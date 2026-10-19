@@ -1,0 +1,12 @@
+{
+  "language": "afr_Latn",
+  "name": "Afrikaans",
+  "status": "complete",
+  "documents": 229,
+  "utf8_bytes": 1004919,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/afr_Latn/test/000_00000.parquet",
+  "source_bytes_downloaded": 4099407,
+  "sample_sha256": "71dd7457890aa0ff18bf7dfa513fc46cd1f6205198ce21bd1f48ca2cc5aeca81"
+}

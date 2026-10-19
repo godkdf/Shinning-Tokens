@@ -1,0 +1,17 @@
+.venv/
+.cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+*.egg-info/
+dist/
+*.tar.gz
+.env
+.env.*
+!.env.example
+site/data/vocab/
+site/data/mappings/
+site/data/tokenizers/
+results/raw/
+artifacts/

@@ -1,0 +1,12 @@
+{
+  "language": "eng_Latn",
+  "name": "English",
+  "status": "complete",
+  "documents": 368,
+  "utf8_bytes": 1005346,
+  "repo": "HuggingFaceFW/fineweb",
+  "revision": "9bb295ddab0e05d785b879661af7260fed5140fc",
+  "source_path": "sample/10BT/000_00000.parquet",
+  "source_bytes_downloaded": 7148567,
+  "sample_sha256": "0b24fd1eb8d382aa2aecc3103f0b33a4967249416a45b03eeb267a5057954269"
+}

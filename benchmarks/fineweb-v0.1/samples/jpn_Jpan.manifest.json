@@ -1,0 +1,12 @@
+{
+  "language": "jpn_Jpan",
+  "name": "Japanese",
+  "status": "complete",
+  "documents": 292,
+  "utf8_bytes": 1003929,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/jpn_Jpan/test/000_00000.parquet",
+  "source_bytes_downloaded": 3137058,
+  "sample_sha256": "6cefd93f0618a8f679e7bdc73d5dcc77001231d1c0a68853cb0ee8b3f853ac43"
+}

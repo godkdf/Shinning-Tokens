@@ -1,0 +1,12 @@
+{
+  "language": "ibo_Latn",
+  "name": "Igbo",
+  "status": "complete",
+  "documents": 286,
+  "utf8_bytes": 1016439,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/ibo_Latn/test/000_00000.parquet",
+  "source_bytes_downloaded": 1640530,
+  "sample_sha256": "f2cf5df4db0de3c8bac98e0892ca3e63b082e0ba92af210812064b4f18cbc583"
+}

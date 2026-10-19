@@ -1,0 +1,12 @@
+{
+  "language": "tha_Thai",
+  "name": "Thai",
+  "status": "complete",
+  "documents": 136,
+  "utf8_bytes": 1030808,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/tha_Thai/test/000_00000.parquet",
+  "source_bytes_downloaded": 4099552,
+  "sample_sha256": "cdc211af39ac9a1b6168760c1e4958b7547ed73ba6c5aee5cfcc992439a69b41"
+}

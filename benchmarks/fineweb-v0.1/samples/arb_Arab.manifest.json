@@ -1,0 +1,12 @@
+{
+  "language": "arb_Arab",
+  "name": "Arabic",
+  "status": "complete",
+  "documents": 206,
+  "utf8_bytes": 1001256,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/arb_Arab/test/000_00000.parquet",
+  "source_bytes_downloaded": 4141240,
+  "sample_sha256": "9c85b591c15db5a2b746417598836d54286337f23b832a9df9389d5337e73240"
+}

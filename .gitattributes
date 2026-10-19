@@ -1,0 +1,2 @@
+# Preserve verbatim upstream agreement snapshots, including their whitespace.
+licenses/*.html -whitespace

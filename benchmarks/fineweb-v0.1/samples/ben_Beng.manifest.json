@@ -1,0 +1,12 @@
+{
+  "language": "ben_Beng",
+  "name": "Bengali",
+  "status": "complete",
+  "documents": 168,
+  "utf8_bytes": 1000983,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/ben_Beng/test/000_00000.parquet",
+  "source_bytes_downloaded": 4298120,
+  "sample_sha256": "7b732fa672500ea479f788e50fc8c4875fa5cbd65ab2994813998054fc0a756c"
+}

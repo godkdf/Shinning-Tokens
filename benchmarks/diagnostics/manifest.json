@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "id": "diagnostics-v0.1",
+  "seed": 20261019,
+  "documents": 10556,
+  "sha256": "035b79aff95eb2730a2fef22553445ecabc828b62e99eaad801f0e55d010a3b4",
+  "unicode_cases": 500,
+  "number_cases": 10000,
+  "code_cases": 56,
+  "license": "Apache-2.0",
+  "scope": "Constructed diagnostics, not representative language, code, or arithmetic-ability evaluation.",
+  "normalization": "Only explicitly labelled paired Unicode transformations; no implicit preprocessing."
+}

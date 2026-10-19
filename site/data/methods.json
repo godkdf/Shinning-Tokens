@@ -1,0 +1,659 @@
+{
+  "schema_version": "1.0.0",
+  "verified_on": "2026-10-19",
+  "title": "Tokenizer transfer research catalog",
+  "scope": "Research reference for the Tokenizer Lab hub; separate from tokenizer-only intrinsic benchmarks.",
+  "local_reproduction_claim": "None. Sources and upstream code links were reviewed; methods were not executed here.",
+  "evidence_labels": {
+    "paper_reported": "A primary source reports the result in its own stated setting. Not a local replication.",
+    "implementation_available": "Upstream source code exists and was inspected for availability. Not a guarantee that it runs in the Lab environment.",
+    "locally_reproduced": "Reserved for a pinned, executable experiment with raw results, artifact hashes, logs and evaluation evidence. All current entries are not_run."
+  },
+  "shared_evaluation": [
+    "First validate exact UTF-8 reconstruction, special-token policy and target ID order.",
+    "Record model/tokenizer revisions, tensor shapes, dtypes, seeds, corpus identities and all output artifact hashes.",
+    "Separate initialization, auxiliary training, teacher inference and LM adaptation runtime and memory.",
+    "Use held-out original text and normalize LM likelihood by original UTF-8 bytes; cross-tokenizer perplexity per token is not directly comparable.",
+    "Keep adaptation data and compute equal for controlled comparisons; report source-language retention and per-language regressions.",
+    "Token compression, vector cosine similarity and nearest-neighbor retrieval measure different properties; none alone proves better model behavior.",
+    "Run several declared seeds when making claims about learned methods; publish individual outcomes and uncertainty rather than only the best run."
+  ],
+  "embedding_safety": {
+    "input": "Build rows in the exact target token-ID order and preserve the source hidden width.",
+    "output": "For an untied LM head, initialize and evaluate output rows separately; retain the framework orientation.",
+    "tied": "When weights are tied, keep one shared parameter tensor and verify that saving and reloading preserves the tie.",
+    "other": "Update vocabulary size, special-token IDs, padding policy and any vocabulary-sized output bias. Never silently reuse a source ID."
+  },
+  "methods": [
+    {
+      "id": "exact-row-copy",
+      "name": "Exact-row copy baseline",
+      "category": "initialization",
+      "summary": "Reuse an existing model row only when the target entry has the same token semantics in the same model space.",
+      "what_transfers": "Existing input rows, and corresponding output rows when available. Unmatched tokens need a separately declared initializer.",
+      "tokenizer_only": false,
+      "requirements": [
+        "Source model embedding tensors and both ID maps.",
+        "A verified token-byte and boundary-semantics match; special tokens require role matching."
+      ],
+      "compute": {
+        "cpu_feasibility": "Yes for copying; peak memory still depends on matrix size.",
+        "weights_required": true,
+        "training_required": "No optimization for the copy itself; adaptation is a separate experiment.",
+        "cost_measurement": "No local runtime, memory, accelerator-hours or cost measurement is available."
+      },
+      "compatibility": [
+        "Use rows from the same checkpoint or a verified compatible model space. Equal dimensions across unrelated models are insufficient.",
+        "The same displayed text can encode different leading-space or continuation semantics. Byte overlap is a candidate match, not proof of interchangeability."
+      ],
+      "embedding_handling": {
+        "input": "Build rows in the exact target token-ID order and preserve the source hidden width.",
+        "output": "For an untied LM head, initialize and evaluate output rows separately; retain the framework orientation.",
+        "tied": "When weights are tied, keep one shared parameter tensor and verify that saving and reloading preserves the tie.",
+        "other": "Update vocabulary size, special-token IDs, padding policy and any vocabulary-sized output bias. Never silently reuse a source ID."
+      },
+      "evidence": {
+        "paper_reported": {
+          "status": "not_applicable",
+          "summary": "Shared-token row copying appears inside FVT and FOCUS; this is the Lab baseline definition, not a separate paper result.",
+          "scope": "No independent performance claim."
+        },
+        "implementation_available": {
+          "status": "linked_not_executed",
+          "summary": "The linked upstream code was inspected for availability. No compatibility or reproduction claim is made."
+        },
+        "locally_reproduced": {
+          "status": "not_run",
+          "summary": "No Tokenizer Lab reproduction of this method is published.",
+          "result_paths": []
+        }
+      },
+      "sources": [
+        {
+          "title": "FVT: shared-token assignment, Equation 1",
+          "url": "https://aclanthology.org/2022.emnlp-industry.41.pdf",
+          "kind": "paper",
+          "verified_on": "2026-10-19"
+        },
+        {
+          "title": "FOCUS: overlap copy, Equation 1",
+          "url": "https://aclanthology.org/2023.emnlp-main.829.pdf",
+          "kind": "paper",
+          "verified_on": "2026-10-19"
+        }
+      ],
+      "implementations": [
+        {
+          "title": "FOCUS",
+          "url": "https://github.com/konstantinjdobler/focus",
+          "relation": "upstream baseline component",
+          "verification": "primary repository inspected; not installed or executed",
+          "notes": "Contains overlap copying; not a standalone Lab implementation."
+        }
+      ],
+      "evaluation_guidance": [
+        "Report copied, unmatched, ambiguous and special-token counts.",
+        "Require exact equality for copied rows before and after save/load.",
+        "Compare to random and subtoken-mean initialization on the same unmatched rows."
+      ],
+      "worked_example": "If 800 of 1,000 target entries match, copy 800 rows; explicitly initialize the other 200. Copying is not a 100% vocabulary conversion.",
+      "docs_path": "docs/research/exact-row-copy.md"
+    },
+    {
+      "id": "fvt",
+      "name": "Subtoken averaging / Fast Vocabulary Transfer",
+      "category": "initialization",
+      "summary": "Tokenize each target piece with the source tokenizer and average the corresponding source model rows.",
+      "what_transfers": "An embedding initialization built from source subpieces; it does not transfer token order or a complete model behavior.",
+      "tokenizer_only": false,
+      "requirements": [
+        "Source tokenizer, target tokenizer and source embedding tensors.",
+        "A declared conversion from target piece bytes to valid source-tokenizer input."
+      ],
+      "compute": {
+        "cpu_feasibility": "Yes for initialization if the matrices fit memory.",
+        "weights_required": true,
+        "training_required": "No training for the arithmetic mean; the paper evaluates additional adaptation training.",
+        "cost_measurement": "No local runtime, memory, accelerator-hours or cost measurement is available."
+      },
+      "compatibility": [
+        "The output width stays equal to the source model hidden width.",
+        "Handle byte fragments, leading-space markers, unknown tokens and added-token matching explicitly; arbitrary vocabulary strings are not always standalone text."
+      ],
+      "embedding_handling": {
+        "input": "Build rows in the exact target token-ID order and preserve the source hidden width.",
+        "output": "For an untied LM head, initialize and evaluate output rows separately; retain the framework orientation.",
+        "tied": "When weights are tied, keep one shared parameter tensor and verify that saving and reloading preserves the tie.",
+        "other": "Update vocabulary size, special-token IDs, padding policy and any vocabulary-sized output bias. Never silently reuse a source ID."
+      },
+      "evidence": {
+        "paper_reported": {
+          "status": "reported",
+          "summary": "The 2022 FVT paper studies domain-specific vocabulary compression with subsequent masked-language-model adaptation.",
+          "scope": "Its reported compression and task results do not establish Gemma or BLOOM transfer quality."
+        },
+        "implementation_available": {
+          "status": "linked_not_executed",
+          "summary": "The linked upstream code was inspected for availability. No compatibility or reproduction claim is made."
+        },
+        "locally_reproduced": {
+          "status": "not_run",
+          "summary": "No Tokenizer Lab reproduction of this method is published.",
+          "result_paths": []
+        }
+      },
+      "sources": [
+        {
+          "title": "Fast Vocabulary Transfer for Language Model Compression",
+          "url": "https://aclanthology.org/2022.emnlp-industry.41/",
+          "kind": "paper",
+          "verified_on": "2026-10-19"
+        }
+      ],
+      "implementations": [
+        {
+          "title": "Tokenkit",
+          "url": "https://github.com/bminixhofer/tokenkit",
+          "relation": "later implementation",
+          "verification": "primary repository inspected; not installed or executed",
+          "notes": "Its FVT transfer path is separate from the learned ZeTT hypernetwork in the original ZeTT repository."
+        }
+      ],
+      "evaluation_guidance": [
+        "Log the source decomposition and averaging weights for every new row.",
+        "Compare shared-row copy plus random initialization against shared-row copy plus FVT.",
+        "Measure vector norms and held-out text likelihood before and after an equal adaptation budget."
+      ],
+      "worked_example": "A target piece decomposed into 3 source IDs receives (e1 + e2 + e3) / 3. Each occurrence contributes one third; changing their order leaves this average unchanged.",
+      "docs_path": "docs/research/fvt.md"
+    },
+    {
+      "id": "wechsel",
+      "name": "WECHSEL",
+      "category": "initialization",
+      "summary": "Use aligned bilingual static embeddings to select source subword neighbors and combine their model rows.",
+      "what_transfers": "New vocabulary rows in the existing model space while retaining the model backbone.",
+      "tokenizer_only": false,
+      "requirements": [
+        "Source and target tokenizers and source model rows.",
+        "Static embeddings covering both languages plus an alignment/dictionary policy."
+      ],
+      "compute": {
+        "cpu_feasibility": "Initialization is CPU-feasible; auxiliary embeddings may occupy substantial RAM.",
+        "weights_required": true,
+        "training_required": "No LM training in row construction; the published adaptation results include model training.",
+        "cost_measurement": "No local runtime, memory, accelerator-hours or cost measurement is available."
+      },
+      "compatibility": [
+        "Bilingual-resource quality and language coverage limit the method.",
+        "Keep the source backbone and hidden width; this is not an arbitrary model-to-model vector swap."
+      ],
+      "embedding_handling": {
+        "input": "Build rows in the exact target token-ID order and preserve the source hidden width.",
+        "output": "For an untied LM head, initialize and evaluate output rows separately; retain the framework orientation.",
+        "tied": "When weights are tied, keep one shared parameter tensor and verify that saving and reloading preserves the tie.",
+        "other": "Update vocabulary size, special-token IDs, padding policy and any vocabulary-sized output bias. Never silently reuse a source ID."
+      },
+      "evidence": {
+        "paper_reported": {
+          "status": "reported",
+          "summary": "The paper transfers English RoBERTa and GPT-2 to French, German, Chinese and Swahili.",
+          "scope": "These four-language experiments are evidence for those settings, not every model and language pair."
+        },
+        "implementation_available": {
+          "status": "linked_not_executed",
+          "summary": "The linked upstream code was inspected for availability. No compatibility or reproduction claim is made."
+        },
+        "locally_reproduced": {
+          "status": "not_run",
+          "summary": "No Tokenizer Lab reproduction of this method is published.",
+          "result_paths": []
+        }
+      },
+      "sources": [
+        {
+          "title": "WECHSEL",
+          "url": "https://aclanthology.org/2022.naacl-main.293/",
+          "kind": "paper",
+          "verified_on": "2026-10-19"
+        }
+      ],
+      "implementations": [
+        {
+          "title": "Official WECHSEL",
+          "url": "https://github.com/CPJKU/wechsel",
+          "relation": "author implementation",
+          "verification": "primary repository inspected; not installed or executed",
+          "notes": "The example applies the method separately to untied input and output embeddings."
+        }
+      ],
+      "evaluation_guidance": [
+        "Publish auxiliary embedding versions and the dictionary or alignment.",
+        "Record neighbor IDs, similarity weights, missing coverage and fallbacks.",
+        "Hold out adaptation evaluation text and include source-language retention."
+      ],
+      "worked_example": "If a new piece uses neighbor weights 0.6, 0.3 and 0.1, its row is 0.6e1 + 0.3e2 + 0.1e3. These are illustrative weights, not a measured result.",
+      "docs_path": "docs/research/wechsel.md"
+    },
+    {
+      "id": "focus",
+      "name": "FOCUS",
+      "category": "initialization",
+      "summary": "Use shared vocabulary as anchors; choose sparse semantic combinations in an auxiliary target-token embedding space.",
+      "what_transfers": "Copied shared rows and weighted combinations of source model anchor rows for new entries.",
+      "tokenizer_only": false,
+      "requirements": [
+        "Both tokenizers, source model rows and usable overlap.",
+        "Target-language text for auxiliary token embeddings, or a declared supported pretrained auxiliary resource."
+      ],
+      "compute": {
+        "cpu_feasibility": "CPU-feasible for auxiliary embeddings and initialization; report memory and elapsed time.",
+        "weights_required": true,
+        "training_required": "Auxiliary embedding training may be needed; continued LM training is separate.",
+        "cost_measurement": "No local runtime, memory, accelerator-hours or cost measurement is available."
+      },
+      "compatibility": [
+        "Overlap quality matters, including special-token and boundary handling.",
+        "The reference evaluation centers on XLM-R; a decoder-model port requires its own evidence."
+      ],
+      "embedding_handling": {
+        "input": "Build rows in the exact target token-ID order and preserve the source hidden width.",
+        "output": "For an untied LM head, initialize and evaluate output rows separately; retain the framework orientation.",
+        "tied": "When weights are tied, keep one shared parameter tensor and verify that saving and reloading preserves the tie.",
+        "other": "Update vocabulary size, special-token IDs, padding policy and any vocabulary-sized output bias. Never silently reuse a source ID."
+      },
+      "evidence": {
+        "paper_reported": {
+          "status": "reported",
+          "summary": "The paper evaluates monolingual specialization of XLM-R on language modeling, NLI, QA and NER.",
+          "scope": "Reported gains compare specific initialization and adaptation settings; no local reproduction is supplied."
+        },
+        "implementation_available": {
+          "status": "linked_not_executed",
+          "summary": "The linked upstream code was inspected for availability. No compatibility or reproduction claim is made."
+        },
+        "locally_reproduced": {
+          "status": "not_run",
+          "summary": "No Tokenizer Lab reproduction of this method is published.",
+          "result_paths": []
+        }
+      },
+      "sources": [
+        {
+          "title": "FOCUS",
+          "url": "https://aclanthology.org/2023.emnlp-main.829/",
+          "kind": "paper",
+          "verified_on": "2026-10-19"
+        }
+      ],
+      "implementations": [
+        {
+          "title": "Official FOCUS / deepfocus",
+          "url": "https://github.com/konstantinjdobler/focus",
+          "relation": "author implementation",
+          "verification": "primary repository inspected; not installed or executed",
+          "notes": "Documents target-text input, cached auxiliary embeddings and separate output-row initialization."
+        }
+      ],
+      "evaluation_guidance": [
+        "Report overlap size, auxiliary corpus hash and out-of-vocabulary fallbacks.",
+        "Save the anchor IDs and sparse weights so each initialized row is auditable.",
+        "Compare to FVT, random and exact-copy baselines at identical adaptation compute."
+      ],
+      "worked_example": "With 10,000 valid shared anchors, a new piece can receive a weighted combination of only a few anchor rows; publish which rows and their exact weights.",
+      "docs_path": "docs/research/focus.md"
+    },
+    {
+      "id": "cw2v",
+      "name": "Constrained Word2Vec (CW2V)",
+      "category": "learned_initialization",
+      "summary": "Learn new rows from target-language contexts as convex combinations of existing rows.",
+      "what_transfers": "Added input and LM-head rows while retaining the existing model parameters.",
+      "tokenizer_only": false,
+      "requirements": [
+        "Expanded target tokenizer, source model rows and target-language text.",
+        "The constrained skip-gram training configuration and a held-out evaluation split."
+      ],
+      "compute": {
+        "cpu_feasibility": "Small prototypes can run on CPU; full matrix and corpus costs must be measured.",
+        "weights_required": true,
+        "training_required": "Yes: contextual initialization training, followed by adaptation for the paper evaluations.",
+        "cost_measurement": "No local runtime, memory, accelerator-hours or cost measurement is available."
+      },
+      "compatibility": [
+        "The paper addresses vocabulary expansion rather than unrestricted model replacement.",
+        "Do not generalize the paper’s convex-hull guarantee beyond its stated assumptions or to arbitrary biased output heads."
+      ],
+      "embedding_handling": {
+        "input": "Build rows in the exact target token-ID order and preserve the source hidden width.",
+        "output": "The paper explicitly learns separate constrained combinations for untied input and LM-head matrices.",
+        "tied": "When weights are tied, keep one shared parameter tensor and verify that saving and reloading preserves the tie.",
+        "other": "Update vocabulary size, special-token IDs, padding policy and any vocabulary-sized output bias. Never silently reuse a source ID."
+      },
+      "evidence": {
+        "paper_reported": {
+          "status": "reported",
+          "summary": "The paper compares RoBERTa and LLaMA 2 across four languages and five tasks.",
+          "scope": "Its theoretical argument concerns initialization; downstream quality is an empirical adaptation result."
+        },
+        "implementation_available": {
+          "status": "linked_not_executed",
+          "summary": "The linked upstream code was inspected for availability. No compatibility or reproduction claim is made."
+        },
+        "locally_reproduced": {
+          "status": "not_run",
+          "summary": "No Tokenizer Lab reproduction of this method is published.",
+          "result_paths": []
+        }
+      },
+      "sources": [
+        {
+          "title": "An Empirical Comparison of Vocabulary Expansion and Initialization Approaches For Language Models",
+          "url": "https://aclanthology.org/2024.conll-1.8/",
+          "kind": "paper",
+          "verified_on": "2026-10-19"
+        }
+      ],
+      "implementations": [
+        {
+          "title": "Official CW2V branch",
+          "url": "https://github.com/AI4Bharat/VocabAdaptation_LLM/tree/CW2V",
+          "relation": "author implementation",
+          "verification": "primary repository inspected; not installed or executed",
+          "notes": "Includes constrained training, initialization and model-specific downstream evaluation folders."
+        }
+      ],
+      "evaluation_guidance": [
+        "Verify nonnegative coefficients and row sums of one within numerical tolerance.",
+        "Separate initializer training time from subsequent LM adaptation.",
+        "Compare simple mean and multivariate baselines; publish language regressions and generation checks."
+      ],
+      "worked_example": "Weights 0.5, 0.3 and 0.2 sum to 1 and keep the new row inside the existing rows’ convex hull. Their values are learned from context.",
+      "docs_path": "docs/research/cw2v.md"
+    },
+    {
+      "id": "embedding-mapping",
+      "name": "Embedding-space mapping",
+      "category": "learned_mapping",
+      "summary": "Fit a transformation using paired anchor vectors, then project other vectors into a target model space.",
+      "what_transfers": "Vector coordinates; no automatic transfer of attention weights, token boundaries or generation behavior.",
+      "tokenizer_only": false,
+      "requirements": [
+        "Source and target vector matrices plus defensible paired anchors.",
+        "Separate fitting, development and evaluation anchors with no token-family leakage."
+      ],
+      "compute": {
+        "cpu_feasibility": "Linear least squares or SVD is CPU-feasible at modest sizes.",
+        "weights_required": true,
+        "training_required": "Yes: fitting a mapper; subsequent LM adaptation is a separate requirement to evaluate.",
+        "cost_measurement": "No local runtime, memory, accelerator-hours or cost measurement is available."
+      },
+      "compatibility": [
+        "Equal width permits a square orthogonal mapping; differing widths require a rectangular or other declared mapper.",
+        "MUSE is a word-embedding alignment reference, not evidence that any two LLM embedding spaces are interchangeable.",
+        "Train and evaluate input and output mappings separately if their spaces differ."
+      ],
+      "embedding_handling": {
+        "input": "Document source/target dimensions, centering, normalization, objective and regularization.",
+        "output": "Fit a separate output mapper for an untied head; do not assume the input mapper is correct for output rows.",
+        "tied": "When weights are tied, keep one shared parameter tensor and verify that saving and reloading preserves the tie.",
+        "other": "Update vocabulary size, special-token IDs, padding policy and any vocabulary-sized output bias. Never silently reuse a source ID."
+      },
+      "evidence": {
+        "paper_reported": {
+          "status": "reported",
+          "summary": "MUSE provides supervised and unsupervised cross-lingual word-embedding alignment methods.",
+          "scope": "This is a method family; those word-vector results do not validate an arbitrary LLM conversion."
+        },
+        "implementation_available": {
+          "status": "linked_not_executed",
+          "summary": "The linked upstream code was inspected for availability. No compatibility or reproduction claim is made."
+        },
+        "locally_reproduced": {
+          "status": "not_run",
+          "summary": "No Tokenizer Lab reproduction of this method is published.",
+          "result_paths": []
+        }
+      },
+      "sources": [
+        {
+          "title": "Word Translation Without Parallel Data",
+          "url": "https://arxiv.org/abs/1710.04087",
+          "kind": "paper",
+          "verified_on": "2026-10-19"
+        }
+      ],
+      "implementations": [
+        {
+          "title": "MUSE",
+          "url": "https://github.com/facebookresearch/MUSE",
+          "relation": "reference alignment implementation",
+          "verification": "primary repository inspected; not installed or executed",
+          "notes": "Supports supervised Procrustes alignment; its published task is word-vector alignment."
+        }
+      ],
+      "evaluation_guidance": [
+        "Report held-out cosine similarity, retrieval accuracy and vector-norm errors.",
+        "Use exact-copy and subtoken-average controls where applicable.",
+        "Evaluate target-model likelihood and behavior; low vector error alone cannot establish model utility.",
+        "Keep the historical o200k-to-BLOOM experiment labeled exploratory until its data, split and artifacts are imported and reproduced."
+      ],
+      "worked_example": "For 768-dimensional source vectors and 1,024-dimensional target vectors, a linear matrix has 768 × 1,024 = 786,432 coefficients, plus 1,024 if a bias is used.",
+      "docs_path": "docs/research/embedding-mapping.md"
+    },
+    {
+      "id": "zett",
+      "name": "Zero-Shot Tokenizer Transfer (ZeTT)",
+      "category": "hypernetwork",
+      "summary": "A previously trained hypernetwork predicts model-compatible rows for a new tokenizer.",
+      "what_transfers": "Predicted vocabulary-dependent parameters for a compatible base model and supported tokenizer representation.",
+      "tokenizer_only": false,
+      "requirements": [
+        "A hypernetwork trained for the source model or a demonstrated compatible variant.",
+        "Source model, target tokenizer, conversion metadata and the exact hypernetwork checkpoint."
+      ],
+      "compute": {
+        "cpu_feasibility": "Inference may be CPU-feasible if all required tensors fit; full-scale training normally needs accelerators.",
+        "weights_required": true,
+        "training_required": "Hypernetwork training is required unless using a compatible released checkpoint; zero-shot applies at transfer time.",
+        "cost_measurement": "No local runtime, memory, accelerator-hours or cost measurement is available."
+      },
+      "compatibility": [
+        "A hypernetwork trained for one base model is not a universal mapper for unrelated checkpoints.",
+        "The original repository describes transfer to fine-tuned variants; follow its combination rule rather than blindly reusing rows."
+      ],
+      "embedding_handling": {
+        "input": "Build rows in the exact target token-ID order and preserve the source hidden width.",
+        "output": "Require a checkpoint/configuration that predicts every required vocabulary-dependent tensor, including an untied LM head.",
+        "tied": "When weights are tied, keep one shared parameter tensor and verify that saving and reloading preserves the tie.",
+        "other": "Update vocabulary size, special-token IDs, padding policy and any vocabulary-sized output bias. Never silently reuse a source ID."
+      },
+      "evidence": {
+        "paper_reported": {
+          "status": "reported",
+          "summary": "The paper evaluates encoder and decoder tokenizer replacement using a learned embedding-prediction hypernetwork.",
+          "scope": "Training-free transfer assumes the hypernetwork already exists; optional continued training is evaluated separately."
+        },
+        "implementation_available": {
+          "status": "linked_not_executed",
+          "summary": "The linked upstream code was inspected for availability. No compatibility or reproduction claim is made."
+        },
+        "locally_reproduced": {
+          "status": "not_run",
+          "summary": "No Tokenizer Lab reproduction of this method is published.",
+          "result_paths": []
+        }
+      },
+      "sources": [
+        {
+          "title": "Zero-Shot Tokenizer Transfer",
+          "url": "https://papers.nips.cc/paper_files/paper/2024/hash/532ce4fcf853023c4cf2ac38cbc5d002-Abstract-Conference.html",
+          "kind": "paper",
+          "verified_on": "2026-10-19"
+        }
+      ],
+      "implementations": [
+        {
+          "title": "Original ZeTT",
+          "url": "https://github.com/bminixhofer/zett",
+          "relation": "author hypernetwork implementation",
+          "verification": "primary repository inspected; not installed or executed",
+          "notes": "Includes hypernetwork training and transfer scripts; repository notes some evaluation setup is incomplete."
+        },
+        {
+          "title": "Tokenkit",
+          "url": "https://github.com/bminixhofer/tokenkit",
+          "relation": "later toolkit",
+          "verification": "primary repository inspected; not installed or executed",
+          "notes": "Its documented transfer path uses FVT; do not describe that path as the original learned hypernetwork."
+        }
+      ],
+      "evaluation_guidance": [
+        "Report hypernetwork training cost separately from transfer latency.",
+        "Measure zero-update model quality before optionally fine-tuning.",
+        "Record compatibility assumptions, changed tensor names and tokenizer byte-conversion checks."
+      ],
+      "worked_example": "Predicting 2,000 rows of width 1,024 yields 2,048,000 values. That count says nothing about the prior hypernetwork training cost.",
+      "docs_path": "docs/research/zett.md"
+    },
+    {
+      "id": "uld",
+      "name": "Universal Logit Distillation (ULD)",
+      "category": "distillation",
+      "summary": "Train a student using target-token supervision and a loss comparing teacher/student sorted probability masses.",
+      "what_transfers": "Teacher behavior through student optimization; no direct embedding-row correspondence is required.",
+      "tokenizer_only": false,
+      "requirements": [
+        "Teacher logits, student model, both tokenizers and distillation text.",
+        "Declared prompt templates, sequence alignment/truncation and supervised-loss weights."
+      ],
+      "compute": {
+        "cpu_feasibility": "Toy experiments can run on CPU; useful model-scale runs usually need accelerator inference and training.",
+        "weights_required": true,
+        "training_required": "Yes: teacher inference and student training.",
+        "cost_measurement": "No local runtime, memory, accelerator-hours or cost measurement is available."
+      },
+      "compatibility": [
+        "Teacher and student hidden widths need not match for the logit loss.",
+        "The original loss pairs positions up to the shorter sequence; positions can cover different text spans.",
+        "Sorted probability matching does not establish semantic token-to-token matches."
+      ],
+      "embedding_handling": {
+        "input": "The student keeps its own input parameters unless an independent initializer is used.",
+        "output": "Each model emits probabilities in its own vocabulary; logit caching must retain model revision, precision, temperature and masking.",
+        "tied": "Preserve the student’s declared tying policy; the distillation loss does not determine it.",
+        "other": "Update vocabulary size, special-token IDs, padding policy and any vocabulary-sized output bias. Never silently reuse a source ID."
+      },
+      "evidence": {
+        "paper_reported": {
+          "status": "reported",
+          "summary": "The paper evaluates cross-tokenizer teachers and students on summarization and question-answering tasks.",
+          "scope": "Treat ULD and later span-aligned or hybrid variants as separate named configurations."
+        },
+        "implementation_available": {
+          "status": "linked_not_executed",
+          "summary": "The linked upstream code was inspected for availability. No compatibility or reproduction claim is made."
+        },
+        "locally_reproduced": {
+          "status": "not_run",
+          "summary": "No Tokenizer Lab reproduction of this method is published.",
+          "result_paths": []
+        }
+      },
+      "sources": [
+        {
+          "title": "Towards Cross-Tokenizer Distillation: the Universal Logit Distillation Loss for LLMs",
+          "url": "https://arxiv.org/abs/2402.12030v3",
+          "kind": "paper",
+          "verified_on": "2026-10-19",
+          "version": "v3 (2025-01-27)"
+        }
+      ],
+      "implementations": [
+        {
+          "title": "Official ULD recipes",
+          "url": "https://github.com/Nicolas-BZRD/llm-recipes",
+          "relation": "author implementation",
+          "verification": "primary repository inspected; not installed or executed",
+          "notes": "Record a commit and inspect the model-specific data/prompt pipeline before reproduction."
+        }
+      ],
+      "evaluation_guidance": [
+        "Publish teacher inference compute and student training compute separately.",
+        "Include a student trained on the same teacher-generated text without the ULD term.",
+        "Report aligned/omitted text, sequence-length mismatch, task metrics and held-out per-byte likelihood."
+      ],
+      "worked_example": "Teacher probabilities [0.6, 0.3, 0.1] and student probabilities [0.1, 0.6, 0.3] become identical after sorting. The loss alone does not know which token means what.",
+      "docs_path": "docs/research/uld.md"
+    },
+    {
+      "id": "alm",
+      "name": "Approximate Likelihood Matching (ALM)",
+      "category": "distillation",
+      "summary": "Match teacher and student likelihoods of aligned text chunks, allowing different token boundaries.",
+      "what_transfers": "Teacher behavior through chunk-level distillation; optional components handle tokenization bias and hidden states.",
+      "tokenizer_only": false,
+      "requirements": [
+        "Teacher and student models, tokenizer byte adapters and shared raw text.",
+        "Declared chunk alignment, divergence, loss weights and any debiasing configuration."
+      ],
+      "compute": {
+        "cpu_feasibility": "CPU is useful for alignment diagnostics; model-scale teacher inference and student training typically need accelerators.",
+        "weights_required": true,
+        "training_required": "Yes: teacher inference and student optimization.",
+        "cost_measurement": "No local runtime, memory, accelerator-hours or cost measurement is available."
+      },
+      "compatibility": [
+        "Both tokenizations must represent comparable underlying bytes; expose lossy normalization and unknown-token cases.",
+        "The likelihood objective does not require equal hidden widths; optional hidden-state loss needs compatible dimensions or a declared projection."
+      ],
+      "embedding_handling": {
+        "input": "The student can use an independent initializer; record that initializer to isolate ALM.",
+        "output": "Use each model’s own output head, summing log probabilities over each aligned chunk.",
+        "tied": "Keep each model’s tying policy; different vocabulary sizes do not imply shared parameter rows.",
+        "other": "Update vocabulary size, special-token IDs, padding policy and any vocabulary-sized output bias. Never silently reuse a source ID."
+      },
+      "evidence": {
+        "paper_reported": {
+          "status": "reported",
+          "summary": "The revised paper studies tokenizer self-distillation, model distillation and hypernetwork training.",
+          "scope": "This catalog cites v4; earlier versions use a shorter title and a narrower experimental description."
+        },
+        "implementation_available": {
+          "status": "linked_not_executed",
+          "summary": "The linked upstream code was inspected for availability. No compatibility or reproduction claim is made."
+        },
+        "locally_reproduced": {
+          "status": "not_run",
+          "summary": "No Tokenizer Lab reproduction of this method is published.",
+          "result_paths": []
+        }
+      },
+      "sources": [
+        {
+          "title": "Universal Cross-Tokenizer Distillation via Approximate Likelihood Matching",
+          "url": "https://arxiv.org/abs/2503.20083v4",
+          "kind": "paper",
+          "verified_on": "2026-10-19",
+          "version": "v4 (2025-10-24)"
+        }
+      ],
+      "implementations": [
+        {
+          "title": "Official Tokenkit",
+          "url": "https://github.com/bminixhofer/tokenkit",
+          "relation": "author implementation",
+          "verification": "primary repository inspected; not installed or executed",
+          "notes": "Includes cross-tokenizer distillation and an ALM implementation guide."
+        }
+      ],
+      "evaluation_guidance": [
+        "Save aligned byte offsets, token spans and excluded cases.",
+        "Compare with equal-compute text-only training and ULD baselines.",
+        "Report per-byte likelihood, task metrics, source-language retention and total inference/training cost."
+      ],
+      "worked_example": "If teacher tokens [ab, c] and student tokens [a, bc] cover the same bytes abc, compare the likelihood of that complete chunk, not the two first-token probabilities.",
+      "docs_path": "docs/research/alm.md"
+    }
+  ]
+}

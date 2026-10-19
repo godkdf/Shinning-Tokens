@@ -1,0 +1,12 @@
+{
+  "language": "cmn_Hani",
+  "name": "Mandarin",
+  "status": "complete",
+  "documents": 280,
+  "utf8_bytes": 1002028,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/cmn_Hani/test/000_00000.parquet",
+  "source_bytes_downloaded": 5010017,
+  "sample_sha256": "1ea2c8bc16231168f77765bef134e405324bed7d1bfbd22d3e7ac07689e7e290"
+}

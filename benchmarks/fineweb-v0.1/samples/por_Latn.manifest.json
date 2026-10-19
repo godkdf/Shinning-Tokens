@@ -1,0 +1,12 @@
+{
+  "language": "por_Latn",
+  "name": "Portuguese",
+  "status": "complete",
+  "documents": 378,
+  "utf8_bytes": 1001057,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/por_Latn/test/000_00000.parquet",
+  "source_bytes_downloaded": 2616941,
+  "sample_sha256": "887e0b4354e97593c4d66dd0db04e0d259311bd40cd630bcb43e5d31b5f56ba4"
+}

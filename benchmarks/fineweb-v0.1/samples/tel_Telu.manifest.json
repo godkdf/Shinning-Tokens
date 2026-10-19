@@ -1,0 +1,12 @@
+{
+  "language": "tel_Telu",
+  "name": "Telugu",
+  "status": "complete",
+  "documents": 115,
+  "utf8_bytes": 1002296,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/tel_Telu/test/000_00000.parquet",
+  "source_bytes_downloaded": 3269326,
+  "sample_sha256": "870a75d0babe9ca3c6c457fd6f4552139a95087731f55ada158af7578e9bc086"
+}

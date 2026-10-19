@@ -1,0 +1,9 @@
+{
+  "schema_version":"1.0", "protocol":"intrinsic-v0.1",
+  "registry":"configs/registry.json",
+  "tokenizers":["gemma4","bloom","jais","qwen3","o200k","gemma_v31","gemma3_parent"],
+  "corpus":"benchmarks/fineweb-v0.1/corpus.jsonl.gz",
+  "manifest":"benchmarks/fineweb-v0.1/manifest.json",
+  "runtime_repeats":5, "runtime_bytes":1000000, "bootstrap_replicates":1000,
+  "seed":20261019, "vocabulary_mappings":true
+}

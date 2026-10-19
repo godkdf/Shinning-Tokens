@@ -1,0 +1,29 @@
+[project]
+name = "shining-tokenizer-lab"
+version = "0.1.0"
+description = "Reproducible tokenizer comparison, vocabulary exploration, and transfer research"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+dependencies = [
+  "tokenizers>=0.22,<0.24", "tiktoken>=0.12,<0.15",
+  "huggingface-hub>=0.36,<3", "numpy>=2,<3", "regex>=2025.9",
+  "psutil>=7,<8", "requests>=2.32,<3", "pyarrow>=20,<27",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+transfer = ["safetensors>=0.6,<1"]
+
+[project.scripts]
+tokenizer-lab = "tokenizer_lab.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tokenizer_lab"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

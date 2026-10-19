@@ -1,0 +1,12 @@
+{
+  "language": "hin_Deva",
+  "name": "Hindi",
+  "status": "complete",
+  "documents": 165,
+  "utf8_bytes": 1002893,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/hin_Deva/test/000_00000.parquet",
+  "source_bytes_downloaded": 2686556,
+  "sample_sha256": "036ce5c5d909f342759d4314beb07e1607ad258c0fd598577c858179536dbe31"
+}

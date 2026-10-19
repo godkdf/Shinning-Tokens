@@ -1,0 +1,12 @@
+{
+  "language": "tur_Latn",
+  "name": "Turkish",
+  "status": "complete",
+  "documents": 344,
+  "utf8_bytes": 1002793,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/tur_Latn/test/000_00000.parquet",
+  "source_bytes_downloaded": 2539453,
+  "sample_sha256": "9de6d7de7843b91db13a609ad476f064072982e82c043dd5f2bd18b3aa489a58"
+}

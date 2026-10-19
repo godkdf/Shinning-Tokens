@@ -1,0 +1,81 @@
+{
+  "source": {
+    "repo": "openai/gpt-oss-20b",
+    "revision": "6cee5e81ee83917806bbde320786a8fb61efebee",
+    "key": "model.embed_tokens.weight",
+    "shape": [
+      201088,
+      2880
+    ],
+    "dtype": "BF16",
+    "download_bytes": 1158266880
+  },
+  "target": {
+    "repo": "bigscience/bloom-560m",
+    "revision": "ac2ae5fab2ce3f9f40dc79b5ca9f637430d24971",
+    "key": "word_embeddings.weight",
+    "shape": [
+      250880,
+      1024
+    ],
+    "dtype": "F16",
+    "download_bytes": 513802240
+  },
+  "seed": 42,
+  "fit_token_count": 32077,
+  "validation_token_count": 3828,
+  "test_token_count": 4095,
+  "candidate_count": 107404,
+  "selected_lambda": 0.01,
+  "validation_results": [
+    {
+      "lambda": 1e-05,
+      "validation_coordinate_mse": 0.00011081316188210621
+    },
+    {
+      "lambda": 0.0001,
+      "validation_coordinate_mse": 0.00011022784747183323
+    },
+    {
+      "lambda": 0.001,
+      "validation_coordinate_mse": 0.0001082886301446706
+    },
+    {
+      "lambda": 0.01,
+      "validation_coordinate_mse": 0.00010705745808081701
+    },
+    {
+      "lambda": 0.1,
+      "validation_coordinate_mse": 0.00010821464093169197
+    },
+    {
+      "lambda": 1.0,
+      "validation_coordinate_mse": 0.00011288007226539776
+    }
+  ],
+  "test_map": {
+    "coordinate_mse": 0.00010686458699638024,
+    "mean_cosine": 0.5687568783760071,
+    "median_cosine": 0.5777304172515869,
+    "median_norm_ratio": 0.6130688786506653
+  },
+  "test_training_mean_baseline": {
+    "coordinate_mse": 0.00013238127576187253,
+    "mean_cosine": 0.39684197306632996,
+    "median_cosine": 0.4475557208061218,
+    "median_norm_ratio": 0.3957929313182831
+  },
+  "test_mse_ratio_to_baseline": 0.8072485053596876,
+  "formula": "((source_vector - source_mean) / source_scale) @ weight + target_mean",
+  "versions": {
+    "torch": "2.11.0+cu130",
+    "numpy": "2.1.3",
+    "huggingface_hub": "1.33.0",
+    "tokenizers": "0.23.2",
+    "tiktoken": "0.14.0",
+    "safetensors": "0.8.0",
+    "requests": "2.32.4"
+  },
+  "elapsed_minutes": 1.4789659099000005,
+  "scope": "input-embedding initialization only; no downstream training evaluation"
+}

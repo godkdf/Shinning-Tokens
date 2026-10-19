@@ -1,0 +1,12 @@
+{
+  "language": "rus_Cyrl",
+  "name": "Russian",
+  "status": "complete",
+  "documents": 120,
+  "utf8_bytes": 1014340,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/rus_Cyrl/test/000_00000.parquet",
+  "source_bytes_downloaded": 4532951,
+  "sample_sha256": "1085d77082756e6b2c94a7715199f5e53cd52f5b2a5905128bffbe684a0624e5"
+}

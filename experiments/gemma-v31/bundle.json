@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "file": "gemma-v31-inputs.tar.gz",
+  "sha256": "6890887d89f9ac186263faae5c990ec3f7df3405548b2e90b3c7ba0f12c105b3",
+  "bytes": 10507043,
+  "inputs": {
+    "artifacts/gemma_v31/tokenizer.json": {
+      "sha256": "58353089deb6e0524893474322495863b8fc31c40f86ed68278bb2721040789c",
+      "bytes": 33750185
+    },
+    ".cache/assets/gemma3_parent/tokenizer.json": {
+      "sha256": "bc3c85152202ea9186bef74f279293b317df98648bfc84db9e8a919d174cfe05",
+      "bytes": 16030258
+    }
+  },
+  "terms": "Gemma 3 Terms of Use and incorporated use restrictions; agreement and modification notice included.",
+  "provenance": "Supplied experimental candidate and reconstructed parent control; no official parent replay verification."
+}

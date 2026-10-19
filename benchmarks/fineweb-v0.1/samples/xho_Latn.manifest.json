@@ -1,0 +1,12 @@
+{
+  "language": "xho_Latn",
+  "name": "isiXhosa",
+  "status": "complete",
+  "documents": 338,
+  "utf8_bytes": 1000690,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/xho_Latn/test/000_00000.parquet",
+  "source_bytes_downloaded": 2426167,
+  "sample_sha256": "06b9e5da0bab0c1162f8b1d045decbe4ed873de1910ce9e87d4ab138de7dc180"
+}

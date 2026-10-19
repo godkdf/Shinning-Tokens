@@ -1,0 +1,12 @@
+{
+  "language": "yor_Latn",
+  "name": "Yoruba",
+  "status": "complete",
+  "documents": 319,
+  "utf8_bytes": 1003769,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/yor_Latn/test/000_00000.parquet",
+  "source_bytes_downloaded": 1194169,
+  "sample_sha256": "0762f21b31177572a91eff76173b8da65b78df463f761281f5912ca94550d1bb"
+}

@@ -1,0 +1,12 @@
+{
+  "language": "fin_Latn",
+  "name": "Finnish",
+  "status": "complete",
+  "documents": 312,
+  "utf8_bytes": 1000283,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/fin_Latn/test/000_00000.parquet",
+  "source_bytes_downloaded": 3717815,
+  "sample_sha256": "248d7a66088d8d0a46a5b7e13cb8422e59c096bf75c5cc24d7f089f1e3056ff4"
+}

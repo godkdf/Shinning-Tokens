@@ -1,0 +1,13 @@
+name: Core checks
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.11.15"
+      - run: uv sync --frozen --extra test --python 3.12
+      - run: uv run pytest -q
+      - run: node --check site/app.js

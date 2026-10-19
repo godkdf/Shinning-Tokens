@@ -1,0 +1,15 @@
+{
+  "protocol": "intrinsic-v0.1",
+  "artifact_sha256": "12bac982b793c44b03d52a250a9f0d0b666813da566b910c24a6da0695fd11e6",
+  "input_manifest_hash": "832d404829da2ca48141c8ecd864069a0a1db66e17ca15472b62ca3dc54be462",
+  "measurement_code": {
+    "adapters.py": "7065edac8ee6f47ec986f7de7346cc93599dfc1c1cf7c38e669c04bccf50def0",
+    "metrics.py": "16040c0b5cc35f9dc11e17f686d0fd7d2440bad1c9d2b1259af91e8b664b2187",
+    "io.py": "d90b8e4462166a60cf6e0b001b85fb7ab02949336c93961f2c8e8190690c79e1"
+  },
+  "packages": {
+    "tokenizers": "0.23.3",
+    "tiktoken": "0.14.0"
+  },
+  "checkpoint_sha256": "e0553ac0cdbbc4bb0ebd943a337b30f00df2876e067924d7fd5a7d6118ee527e"
+}

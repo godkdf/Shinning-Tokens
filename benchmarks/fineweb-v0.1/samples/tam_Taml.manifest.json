@@ -1,0 +1,12 @@
+{
+  "language": "tam_Taml",
+  "name": "Tamil",
+  "status": "complete",
+  "documents": 168,
+  "utf8_bytes": 1006741,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/tam_Taml/test/000_00000.parquet",
+  "source_bytes_downloaded": 2259001,
+  "sample_sha256": "7a2c7066cc79a4e4a3e8a4966d4bd07162dba95b9a3116e9cac5a6cc92400041"
+}

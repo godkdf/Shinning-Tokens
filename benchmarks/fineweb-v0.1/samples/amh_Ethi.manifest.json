@@ -1,0 +1,12 @@
+{
+  "language": "amh_Ethi",
+  "name": "Amharic",
+  "status": "complete",
+  "documents": 203,
+  "utf8_bytes": 1002939,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/amh_Ethi/test/000_00000.parquet",
+  "source_bytes_downloaded": 3340319,
+  "sample_sha256": "439e3eeb8f32926dc4faf8d2b64396aaeefa97d7dc34fce1ed608a1b2d5fccef"
+}

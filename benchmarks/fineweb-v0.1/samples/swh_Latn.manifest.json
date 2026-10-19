@@ -1,0 +1,12 @@
+{
+  "language": "swh_Latn",
+  "name": "Swahili",
+  "status": "complete",
+  "documents": 334,
+  "utf8_bytes": 1007627,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/swh_Latn/test/000_00000.parquet",
+  "source_bytes_downloaded": 2570932,
+  "sample_sha256": "4ec5295115c32c289b9b902382809c19a1300137567a03950388c049b3ae1c29"
+}

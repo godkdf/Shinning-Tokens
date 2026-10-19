@@ -1,0 +1,12 @@
+{
+  "language": "fra_Latn",
+  "name": "French",
+  "status": "complete",
+  "documents": 302,
+  "utf8_bytes": 1011123,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/fra_Latn/test/000_00000.parquet",
+  "source_bytes_downloaded": 4117033,
+  "sample_sha256": "d2aa43343ef921da7172417b055844f2d9f9c860024c815eca95bd318a149bb2"
+}

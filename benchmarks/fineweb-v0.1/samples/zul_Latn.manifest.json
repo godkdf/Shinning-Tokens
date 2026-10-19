@@ -1,0 +1,12 @@
+{
+  "language": "zul_Latn",
+  "name": "isiZulu",
+  "status": "complete",
+  "documents": 253,
+  "utf8_bytes": 1000001,
+  "repo": "HuggingFaceFW/fineweb-2",
+  "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+  "source_path": "data/zul_Latn/test/000_00000.parquet",
+  "source_bytes_downloaded": 1288185,
+  "sample_sha256": "3b596eb3d332f53de60199b4b8c31b125f492272db3c1873b844ad96ef55aa26"
+}
