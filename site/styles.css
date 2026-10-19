@@ -30,3 +30,4 @@
 @layer responsive {
   @media(max-width:700px){.download-totals{grid-template-columns:1fr 1fr}.download-totals>div:nth-child(2){border-right:0}.download-totals>div:nth-child(-n+2){border-bottom:1px solid var(--line)}.download-totals strong{font-size:15px}.download-manager>.button{white-space:normal}.download-manager .button-row .button{white-space:normal}.download-manager .details-section code{overflow-wrap:anywhere}}
 }
+[hidden]{display:none!important}

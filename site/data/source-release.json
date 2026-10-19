@@ -1,8 +1,8 @@
 {
   "release": "0.2.0",
   "file": "source.tar.gz",
-  "sha256": "932760261be13a6c07a97275ed28c28c91edde26cf4ffb8b500079b9cbc5dce7",
-  "bytes": 15217005,
+  "sha256": "9ebbc6bdb3960e3eba1ec9e9d83d0bf9ee80cfbd19d30acb19f273dfc870f7f1",
+  "bytes": 15217028,
   "files": 118,
   "scope": "Source, manifests, initial frozen corpus, expanded aggregates and saved measurement sources. Expanded text and tokenizer payloads are selected separately."
 }
