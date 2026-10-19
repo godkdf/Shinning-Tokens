@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "npi_Deva",
+  "path": "benchmarks/partitions/flores200-dev/npi_Deva.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 323180,
+  "sha256": "e3a17a929a5358250545986ddda326bac68b2320bfe1c5af3b87e7b726174e1f",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

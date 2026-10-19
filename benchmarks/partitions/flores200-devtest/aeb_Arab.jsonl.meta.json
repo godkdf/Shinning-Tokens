@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "aeb_Arab",
+  "path": "benchmarks/partitions/flores200-devtest/aeb_Arab.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 203548,
+  "sha256": "01eaa9750ec9d29dfc6e0b98617957aa50a4df5bfa0062305629c953770424e1",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

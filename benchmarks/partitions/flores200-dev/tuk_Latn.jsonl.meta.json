@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "tuk_Latn",
+  "path": "benchmarks/partitions/flores200-dev/tuk_Latn.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 146397,
+  "sha256": "bf66a6d16f17e8813c78c5070e691d5d53038186538a664f3f92e8beab9c10cc",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

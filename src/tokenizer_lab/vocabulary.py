@@ -81,6 +81,7 @@ def inspect_vocabulary(adapter, *, output=None):
              "provenance":{"classification":"unicode-script-15.1.0","category_unicode_version":ud.unidata_version,
                "boundary_note":"Piece byte overlap is descriptive. Equal pieces do not imply equal in-context segmentation.",
                "types_note":"Categories overlap. Code-associated and emoji-candidate labels are heuristics, not capability scores."}}
+    profile.update({k:spec[k] for k in ["family","families","aliases","catalog_structural_sha256"] if k in spec})
     metadata=ROOT/".cache/assets"/adapter.id/"provenance.json"
     if metadata.exists(): profile["provenance"].update(read_json(metadata))
     payload={"schema_version":"1.0","tokenizer":adapter.id,"artifact_sha256":adapter.asset_sha,

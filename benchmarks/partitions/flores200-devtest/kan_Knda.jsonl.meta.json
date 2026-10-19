@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "kan_Knda",
+  "path": "benchmarks/partitions/flores200-devtest/kan_Knda.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 375480,
+  "sha256": "d05143c6aebc3b715deda2055e69cf3b5a85b381fd4f9a99e8ba062004ae7ecd",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

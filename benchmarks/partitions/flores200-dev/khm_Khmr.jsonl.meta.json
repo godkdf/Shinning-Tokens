@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "khm_Khmr",
+  "path": "benchmarks/partitions/flores200-dev/khm_Khmr.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 427210,
+  "sha256": "991da3ca1c1b4ba7d9c89cacb1a075f340dba12581280fa867a9b82910e237cf",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

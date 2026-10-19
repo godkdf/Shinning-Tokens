@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "lug_Latn",
+  "path": "benchmarks/partitions/flores200-devtest/lug_Latn.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 136784,
+  "sha256": "625e40dd78f5077e43cbc0eda2ae9a225468a6394ffeff3fc610055a1a0fddaf",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "dataset": "madlad400-sample-v0.2",
+  "language": "tiv_Latn_madlad-tiv",
+  "path": "benchmarks/partitions/madlad400-sample-v0.2/tiv_Latn_madlad-tiv.jsonl.gz",
+  "documents": 7,
+  "utf8_bytes": 79691,
+  "sha256": "2b036e10b056ae80402d176c918f973acf1e0d9f6582158c0559c4f45d43fd44",
+  "source": {
+    "repo": "allenai/MADLAD-400",
+    "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+    "source_config": "tiv",
+    "source_path": "data/tiv/tiv_clean_0000.jsonl.gz",
+    "license": "ODC-BY-1.0",
+    "selection": "First unique whole documents in first pinned clean shard, bounded by bytes/documents; not uniform and not held out from earlier MADLAD selection studies",
+    "excluded": {}
+  }
+}

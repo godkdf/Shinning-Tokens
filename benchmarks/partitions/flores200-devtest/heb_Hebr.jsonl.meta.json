@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "heb_Hebr",
+  "path": "benchmarks/partitions/flores200-devtest/heb_Hebr.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 183081,
+  "sha256": "33359e4f6257cec0e6363e0e6c3605e01f4d18e3775dc028bef9ec0fb1c2e36d",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

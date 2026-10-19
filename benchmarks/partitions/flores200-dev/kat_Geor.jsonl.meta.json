@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "kat_Geor",
+  "path": "benchmarks/partitions/flores200-dev/kat_Geor.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 372658,
+  "sha256": "ef8abf747418e6ef0ed37bbfec9f8179c45639b27b35e47dfe81a2be72b6b9f6",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

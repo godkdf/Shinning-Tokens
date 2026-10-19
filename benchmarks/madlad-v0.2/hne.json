@@ -1,0 +1,24 @@
+{
+  "config": "hne",
+  "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+  "target_bytes": 65536,
+  "max_documents": 32,
+  "status": "complete",
+  "partition": {
+    "dataset": "madlad400-sample-v0.2",
+    "language": "hne_Deva_madlad-hne",
+    "path": "benchmarks/partitions/madlad400-sample-v0.2/hne_Deva_madlad-hne.jsonl.gz",
+    "documents": 9,
+    "utf8_bytes": 72895,
+    "sha256": "52d1cadfb78b8291d1ddfe8796f075bafbeb4bf66089415203da1a6f482c95e6",
+    "source": {
+      "repo": "allenai/MADLAD-400",
+      "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+      "source_config": "hne",
+      "source_path": "data/hne/hne_clean_0000.jsonl.gz",
+      "license": "ODC-BY-1.0",
+      "selection": "First unique whole documents in first pinned clean shard, bounded by bytes/documents; not uniform and not held out from earlier MADLAD selection studies",
+      "excluded": {}
+    }
+  }
+}

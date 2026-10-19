@@ -1,0 +1,11 @@
+{
+  "dataset": "code-diagnostics-v0.1",
+  "language": "JavaScript",
+  "path": "benchmarks/partitions/code-diagnostics-v0.1/JavaScript.jsonl.gz",
+  "documents": 12,
+  "utf8_bytes": 570,
+  "sha256": "508b4249aad32f766d7bcc4abd2ac954f55d8dbffcbb90c1f6c501fb6c6e77ab",
+  "source": {
+    "legacy_path": "benchmarks/diagnostics/corpus.jsonl.gz"
+  }
+}

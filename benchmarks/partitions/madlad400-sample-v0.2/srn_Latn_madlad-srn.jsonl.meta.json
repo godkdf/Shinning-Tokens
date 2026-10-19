@@ -1,0 +1,17 @@
+{
+  "dataset": "madlad400-sample-v0.2",
+  "language": "srn_Latn_madlad-srn",
+  "path": "benchmarks/partitions/madlad400-sample-v0.2/srn_Latn_madlad-srn.jsonl.gz",
+  "documents": 8,
+  "utf8_bytes": 65624,
+  "sha256": "830e5ba232dbb6bf7d9abfc480ab09a94d2cf6bc9c046b17e3867ed9f398cc93",
+  "source": {
+    "repo": "allenai/MADLAD-400",
+    "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+    "source_config": "srn",
+    "source_path": "data/srn/srn_clean_0000.jsonl.gz",
+    "license": "ODC-BY-1.0",
+    "selection": "First unique whole documents in first pinned clean shard, bounded by bytes/documents; not uniform and not held out from earlier MADLAD selection studies",
+    "excluded": {}
+  }
+}

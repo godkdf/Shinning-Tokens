@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "pan_Guru",
+  "path": "benchmarks/partitions/flores200-dev/pan_Guru.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 326053,
+  "sha256": "615c12ffa1f73d45a5d2fc7cf121dfea84c80c433e167dfe5414ec5dba39d9ea",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

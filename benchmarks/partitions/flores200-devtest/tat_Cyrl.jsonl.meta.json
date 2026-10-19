@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "tat_Cyrl",
+  "path": "benchmarks/partitions/flores200-devtest/tat_Cyrl.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 244763,
+  "sha256": "3bd21156e9b4a6a8c2313a24513839a25776ba7f7c614154f445f36112acbbfc",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

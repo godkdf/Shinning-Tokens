@@ -1,0 +1,182 @@
+{
+  "release": "0.2.0",
+  "kits": [
+    {
+      "target": "macos-arm64",
+      "sha256": "71a039ccf43e8d1a522c5c98cb49b441a7ef6f0e35c32704399b8760e27723b7",
+      "bytes": 118008505,
+      "installed_bytes": 345220326,
+      "filename": "tokenizer-lab-0.2.0-starter-macos-arm64.zip",
+      "minimum_os": "macOS 13",
+      "parts": [
+        {
+          "path": "data/offline/macos-arm64/tokenizer-lab-0.2.0-starter-macos-arm64.zip.part-001",
+          "bytes": 23068672,
+          "sha256": "9346d9d1f89856888738af944d83500a5336173c5fd9e0db710601447c76547b"
+        },
+        {
+          "path": "data/offline/macos-arm64/tokenizer-lab-0.2.0-starter-macos-arm64.zip.part-002",
+          "bytes": 23068672,
+          "sha256": "4b4c283460eb7efeb818d0f6f32fcd600e2a671728097809ab19295ad5845528"
+        },
+        {
+          "path": "data/offline/macos-arm64/tokenizer-lab-0.2.0-starter-macos-arm64.zip.part-003",
+          "bytes": 23068672,
+          "sha256": "d8184a4952d2b19f57303ffb910546b0888a076cdae1393cda8ad1297e4efb8c"
+        },
+        {
+          "path": "data/offline/macos-arm64/tokenizer-lab-0.2.0-starter-macos-arm64.zip.part-004",
+          "bytes": 23068672,
+          "sha256": "5ad5e76aa96853f150beb4ac8064df62f9b11bda81c88198d15992b0e18e00cb"
+        },
+        {
+          "path": "data/offline/macos-arm64/tokenizer-lab-0.2.0-starter-macos-arm64.zip.part-005",
+          "bytes": 23068672,
+          "sha256": "c21a5788999821e97c51643d8103dd64c77fdcbc6e74706c66e6b4f9308a0b5a"
+        },
+        {
+          "path": "data/offline/macos-arm64/tokenizer-lab-0.2.0-starter-macos-arm64.zip.part-006",
+          "bytes": 2665145,
+          "sha256": "71e95b76dc2badb40d3b13c80d9a87956c0fa493d13a25eeadc330ea4776aac4"
+        }
+      ],
+      "tokenizers": 0,
+      "languages": 0,
+      "datasets": 0,
+      "native_execution_verified": true
+    },
+    {
+      "target": "macos-x86_64",
+      "sha256": "f00eab2edcf284e471bf70d255541ca52016ba444ddfa195d3d61a9c759e7329",
+      "bytes": 125393911,
+      "installed_bytes": 374640301,
+      "filename": "tokenizer-lab-0.2.0-starter-macos-x86_64.zip",
+      "minimum_os": "macOS 13",
+      "parts": [
+        {
+          "path": "data/offline/macos-x86_64/tokenizer-lab-0.2.0-starter-macos-x86_64.zip.part-001",
+          "bytes": 23068672,
+          "sha256": "4c886cc98326713befe87ffcd60e24edfd04c443c2f1cf8eaddcddb643de8802"
+        },
+        {
+          "path": "data/offline/macos-x86_64/tokenizer-lab-0.2.0-starter-macos-x86_64.zip.part-002",
+          "bytes": 23068672,
+          "sha256": "347d647b3d87603046c515a7089c9542626b690430f9093c5176e506ba95bb67"
+        },
+        {
+          "path": "data/offline/macos-x86_64/tokenizer-lab-0.2.0-starter-macos-x86_64.zip.part-003",
+          "bytes": 23068672,
+          "sha256": "44aa87bcee916b2b2b49f9f4b3293407c3c343dbab231720832abbebf036bd0e"
+        },
+        {
+          "path": "data/offline/macos-x86_64/tokenizer-lab-0.2.0-starter-macos-x86_64.zip.part-004",
+          "bytes": 23068672,
+          "sha256": "e7d48f5ca44a74985a2ff6d8dd389905cc052478a58cc61efb56cc79ce2aa72a"
+        },
+        {
+          "path": "data/offline/macos-x86_64/tokenizer-lab-0.2.0-starter-macos-x86_64.zip.part-005",
+          "bytes": 23068672,
+          "sha256": "2308887c5231a4fb027cb1b3902ee3f7d5c1f63aa5aff82f90dfddb28df7506c"
+        },
+        {
+          "path": "data/offline/macos-x86_64/tokenizer-lab-0.2.0-starter-macos-x86_64.zip.part-006",
+          "bytes": 10050551,
+          "sha256": "3acce6043cf67f7dd578c741649b50f2b731072f49ea3fb5745e09f0de2f285f"
+        }
+      ],
+      "tokenizers": 0,
+      "languages": 0,
+      "datasets": 0,
+      "native_execution_verified": false
+    },
+    {
+      "target": "windows-x86_64",
+      "sha256": "070d1cd839a50f0f78af27a0e0ed2fea815e6502e5df303c19a7dcd73831ca91",
+      "bytes": 89502217,
+      "installed_bytes": 261309991,
+      "filename": "tokenizer-lab-0.2.0-starter-windows-x86_64.zip",
+      "minimum_os": "Windows 10 or newer, x86_64",
+      "parts": [
+        {
+          "path": "data/offline/windows-x86_64/tokenizer-lab-0.2.0-starter-windows-x86_64.zip.part-001",
+          "bytes": 23068672,
+          "sha256": "6991c74a5760996b288de1e52c490809a75bf038685519e815be3b745e6c58a7"
+        },
+        {
+          "path": "data/offline/windows-x86_64/tokenizer-lab-0.2.0-starter-windows-x86_64.zip.part-002",
+          "bytes": 23068672,
+          "sha256": "d74e3e8a76ae43908ca5a587d092b45cd87e761af18e9a61108bd8a4cb3f58c4"
+        },
+        {
+          "path": "data/offline/windows-x86_64/tokenizer-lab-0.2.0-starter-windows-x86_64.zip.part-003",
+          "bytes": 23068672,
+          "sha256": "1412a7ca91661cea6f2e7701eadc274a77f799b389b774ec1a4a5f2879371c5d"
+        },
+        {
+          "path": "data/offline/windows-x86_64/tokenizer-lab-0.2.0-starter-windows-x86_64.zip.part-004",
+          "bytes": 20296201,
+          "sha256": "c3b78082ac3a73cfe3c06ff395dadc58066ac484e6509c5ec4293e55eafbe53d"
+        }
+      ],
+      "tokenizers": 0,
+      "languages": 0,
+      "datasets": 0,
+      "native_execution_verified": false
+    },
+    {
+      "target": "linux-x86_64",
+      "sha256": "70687b4077c0e6a23a7b443cf07fb4faeb2c29e043e80a7a3bb65c7a9077d630",
+      "bytes": 170896734,
+      "installed_bytes": 507830716,
+      "filename": "tokenizer-lab-0.2.0-starter-linux-x86_64.zip",
+      "minimum_os": "Linux x86_64 with glibc 2.28 or newer",
+      "parts": [
+        {
+          "path": "data/offline/linux-x86_64/tokenizer-lab-0.2.0-starter-linux-x86_64.zip.part-001",
+          "bytes": 23068672,
+          "sha256": "76daabe61c9e5a65871cef75184695e30827449aeff516f066ee44d853011b94"
+        },
+        {
+          "path": "data/offline/linux-x86_64/tokenizer-lab-0.2.0-starter-linux-x86_64.zip.part-002",
+          "bytes": 23068672,
+          "sha256": "6f1a3d97a7faae436734089f733fb8b8ca7e286b72f276c86fdf89a41cc0a0e2"
+        },
+        {
+          "path": "data/offline/linux-x86_64/tokenizer-lab-0.2.0-starter-linux-x86_64.zip.part-003",
+          "bytes": 23068672,
+          "sha256": "b888052c3e38ee303900ac4739fde1d426c4fda380d6def93c157b0b2fbf2390"
+        },
+        {
+          "path": "data/offline/linux-x86_64/tokenizer-lab-0.2.0-starter-linux-x86_64.zip.part-004",
+          "bytes": 23068672,
+          "sha256": "452e51339c05d4ebf04e95a3a7a716fecc1efc205bd93e368a7f00b30a24752e"
+        },
+        {
+          "path": "data/offline/linux-x86_64/tokenizer-lab-0.2.0-starter-linux-x86_64.zip.part-005",
+          "bytes": 23068672,
+          "sha256": "3b4882c111ccb88f4ec09f9c8918d78ab38821372ffae62a24027c35fc9ec95d"
+        },
+        {
+          "path": "data/offline/linux-x86_64/tokenizer-lab-0.2.0-starter-linux-x86_64.zip.part-006",
+          "bytes": 23068672,
+          "sha256": "111bf70c9eb32ba3a8c78ebd800d980357188bf6a55e8a7199f0eab36f88ea60"
+        },
+        {
+          "path": "data/offline/linux-x86_64/tokenizer-lab-0.2.0-starter-linux-x86_64.zip.part-007",
+          "bytes": 23068672,
+          "sha256": "cdd8f4d1d713451fa91f51b1451647fdc65faaa02559ed5ed80254ff344d1d18"
+        },
+        {
+          "path": "data/offline/linux-x86_64/tokenizer-lab-0.2.0-starter-linux-x86_64.zip.part-008",
+          "bytes": 9416030,
+          "sha256": "44b66c929b145aa8f9a888137807111d604bb5387fe51ae70ba07a679ee9418f"
+        }
+      ],
+      "tokenizers": 0,
+      "languages": 0,
+      "datasets": 0,
+      "native_execution_verified": false
+    }
+  ],
+  "note": "Zero tokenizer and corpus payloads; select later downloads explicitly. Cross-platform packages verified by hashes; native Apple Silicon execution checked separately."
+}

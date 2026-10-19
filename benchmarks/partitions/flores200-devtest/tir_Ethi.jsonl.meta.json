@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "tir_Ethi",
+  "path": "benchmarks/partitions/flores200-devtest/tir_Ethi.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 231800,
+  "sha256": "036256d5c89331e8ae852407c1ca89025a8145bfac991da9b9155e181c54ba6b",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

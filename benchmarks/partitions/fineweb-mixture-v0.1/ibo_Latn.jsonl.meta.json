@@ -1,0 +1,11 @@
+{
+  "dataset": "fineweb-mixture-v0.1",
+  "language": "ibo_Latn",
+  "path": "benchmarks/partitions/fineweb-mixture-v0.1/ibo_Latn.jsonl.gz",
+  "documents": 286,
+  "utf8_bytes": 1016439,
+  "sha256": "f2cf5df4db0de3c8bac98e0892ca3e63b082e0ba92af210812064b4f18cbc583",
+  "source": {
+    "legacy_path": "benchmarks/fineweb-v0.1/corpus.jsonl.gz"
+  }
+}

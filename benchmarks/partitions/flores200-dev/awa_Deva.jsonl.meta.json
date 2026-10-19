@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "awa_Deva",
+  "path": "benchmarks/partitions/flores200-dev/awa_Deva.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 316020,
+  "sha256": "9e123cf224536ffb769c8f1ecd69419a5aa1cd072749bd3fdf77bc0010e328f8",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

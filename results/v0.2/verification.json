@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "tokenizers": 44,
+  "partitions_per_tokenizer": 867,
+  "checkpoints": 38148,
+  "observations": 18989080,
+  "errors": 0,
+  "malformed_transport_rejections": 264,
+  "catalog_sha256": "c54883db96130f2d0d1c5e84ff966856f5147952a190ef8f9e7ef5da84d9e2ad"
+}

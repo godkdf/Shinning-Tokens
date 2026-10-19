@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "dzo_Tibt",
+  "path": "benchmarks/partitions/flores200-dev/dzo_Tibt.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 462952,
+  "sha256": "bb466f589e319bd7dfad4b76881ae91a14ab1e22ed1609db56348bfee76d3974",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "ckb_Arab",
+  "path": "benchmarks/partitions/flores200-devtest/ckb_Arab.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 236368,
+  "sha256": "a1b471455066417fde52b99a271ebb442b9074a4c99b1f9d646fbce5acf3e01d",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

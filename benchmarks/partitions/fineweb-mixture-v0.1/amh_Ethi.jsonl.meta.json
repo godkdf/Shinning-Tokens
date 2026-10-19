@@ -1,0 +1,11 @@
+{
+  "dataset": "fineweb-mixture-v0.1",
+  "language": "amh_Ethi",
+  "path": "benchmarks/partitions/fineweb-mixture-v0.1/amh_Ethi.jsonl.gz",
+  "documents": 203,
+  "utf8_bytes": 1002939,
+  "sha256": "439e3eeb8f32926dc4faf8d2b64396aaeefa97d7dc34fce1ed608a1b2d5fccef",
+  "source": {
+    "legacy_path": "benchmarks/fineweb-v0.1/corpus.jsonl.gz"
+  }
+}

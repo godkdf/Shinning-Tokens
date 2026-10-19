@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "tel_Telu",
+  "path": "benchmarks/partitions/flores200-dev/tel_Telu.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 338841,
+  "sha256": "fbfa025838412c7a40ad9180a233157edd66e8126175e6d9bcfb483081b39556",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

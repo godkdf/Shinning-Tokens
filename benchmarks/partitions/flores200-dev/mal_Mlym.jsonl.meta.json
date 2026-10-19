@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "mal_Mlym",
+  "path": "benchmarks/partitions/flores200-dev/mal_Mlym.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 391357,
+  "sha256": "a1e5711cdf42765cf1c8b224dae263fc294964429576f4b47e3ab7ea9e821462",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "dataset": "fineweb-mixture-v0.1",
+  "language": "tel_Telu",
+  "path": "benchmarks/partitions/fineweb-mixture-v0.1/tel_Telu.jsonl.gz",
+  "documents": 115,
+  "utf8_bytes": 1002296,
+  "sha256": "870a75d0babe9ca3c6c457fd6f4552139a95087731f55ada158af7578e9bc086",
+  "source": {
+    "legacy_path": "benchmarks/fineweb-v0.1/corpus.jsonl.gz"
+  }
+}

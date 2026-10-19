@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "khk_Cyrl",
+  "path": "benchmarks/partitions/flores200-devtest/khk_Cyrl.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 252029,
+  "sha256": "e6f1baeefb7aef791006996061b364556d0d4f2d3979da2c37d825411eb18586",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

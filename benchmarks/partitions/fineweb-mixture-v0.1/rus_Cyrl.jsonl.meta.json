@@ -1,0 +1,11 @@
+{
+  "dataset": "fineweb-mixture-v0.1",
+  "language": "rus_Cyrl",
+  "path": "benchmarks/partitions/fineweb-mixture-v0.1/rus_Cyrl.jsonl.gz",
+  "documents": 120,
+  "utf8_bytes": 1014340,
+  "sha256": "1085d77082756e6b2c94a7715199f5e53cd52f5b2a5905128bffbe684a0624e5",
+  "source": {
+    "legacy_path": "benchmarks/fineweb-v0.1/corpus.jsonl.gz"
+  }
+}

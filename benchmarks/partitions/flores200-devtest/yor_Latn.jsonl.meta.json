@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "yor_Latn",
+  "path": "benchmarks/partitions/flores200-devtest/yor_Latn.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 168857,
+  "sha256": "579c5cbf92b0282a8e4e69a90a7964c8c19be9504f77cc6f01b41f35f2021ff1",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

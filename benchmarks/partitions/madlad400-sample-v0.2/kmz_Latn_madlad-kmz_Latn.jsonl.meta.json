@@ -1,0 +1,17 @@
+{
+  "dataset": "madlad400-sample-v0.2",
+  "language": "kmz_Latn_madlad-kmz_Latn",
+  "path": "benchmarks/partitions/madlad400-sample-v0.2/kmz_Latn_madlad-kmz_Latn.jsonl.gz",
+  "documents": 19,
+  "utf8_bytes": 67209,
+  "sha256": "c2bc7d9328ba80aaba0c7a14f7db28c899993f7195c8c470bd90a5e8860f689a",
+  "source": {
+    "repo": "allenai/MADLAD-400",
+    "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+    "source_config": "kmz_Latn",
+    "source_path": "data/kmz_Latn/kmz_Latn_clean_0000.jsonl.gz",
+    "license": "ODC-BY-1.0",
+    "selection": "First unique whole documents in first pinned clean shard, bounded by bytes/documents; not uniform and not held out from earlier MADLAD selection studies",
+    "excluded": {}
+  }
+}

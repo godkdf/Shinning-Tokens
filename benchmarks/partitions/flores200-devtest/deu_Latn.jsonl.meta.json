@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "deu_Latn",
+  "path": "benchmarks/partitions/flores200-devtest/deu_Latn.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 156358,
+  "sha256": "7ae668dbd1b55f4db2753195ecbec75e6297d6078729f76614f33cd4ffa3ce66",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

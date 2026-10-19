@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "kor_Hang",
+  "path": "benchmarks/partitions/flores200-devtest/kor_Hang.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 157799,
+  "sha256": "0c0b1fe37c3c7f93c2edce40fe15dc2f68b9a5c62ba42a5c8fbafd5416ca8dca",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

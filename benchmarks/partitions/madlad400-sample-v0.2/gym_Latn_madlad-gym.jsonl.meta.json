@@ -1,0 +1,17 @@
+{
+  "dataset": "madlad400-sample-v0.2",
+  "language": "gym_Latn_madlad-gym",
+  "path": "benchmarks/partitions/madlad400-sample-v0.2/gym_Latn_madlad-gym.jsonl.gz",
+  "documents": 9,
+  "utf8_bytes": 66241,
+  "sha256": "da2022349f058c4bd9a06ffd2abfffce4cd085cd1f2e060772b4b4de0e65e8ad",
+  "source": {
+    "repo": "allenai/MADLAD-400",
+    "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+    "source_config": "gym",
+    "source_path": "data/gym/gym_clean_0000.jsonl.gz",
+    "license": "ODC-BY-1.0",
+    "selection": "First unique whole documents in first pinned clean shard, bounded by bytes/documents; not uniform and not held out from earlier MADLAD selection studies",
+    "excluded": {}
+  }
+}

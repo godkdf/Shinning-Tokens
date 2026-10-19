@@ -1,14 +1,23 @@
 [project]
 name = "shining-tokenizer-lab"
-version = "0.1.0"
+version = "0.2.0"
 description = "Reproducible tokenizer comparison, vocabulary exploration, and transfer research"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "Apache-2.0"
 dependencies = [
-  "tokenizers>=0.22,<0.24", "tiktoken>=0.12,<0.15",
-  "huggingface-hub>=0.36,<3", "numpy>=2,<3", "regex>=2025.9",
-  "psutil>=7,<8", "requests>=2.32,<3", "pyarrow>=20,<27",
+  "tokenizers>=0.22,<0.24",
+  "tiktoken>=0.12,<0.15",
+  "huggingface-hub>=0.36,<3",
+  "numpy>=2,<3",
+  "regex>=2025.9",
+  "psutil>=7,<8",
+  "requests>=2.32,<3",
+  "pyarrow>=20,<27",
+  "sentencepiece>=0.2.2",
+  "langcodes>=3.5.1",
+  "language-data>=1.4.0",
+  "pycountry>=26.2.16",
 ]
 
 [project.optional-dependencies]

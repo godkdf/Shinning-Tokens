@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "kaz_Cyrl",
+  "path": "benchmarks/partitions/flores200-devtest/kaz_Cyrl.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 250014,
+  "sha256": "92b2940c49e499a130a0e1f247e40c45c596ba7a7e44ff1bfa1df1a3958f2bce",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

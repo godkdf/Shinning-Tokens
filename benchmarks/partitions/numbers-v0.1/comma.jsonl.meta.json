@@ -1,0 +1,11 @@
+{
+  "dataset": "numbers-v0.1",
+  "language": "comma",
+  "path": "benchmarks/partitions/numbers-v0.1/comma.jsonl.gz",
+  "documents": 1000,
+  "utf8_bytes": 7979,
+  "sha256": "c158ab048f415588de7c2493a1a7638e074f91d1cb957bc5fe325353b5da97fc",
+  "source": {
+    "legacy_path": "benchmarks/diagnostics/corpus.jsonl.gz"
+  }
+}

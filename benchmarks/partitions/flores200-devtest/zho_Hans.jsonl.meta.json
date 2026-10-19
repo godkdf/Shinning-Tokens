@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "zho_Hans",
+  "path": "benchmarks/partitions/flores200-devtest/zho_Hans.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 120806,
+  "sha256": "dd0bee69bbaeb177e6dd8bfcdbd72f3540654e4fb30efcae5bf07e42cc4d93b4",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

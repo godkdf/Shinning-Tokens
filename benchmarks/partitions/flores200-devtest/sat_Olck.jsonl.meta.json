@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "sat_Olck",
+  "path": "benchmarks/partitions/flores200-devtest/sat_Olck.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 369315,
+  "sha256": "40a74e9d9762d24c93ba49b19c6ea9d9b3eb53ea57b499c67f3d7f8e2c9c9067",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "tha_Thai",
+  "path": "benchmarks/partitions/flores200-devtest/tha_Thai.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 365110,
+  "sha256": "15513e44543421d1857cbacdd068b998aca366d89360fa02936eb4cbe6b968ce",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

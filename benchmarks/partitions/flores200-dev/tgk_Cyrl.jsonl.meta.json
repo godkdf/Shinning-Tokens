@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "tgk_Cyrl",
+  "path": "benchmarks/partitions/flores200-dev/tgk_Cyrl.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 253639,
+  "sha256": "55c5d9d832108debae295d369852147056aebef1111d66b2164e35380c22ec7c",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

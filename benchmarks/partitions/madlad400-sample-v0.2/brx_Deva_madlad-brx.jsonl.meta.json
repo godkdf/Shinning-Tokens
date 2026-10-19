@@ -1,0 +1,17 @@
+{
+  "dataset": "madlad400-sample-v0.2",
+  "language": "brx_Deva_madlad-brx",
+  "path": "benchmarks/partitions/madlad400-sample-v0.2/brx_Deva_madlad-brx.jsonl.gz",
+  "documents": 5,
+  "utf8_bytes": 70666,
+  "sha256": "de384f5dd17853573d15dc0f725ab4838dd8f879c41451d01e4e2944c380622f",
+  "source": {
+    "repo": "allenai/MADLAD-400",
+    "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+    "source_config": "brx",
+    "source_path": "data/brx/brx_clean_0000.jsonl.gz",
+    "license": "ODC-BY-1.0",
+    "selection": "First unique whole documents in first pinned clean shard, bounded by bytes/documents; not uniform and not held out from earlier MADLAD selection studies",
+    "excluded": {}
+  }
+}

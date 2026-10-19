@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "cjk_Latn",
+  "path": "benchmarks/partitions/flores200-devtest/cjk_Latn.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 139797,
+  "sha256": "ef884d0d2968387e696bf72f9d5df7c3795aa47bb2246a4fb57b0eaa3711aec0",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

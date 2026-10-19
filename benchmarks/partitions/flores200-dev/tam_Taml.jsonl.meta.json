@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "tam_Taml",
+  "path": "benchmarks/partitions/flores200-dev/tam_Taml.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 398801,
+  "sha256": "1695ac36110b7b6459a40ae671542b49575d11d1ed058eb2ca71795d20fd247f",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

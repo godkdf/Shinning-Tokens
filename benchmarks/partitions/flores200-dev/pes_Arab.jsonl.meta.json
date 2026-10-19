@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "pes_Arab",
+  "path": "benchmarks/partitions/flores200-dev/pes_Arab.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 214649,
+  "sha256": "dae934a1fb207a419c2d4665cb8d221499db6f027ea67358c77a24b0645b78d7",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

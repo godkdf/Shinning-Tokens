@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "shn_Mymr",
+  "path": "benchmarks/partitions/flores200-dev/shn_Mymr.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 496505,
+  "sha256": "25f05c6e20440d483991ad8aa826436d3da865a104f6b4cde6ce28cf9392255c",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "mni_Beng",
+  "path": "benchmarks/partitions/flores200-devtest/mni_Beng.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 367969,
+  "sha256": "ac8be313575b2c6765f1237d836d4b5e4b7306bcf245e92f9af9f2fa9c23918b",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "dataset": "madlad400-sample-v0.2",
+  "language": "bik_Latn_madlad-bik",
+  "path": "benchmarks/partitions/madlad400-sample-v0.2/bik_Latn_madlad-bik.jsonl.gz",
+  "documents": 19,
+  "utf8_bytes": 70494,
+  "sha256": "4b76f96e980d818553222b0915da49b735c4dd1852a75915d1483ddc96cb987c",
+  "source": {
+    "repo": "allenai/MADLAD-400",
+    "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+    "source_config": "bik",
+    "source_path": "data/bik/bik_clean_0000.jsonl.gz",
+    "license": "ODC-BY-1.0",
+    "selection": "First unique whole documents in first pinned clean shard, bounded by bytes/documents; not uniform and not held out from earlier MADLAD selection studies",
+    "excluded": {}
+  }
+}

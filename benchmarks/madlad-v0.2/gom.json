@@ -1,0 +1,24 @@
+{
+  "config": "gom",
+  "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+  "target_bytes": 65536,
+  "max_documents": 32,
+  "status": "complete",
+  "partition": {
+    "dataset": "madlad400-sample-v0.2",
+    "language": "gom_Deva_madlad-gom",
+    "path": "benchmarks/partitions/madlad400-sample-v0.2/gom_Deva_madlad-gom.jsonl.gz",
+    "documents": 8,
+    "utf8_bytes": 68110,
+    "sha256": "b06357fe7931a2ae05ead11d583b493c90e10f705f459fee89b794b2f7bcd582",
+    "source": {
+      "repo": "allenai/MADLAD-400",
+      "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+      "source_config": "gom",
+      "source_path": "data/gom/gom_clean_0000.jsonl.gz",
+      "license": "ODC-BY-1.0",
+      "selection": "First unique whole documents in first pinned clean shard, bounded by bytes/documents; not uniform and not held out from earlier MADLAD selection studies",
+      "excluded": {}
+    }
+  }
+}

@@ -2,9 +2,11 @@
 from __future__ import annotations
 import importlib.metadata
 import json
+import os
+import base64
 from pathlib import Path
 import re
-from .io import ROOT, file_hash, read_json, sha256
+from .io import ROOT, file_hash, read_json, sha256,write_json
 
 def byte_alphabet():
     bs = list(range(ord("!"), ord("~") + 1)) + list(range(0xA1, 0xAD)) + list(range(0xAE, 0x100))
@@ -78,10 +80,26 @@ class HFAdapter:
         return {k:self.raw.get(k) for k in ["normalizer","pre_tokenizer","post_processor","decoder"]} | {"model":self.raw["model"]["type"]}
 
 class TikAdapter:
-    def __init__(self, spec):
+    def __init__(self, spec, *, download=True, inventory=True):
         import tiktoken
         self.spec = spec; self.id = spec["id"]
-        self.tokenizer = tiktoken.get_encoding(spec.get("encoding", "o200k_base"))
+        saved=ROOT/spec.get("offline_file",f"artifacts/tiktoken/{self.id}.json")
+        if saved.exists():
+            if spec.get("offline_sha256") and file_hash(saved)!=spec["offline_sha256"]:raise ValueError("Native tokenizer hash mismatch")
+            data=read_json(saved)
+            ranks={base64.b64decode(b):i for b,i in data["mergeable_ranks"]}
+            self.tokenizer=tiktoken.Encoding(name=self.id,pat_str=data["pat_str"],mergeable_ranks=ranks,special_tokens=data["special_tokens"])
+        elif spec["kind"] in ["custom_tiktoken","tiktoken_asset"]:
+            asset=resolve_asset(spec,download=download);ranks={}
+            for line in asset.read_bytes().splitlines():
+                b,i=line.split();ranks[base64.b64decode(b)]=int(i)
+            native=spec["native_spec"]
+            self.tokenizer=tiktoken.Encoding(name=self.id,pat_str=native["pat_str"],mergeable_ranks=ranks,special_tokens=native["special_tokens"])
+        elif download and os.environ.get("TOKENIZER_LAB_OFFLINE")!="1":
+            self.tokenizer = tiktoken.get_encoding(spec.get("encoding", "o200k_base"))
+            write_json(saved,{"pat_str":self.tokenizer._pat_str,"mergeable_ranks":[[base64.b64encode(b).decode(),i] for b,i in self.tokenizer._mergeable_ranks.items()],"special_tokens":self.tokenizer._special_tokens},compact=True)
+        else:raise FileNotFoundError(f"Native tokenizer {self.id} is not cached; explicitly download it first")
+        if not inventory:return
         self.by_id = {i:b.decode("utf-8", errors="backslashreplace") for b,i in self.tokenizer._mergeable_ranks.items()}
         self.byte_vocab = {i:b for b,i in self.tokenizer._mergeable_ranks.items()}
         self.by_id.update({i:s for s,i in self.tokenizer._special_tokens.items()})
@@ -89,12 +107,16 @@ class TikAdapter:
         self.unknown_id = None
         canonical = b"".join(i.to_bytes(4,"big") + len(b).to_bytes(4,"big") + b for i,b in sorted(self.byte_vocab.items()))
         self.asset_sha = sha256(canonical + json.dumps(self.tokenizer._special_tokens, sort_keys=True).encode())
-        self.path = None
+        self.path = saved if saved.exists() else asset
 
     def encode(self, text):
+        if self.spec.get("native_spec",{}).get("normalization")=="NFC":text=__import__("unicodedata").normalize("NFC",text)
+        if self.spec.get("native_spec",{}).get("allowed_special")=="all":return self.tokenizer.encode(text,allowed_special="all")
+        if self.spec.get("native_spec",{}).get("allowed_special")=="config_added_tokens":return self.tokenizer.encode(text,allowed_special=set(self.tokenizer._special_tokens),disallowed_special=())
         return self.tokenizer.encode_ordinary(text)
 
     def encode_batch(self, texts):
+        if self.spec.get("native_spec"):return [self.encode(t) for t in texts]
         return self.tokenizer.encode_ordinary_batch(texts, num_threads=1)
 
     def decode_bytes(self, ids):
@@ -107,15 +129,22 @@ class TikAdapter:
         return self.byte_vocab.get(i)
 
     def components(self):
-        return {"model":"byte-level BPE", "normalizer":None,
+        return {"model":"byte-level BPE", "normalizer":self.spec.get("native_spec",{}).get("normalization"),
                 "pre_tokenizer":{"type":"regex","pattern":self.tokenizer._pat_str},
-                "decoder":"byte concatenation", "implementation":"tiktoken"}
+                "decoder":"byte concatenation", "implementation":"tiktoken","special_token_policy":self.spec.get("native_spec",{}).get("allowed_special","ordinary text"),"asset_hash_scope":"canonical mergeable ranks and special-token map; pipeline settings are recorded separately"}
 
 def registry(path=None):
-    return read_json(path or ROOT / "configs/registry.json")["tokenizers"]
+    entries=read_json(path or ROOT / "configs/registry.json")["tokenizers"]
+    custom=ROOT/"configs/custom-tokenizers.json"
+    if path is None and custom.exists():entries+=read_json(custom)["tokenizers"]
+    return entries
+
+def asset_path(spec):
+    if spec["kind"]=="tiktoken":return ROOT/spec.get("offline_file",f"artifacts/tiktoken/{spec['id']}.json")
+    return ROOT/(spec["file"] if spec["kind"]=="local" else f".cache/assets/{spec['id']}/{Path(spec.get('file','tokenizer.json')).name}")
 
 def resolve_asset(spec, *, download=True):
-    local = ROOT / (spec["file"] if spec["kind"] == "local" else f".cache/assets/{spec['id']}/tokenizer.json")
+    local = asset_path(spec)
     if local.exists():
         if spec.get("sha256") and file_hash(local)!=spec["sha256"]:raise ValueError(f"Tokenizer artifact hash mismatch: {spec['id']}")
         if spec.get("structural_sha256"):
@@ -124,7 +153,7 @@ def resolve_asset(spec, *, download=True):
         return local
     if spec["kind"] == "local":
         raise FileNotFoundError(f"Missing {local}. See docs/REPRODUCE.md for V3.1 artifact installation.")
-    if not download:
+    if not download or os.environ.get("TOKENIZER_LAB_OFFLINE")=="1":
         raise FileNotFoundError(f"Asset not cached for {spec['id']}")
     from huggingface_hub import hf_hub_download
     src = hf_hub_download(spec["repo"], spec["file"], revision=spec["revision"], cache_dir=ROOT/".cache/huggingface")
@@ -132,8 +161,29 @@ def resolve_asset(spec, *, download=True):
     local.write_bytes(Path(src).read_bytes())
     return resolve_asset(spec,download=False)
 
+def register_custom(path,name):
+    path=Path(path).expanduser()
+    if not path.is_absolute() or not path.is_file():raise ValueError("Use an existing absolute tokenizer.json path")
+    if path.stat().st_size>100_000_000:raise ValueError("Custom tokenizer exceeds 100 MB limit")
+    if not isinstance(name,str) or not 1<=len(name.strip())<=100:raise ValueError("Name must contain 1–100 characters")
+    digest=file_hash(path);id="custom_"+digest[:16]
+    destination=ROOT/f"artifacts/custom/{digest}.json"
+    spec={"id":id,"name":name.strip(),"kind":"local","role":"custom","file":str(destination.relative_to(ROOT)),"sha256":digest}
+    HFAdapter(spec,path)  # Parse data only; never execute custom Python.
+    destination.parent.mkdir(parents=True,exist_ok=True);destination.write_bytes(path.read_bytes())
+    file=ROOT/"configs/custom-tokenizers.json";entries=read_json(file)["tokenizers"] if file.exists() else []
+    write_json(file,{"tokenizers":[s for s in entries if s["id"]!=id]+[spec]})
+    return spec
+
 def load_adapter(tokenizer_id, *, download=True):
     spec = next((s for s in registry() if s["id"] == tokenizer_id), None)
     if spec is None:
         raise ValueError(f"Unknown tokenizer {tokenizer_id}")
-    return TikAdapter(spec) if spec["kind"] == "tiktoken" else HFAdapter(spec, resolve_asset(spec, download=download))
+    if spec["kind"] in ["tiktoken","custom_tiktoken","tiktoken_asset"]:return TikAdapter(spec,download=download)
+    if spec["kind"]=="sentencepiece":
+        from .legacy import SentencePieceAdapter
+        return SentencePieceAdapter(spec,resolve_asset(spec,download=download))
+    if spec["kind"]=="legacy_gpt2":
+        from .legacy import GPT2Adapter
+        return GPT2Adapter(spec,resolve_asset(spec,download=download))
+    return HFAdapter(spec, resolve_asset(spec, download=download))

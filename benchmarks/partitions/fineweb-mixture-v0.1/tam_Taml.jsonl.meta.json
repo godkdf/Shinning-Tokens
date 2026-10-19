@@ -1,0 +1,11 @@
+{
+  "dataset": "fineweb-mixture-v0.1",
+  "language": "tam_Taml",
+  "path": "benchmarks/partitions/fineweb-mixture-v0.1/tam_Taml.jsonl.gz",
+  "documents": 168,
+  "utf8_bytes": 1006741,
+  "sha256": "7a2c7066cc79a4e4a3e8a4966d4bd07162dba95b9a3116e9cac5a6cc92400041",
+  "source": {
+    "legacy_path": "benchmarks/fineweb-v0.1/corpus.jsonl.gz"
+  }
+}

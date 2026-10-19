@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "mag_Deva",
+  "path": "benchmarks/partitions/flores200-devtest/mag_Deva.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 326702,
+  "sha256": "022f487d48968b8bcb4b0d98d534d33cff7460583e63abeb28778cc54b97d305",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "ell_Grek",
+  "path": "benchmarks/partitions/flores200-devtest/ell_Grek.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 287463,
+  "sha256": "b69dde730662a5b5beabea68907c47262e956a3df5a3d2edaf1660ff37ddd8bc",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

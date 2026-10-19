@@ -1,0 +1,266 @@
+[
+  {
+    "tokenizer": "gemma4",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "bloom",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "jais",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "o200k",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "gemma_v31",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "gemma3_parent",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "glm_original_en",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "glm_original_zh",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "chatglm1",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "chatglm2",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "chatglm3_base",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "chatglm3",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "glm4_native",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "glm4",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "glm_edge",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "glm4_0414",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "glm45",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "glm47_flash",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "glm_roberta_large",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "qwen1_native",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "qwen1_hf",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "codeqwen15",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "qwen25",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "qwen3",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "qwen35",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "qwen35_base",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "qwen38",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "deepseek_coder1",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "deepseek_coder15",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "deepseek_llm",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "deepseek_math_7b_base",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "deepseek_coder_v2",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "deepseek_v3_base",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "deepseek_r1",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "deepseek_v31_base",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "deepseek_v32",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "deepseek_v4_base",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "deepseek_v41",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "mimo_v25_base",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "mimo_v26_distill_qwen",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "minimax_text01",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "minimax_m1",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "minimax_m2",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  },
+  {
+    "tokenizer": "minimax_m3",
+    "returncode": 0,
+    "stdout": "{'tokenizers': 1, 'partitions': 867, 'documents_per_tokenizer': 431570, 'observations': 431570, 'errors': 0}\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,115 @@
+name: Offline portability
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/**'
+      - 'scripts/launch*'
+      - 'configs/runtime-assets.json'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.github/workflows/portability.yml'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'scripts/launch*'
+      - 'configs/runtime-assets.json'
+      - 'pyproject.toml'
+      - 'uv.lock'
+jobs:
+  native-kit:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-22.04
+            target: linux-x86_64
+            executable: runtime/bin/python3
+          - runner: windows-2022
+            target: windows-x86_64
+            executable: runtime/python.exe
+          - runner: macos-15
+            target: macos-arm64
+            executable: runtime/bin/python3
+          - runner: macos-15-intel
+            target: macos-x86_64
+            executable: runtime/bin/python3
+    runs-on: ${{ matrix.runner }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.11.15'
+      - run: uv sync --frozen --extra test --python 3.12
+      - run: uv run --frozen pytest -q
+      - name: Build a native self-contained kit from a byte-level fixture
+        env:
+          LAB_TARGET: ${{ matrix.target }}
+        run: |
+          uv run --frozen python - <<'PY'
+          import os
+          from pathlib import Path
+          from tokenizers import Tokenizer, models, pre_tokenizers, decoders
+          from tokenizer_lab.adapters import BYTE_DECODER
+          from tokenizer_lab.io import ROOT, write_json, write_jsonl, file_hash, sha256
+          from tokenizer_lab.offline import build_bundle
+          fixture = ROOT / 'artifacts/portability/tokenizer.json'
+          fixture.parent.mkdir(parents=True, exist_ok=True)
+          tokenizer = Tokenizer(models.BPE(vocab={char:i for i,char in enumerate(BYTE_DECODER)},merges=[]))
+          tokenizer.pre_tokenizer = pre_tokenizers.ByteLevel(add_prefix_space=False,use_regex=False)
+          tokenizer.decoder = decoders.ByteLevel()
+          tokenizer.save(str(fixture))
+          write_json(ROOT/'configs/registry.json', {'tokenizers':[{'id':'portability','name':'Portability fixture','kind':'local','file':str(fixture.relative_to(ROOT)),'role':'control','sha256':file_hash(fixture)}]})
+          text = 'English 中文 العربية e\u0301 👩🏽‍💻\x00\n=Function'
+          corpus = ROOT/'benchmarks/portability/und.jsonl.gz'
+          write_jsonl(corpus,[{'id':'offline-1','text':text,'sha256':sha256(text.encode()),'language':'und','dataset':'portability','utf8_bytes':len(text.encode())}])
+          write_json(ROOT/'benchmarks/catalog.json', {'partitions':[{'dataset':'portability','language':'und','path':str(corpus.relative_to(ROOT)),'documents':1,'utf8_bytes':len(text.encode()),'sha256':file_hash(corpus)}]})
+          # No production text partitions are needed for this deliberately tiny fixture.
+          text_index = ROOT/'site/data/text-index.json'
+          if text_index.exists(): write_json(text_index,{'partitions':[]})
+          result = build_bundle(os.environ['LAB_TARGET'],tokenizers=['portability'],languages=['und'],datasets=['portability'],output=ROOT/'artifacts/portability-kit.zip')
+          print(result)
+          PY
+      - name: Extract into a different path and run with offline network guard
+        env:
+          LAB_EXECUTABLE: ${{ matrix.executable }}
+        run: |
+          uv run --frozen python - <<'PY'
+          import json, os, pathlib, stat, subprocess, zipfile
+          from tokenizer_lab.io import ROOT
+          destination = ROOT/'artifacts/relocated kit with spaces'
+          with zipfile.ZipFile(ROOT/'artifacts/portability-kit.zip') as z:
+              z.extractall(destination)
+              for info in z.infolist():
+                  mode = info.external_attr >> 16
+                  path = destination/info.filename
+                  if path.is_file() and mode: path.chmod(mode)
+          kit = destination/'Tokenizer Lab'
+          env = {**os.environ,'TOKENIZER_LAB_OFFLINE':'1','HF_HUB_OFFLINE':'1','PYTHONNOUSERSITE':'1','PYTHONDONTWRITEBYTECODE':'1','PYTHONPATH':os.pathsep.join([str(kit/'src'),str(kit/'vendor')])}
+          python = str(kit/os.environ['LAB_EXECUTABLE'])
+          code = '''
+          import socket
+          from tokenizer_lab.offline import verify_bundle
+          from tokenizer_lab.adapters import load_adapter
+          from tokenizer_lab.io import ROOT,read_jsonl
+          evidence = verify_bundle()
+          assert evidence['passed'] and evidence['native_target_match'], evidence
+          adapter = load_adapter('portability')
+          docs = list(read_jsonl(ROOT/'benchmarks/portability/und.jsonl.gz'))
+          for doc in docs:
+              assert adapter.decode_bytes(adapter.encode(doc['text'])) == doc['text'].encode('utf-8')
+              assert adapter.decode_bytes(adapter.encode(doc['text'])).decode('utf-8').encode('utf-16-le') == doc['text'].encode('utf-16-le')
+          try: socket.getaddrinfo('huggingface.co',443)
+          except OSError: pass
+          else: raise AssertionError('External DNS was permitted')
+          print(evidence)
+          '''
+          subprocess.run([python,'-c',code],cwd=kit,env=env,check=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: portability-${{ matrix.target }}
+          path: artifacts/portability-kit.manifest.json

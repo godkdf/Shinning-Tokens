@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "hye_Armn",
+  "path": "benchmarks/partitions/flores200-dev/hye_Armn.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 257750,
+  "sha256": "f5dd31b421e8b0566ca24cbe2ded8e1d6778ea0776ebc0a951dfa8473c17b31d",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

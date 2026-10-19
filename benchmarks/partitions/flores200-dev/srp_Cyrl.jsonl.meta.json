@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "srp_Cyrl",
+  "path": "benchmarks/partitions/flores200-dev/srp_Cyrl.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 226451,
+  "sha256": "5ee98851f3b95e95e7b4210c1974721f6bbd2dd6697952964af4a6f92ba4a768",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

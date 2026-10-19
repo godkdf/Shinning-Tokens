@@ -1,0 +1,11 @@
+{
+  "dataset": "unicode-diagnostics-v0.1",
+  "language": "mixed",
+  "path": "benchmarks/partitions/unicode-diagnostics-v0.1/mixed.jsonl.gz",
+  "documents": 500,
+  "utf8_bytes": 14276,
+  "sha256": "42baa755f44cc2b8f762d6c95acfcd46b3c73d364f650cbc240c3bdf2ae39d17",
+  "source": {
+    "legacy_path": "benchmarks/diagnostics/corpus.jsonl.gz"
+  }
+}

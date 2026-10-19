@@ -1,0 +1,24 @@
+{
+  "config": "noa",
+  "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+  "target_bytes": 65536,
+  "max_documents": 32,
+  "status": "complete",
+  "partition": {
+    "dataset": "madlad400-sample-v0.2",
+    "language": "noa_Latn_madlad-noa",
+    "path": "benchmarks/partitions/madlad400-sample-v0.2/noa_Latn_madlad-noa.jsonl.gz",
+    "documents": 12,
+    "utf8_bytes": 68916,
+    "sha256": "e16f914c07009c98e793b070e3f68a1466eeb0a8319b31cbee4388d30b7361ee",
+    "source": {
+      "repo": "allenai/MADLAD-400",
+      "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+      "source_config": "noa",
+      "source_path": "data/noa/noa_clean_0000.jsonl.gz",
+      "license": "ODC-BY-1.0",
+      "selection": "First unique whole documents in first pinned clean shard, bounded by bytes/documents; not uniform and not held out from earlier MADLAD selection studies",
+      "excluded": {}
+    }
+  }
+}

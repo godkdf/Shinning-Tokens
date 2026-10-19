@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Cite the Lab, the exact result manifest, and relevant upstream tokenizer/dataset papers."
 title: "Tokenizer Lab: Shinning-Tokens"
 type: software
-version: 0.1.0
+version: 0.2.0
 license: Apache-2.0
 repository-code: "https://github.com/godkdf/Shinning-Tokens"
 authors:

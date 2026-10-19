@@ -1,0 +1,17 @@
+{
+  "dataset": "madlad400-sample-v0.2",
+  "language": "tks_Arab_madlad-tks",
+  "path": "benchmarks/partitions/madlad400-sample-v0.2/tks_Arab_madlad-tks.jsonl.gz",
+  "documents": 32,
+  "utf8_bytes": 59870,
+  "sha256": "3115fb793db4bd667b274ad72f0faa3e01ea1a5b664c2b4c1cb60323ae2f42b4",
+  "source": {
+    "repo": "allenai/MADLAD-400",
+    "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+    "source_config": "tks",
+    "source_path": "data/tks/tks_clean_0000.jsonl.gz",
+    "license": "ODC-BY-1.0",
+    "selection": "First unique whole documents in first pinned clean shard, bounded by bytes/documents; not uniform and not held out from earlier MADLAD selection studies",
+    "excluded": {}
+  }
+}

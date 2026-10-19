@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "uig_Arab",
+  "path": "benchmarks/partitions/flores200-dev/uig_Arab.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 248124,
+  "sha256": "a758ad3a324d4c9f878ed317b93b2d668185b73ca573321fe7c169ee728a53e7",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

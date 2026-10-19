@@ -1,0 +1,11 @@
+{
+  "dataset": "fineweb-mixture-v0.1",
+  "language": "ben_Beng",
+  "path": "benchmarks/partitions/fineweb-mixture-v0.1/ben_Beng.jsonl.gz",
+  "documents": 168,
+  "utf8_bytes": 1000983,
+  "sha256": "7b732fa672500ea479f788e50fc8c4875fa5cbd65ab2994813998054fc0a756c",
+  "source": {
+    "legacy_path": "benchmarks/fineweb-v0.1/corpus.jsonl.gz"
+  }
+}

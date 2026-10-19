@@ -1,0 +1,24 @@
+{
+  "config": "kwi",
+  "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+  "target_bytes": 65536,
+  "max_documents": 32,
+  "status": "complete",
+  "partition": {
+    "dataset": "madlad400-sample-v0.2",
+    "language": "kwi_Latn_madlad-kwi",
+    "path": "benchmarks/partitions/madlad400-sample-v0.2/kwi_Latn_madlad-kwi.jsonl.gz",
+    "documents": 14,
+    "utf8_bytes": 65960,
+    "sha256": "286e0f8a4b292df21435b017d1ccc1e80443a082fd9a3b3eb1dad83c036f7923",
+    "source": {
+      "repo": "allenai/MADLAD-400",
+      "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+      "source_config": "kwi",
+      "source_path": "data/kwi/kwi_clean_0000.jsonl.gz",
+      "license": "ODC-BY-1.0",
+      "selection": "First unique whole documents in first pinned clean shard, bounded by bytes/documents; not uniform and not held out from earlier MADLAD selection studies",
+      "excluded": {}
+    }
+  }
+}

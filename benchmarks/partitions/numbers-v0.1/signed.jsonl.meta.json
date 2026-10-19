@@ -1,0 +1,11 @@
+{
+  "dataset": "numbers-v0.1",
+  "language": "signed",
+  "path": "benchmarks/partitions/numbers-v0.1/signed.jsonl.gz",
+  "documents": 1000,
+  "utf8_bytes": 7484,
+  "sha256": "04660a9dfd412a9007b810f15ddb82de562136d9aacd26149c845c74ad78b7a7",
+  "source": {
+    "legacy_path": "benchmarks/diagnostics/corpus.jsonl.gz"
+  }
+}

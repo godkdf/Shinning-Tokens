@@ -1,0 +1,24 @@
+{
+  "config": "qub",
+  "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+  "target_bytes": 65536,
+  "max_documents": 32,
+  "status": "complete",
+  "partition": {
+    "dataset": "madlad400-sample-v0.2",
+    "language": "qub_Latn_madlad-qub",
+    "path": "benchmarks/partitions/madlad400-sample-v0.2/qub_Latn_madlad-qub.jsonl.gz",
+    "documents": 9,
+    "utf8_bytes": 74925,
+    "sha256": "3924874b6228098a2f8b5a66c692c7a8212d76a4be91f0f5242fe37f44a2f9df",
+    "source": {
+      "repo": "allenai/MADLAD-400",
+      "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+      "source_config": "qub",
+      "source_path": "data/qub/qub_clean_0000.jsonl.gz",
+      "license": "ODC-BY-1.0",
+      "selection": "First unique whole documents in first pinned clean shard, bounded by bytes/documents; not uniform and not held out from earlier MADLAD selection studies",
+      "excluded": {}
+    }
+  }
+}

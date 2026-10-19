@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "tzm_Tfng",
+  "path": "benchmarks/partitions/flores200-devtest/tzm_Tfng.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 303151,
+  "sha256": "eeb624683990abf93c2821afca0d29a93cde7aa6c772940c6b7632cd90e1cd23",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

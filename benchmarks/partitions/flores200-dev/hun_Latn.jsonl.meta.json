@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "hun_Latn",
+  "path": "benchmarks/partitions/flores200-dev/hun_Latn.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 144998,
+  "sha256": "77b867f8399e28ad0ee7c85cc01661554defbda838a1be0cd012dfe85cf7d35d",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

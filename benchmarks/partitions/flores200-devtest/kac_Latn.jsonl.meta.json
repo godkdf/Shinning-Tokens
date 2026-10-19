@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "kac_Latn",
+  "path": "benchmarks/partitions/flores200-devtest/kac_Latn.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 169967,
+  "sha256": "376b3c42d8349a2866d8dee9234f3046943546c81404226597d909eaa5a01d5a",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

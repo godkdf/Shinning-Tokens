@@ -1,0 +1,11 @@
+{
+  "dataset": "numbers-v0.1",
+  "language": "Arabic-Indic",
+  "path": "benchmarks/partitions/numbers-v0.1/Arabic-Indic.jsonl.gz",
+  "documents": 1000,
+  "utf8_bytes": 12968,
+  "sha256": "cb6e9b4b239eab1e2741891e222048bc27b68cf5d60ac4d231f379892b53542f",
+  "source": {
+    "legacy_path": "benchmarks/diagnostics/corpus.jsonl.gz"
+  }
+}

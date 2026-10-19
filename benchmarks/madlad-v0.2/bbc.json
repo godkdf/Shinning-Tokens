@@ -1,0 +1,24 @@
+{
+  "config": "bbc",
+  "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+  "target_bytes": 65536,
+  "max_documents": 32,
+  "status": "complete",
+  "partition": {
+    "dataset": "madlad400-sample-v0.2",
+    "language": "bbc_Latn_madlad-bbc",
+    "path": "benchmarks/partitions/madlad400-sample-v0.2/bbc_Latn_madlad-bbc.jsonl.gz",
+    "documents": 14,
+    "utf8_bytes": 74389,
+    "sha256": "97841fb046cb32493ca03f37a6e5a27afe37e3d234c84cfdd647bfc806caef50",
+    "source": {
+      "repo": "allenai/MADLAD-400",
+      "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+      "source_config": "bbc",
+      "source_path": "data/bbc/bbc_clean_0000.jsonl.gz",
+      "license": "ODC-BY-1.0",
+      "selection": "First unique whole documents in first pinned clean shard, bounded by bytes/documents; not uniform and not held out from earlier MADLAD selection studies",
+      "excluded": {}
+    }
+  }
+}

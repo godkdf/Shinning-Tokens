@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "lao_Laoo",
+  "path": "benchmarks/partitions/flores200-devtest/lao_Laoo.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 360738,
+  "sha256": "a79f166c0915d2c17cc1292d3600f2e6c53024b03decd51a8d112ed3b49690da",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "dataset": "numbers-v0.1",
+  "language": "identifier",
+  "path": "benchmarks/partitions/numbers-v0.1/identifier.jsonl.gz",
+  "documents": 1000,
+  "utf8_bytes": 11484,
+  "sha256": "1ec41ee8a63d02bfc164f007afb40096eb86bcc64d3469f41d91674acabaf783",
+  "source": {
+    "legacy_path": "benchmarks/diagnostics/corpus.jsonl.gz"
+  }
+}

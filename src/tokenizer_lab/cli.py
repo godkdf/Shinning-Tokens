@@ -18,6 +18,11 @@ def main(argv=None):
     run=sub.add_parser("run");run.add_argument("--config",default="configs/launch.json");run.add_argument("--skip-maps",action="store_true");run.add_argument("--skip-runtime",action="store_true")
     sub.add_parser("build-site")
     serve=sub.add_parser("serve");serve.add_argument("--port",type=int,default=8765)
+    launch=sub.add_parser("launch");launch.add_argument("--port",type=int,default=8765);launch.add_argument("--no-browser",action="store_true")
+    selected=sub.add_parser("run-selected")
+    for key in ["tokenizers","languages","datasets"]:selected.add_argument("--"+key,nargs="*",default=[])
+    selected.add_argument("--custom-tokenizers",nargs="*",default=[]);selected.add_argument("--selection");selected.add_argument("--output");selected.add_argument("--vocabulary",action="store_true");selected.add_argument("--runtime",action="store_true")
+    expanded=sub.add_parser("prepare-expanded");expanded.add_argument("--flores",action="store_true");expanded.add_argument("--madlad",action="store_true")
     cv=sub.add_parser("convert");cv.add_argument("--source",required=True);cv.add_argument("--target",required=True);input_group=cv.add_mutually_exclusive_group(required=True);input_group.add_argument("--text");input_group.add_argument("--ids",help="JSON array of source IDs")
     vocab=sub.add_parser("vocab");vocab.add_argument("tokenizer");vocab.add_argument("--output")
     compare=sub.add_parser("compare");compare.add_argument("source");compare.add_argument("target")
@@ -58,6 +63,23 @@ def main(argv=None):
     elif args.command=="serve":
         from .server import serve
         serve(args.port)
+    elif args.command=="launch":
+        from .server import serve
+        serve(args.port,launch=not args.no_browser)
+    elif args.command=="run-selected":
+        from .engine import run_selection
+        value={key:getattr(args,key) for key in ["tokenizers","languages","datasets","custom_tokenizers"]}
+        if args.selection:
+            if any(value.values()):parser.error("Use a selection file or explicit selection lists, not both")
+            value=read_json(Path(args.selection).expanduser())
+        result=run_selection(value,output=args.output,vocabulary=args.vocabulary,runtime=args.runtime)
+        emit(result["checks"])
+    elif args.command=="prepare-expanded":
+        from .corpus_catalog import import_existing,prepare_flores,prepare_madlad
+        emit(import_existing())
+        if args.flores:emit(prepare_flores())
+        if args.madlad:
+            result=prepare_madlad();emit({k:v for k,v in result.items() if k!="configs"})
     elif args.command in ("convert","vocab","compare"):
         from .adapters import load_adapter
         if args.command=="convert":

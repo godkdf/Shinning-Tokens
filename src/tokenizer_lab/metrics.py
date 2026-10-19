@@ -4,6 +4,7 @@ from collections import Counter
 import unicodedata as ud
 import numpy as np
 from .io import sha256,validate_text_record
+from .transport import transport_sizes,fidelity
 
 def measure(adapter, documents):
     output=[]
@@ -15,6 +16,7 @@ def measure(adapter, documents):
             original=validate_text_record(doc)
             row={k:doc.get(k) for k in ["id","dataset","language","source_id","domain","sha256"]}
             row.update(tokenizer=adapter.id,utf8_bytes=len(original),tokens=0,exact=False,canonical_only=False,error=None,unknown_emissions=0)
+            row.update(transport_sizes(doc["text"]),utf16le_exact=False,utf16be_exact=False)
             try:
                 if ids is None: ids=adapter.encode(doc["text"])
                 decoded=adapter.decode_bytes(ids)
@@ -22,6 +24,7 @@ def measure(adapter, documents):
                 canonical=ud.normalize("NFC",decoded.decode("utf-8",errors="strict"))==ud.normalize("NFC",doc["text"])
                 row.update(tokens=len(ids),exact=exact,canonical_only=bool(not exact and canonical),decoded_sha256=sha256(decoded),
                            unknown_emissions=sum(i==adapter.unknown_id for i in ids) if adapter.unknown_id is not None else 0)
+                row.update(fidelity(doc["text"],decoded))
                 if not exact: row["mismatch_example"]={"original":doc["text"][:500],"decoded":decoded.decode("utf-8",errors="backslashreplace")[:500]}
             except Exception as exc: row["error"]=f"{type(exc).__name__}: {exc}"[:400]
             output.append(row)
@@ -36,6 +39,8 @@ def aggregate(rows):
         errors=sum(x["error"] is not None for x in group); exact=sum(x["exact"] for x in group); canonical=sum(x["canonical_only"] for x in group)
         counts=[x["tokens"] for x in group if x["error"] is None]
         output.append({"dataset":dataset,"language":language,"tokenizer":tokenizer,"documents":n,"utf8_bytes":size,"tokens":tokens,
+                       "utf16le_bytes":sum(x.get("utf16le_bytes",0) for x in group),"utf16be_bytes":sum(x.get("utf16be_bytes",0) for x in group),
+                       "utf16_code_units":sum(x.get("utf16_code_units",0) for x in group),"utf16le_exact":sum(x.get("utf16le_exact",False) for x in group),"utf16be_exact":sum(x.get("utf16be_exact",False) for x in group),
                        "bytes_per_token":size/tokens if tokens and not errors else None,"exact":exact,"canonical_only":canonical,
                        "mismatches":n-exact-canonical-errors,"errors":errors,"unknown_emissions":sum(x["unknown_emissions"] for x in group),
                        "strict_lossless":exact==n and errors==0,"token_p90":float(np.percentile(counts,90)) if counts else None,"token_max":max(counts) if counts else None,

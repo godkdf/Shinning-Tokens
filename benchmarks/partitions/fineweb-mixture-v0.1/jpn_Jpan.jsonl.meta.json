@@ -1,0 +1,11 @@
+{
+  "dataset": "fineweb-mixture-v0.1",
+  "language": "jpn_Jpan",
+  "path": "benchmarks/partitions/fineweb-mixture-v0.1/jpn_Jpan.jsonl.gz",
+  "documents": 292,
+  "utf8_bytes": 1003929,
+  "sha256": "6cefd93f0618a8f679e7bdc73d5dcc77001231d1c0a68853cb0ee8b3f853ac43",
+  "source": {
+    "legacy_path": "benchmarks/fineweb-v0.1/corpus.jsonl.gz"
+  }
+}

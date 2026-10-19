@@ -1,0 +1,11 @@
+{
+  "dataset": "fineweb-mixture-v0.1",
+  "language": "swh_Latn",
+  "path": "benchmarks/partitions/fineweb-mixture-v0.1/swh_Latn.jsonl.gz",
+  "documents": 334,
+  "utf8_bytes": 1007627,
+  "sha256": "4ec5295115c32c289b9b902382809c19a1300137567a03950388c049b3ae1c29",
+  "source": {
+    "legacy_path": "benchmarks/fineweb-v0.1/corpus.jsonl.gz"
+  }
+}

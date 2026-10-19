@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "ben_Beng",
+  "path": "benchmarks/partitions/flores200-dev/ben_Beng.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 329572,
+  "sha256": "234dcb08fa0de329de983d1f048bf825521d4f746e2f95c0cc8ebae3ec7b53e9",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

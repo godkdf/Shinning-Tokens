@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "bod_Tibt",
+  "path": "benchmarks/partitions/flores200-devtest/bod_Tibt.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 439105,
+  "sha256": "7bd24124428bd4faecee51ec6ba0af2b8fea74fb04a3802b2ed8b2d3785a6efb",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

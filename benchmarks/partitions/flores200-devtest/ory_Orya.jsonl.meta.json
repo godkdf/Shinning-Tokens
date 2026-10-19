@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "ory_Orya",
+  "path": "benchmarks/partitions/flores200-devtest/ory_Orya.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 361459,
+  "sha256": "51c76d1f047ff6fa416bbcbb3748d0285b06b5acd04bc6e89dbcc1e0ce214d09",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

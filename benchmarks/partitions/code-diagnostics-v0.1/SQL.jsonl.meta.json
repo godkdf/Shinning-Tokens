@@ -1,0 +1,11 @@
+{
+  "dataset": "code-diagnostics-v0.1",
+  "language": "SQL",
+  "path": "benchmarks/partitions/code-diagnostics-v0.1/SQL.jsonl.gz",
+  "documents": 12,
+  "utf8_bytes": 742,
+  "sha256": "f4af9856cc4b7aa5949658522b8c5d98bf2ab0110366cb1b806f9c2bc175423b",
+  "source": {
+    "legacy_path": "benchmarks/diagnostics/corpus.jsonl.gz"
+  }
+}

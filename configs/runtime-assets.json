@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "python_version": "3.12.14",
+  "release": "20260901",
+  "source": "https://github.com/astral-sh/python-build-standalone/releases/tag/20260901",
+  "verified_on": "2026-10-19",
+  "distribution": "CPython install_only_stripped; redistribution licenses remain inside runtime/",
+  "targets": {
+    "macos-arm64": {
+      "python_platform": "aarch64-apple-darwin",
+      "python": "runtime/bin/python3",
+      "minimum_os": "macOS 13",
+      "filename": "cpython-3.12.14+20260901-aarch64-apple-darwin-install_only_stripped.tar.gz",
+      "sha256": "81a359f1cfadd4da11766534c5913791cea55f26e1bb902cacd2a531bb1e4b2b",
+      "bytes": 24981445,
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.12.14%2B20260901-aarch64-apple-darwin-install_only_stripped.tar.gz"
+    },
+    "macos-x86_64": {
+      "python_platform": "x86_64-apple-darwin",
+      "python": "runtime/bin/python3",
+      "minimum_os": "macOS 13",
+      "filename": "cpython-3.12.14+20260901-x86_64-apple-darwin-install_only_stripped.tar.gz",
+      "sha256": "65b195c9cedc1fef6767f044f9822069adbd1bd9204d424ece4628776fdc04bb",
+      "bytes": 24686153,
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.12.14%2B20260901-x86_64-apple-darwin-install_only_stripped.tar.gz"
+    },
+    "linux-x86_64": {
+      "python_platform": "x86_64-manylinux_2_28",
+      "python": "runtime/bin/python3",
+      "minimum_os": "Linux x86_64 with glibc 2.28 or newer",
+      "filename": "cpython-3.12.14+20260901-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+      "sha256": "72748da13197c1fb161e3afeef20a6a385ff24f2165e6e2758e47008e7faba4c",
+      "bytes": 34143368,
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.12.14%2B20260901-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz"
+    },
+    "linux-arm64": {
+      "python_platform": "aarch64-manylinux_2_28",
+      "python": "runtime/bin/python3",
+      "minimum_os": "Linux arm64 with glibc 2.28 or newer",
+      "filename": "cpython-3.12.14+20260901-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz",
+      "sha256": "577b4bec0793ad1ff0cbff9adbd0df078eddde38a4c41bf5d83ad381a85ee39d",
+      "bytes": 29199399,
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.12.14%2B20260901-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz"
+    },
+    "windows-x86_64": {
+      "python_platform": "x86_64-pc-windows-msvc",
+      "python": "runtime/python.exe",
+      "minimum_os": "Windows 10 or newer, x86_64",
+      "filename": "cpython-3.12.14+20260901-x86_64-pc-windows-msvc-install_only_stripped.tar.gz",
+      "sha256": "7c45c9622400d578709a9b2cddbe8124cc21d382409d9f13406d706d28e31b14",
+      "bytes": 21980728,
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.12.14%2B20260901-x86_64-pc-windows-msvc-install_only_stripped.tar.gz"
+    }
+  }
+}

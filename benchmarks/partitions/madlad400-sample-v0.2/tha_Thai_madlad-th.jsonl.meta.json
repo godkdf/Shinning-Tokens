@@ -1,0 +1,17 @@
+{
+  "dataset": "madlad400-sample-v0.2",
+  "language": "tha_Thai_madlad-th",
+  "path": "benchmarks/partitions/madlad400-sample-v0.2/tha_Thai_madlad-th.jsonl.gz",
+  "documents": 9,
+  "utf8_bytes": 80029,
+  "sha256": "6ccf2792b74e039ab4bd93047833da9305b442c2ec748481bba8a5775b46f21d",
+  "source": {
+    "repo": "allenai/MADLAD-400",
+    "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+    "source_config": "th",
+    "source_path": "data/th/th_clean_0000.jsonl.gz",
+    "license": "ODC-BY-1.0",
+    "selection": "First unique whole documents in first pinned clean shard, bounded by bytes/documents; not uniform and not held out from earlier MADLAD selection studies",
+    "excluded": {}
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "config": "zxx_xx_dtynoise",
+  "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+  "target_bytes": 65536,
+  "max_documents": 32,
+  "status": "excluded",
+  "reason": "Declared dirty/noise source, not a language"
+}

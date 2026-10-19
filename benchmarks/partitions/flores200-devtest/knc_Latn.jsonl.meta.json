@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "knc_Latn",
+  "path": "benchmarks/partitions/flores200-devtest/knc_Latn.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 146604,
+  "sha256": "d5fdc77adf4f75a01148424198bdf78693f8740243911ba4ba5039c0a2698a4a",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

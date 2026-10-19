@@ -1,0 +1,11 @@
+{
+  "dataset": "fineweb-mixture-v0.1",
+  "language": "cmn_Hani",
+  "path": "benchmarks/partitions/fineweb-mixture-v0.1/cmn_Hani.jsonl.gz",
+  "documents": 280,
+  "utf8_bytes": 1002028,
+  "sha256": "1ea2c8bc16231168f77765bef134e405324bed7d1bfbd22d3e7ac07689e7e290",
+  "source": {
+    "legacy_path": "benchmarks/fineweb-v0.1/corpus.jsonl.gz"
+  }
+}

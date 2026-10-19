@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "sin_Sinh",
+  "path": "benchmarks/partitions/flores200-devtest/sin_Sinh.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 346056,
+  "sha256": "5b26039effbca64962f75c15c36e2c43b5227de2a8d4f4052ae5972ec36d5b73",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

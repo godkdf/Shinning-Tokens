@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "yue_Hant",
+  "path": "benchmarks/partitions/flores200-devtest/yue_Hant.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 114462,
+  "sha256": "0ba7e3ac43d036a7fb9ad30ee92b50da994332dad98fdb6c2f9561e994abac81",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

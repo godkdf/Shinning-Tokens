@@ -15,3 +15,7 @@ site/data/mappings/
 site/data/tokenizers/
 results/raw/
 artifacts/
+configs/custom-tokenizers.json
+results/local/
+results/v0.2/*/checkpoints/
+site/data/offline/

@@ -1,0 +1,24 @@
+{
+  "config": "jiv",
+  "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+  "target_bytes": 65536,
+  "max_documents": 32,
+  "status": "complete",
+  "partition": {
+    "dataset": "madlad400-sample-v0.2",
+    "language": "jiv_Latn_madlad-jiv",
+    "path": "benchmarks/partitions/madlad400-sample-v0.2/jiv_Latn_madlad-jiv.jsonl.gz",
+    "documents": 16,
+    "utf8_bytes": 67093,
+    "sha256": "65081901f7e2c39b6c61057744e90a4422af774ff1fc3b44fd4ec80d6d5172ff",
+    "source": {
+      "repo": "allenai/MADLAD-400",
+      "revision": "9d886a76bd8fa69b294f2dd3843dacb8388ee5a5",
+      "source_config": "jiv",
+      "source_path": "data/jiv/jiv_clean_0000.jsonl.gz",
+      "license": "ODC-BY-1.0",
+      "selection": "First unique whole documents in first pinned clean shard, bounded by bytes/documents; not uniform and not held out from earlier MADLAD selection studies",
+      "excluded": {}
+    }
+  }
+}

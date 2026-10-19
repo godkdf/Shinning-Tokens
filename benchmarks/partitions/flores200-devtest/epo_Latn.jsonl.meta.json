@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "epo_Latn",
+  "path": "benchmarks/partitions/flores200-devtest/epo_Latn.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 133742,
+  "sha256": "9717f6f2ce3c1796732eec5b34f4386df27af9e4bafcf78cf4e01d473799fa26",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

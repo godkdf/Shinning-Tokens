@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-dev",
+  "language": "zho_Hant",
+  "path": "benchmarks/partitions/flores200-dev/zho_Hant.jsonl.gz",
+  "documents": 997,
+  "utf8_bytes": 111479,
+  "sha256": "2c778eefe2685fa7194699eb9314b6152876044302af766c3e8c644e64522ab9",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

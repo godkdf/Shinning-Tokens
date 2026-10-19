@@ -1,0 +1,14 @@
+{
+  "dataset": "flores200-devtest",
+  "language": "kir_Cyrl",
+  "path": "benchmarks/partitions/flores200-devtest/kir_Cyrl.jsonl.gz",
+  "documents": 1012,
+  "utf8_bytes": 250218,
+  "sha256": "7f16e398f9de258b4d0df8b1e019d642ee161ff4da9164d7feac6cff55bb70f3",
+  "source": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "archive_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "license": "CC-BY-SA-4.0",
+    "selection": "All published sentences; no normalization or filtering"
+  }
+}

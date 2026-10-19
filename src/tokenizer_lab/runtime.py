@@ -19,10 +19,15 @@ def measure_runtime(tokenizer_id,texts,*,repeats=5):
     os.environ["TOKENIZERS_PARALLELISM"]="false"
     process=psutil.Process();baseline=process.memory_info().rss;spec=next(x for x in registry() if x["id"]==tokenizer_id)
     start=time.perf_counter()
-    if spec["kind"]=="tiktoken":
-        import tiktoken
-        tok=tiktoken.get_encoding(spec["encoding"])
-        encode=lambda values:tok.encode_ordinary_batch(values,num_threads=1)
+    if spec["kind"] in ["custom_tiktoken","tiktoken_asset","tiktoken"]:
+        from .adapters import TikAdapter
+        tok=TikAdapter(spec,download=False,inventory=False)
+        encode=tok.encode_batch
+        decode=lambda values:[tok.decode_bytes(ids) for ids in values]
+    elif spec["kind"] in ["sentencepiece","legacy_gpt2"]:
+        from .adapters import load_adapter
+        tok=load_adapter(tokenizer_id,download=False)
+        encode=tok.encode_batch
         decode=lambda values:[tok.decode_bytes(ids) for ids in values]
     else:
         from tokenizers import Tokenizer
@@ -47,4 +52,4 @@ def measure_runtime(tokenizer_id,texts,*,repeats=5):
             "incremental_loaded_rss_bytes":loaded-baseline,"peak_rss_bytes":peak[0],"encode_seconds":durations_encode,"decode_seconds":durations_decode,
             "encode_mbps":size/1e6/statistics.median(durations_encode),"decode_mbps":decoded_size/1e6/statistics.median(durations_decode),
             "utf8_bytes":size,"documents":len(texts),"repeats":repeats,"roundtrip_exact_documents":sum(a.encode()==b for a,b in zip(texts,decoded)),
-            "hardware":hardware(),"memory_scope":"Fresh-process native tokenizer, excluding vocabulary analysis; process RSS and incremental RSS both reported. Peak sampled every 5 ms."}
+            "hardware":hardware(),"implementation_kind":spec["kind"],"memory_scope":"Fresh process, excluding vocabulary classification. Native JSON/tiktoken engines; legacy ports include their adapter lookup structures. Process RSS and incremental RSS reported; peak sampled every 5 ms."}

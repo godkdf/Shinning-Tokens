@@ -1,6 +1,10 @@
 # Tokenizer Lab
 
-A reproducible hub for understanding tokenizer strengths, weaknesses, and tradeoffs across languages. Inspect the same UTF-8 text, vocabulary pieces, and numeric/code diagnostics across **6 primary tokenizers**, with **1 parent control**, **15 vocabulary pairs**, and **30 directional vocabulary maps**.
+A reproducible hub for understanding tokenizer strengths, weaknesses, and tradeoffs across languages. The expanded inventory has **44 tokenizer profiles**, including distinct GLM, Qwen, DeepSeek, Xiaomi MiMo and MiniMax generations. Exact aliases group **104 official checkpoints into 38 profiles**; the existing Gemma, BLOOM, JAIS, o200k and parent-control profiles remain available.
+
+The v0.2 corpus contains **431,570 inputs**: **409,836 FLORES-200 sentences** across **204 script varieties**, **5,237 MADLAD documents** across **418 configurations**, **5,941 FineWeb documents**, and **10,556 diagnostics**. UTF-8, UTF-16LE and UTF-16BE fidelity are reported separately. See [the expanded protocol](docs/EXPANDED.md) and [tokenizer inventory](docs/tokenizer-families.md).
+
+For a self-contained local application, use [the offline setup](docs/OFFLINE.md). Starter packages contain **0 tokenizer and 0 language-text payloads**. Select only the tokenizers, benchmarks and languages you need, review installed and download sizes, then download explicitly. Cached benchmark runs never fetch missing files.
 
 This is intrinsic analysis: **no model training or model weights are required**. Compression is not model quality. Embedding transfer and distillation have a separate, cited [research library](docs/research/index.md).
 
@@ -16,7 +20,7 @@ This is intrinsic analysis: **no model training or model weights are required**.
 
 Exact repository revisions are in [the registry](configs/registry.json). The reconstructed parent has not been verified against Google's gated download. Its identity and exact candidate rebuild are recorded in [the expansion experiment](experiments/gemma-v31/identity.json).
 
-## Initial measured results
+## Frozen v0.1 measured results
 
 - **115,479 observations**: 7 tokenizers × 16,497 original inputs.
 - **5,941 FineWeb documents**, **23,437,127 UTF-8 bytes**, **24 language/script varieties**. All 7 tokenizers reconstruct every sampled FineWeb document exactly.

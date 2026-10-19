@@ -1,0 +1,11 @@
+{
+  "dataset": "fineweb-mixture-v0.1",
+  "language": "tha_Thai",
+  "path": "benchmarks/partitions/fineweb-mixture-v0.1/tha_Thai.jsonl.gz",
+  "documents": 136,
+  "utf8_bytes": 1030808,
+  "sha256": "cdc211af39ac9a1b6168760c1e4958b7547ed73ba6c5aee5cfcc992439a69b41",
+  "source": {
+    "legacy_path": "benchmarks/fineweb-v0.1/corpus.jsonl.gz"
+  }
+}
