@@ -171,6 +171,25 @@ export async function mountLocalLauncher(root,{languages:fallbackLanguages=[]}={
       await poll(job.id);
     }catch(error){replace(errorBox,node('div',{class:'callout error'},error.message));}finally{running=false;refreshSummary();if(currentPlan)drawPlan();}
   }
+  function readableResults(result){
+    const profiles=values(result.profiles),runtimes=new Map(values(result.runtime).map(row=>[row.tokenizer,row]));
+    const tokenizerName=id=>tokenizers.find(row=>row.id===id)?.name||profiles.find(row=>row.id===id)?.name||id;
+    const languageName=id=>languages.find(row=>row.id===id)?.name||id;
+    const decimal=value=>typeof value==='number'?value.toLocaleString('en-US',{maximumFractionDigits:3}):'—';
+    const table=(headers,rows)=>node('div',{class:'table-wrap'},node('table',{class:'data-table'},node('thead',{},node('tr',{},headers.map(label=>node('th',{},label)))),node('tbody',{},rows.map(row=>node('tr',{},row.map(value=>node('td',{},value)))))));
+    const rows=values(result.benchmarks),query=node('input',{class:'input',type:'search','aria-label':'Search local result languages',placeholder:'Find a language, tokenizer, or benchmark…'}),measurements=node('div',{});
+    function draw(){
+      const matched=rows.filter(row=>normalize([tokenizerName(row.tokenizer),languageName(row.language),row.language,row.dataset].join(' ')).includes(normalize(query.value)));
+      replace(measurements,node('p',{class:'note'},`${count(matched.length)} matching rows${matched.length>200?' · first 200 shown; narrow the search or save the full JSON':''}`),table(['Tokenizer','Language','Benchmark','Inputs','Tokens','Bytes/token','UTF-8 exact','UTF-16LE exact','UTF-16BE exact','Normalization changes','Unknown tokens','Errors'],matched.slice(0,200).map(row=>[tokenizerName(row.tokenizer),languageName(row.language),row.dataset,count(row.documents),count(row.tokens),decimal(row.bytes_per_token),`${count(row.exact)} / ${count(row.documents)}`,`${count(row.utf16le_exact)} / ${count(row.documents)}`,`${count(row.utf16be_exact)} / ${count(row.documents)}`,count(row.canonical_only),count(row.unknown_emissions),count(row.errors)])));
+    }
+    query.addEventListener('input',draw);draw();
+    const capacity=profiles.length?table(['Tokenizer','Vocabulary IDs','Special IDs','Encode MB/s','Decode MB/s','Loaded memory MB','Peak memory MB','Timing sample inputs'],profiles.map(profile=>{
+      const rt=runtimes.get(profile.id)||{};
+      return [tokenizerName(profile.id),count(profile.vocabulary?.total),count(profile.vocabulary?.special),decimal(rt.encode_mbps),decimal(rt.decode_mbps),decimal(typeof rt.loaded_rss_bytes==='number'?rt.loaded_rss_bytes/1e6:null),decimal(typeof rt.peak_rss_bytes==='number'?rt.peak_rss_bytes/1e6:null),count(rt.documents)];
+    })):null;
+    const categories=profiles.map(profile=>node('details',{class:'details-section'},node('summary',{},`${tokenizerName(profile.id)} · vocabulary scripts and types`),node('p',{class:'note'},'Categories overlap. Counts describe token IDs and pieces; they do not establish language or model quality.'),table(['Script','Token IDs'],Object.entries(profile.vocabulary?.script_counts||{}).sort((a,b)=>b[1]-a[1]).map(([key,value])=>[key,count(value)])),table(['Token type','Token IDs'],Object.entries(profile.vocabulary?.type_counts||{}).sort((a,b)=>b[1]-a[1]).map(([key,value])=>[key.replaceAll('_',' '),count(value)])),node('a',{class:'button small',href:`./data/vocab/${encodeURIComponent(profile.id)}.json.gz`,download:`${profile.id}.json.gz`},'Save vocabulary data ↓')));
+    return node('div',{class:'local-result-tables'},node('h3',{},'Capacity, speed & memory'),capacity,node('p',{class:'note'},'One warm-up and five timed repeats in fresh processes. Speed uses the recorded text sample; small samples can give noisy timings. MB means 1,000,000 bytes. Process memory includes the runtime and declared adapter.'),node('h3',{},'Language measurements'),query,measurements,categories);
+  }
   async function poll(id){
     while(root.isConnected){
       const job=await api(`/api/runs/${encodeURIComponent(id)}`);
@@ -186,7 +205,7 @@ export async function mountLocalLauncher(root,{languages:fallbackLanguages=[]}={
         },'small'));
         if(job.result.url&&String(job.result.url).startsWith('/'))controls.push(node('a',{class:'button small',href:job.result.url},'Open run results →'));
       }
-      replace(runOutput,node('section',{class:'card run-result'},node('div',{class:'card-header'},node('h3',{},complete?'Benchmark completed':failed?'Benchmark stopped':'Benchmark running'),node('span',{class:`badge ${failed?'badge-red':''}`},job.status||'queued')),node('p',{class:'note mono'},`Run ${id}`),node('p',{role:'status'},progressLabel),Number.isFinite(done)&&total>0?node('progress',{max:total,value:done,'aria-label':'Benchmark progress'}):null,job.error?node('div',{class:'callout error'},typeof job.error==='string'?job.error:JSON.stringify(job.error)):null,controls.length?node('div',{class:'button-row'},controls):null,job.result?node('details',{},node('summary',{},'Inspect run result'),node('pre',{},JSON.stringify(job.result,null,2))):null));
+      replace(runOutput,node('section',{class:'card run-result'},node('div',{class:'card-header'},node('h3',{},complete?'Benchmark completed':failed?'Benchmark stopped':'Benchmark running'),node('span',{class:`badge ${failed?'badge-red':''}`},job.status||'queued')),node('p',{class:'note mono'},`Run ${id}`),node('p',{role:'status'},progressLabel),Number.isFinite(done)&&total>0?node('progress',{max:total,value:done,'aria-label':'Benchmark progress'}):null,job.error?node('div',{class:'callout error'},typeof job.error==='string'?job.error:JSON.stringify(job.error)):null,controls.length?node('div',{class:'button-row'},controls):null,job.result?readableResults(job.result):null,job.result?node('details',{},node('summary',{},'Inspect run result'),node('pre',{},JSON.stringify(job.result,null,2))):null));
       if(complete||failed)return;
       await new Promise(resolve=>setTimeout(resolve,1500));
     }

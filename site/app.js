@@ -201,7 +201,7 @@ function corpusTexts(params) {
 async function localRuns() {
   main.append(heading('Your machine. Your tokenizers.','Launch an offline benchmark.','Choose cached tokenizers, languages, and datasets. Register a local tokenizer.json to run the same checks on your own tokenizer.'));
   const output=el('div',{});main.append(output);
-  const {mountLocalLauncher}=await import('./launcher.js?v=20261019.2');
+  const {mountLocalLauncher}=await import('./launcher.js?v=20261019.4');
   await mountLocalLauncher(output,{languages:state.languages});
 }
 

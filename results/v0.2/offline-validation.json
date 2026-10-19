@@ -1,42 +1,45 @@
 {
-  "release": "0.2.0",
+  "release": "0.2.1",
   "native_apple_silicon": {
     "passed": true,
     "relocated_path_contains_spaces": true,
-    "file_hash_checks": 5753,
+    "file_hash_checks": 5755,
     "initial_cached_tokenizers": 0,
     "custom_tokenizer_unicode_documents": 500,
     "utf8_exact": 500,
     "utf16le_exact": 500,
     "utf16be_exact": 500,
-    "external_dns_blocked": true
+    "external_dns_blocked": true,
+    "runtime_profiles": 1,
+    "timed_repeats": 5,
+    "custom_name_preserved": true
   },
   "foreign_platform_execution_verified": false,
   "foreign_validation": "Pinned runtime SHA-256 and destination-specific binary wheel hashes verified. Native CI exists but has not run from this environment.",
   "archives": [
     {
       "target": "macos-arm64",
-      "sha256": "71a039ccf43e8d1a522c5c98cb49b441a7ef6f0e35c32704399b8760e27723b7",
-      "bytes": 118008505,
-      "installed_bytes": 345220326
+      "sha256": "442872b55adf0881d06e34239ccaaf51d0c0a8c75573a05782fef3c60438e871",
+      "bytes": 118012585,
+      "installed_bytes": 345233415
     },
     {
       "target": "macos-x86_64",
-      "sha256": "f00eab2edcf284e471bf70d255541ca52016ba444ddfa195d3d61a9c759e7329",
-      "bytes": 125393911,
-      "installed_bytes": 374640301
+      "sha256": "7ac65f2bc5ac5c7e769fe342f2682115dacfec5194709130a411bf6db56964ac",
+      "bytes": 125397988,
+      "installed_bytes": 374653390
     },
     {
       "target": "windows-x86_64",
-      "sha256": "070d1cd839a50f0f78af27a0e0ed2fea815e6502e5df303c19a7dcd73831ca91",
-      "bytes": 89502217,
-      "installed_bytes": 261309991
+      "sha256": "395462f85a7ad831753bcc48708f37886b5bd9761cb19181b38be294589f0307",
+      "bytes": 89506303,
+      "installed_bytes": 261323080
     },
     {
       "target": "linux-x86_64",
-      "sha256": "70687b4077c0e6a23a7b443cf07fb4faeb2c29e043e80a7a3bb65c7a9077d630",
-      "bytes": 170896734,
-      "installed_bytes": 507830716
+      "sha256": "2de54ac6b8845a75443b695337d165819d76c56bd92d17fcbd2e92b561d2919c",
+      "bytes": 170900818,
+      "installed_bytes": 507843805
     }
   ]
 }

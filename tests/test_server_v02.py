@@ -183,8 +183,9 @@ def test_custom_registration_requires_absolute_path_and_name(service, monkeypatc
 def test_only_one_run_is_active_and_progress_is_observable(service, monkeypatch):
     entered, release = Event(), Event()
     received = []
-    def engine(selection, *, progress, cancel, vocabulary):
+    def engine(selection, *, progress, cancel, vocabulary, runtime):
         assert vocabulary is True
+        assert runtime is True
         received.append(selection)
         progress({"completed": 1, "total": 2})
         entered.set()

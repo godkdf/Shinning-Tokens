@@ -94,6 +94,7 @@ jobs:
           import socket
           from tokenizer_lab.offline import verify_bundle
           from tokenizer_lab.adapters import load_adapter
+          from tokenizer_lab.engine import run_selection
           from tokenizer_lab.io import ROOT,read_jsonl
           evidence = verify_bundle()
           assert evidence['passed'] and evidence['native_target_match'], evidence
@@ -102,6 +103,10 @@ jobs:
           for doc in docs:
               assert adapter.decode_bytes(adapter.encode(doc['text'])) == doc['text'].encode('utf-8')
               assert adapter.decode_bytes(adapter.encode(doc['text'])).decode('utf-8').encode('utf-16-le') == doc['text'].encode('utf-16-le')
+          result = run_selection({'tokenizers':['portability'],'datasets':['portability'],'languages':['und']},vocabulary=True,runtime=True)
+          assert len(result['profiles']) == len(result['runtime']) == 1
+          assert result['runtime'][0]['repeats'] == 5
+          assert result['runtime'][0]['encode_mbps'] > 0 and result['runtime'][0]['loaded_rss_bytes'] > 0
           try: socket.getaddrinfo('huggingface.co',443)
           except OSError: pass
           else: raise AssertionError('External DNS was permitted')

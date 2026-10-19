@@ -45,7 +45,9 @@ def run_selection(value,*,progress=None,cancel=None,output=None,vocabulary=False
     value=selection(value);cancel=cancel or threading.Event();progress=progress or (lambda p:None)
     for path in value["custom_tokenizers"]:
         from pathlib import Path
-        spec=register_custom(path,Path(path).stem);value["tokenizers"].append(spec["id"])
+        digest=file_hash(Path(path))
+        spec=next((s for s in registry() if s.get('role')=='custom' and s.get('sha256')==digest),None) or register_custom(path,Path(path).stem)
+        value["tokenizers"].append(spec["id"])
     value["tokenizers"]=list(dict.fromkeys(value["tokenizers"]))
     known={s["id"] for s in registry()}
     if set(value["tokenizers"])-known:raise ValueError("Unknown tokenizer selection")
@@ -56,7 +58,7 @@ def run_selection(value,*,progress=None,cancel=None,output=None,vocabulary=False
     code={p.name:file_hash(p) for p in (ROOT/"src/tokenizer_lab").glob("*.py") if p.name in ["engine.py","adapters.py","legacy.py","metrics.py","transport.py","io.py"]}
     packages={p:importlib.metadata.version(p) for p in ["tokenizers","tiktoken","sentencepiece"]}
     result={"schema_version":"2.0","generated_at":datetime.datetime.now(datetime.timezone.utc).isoformat(),"selection":value,"benchmarks":[],"profiles":[],"runtime":[],"transport_probes":{},"checkpoints":[],"failures":[],"measurement_code":code,"packages":packages,"network_downloads":0}
-    total=len(parts)*len(value["tokenizers"]);done=0
+    total=(len(parts)+int(runtime))*len(value["tokenizers"]);done=0
     for id in value["tokenizers"]:
         if cancel.is_set():raise InterruptedError("Benchmark cancelled")
         adapter=load_adapter(id,download=False)
@@ -87,8 +89,10 @@ def run_selection(value,*,progress=None,cancel=None,output=None,vocabulary=False
                     if row is not None:texts.append(row["text"]);size+=row["utf8_bytes"]
                 if size>=1_000_000:break
             input_path=out/"runtime-input.json";write_json(input_path,texts)
+            progress({"completed":done,"total":total,"message":f"{id}: measuring encode/decode speed and process memory"})
             process=subprocess.run([sys.executable,"-m","tokenizer_lab.cli","_runtime",id,str(input_path),"5"],capture_output=True,text=True,check=True,env=os.environ|{"TOKENIZER_LAB_OFFLINE":"1","TOKENIZERS_PARALLELISM":"false"})
             item=json.loads(process.stdout);item["input_sha256"]=file_hash(input_path);result["runtime"].append(item)
+            done+=1;progress({"completed":done,"total":total,"message":f"{id}: timing and memory complete ({done}/{total})"})
         write_json(out/"result.json",result)
         del adapter
     result["checks"]={"tokenizers":len(value["tokenizers"]),"partitions":len(parts),"documents_per_tokenizer":sum(p["documents"] for p in parts),"observations":sum(x["documents"] for x in result["benchmarks"]),"errors":sum(x["errors"] for x in result["benchmarks"])}

@@ -116,7 +116,7 @@ class RunManager:
             self.jobs[identifier].update(status="running", started_at=_now())
         try:
             from .engine import run_selection
-            result = run_selection(selection, progress=progress, cancel=cancel, vocabulary=True)
+            result = run_selection(selection, progress=progress, cancel=cancel, vocabulary=True, runtime=True)
             result = json.loads(json.dumps(result, ensure_ascii=False, allow_nan=False))
             with self.lock:
                 self.jobs[identifier].update(status="cancelled" if cancel.is_set() else "completed",
