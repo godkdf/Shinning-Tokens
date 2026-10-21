@@ -17,6 +17,12 @@ results/raw/
 artifacts/
 configs/custom-tokenizers.json
 results/local/
+benchmarks/code-realistic-v0.1/*.jsonl.gz
+!benchmarks/code-realistic-v0.1/file-index.jsonl.gz
+benchmarks/code-scenarios-v0.1/*.jsonl.gz
+!benchmarks/code-scenarios-v0.1/edit-index.jsonl.gz
+results/code-realistic-v0.1/checkpoints/
+results/code-scenarios-v0.1/checkpoints/
 results/v0.2/*/checkpoints/
 results/v0.3/*/checkpoints/
 results/v0.4/*/checkpoints/

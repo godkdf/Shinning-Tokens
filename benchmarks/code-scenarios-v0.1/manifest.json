@@ -1,0 +1,1756 @@
+{
+  "protocol": "code-scenarios-v0.1",
+  "created_at": "2026-10-21T20:20:14.930600+00:00",
+  "base_manifest_sha256": "df93bccfe90a3eb1665afd93cfdeca722b07cbd28152a50cbe3dd3ac1a888f00",
+  "edit_index_sha256": "5fb7e5a8323410da3b14cdc8cc6bcb9d20178a6e1e4e7262b27e697348a7e018",
+  "partitions": [
+    {
+      "language": "python__edit-before",
+      "programming_language": "python",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/python__edit-before.jsonl.gz",
+      "sha256": "ed705eda8a5ffe6ea1dbaebec6e9ffaf8db938cac4264689bdc0a6d7e460b56c",
+      "documents": 100,
+      "utf8_bytes": 1598986
+    },
+    {
+      "language": "python__edit-after",
+      "programming_language": "python",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/python__edit-after.jsonl.gz",
+      "sha256": "1402d440781586d0c201055eee069722f0e949499052cf73447df75ea2092c45",
+      "documents": 100,
+      "utf8_bytes": 1747171
+    },
+    {
+      "language": "python__edit-diff",
+      "programming_language": "python",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/python__edit-diff.jsonl.gz",
+      "sha256": "c322b9e3bf61a92f2e2d08f02822578a35198b23ff114fb9f499efea87b3674b",
+      "documents": 100,
+      "utf8_bytes": 271179
+    },
+    {
+      "language": "python__context",
+      "programming_language": "python",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/python__context.jsonl.gz",
+      "sha256": "723bb95e3be08ac62e688b1a4c832008d3ab6da11999c7784579c891854fc73f",
+      "documents": 50,
+      "utf8_bytes": 523826
+    },
+    {
+      "language": "python__stress",
+      "programming_language": "python",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/python__stress.jsonl.gz",
+      "sha256": "15d514b53fd196c4a50a706518ca329063891b4aad687001910947419572173e",
+      "documents": 50,
+      "utf8_bytes": 186718
+    },
+    {
+      "language": "javascript__edit-before",
+      "programming_language": "javascript",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/javascript__edit-before.jsonl.gz",
+      "sha256": "b1817504df569f5722e10cc50c09049da1f9100bd2e65225f40b1a32d60251d1",
+      "documents": 100,
+      "utf8_bytes": 1098558
+    },
+    {
+      "language": "javascript__edit-after",
+      "programming_language": "javascript",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/javascript__edit-after.jsonl.gz",
+      "sha256": "22351501285c724e02188ee88a6df0922eb1b59affb7991b10c23542103e0f78",
+      "documents": 100,
+      "utf8_bytes": 1223142
+    },
+    {
+      "language": "javascript__edit-diff",
+      "programming_language": "javascript",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/javascript__edit-diff.jsonl.gz",
+      "sha256": "3d9596e5b0da6c09a8caee1b4938fca2a61d89436e3f2a317280eb8b2a274a56",
+      "documents": 100,
+      "utf8_bytes": 334508
+    },
+    {
+      "language": "javascript__context",
+      "programming_language": "javascript",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/javascript__context.jsonl.gz",
+      "sha256": "ac9174eb9b06ebec3b8fd72d0d5426bc6abf7d9c9228e4393a3b6e9420e413cc",
+      "documents": 50,
+      "utf8_bytes": 508122
+    },
+    {
+      "language": "javascript__stress",
+      "programming_language": "javascript",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/javascript__stress.jsonl.gz",
+      "sha256": "498ec68948f3483c3812c93bf92418c54bfb6bd2923ed4d61093d8c2401be7d7",
+      "documents": 50,
+      "utf8_bytes": 155077
+    },
+    {
+      "language": "typescript__edit-before",
+      "programming_language": "typescript",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/typescript__edit-before.jsonl.gz",
+      "sha256": "256d772c7795c6375607cc86910d798535d21c7f2994266f8ac041fcd0047ee5",
+      "documents": 100,
+      "utf8_bytes": 1161810
+    },
+    {
+      "language": "typescript__edit-after",
+      "programming_language": "typescript",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/typescript__edit-after.jsonl.gz",
+      "sha256": "c810ae84921613558c0eb24b0f1195083eef5935cd98e577bef672d27a9bd531",
+      "documents": 100,
+      "utf8_bytes": 1210088
+    },
+    {
+      "language": "typescript__edit-diff",
+      "programming_language": "typescript",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/typescript__edit-diff.jsonl.gz",
+      "sha256": "bd5e34beaa82e9009495dddbb00c118e18af3c761adbdc1ac5b354712bf4bb85",
+      "documents": 100,
+      "utf8_bytes": 270469
+    },
+    {
+      "language": "typescript__context",
+      "programming_language": "typescript",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/typescript__context.jsonl.gz",
+      "sha256": "26618eb3624d3dc1d68d86061383af81b7e1ae2f0b71db9b0588c00cd27484ff",
+      "documents": 50,
+      "utf8_bytes": 409647
+    },
+    {
+      "language": "typescript__stress",
+      "programming_language": "typescript",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/typescript__stress.jsonl.gz",
+      "sha256": "8db61c39b35193a8a42c359aab6c923ea3b4fe550cc65f29cc0254c25b3701b7",
+      "documents": 50,
+      "utf8_bytes": 154213
+    },
+    {
+      "language": "ruby__edit-before",
+      "programming_language": "ruby",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/ruby__edit-before.jsonl.gz",
+      "sha256": "df1f9668874c9545ef14acb7cdab298b2de9df0a40772fe731b40a128c922c14",
+      "documents": 100,
+      "utf8_bytes": 1323994
+    },
+    {
+      "language": "ruby__edit-after",
+      "programming_language": "ruby",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/ruby__edit-after.jsonl.gz",
+      "sha256": "5b04da51ac187a36aaca5966ef7f330a2a597685c871f2c1cd80841711c71404",
+      "documents": 100,
+      "utf8_bytes": 1373346
+    },
+    {
+      "language": "ruby__edit-diff",
+      "programming_language": "ruby",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/ruby__edit-diff.jsonl.gz",
+      "sha256": "56e0b7723e661cf61f2a62ec7ecad2899f0e7285978809b3229670f0132cc4b0",
+      "documents": 100,
+      "utf8_bytes": 156001
+    },
+    {
+      "language": "ruby__context",
+      "programming_language": "ruby",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/ruby__context.jsonl.gz",
+      "sha256": "53e36b19d023420335ce2d7f1cefe6e8909ff6fc7b93073a5d5c734324a8de7f",
+      "documents": 50,
+      "utf8_bytes": 323376
+    },
+    {
+      "language": "ruby__stress",
+      "programming_language": "ruby",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/ruby__stress.jsonl.gz",
+      "sha256": "effa09e7ce3f3a7ab4e1e9c723831683f54d959a8c517c841126432429f45e2a",
+      "documents": 50,
+      "utf8_bytes": 175109
+    },
+    {
+      "language": "php__edit-before",
+      "programming_language": "php",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/php__edit-before.jsonl.gz",
+      "sha256": "78b7a02c3c6167b2011ae15565d9aaca162c040a47d98724b10c930add6a4b16",
+      "documents": 100,
+      "utf8_bytes": 1163516
+    },
+    {
+      "language": "php__edit-after",
+      "programming_language": "php",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/php__edit-after.jsonl.gz",
+      "sha256": "780815706683aeca4fb156b36e2a6c9dd6c149bfc33168b9502ef7a33ceeebdf",
+      "documents": 100,
+      "utf8_bytes": 1234398
+    },
+    {
+      "language": "php__edit-diff",
+      "programming_language": "php",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/php__edit-diff.jsonl.gz",
+      "sha256": "38bac9a31f09462002ef07201a1b109e6041fed43679e94a29bbd7ce75dbe9d5",
+      "documents": 100,
+      "utf8_bytes": 192988
+    },
+    {
+      "language": "php__context",
+      "programming_language": "php",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/php__context.jsonl.gz",
+      "sha256": "ecd87b32c67ed965062cc0757021d6ac0030f07ca780654db865b30235b6a1ee",
+      "documents": 50,
+      "utf8_bytes": 346362
+    },
+    {
+      "language": "php__stress",
+      "programming_language": "php",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/php__stress.jsonl.gz",
+      "sha256": "cb19a2f6c0b6fd3d0deb97ace6f6a41cfc0fa631fedb8c19d3516d9d63a1b794",
+      "documents": 50,
+      "utf8_bytes": 184007
+    },
+    {
+      "language": "perl__edit-before",
+      "programming_language": "perl",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/perl__edit-before.jsonl.gz",
+      "sha256": "d79c7426062b73d9af23effefdf7c659f2be9ceaf2d6325125357c9fd425d9ef",
+      "documents": 100,
+      "utf8_bytes": 1391108
+    },
+    {
+      "language": "perl__edit-after",
+      "programming_language": "perl",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/perl__edit-after.jsonl.gz",
+      "sha256": "bcb3985e739850f92e178232a0a6fc7e76761395afd982b3f844f4b9c3e48eb6",
+      "documents": 100,
+      "utf8_bytes": 1425543
+    },
+    {
+      "language": "perl__edit-diff",
+      "programming_language": "perl",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/perl__edit-diff.jsonl.gz",
+      "sha256": "f6115aaa8270d53345650f27134fbeb13d36ee508e0f347f2ccb4795c9944a50",
+      "documents": 100,
+      "utf8_bytes": 127182
+    },
+    {
+      "language": "perl__context",
+      "programming_language": "perl",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/perl__context.jsonl.gz",
+      "sha256": "a45548de9760081a862e200851a63dd99a288268d0854caa285c769fed37715b",
+      "documents": 50,
+      "utf8_bytes": 529107
+    },
+    {
+      "language": "perl__stress",
+      "programming_language": "perl",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/perl__stress.jsonl.gz",
+      "sha256": "c16a1b2690ad432eacbde44ef88c08c22da160539620ccc8238bf17e26680727",
+      "documents": 50,
+      "utf8_bytes": 187839
+    },
+    {
+      "language": "lua__edit-before",
+      "programming_language": "lua",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/lua__edit-before.jsonl.gz",
+      "sha256": "95be08de465831cde8ab15ac6fb3cefa2c5f47e8e9c3b9225931e1d3ba564ef2",
+      "documents": 100,
+      "utf8_bytes": 1108360
+    },
+    {
+      "language": "lua__edit-after",
+      "programming_language": "lua",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/lua__edit-after.jsonl.gz",
+      "sha256": "20443a33bba7fa36dcf82b6861fa9c95fa0345de0a2d70cad0a45f41a3cb5593",
+      "documents": 100,
+      "utf8_bytes": 1125010
+    },
+    {
+      "language": "lua__edit-diff",
+      "programming_language": "lua",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/lua__edit-diff.jsonl.gz",
+      "sha256": "2430df1faa01acc7ad5467434793d300551f0b76cf5dda7c9d969b958276b63d",
+      "documents": 100,
+      "utf8_bytes": 170127
+    },
+    {
+      "language": "lua__context",
+      "programming_language": "lua",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/lua__context.jsonl.gz",
+      "sha256": "5f9f5360c5aaa5aa212f8ea514a314330d98a2ffc5a6c25e46f35cec0b686d5a",
+      "documents": 50,
+      "utf8_bytes": 407651
+    },
+    {
+      "language": "lua__stress",
+      "programming_language": "lua",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/lua__stress.jsonl.gz",
+      "sha256": "bc1cbfd162ae307fe2249c5a91562f4cf7b6ba0c3cc44842d71ec2357b20a9b4",
+      "documents": 50,
+      "utf8_bytes": 163573
+    },
+    {
+      "language": "c__edit-before",
+      "programming_language": "c",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/c__edit-before.jsonl.gz",
+      "sha256": "4ddab0f899e8fe7d5eef61c93e536009852a12927effaafdd028b992886ee84d",
+      "documents": 100,
+      "utf8_bytes": 1923789
+    },
+    {
+      "language": "c__edit-after",
+      "programming_language": "c",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/c__edit-after.jsonl.gz",
+      "sha256": "33b3031b759301ae55673618c2e7ea57a45b9ad375d4324fa3d3ab2c8831f9f4",
+      "documents": 100,
+      "utf8_bytes": 1964814
+    },
+    {
+      "language": "c__edit-diff",
+      "programming_language": "c",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/c__edit-diff.jsonl.gz",
+      "sha256": "1d7513d41b5bafb8c7ee839f4cc6493decdf0289f46184d42706199133ed06a9",
+      "documents": 100,
+      "utf8_bytes": 216456
+    },
+    {
+      "language": "c__context",
+      "programming_language": "c",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/c__context.jsonl.gz",
+      "sha256": "79301684742fb52671e50ab3bbcc9820248431c5ccd4407c2ab6c05bb0d9ebe3",
+      "documents": 50,
+      "utf8_bytes": 680022
+    },
+    {
+      "language": "c__stress",
+      "programming_language": "c",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/c__stress.jsonl.gz",
+      "sha256": "4a5ba01b73d68817313ffd5a6429e9d8a5d81e04300be7a15ab96330343a3983",
+      "documents": 50,
+      "utf8_bytes": 162671
+    },
+    {
+      "language": "cpp__edit-before",
+      "programming_language": "cpp",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/cpp__edit-before.jsonl.gz",
+      "sha256": "9c2876ea358b6cf8eab6936436cddbc311fb36a2aaa3dd2afd41e77aaa7ddd08",
+      "documents": 100,
+      "utf8_bytes": 2332665
+    },
+    {
+      "language": "cpp__edit-after",
+      "programming_language": "cpp",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/cpp__edit-after.jsonl.gz",
+      "sha256": "d7d9bc00f2cac3785ad6bfa8faaa806845fe239ae5c785d635daa115f0b85b57",
+      "documents": 100,
+      "utf8_bytes": 2339981
+    },
+    {
+      "language": "cpp__edit-diff",
+      "programming_language": "cpp",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/cpp__edit-diff.jsonl.gz",
+      "sha256": "475dc6a89d69b8fd461151628a11b2e9dbf6ad17f0d1655535de0b9e026b3378",
+      "documents": 100,
+      "utf8_bytes": 163379
+    },
+    {
+      "language": "cpp__context",
+      "programming_language": "cpp",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/cpp__context.jsonl.gz",
+      "sha256": "37398f9b961a10dc09c85b7c1975c76c4da9935561b43ceed697d72584ad1f48",
+      "documents": 50,
+      "utf8_bytes": 584672
+    },
+    {
+      "language": "cpp__stress",
+      "programming_language": "cpp",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/cpp__stress.jsonl.gz",
+      "sha256": "58b7961fd5603c96074db631ea5d1861e18b0e6cd82768157fa01b14471df053",
+      "documents": 50,
+      "utf8_bytes": 182303
+    },
+    {
+      "language": "rust__edit-before",
+      "programming_language": "rust",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/rust__edit-before.jsonl.gz",
+      "sha256": "6f17c01880faeb947590b2c36cfdffb7fce5af3960336239b11e093621d407ab",
+      "documents": 100,
+      "utf8_bytes": 1904392
+    },
+    {
+      "language": "rust__edit-after",
+      "programming_language": "rust",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/rust__edit-after.jsonl.gz",
+      "sha256": "6297dc09cbdd89864f5de3438ddb37bbb35ca5e66f75d384ad91df810dd4fdba",
+      "documents": 100,
+      "utf8_bytes": 1937469
+    },
+    {
+      "language": "rust__edit-diff",
+      "programming_language": "rust",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/rust__edit-diff.jsonl.gz",
+      "sha256": "22fea741a75c6910893e83c4810fe9d44cf37ca122f19922e6f0d2dc962c6800",
+      "documents": 100,
+      "utf8_bytes": 225746
+    },
+    {
+      "language": "rust__context",
+      "programming_language": "rust",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/rust__context.jsonl.gz",
+      "sha256": "9d7d75a53d4171dfb9a29a4c041899015ef2002a59a988bf5001e22decc6890e",
+      "documents": 50,
+      "utf8_bytes": 497912
+    },
+    {
+      "language": "rust__stress",
+      "programming_language": "rust",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/rust__stress.jsonl.gz",
+      "sha256": "d14bb4be135c6b8e590822d2f477e847cc67b59dd6745830fe7c549fe2d0b7e4",
+      "documents": 50,
+      "utf8_bytes": 164819
+    },
+    {
+      "language": "go__edit-before",
+      "programming_language": "go",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/go__edit-before.jsonl.gz",
+      "sha256": "44ba07ee80d3d074fcfa315b37168bec87a52dcec83805e3e883daf4551506be",
+      "documents": 100,
+      "utf8_bytes": 1589811
+    },
+    {
+      "language": "go__edit-after",
+      "programming_language": "go",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/go__edit-after.jsonl.gz",
+      "sha256": "bf9a2cff7e3c1f4659019737f2e05baf1fd8d254fca00b290b1517648ebf9456",
+      "documents": 100,
+      "utf8_bytes": 1655723
+    },
+    {
+      "language": "go__edit-diff",
+      "programming_language": "go",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/go__edit-diff.jsonl.gz",
+      "sha256": "b6b07561c0304752b1c4a6a15de6290d0f9abfeb156bbaf054b7fdbb66d3f811",
+      "documents": 100,
+      "utf8_bytes": 176006
+    },
+    {
+      "language": "go__context",
+      "programming_language": "go",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/go__context.jsonl.gz",
+      "sha256": "09bba65d8f2e8ebcd323e512760b36d7bb16e09a34e3735fa71a53f5317f57cc",
+      "documents": 50,
+      "utf8_bytes": 422151
+    },
+    {
+      "language": "go__stress",
+      "programming_language": "go",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/go__stress.jsonl.gz",
+      "sha256": "3a8554f9c54a006a9f9a666336f936e025666e47f2b199b2fa8a3e4e6aedc8f3",
+      "documents": 50,
+      "utf8_bytes": 173867
+    },
+    {
+      "language": "zig__edit-before",
+      "programming_language": "zig",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/zig__edit-before.jsonl.gz",
+      "sha256": "40baab97575cc9ab803f93c8ab6d5c464f970240e4f61dd007771e728bc8f155",
+      "documents": 100,
+      "utf8_bytes": 2493111
+    },
+    {
+      "language": "zig__edit-after",
+      "programming_language": "zig",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/zig__edit-after.jsonl.gz",
+      "sha256": "1eaa7f003bfc211574f89aad6b43fc7bfdd5d8eed2bc00375c5f4e2c7def68bc",
+      "documents": 100,
+      "utf8_bytes": 2545773
+    },
+    {
+      "language": "zig__edit-diff",
+      "programming_language": "zig",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/zig__edit-diff.jsonl.gz",
+      "sha256": "a50c0b898624524a494ba8edc25b6f9f73d44d65f249d2446c5c6fb02d9c9228",
+      "documents": 100,
+      "utf8_bytes": 227124
+    },
+    {
+      "language": "zig__context",
+      "programming_language": "zig",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/zig__context.jsonl.gz",
+      "sha256": "6befe1fb164bdf8a055095a0e64952cd2df040768c993bc1c03f42f672c0509a",
+      "documents": 50,
+      "utf8_bytes": 544606
+    },
+    {
+      "language": "zig__stress",
+      "programming_language": "zig",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/zig__stress.jsonl.gz",
+      "sha256": "cbf1451066127ad75cc401c8e84ba57b820fe3e3f18f69d2fbe74a226e798903",
+      "documents": 50,
+      "utf8_bytes": 163205
+    },
+    {
+      "language": "assembly__edit-before",
+      "programming_language": "assembly",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/assembly__edit-before.jsonl.gz",
+      "sha256": "a3e5cb715940752754830771ec835c4b1dc6c0b0e2f91fa76f3e16c999013615",
+      "documents": 100,
+      "utf8_bytes": 1066265
+    },
+    {
+      "language": "assembly__edit-after",
+      "programming_language": "assembly",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/assembly__edit-after.jsonl.gz",
+      "sha256": "aa5919d0524e2839a5f90153cb07942fc6bfda21b717149a5d9f2e66dd58f1d7",
+      "documents": 100,
+      "utf8_bytes": 1087894
+    },
+    {
+      "language": "assembly__edit-diff",
+      "programming_language": "assembly",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/assembly__edit-diff.jsonl.gz",
+      "sha256": "1dc6189d25711a9ef348533e4bd4feb6961177e1f26108e798a2cef027dc107b",
+      "documents": 100,
+      "utf8_bytes": 434823
+    },
+    {
+      "language": "assembly__context",
+      "programming_language": "assembly",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/assembly__context.jsonl.gz",
+      "sha256": "cc67200bec516767fd100808b6efae98964e5261b220f794c72b3cfd28149764",
+      "documents": 50,
+      "utf8_bytes": 521289
+    },
+    {
+      "language": "assembly__stress",
+      "programming_language": "assembly",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/assembly__stress.jsonl.gz",
+      "sha256": "6eb6c53d0ba142b879e6e2da8d345ad0b129ace290bd993896b10cd9c0be6e1c",
+      "documents": 50,
+      "utf8_bytes": 181929
+    },
+    {
+      "language": "java__edit-before",
+      "programming_language": "java",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/java__edit-before.jsonl.gz",
+      "sha256": "d4308da68c9f78399fb1d1ba3e2c33dfdce272b1efdf52f2bea7bed0c4059837",
+      "documents": 100,
+      "utf8_bytes": 1209139
+    },
+    {
+      "language": "java__edit-after",
+      "programming_language": "java",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/java__edit-after.jsonl.gz",
+      "sha256": "442003bd5bfcdb6b0bf5ddce776d53d52b416d77c8ab72c2cf4ae41798451cc3",
+      "documents": 100,
+      "utf8_bytes": 1251192
+    },
+    {
+      "language": "java__edit-diff",
+      "programming_language": "java",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/java__edit-diff.jsonl.gz",
+      "sha256": "e445533912e6bff8d480323aac260272095cb5454b50ee566b4e7aac3df42e78",
+      "documents": 100,
+      "utf8_bytes": 190882
+    },
+    {
+      "language": "java__context",
+      "programming_language": "java",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/java__context.jsonl.gz",
+      "sha256": "8f8a60431329b5d8825199d581f6cc8c75c3782f62b718c57e3d3ddf24493d9e",
+      "documents": 50,
+      "utf8_bytes": 363010
+    },
+    {
+      "language": "java__stress",
+      "programming_language": "java",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/java__stress.jsonl.gz",
+      "sha256": "770bdc61bd33b3d7e1e4b6283f5078e1e463b163994a363070ad7b4f9c4984cb",
+      "documents": 50,
+      "utf8_bytes": 170963
+    },
+    {
+      "language": "kotlin__edit-before",
+      "programming_language": "kotlin",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/kotlin__edit-before.jsonl.gz",
+      "sha256": "980dbe394f58c0d3a311e9f76faeecee5b75f5123dfdc73e5999f3cff9d2fe34",
+      "documents": 100,
+      "utf8_bytes": 864772
+    },
+    {
+      "language": "kotlin__edit-after",
+      "programming_language": "kotlin",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/kotlin__edit-after.jsonl.gz",
+      "sha256": "2909069079e35ccecdf6bbfb1cc4793cc5670e68ec725a4e36be35e5f4063b29",
+      "documents": 100,
+      "utf8_bytes": 866204
+    },
+    {
+      "language": "kotlin__edit-diff",
+      "programming_language": "kotlin",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/kotlin__edit-diff.jsonl.gz",
+      "sha256": "8c78576c11656be4bc982529e5118d9cfa6ba993be9ecbcca3d66587b84bbac7",
+      "documents": 100,
+      "utf8_bytes": 207193
+    },
+    {
+      "language": "kotlin__context",
+      "programming_language": "kotlin",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/kotlin__context.jsonl.gz",
+      "sha256": "4fb826dfb47e07bece6505102aea42f3f588f66328b71b484a5027ac282f4654",
+      "documents": 50,
+      "utf8_bytes": 438244
+    },
+    {
+      "language": "kotlin__stress",
+      "programming_language": "kotlin",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/kotlin__stress.jsonl.gz",
+      "sha256": "b8cdf473d7f3f9454bca8ba8a5ca8c4b5864916d7ea8bb1e362b62620dc0a494",
+      "documents": 50,
+      "utf8_bytes": 188141
+    },
+    {
+      "language": "scala__edit-before",
+      "programming_language": "scala",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/scala__edit-before.jsonl.gz",
+      "sha256": "436dff00d21a08e8d1cfd1623215831c0a714b62a6972893255372453b3f11a3",
+      "documents": 100,
+      "utf8_bytes": 915873
+    },
+    {
+      "language": "scala__edit-after",
+      "programming_language": "scala",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/scala__edit-after.jsonl.gz",
+      "sha256": "6d6b0ba9391703256a6cf6cdc6a26cc7aa6f5370cd0f9a77d48704e46626374d",
+      "documents": 100,
+      "utf8_bytes": 933348
+    },
+    {
+      "language": "scala__edit-diff",
+      "programming_language": "scala",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/scala__edit-diff.jsonl.gz",
+      "sha256": "58809fde6705131ef6fe099a30ca27a88bfbd520a262adbde102e0de06b5ede1",
+      "documents": 100,
+      "utf8_bytes": 172295
+    },
+    {
+      "language": "scala__context",
+      "programming_language": "scala",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/scala__context.jsonl.gz",
+      "sha256": "7a2362da648f1765faa5490013d483a3af6827ff6972ce1fa2767a141d8ca2a5",
+      "documents": 50,
+      "utf8_bytes": 383364
+    },
+    {
+      "language": "scala__stress",
+      "programming_language": "scala",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/scala__stress.jsonl.gz",
+      "sha256": "fc8f48b9b1795b6915109aff68e5bdb2ae1a22f1af5ce46c219554211567e3cc",
+      "documents": 50,
+      "utf8_bytes": 155547
+    },
+    {
+      "language": "csharp__edit-before",
+      "programming_language": "csharp",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/csharp__edit-before.jsonl.gz",
+      "sha256": "5ae983943f29c9adeaab1b1729b5a5b5811270c78db8715d7cacba0956ef0d5e",
+      "documents": 100,
+      "utf8_bytes": 725325
+    },
+    {
+      "language": "csharp__edit-after",
+      "programming_language": "csharp",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/csharp__edit-after.jsonl.gz",
+      "sha256": "92e94c5b855808bbe2093872e0550c494fec276d6e8cbacebac077cc910cbe1a",
+      "documents": 100,
+      "utf8_bytes": 759023
+    },
+    {
+      "language": "csharp__edit-diff",
+      "programming_language": "csharp",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/csharp__edit-diff.jsonl.gz",
+      "sha256": "a26cf2dd072ea151d288334c98212d82b0f6aaabfad1af4ff0bed641b5bdbd69",
+      "documents": 100,
+      "utf8_bytes": 212042
+    },
+    {
+      "language": "csharp__context",
+      "programming_language": "csharp",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/csharp__context.jsonl.gz",
+      "sha256": "99d57a036213098b67b18c5a1794d28831e91cc8cda2a20bcfddfd16b4efcbd1",
+      "documents": 50,
+      "utf8_bytes": 473446
+    },
+    {
+      "language": "csharp__stress",
+      "programming_language": "csharp",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/csharp__stress.jsonl.gz",
+      "sha256": "c4031145af069b3d97c22f56373ed99cdc8ea37ece984f77e8c9374a7f871c74",
+      "documents": 50,
+      "utf8_bytes": 166997
+    },
+    {
+      "language": "swift__edit-before",
+      "programming_language": "swift",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/swift__edit-before.jsonl.gz",
+      "sha256": "88bf0c2b13ccff32bdff52529616af875aaeb1940172b03471f296c9a57010f4",
+      "documents": 100,
+      "utf8_bytes": 1002159
+    },
+    {
+      "language": "swift__edit-after",
+      "programming_language": "swift",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/swift__edit-after.jsonl.gz",
+      "sha256": "c92bbef3d8b06fc73c562a9ac053f72f505a42eb8f87b07451d3b6938852230a",
+      "documents": 100,
+      "utf8_bytes": 1037480
+    },
+    {
+      "language": "swift__edit-diff",
+      "programming_language": "swift",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/swift__edit-diff.jsonl.gz",
+      "sha256": "d479d3efc45ebb1f3c1d36103ae5de36c682efd5b4b0e3af57ee00071e317620",
+      "documents": 100,
+      "utf8_bytes": 232071
+    },
+    {
+      "language": "swift__context",
+      "programming_language": "swift",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/swift__context.jsonl.gz",
+      "sha256": "12faea61e801dd0f3893c965d2e6c1fec5fa917502f9d90be2249e9bf629810d",
+      "documents": 50,
+      "utf8_bytes": 453411
+    },
+    {
+      "language": "swift__stress",
+      "programming_language": "swift",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/swift__stress.jsonl.gz",
+      "sha256": "54bd58c519b2a356b7353b80c0f1c503cfdff7359c1fb2f40cce746cf080cf4e",
+      "documents": 50,
+      "utf8_bytes": 188991
+    },
+    {
+      "language": "dart__edit-before",
+      "programming_language": "dart",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/dart__edit-before.jsonl.gz",
+      "sha256": "59eb8ddea64163b5387b919e6a2fb45c7507a8848b7195d3d41cec0bdb3e69b1",
+      "documents": 100,
+      "utf8_bytes": 1501245
+    },
+    {
+      "language": "dart__edit-after",
+      "programming_language": "dart",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/dart__edit-after.jsonl.gz",
+      "sha256": "6ac07d8980d5379745847956e74cdaaf1e69af273e990420a3a081514ac8f910",
+      "documents": 100,
+      "utf8_bytes": 1562503
+    },
+    {
+      "language": "dart__edit-diff",
+      "programming_language": "dart",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/dart__edit-diff.jsonl.gz",
+      "sha256": "d3ccd20e1d94e0b0556de96fa02a561614acbbc8c78d32bfea9312142d3eda71",
+      "documents": 100,
+      "utf8_bytes": 263619
+    },
+    {
+      "language": "dart__context",
+      "programming_language": "dart",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/dart__context.jsonl.gz",
+      "sha256": "2e3e97b5229212d7afa88eb32db3f5b7ebfd4b0e73bda27db58d6b1b3c42f7ab",
+      "documents": 50,
+      "utf8_bytes": 400761
+    },
+    {
+      "language": "dart__stress",
+      "programming_language": "dart",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/dart__stress.jsonl.gz",
+      "sha256": "6c53a17ea8cfc99711d744fa7d80719b43929412184914ea1974ed1e280f94ce",
+      "documents": 50,
+      "utf8_bytes": 162715
+    },
+    {
+      "language": "haskell__edit-before",
+      "programming_language": "haskell",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/haskell__edit-before.jsonl.gz",
+      "sha256": "24973447274398a2d4704ce33cae444cbc25203567f742db99cbdee054c26211",
+      "documents": 100,
+      "utf8_bytes": 1784012
+    },
+    {
+      "language": "haskell__edit-after",
+      "programming_language": "haskell",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/haskell__edit-after.jsonl.gz",
+      "sha256": "34081315e35fd88df1654799aa3939c9de81488bf34c2803c08b206a22136d53",
+      "documents": 100,
+      "utf8_bytes": 1804751
+    },
+    {
+      "language": "haskell__edit-diff",
+      "programming_language": "haskell",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/haskell__edit-diff.jsonl.gz",
+      "sha256": "14183bc49ec09cc4b2db66def953b95d45aa0083ab4c36e92d394866b355c6c0",
+      "documents": 100,
+      "utf8_bytes": 267336
+    },
+    {
+      "language": "haskell__context",
+      "programming_language": "haskell",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/haskell__context.jsonl.gz",
+      "sha256": "4d55c7c86bbb0988619aa92ca449f4281357f1f9fe8f8626bc72e0a2eb2126a9",
+      "documents": 50,
+      "utf8_bytes": 476929
+    },
+    {
+      "language": "haskell__stress",
+      "programming_language": "haskell",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/haskell__stress.jsonl.gz",
+      "sha256": "167e259072c440a080bcc28c4c5baa29b62c499bbc146c4a98a7e46910a1d47d",
+      "documents": 50,
+      "utf8_bytes": 158329
+    },
+    {
+      "language": "ocaml__edit-before",
+      "programming_language": "ocaml",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/ocaml__edit-before.jsonl.gz",
+      "sha256": "d5df624aa54fed9ad971ff9eb6e35a21482510980875057c0fe6c195c1d6cf11",
+      "documents": 100,
+      "utf8_bytes": 1365633
+    },
+    {
+      "language": "ocaml__edit-after",
+      "programming_language": "ocaml",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/ocaml__edit-after.jsonl.gz",
+      "sha256": "2210f92fb751ebbd05318f41cd401f67a96fdf959762f73a92d300b239156c1e",
+      "documents": 100,
+      "utf8_bytes": 1376273
+    },
+    {
+      "language": "ocaml__edit-diff",
+      "programming_language": "ocaml",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/ocaml__edit-diff.jsonl.gz",
+      "sha256": "9ea1cfc3a75bf6d8ec077665d4f64d19224055407d08802fe98931d4a87d248a",
+      "documents": 100,
+      "utf8_bytes": 225654
+    },
+    {
+      "language": "ocaml__context",
+      "programming_language": "ocaml",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/ocaml__context.jsonl.gz",
+      "sha256": "4e94aeea2d2c7d1c0f064121b3b813cb8ea05600d3f78d3081f63c07ffe78195",
+      "documents": 50,
+      "utf8_bytes": 398559
+    },
+    {
+      "language": "ocaml__stress",
+      "programming_language": "ocaml",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/ocaml__stress.jsonl.gz",
+      "sha256": "a25011ab1c08b808b1c098a26931aaff468d1f2e5d050a3ba4b2f895173a64a1",
+      "documents": 50,
+      "utf8_bytes": 149603
+    },
+    {
+      "language": "elixir__edit-before",
+      "programming_language": "elixir",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/elixir__edit-before.jsonl.gz",
+      "sha256": "9f7bb93a628001a3fe63da443afa02f0cbf2bb6bce6aeb508eae6d3f52ac32cc",
+      "documents": 100,
+      "utf8_bytes": 2016598
+    },
+    {
+      "language": "elixir__edit-after",
+      "programming_language": "elixir",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/elixir__edit-after.jsonl.gz",
+      "sha256": "2bcb4508e4c325933efbb88c67dc8767d4f5e44b6dff1e6ef8855fb2cca324d4",
+      "documents": 100,
+      "utf8_bytes": 2044819
+    },
+    {
+      "language": "elixir__edit-diff",
+      "programming_language": "elixir",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/elixir__edit-diff.jsonl.gz",
+      "sha256": "9fb47b1f203dbb35d6c761c500c528b9fc1d415966e93aeb8119ff3904ae0857",
+      "documents": 100,
+      "utf8_bytes": 138524
+    },
+    {
+      "language": "elixir__context",
+      "programming_language": "elixir",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/elixir__context.jsonl.gz",
+      "sha256": "356d10b98271b9cbb637bbc7ac046c48e0ce52ed5ae75a9488083a7f7387723c",
+      "documents": 50,
+      "utf8_bytes": 429358
+    },
+    {
+      "language": "elixir__stress",
+      "programming_language": "elixir",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/elixir__stress.jsonl.gz",
+      "sha256": "f97558afb11cd64682949bf3898483528ec848105d73be8f423819da59324b27",
+      "documents": 50,
+      "utf8_bytes": 169411
+    },
+    {
+      "language": "erlang__edit-before",
+      "programming_language": "erlang",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/erlang__edit-before.jsonl.gz",
+      "sha256": "7a90d882c27b34d115ba008be05d4437941adeceb98d5e33d4bc03b503fd4156",
+      "documents": 100,
+      "utf8_bytes": 2044657
+    },
+    {
+      "language": "erlang__edit-after",
+      "programming_language": "erlang",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/erlang__edit-after.jsonl.gz",
+      "sha256": "72485565ac4756958ceef812ae7a52b256506f1ef10f199d5a63e21e41c7de77",
+      "documents": 100,
+      "utf8_bytes": 2110970
+    },
+    {
+      "language": "erlang__edit-diff",
+      "programming_language": "erlang",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/erlang__edit-diff.jsonl.gz",
+      "sha256": "1bd945f5d4c1cf4b7864853db73120d7a050356fb2dae32a0a808348604c1aa1",
+      "documents": 100,
+      "utf8_bytes": 292295
+    },
+    {
+      "language": "erlang__context",
+      "programming_language": "erlang",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/erlang__context.jsonl.gz",
+      "sha256": "047856283347e896f9a1611dffc457c9aa56d3407b53cc76348970ae96575241",
+      "documents": 50,
+      "utf8_bytes": 461367
+    },
+    {
+      "language": "erlang__stress",
+      "programming_language": "erlang",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/erlang__stress.jsonl.gz",
+      "sha256": "dbbd70558ad125550c0b54a3de17ad6043d7488d992864fef3dd170d18e5cf67",
+      "documents": 50,
+      "utf8_bytes": 182443
+    },
+    {
+      "language": "r__edit-before",
+      "programming_language": "r",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/r__edit-before.jsonl.gz",
+      "sha256": "e52797ea0b2a5092079cc93576855f37dd4d4df22bc712cb0efda7b1c0958fd3",
+      "documents": 100,
+      "utf8_bytes": 588077
+    },
+    {
+      "language": "r__edit-after",
+      "programming_language": "r",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/r__edit-after.jsonl.gz",
+      "sha256": "a09af5b9e97fab93904af5015452de22f39c78f3c3d839fcf1243d1e5a0b56c7",
+      "documents": 100,
+      "utf8_bytes": 607999
+    },
+    {
+      "language": "r__edit-diff",
+      "programming_language": "r",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/r__edit-diff.jsonl.gz",
+      "sha256": "e342a487a913109e9099a5656c8011ec0b72139c92e544e2fc7cfcf7f709292c",
+      "documents": 100,
+      "utf8_bytes": 117080
+    },
+    {
+      "language": "r__context",
+      "programming_language": "r",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/r__context.jsonl.gz",
+      "sha256": "d0b69ce05a7a6661197efdf3bbfbb749fa6ad49bd729f7e9337e80d6fd8e9a4b",
+      "documents": 50,
+      "utf8_bytes": 417453
+    },
+    {
+      "language": "r__stress",
+      "programming_language": "r",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/r__stress.jsonl.gz",
+      "sha256": "b679e7cc6fd1a680032a881b7c441a058da0de9351b8d066d328d00df9863d85",
+      "documents": 50,
+      "utf8_bytes": 161905
+    },
+    {
+      "language": "julia__edit-before",
+      "programming_language": "julia",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/julia__edit-before.jsonl.gz",
+      "sha256": "b5aaa00daad929ad0967feec6649af0bb3890dc2360e62d6c149c74a26089bd3",
+      "documents": 100,
+      "utf8_bytes": 691304
+    },
+    {
+      "language": "julia__edit-after",
+      "programming_language": "julia",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/julia__edit-after.jsonl.gz",
+      "sha256": "b6ee3b9311169a735135175e0e300947f2a7669e8567c1acce12f3f90e120719",
+      "documents": 100,
+      "utf8_bytes": 719342
+    },
+    {
+      "language": "julia__edit-diff",
+      "programming_language": "julia",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/julia__edit-diff.jsonl.gz",
+      "sha256": "aa0fc3003c81410bd653481b62b100222cc3ac4f98116d20737b4a18801bcf07",
+      "documents": 100,
+      "utf8_bytes": 153093
+    },
+    {
+      "language": "julia__context",
+      "programming_language": "julia",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/julia__context.jsonl.gz",
+      "sha256": "e347558258627cfb1fa82c52e1764ee3deeb4b461c1574fdbd6bc8a4027b96be",
+      "documents": 50,
+      "utf8_bytes": 417749
+    },
+    {
+      "language": "julia__stress",
+      "programming_language": "julia",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/julia__stress.jsonl.gz",
+      "sha256": "bac870d6677eb361b339be28eacbfcfcc3036e47ddccd0fe88936fd0b7e8e502",
+      "documents": 50,
+      "utf8_bytes": 149031
+    },
+    {
+      "language": "matlab__edit-before",
+      "programming_language": "matlab",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/matlab__edit-before.jsonl.gz",
+      "sha256": "5bbde61dcc336fd92cebca3e10f56d49db87ff152411cce602a7daf2635fcc4a",
+      "documents": 100,
+      "utf8_bytes": 796222
+    },
+    {
+      "language": "matlab__edit-after",
+      "programming_language": "matlab",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/matlab__edit-after.jsonl.gz",
+      "sha256": "fcb8b34fefa43ee2b73a929869d41a1602582cf130ebd13fb7f4d6d66b636635",
+      "documents": 100,
+      "utf8_bytes": 840260
+    },
+    {
+      "language": "matlab__edit-diff",
+      "programming_language": "matlab",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/matlab__edit-diff.jsonl.gz",
+      "sha256": "4a468f044a50bd8e11eeb4daa589d0b70438cc0cb84a4602c1d05337ffbe7acf",
+      "documents": 100,
+      "utf8_bytes": 291465
+    },
+    {
+      "language": "matlab__context",
+      "programming_language": "matlab",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/matlab__context.jsonl.gz",
+      "sha256": "bc9b43e0ea6cc4b24098bb24f4dc446faa9e8bfe3d3a0f93c4c2d734bec4dcb9",
+      "documents": 50,
+      "utf8_bytes": 410840
+    },
+    {
+      "language": "matlab__stress",
+      "programming_language": "matlab",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/matlab__stress.jsonl.gz",
+      "sha256": "700c0c3fa19d091c9b371d87b6dc194aa9e196e967dd9afd660ec73e06cd9f72",
+      "documents": 50,
+      "utf8_bytes": 162877
+    },
+    {
+      "language": "fortran__edit-before",
+      "programming_language": "fortran",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/fortran__edit-before.jsonl.gz",
+      "sha256": "43bc84df542ebf4c4909ff3628e4ea5838a68f72602c5db59334127405587652",
+      "documents": 100,
+      "utf8_bytes": 983228
+    },
+    {
+      "language": "fortran__edit-after",
+      "programming_language": "fortran",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/fortran__edit-after.jsonl.gz",
+      "sha256": "5243d4a32814beb03d914ceacc3dbe199c0e3f65630e92d1f79432cacd2b73ff",
+      "documents": 100,
+      "utf8_bytes": 1029208
+    },
+    {
+      "language": "fortran__edit-diff",
+      "programming_language": "fortran",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/fortran__edit-diff.jsonl.gz",
+      "sha256": "5907a1fb3502c2507db24b7ec7cbd1ecfc2f8fec33f3009c6a08cd029d461895",
+      "documents": 100,
+      "utf8_bytes": 176503
+    },
+    {
+      "language": "fortran__context",
+      "programming_language": "fortran",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/fortran__context.jsonl.gz",
+      "sha256": "0a5db130538851b345957e569c21d3806874cf7b2c87e28727c44fa329b780cd",
+      "documents": 50,
+      "utf8_bytes": 573896
+    },
+    {
+      "language": "fortran__stress",
+      "programming_language": "fortran",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/fortran__stress.jsonl.gz",
+      "sha256": "16a11070dee749f7ebf0a705ad308ca4c9ec53ac2f93b8141e4c129844306daf",
+      "documents": 50,
+      "utf8_bytes": 172255
+    },
+    {
+      "language": "sql__edit-before",
+      "programming_language": "sql",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/sql__edit-before.jsonl.gz",
+      "sha256": "d48b35413cd32b8a6a62a3abc934a303167bf74ea191a4e78245db20fb8321bf",
+      "documents": 100,
+      "utf8_bytes": 522899
+    },
+    {
+      "language": "sql__edit-after",
+      "programming_language": "sql",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/sql__edit-after.jsonl.gz",
+      "sha256": "53e66cf7a400261bbc35fc91b9e9f31a08c9a44450be8ff80ef6fbd388a77291",
+      "documents": 100,
+      "utf8_bytes": 544079
+    },
+    {
+      "language": "sql__edit-diff",
+      "programming_language": "sql",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/sql__edit-diff.jsonl.gz",
+      "sha256": "2f24fb13a563f767bfe24ecaa530a3ec028a04e1b5b43ca596548462c57276c6",
+      "documents": 100,
+      "utf8_bytes": 219523
+    },
+    {
+      "language": "sql__context",
+      "programming_language": "sql",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/sql__context.jsonl.gz",
+      "sha256": "c84fb6e05e124b182200feff9a5cb9ecca309e3f9992948d47462d428f8b03d2",
+      "documents": 50,
+      "utf8_bytes": 335504
+    },
+    {
+      "language": "sql__stress",
+      "programming_language": "sql",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/sql__stress.jsonl.gz",
+      "sha256": "c9b1cb697c3ab24a768464a6fb0b40c2cab1c7e759ef69a351264d703845002e",
+      "documents": 50,
+      "utf8_bytes": 164217
+    },
+    {
+      "language": "bash__edit-before",
+      "programming_language": "bash",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/bash__edit-before.jsonl.gz",
+      "sha256": "2b6a09e36193e488fee3eab9894bbe84a646e86631a5465bb58983bfebad988a",
+      "documents": 100,
+      "utf8_bytes": 940250
+    },
+    {
+      "language": "bash__edit-after",
+      "programming_language": "bash",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/bash__edit-after.jsonl.gz",
+      "sha256": "e3616c34a8cef39d5a381eb492f0a7ef5ae84fb5906d179351064fe4c9c3e3d7",
+      "documents": 100,
+      "utf8_bytes": 993152
+    },
+    {
+      "language": "bash__edit-diff",
+      "programming_language": "bash",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/bash__edit-diff.jsonl.gz",
+      "sha256": "3340c7293c5f0f52243c50de28c79ce25a7c79cedc59a07674212d49aaba300e",
+      "documents": 100,
+      "utf8_bytes": 191957
+    },
+    {
+      "language": "bash__context",
+      "programming_language": "bash",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/bash__context.jsonl.gz",
+      "sha256": "795b551b2e02e4c56f194fcf6826e5acf4d7cc5e6c42e645eedec15f38b48094",
+      "documents": 50,
+      "utf8_bytes": 415845
+    },
+    {
+      "language": "bash__stress",
+      "programming_language": "bash",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/bash__stress.jsonl.gz",
+      "sha256": "9c77776c89856d14707d40242cfb971c9e00cf1e8996ae9098139b91f5b14c9c",
+      "documents": 50,
+      "utf8_bytes": 179809
+    },
+    {
+      "language": "powershell__edit-before",
+      "programming_language": "powershell",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/powershell__edit-before.jsonl.gz",
+      "sha256": "824b8e7e0e06b86f4200dcf1882df5c23569f024c9746e13fced8a4987556944",
+      "documents": 100,
+      "utf8_bytes": 912765
+    },
+    {
+      "language": "powershell__edit-after",
+      "programming_language": "powershell",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/powershell__edit-after.jsonl.gz",
+      "sha256": "bcdab2f7a3e1235ae5dfc8228bc1ffa116a321eed24452346faff04845ab3114",
+      "documents": 100,
+      "utf8_bytes": 954961
+    },
+    {
+      "language": "powershell__edit-diff",
+      "programming_language": "powershell",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/powershell__edit-diff.jsonl.gz",
+      "sha256": "6acb273cb9ad5e41382ef57dc67f9fa6f5ac0ac3f616c3dd07128d40c0575cc8",
+      "documents": 100,
+      "utf8_bytes": 179151
+    },
+    {
+      "language": "powershell__context",
+      "programming_language": "powershell",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/powershell__context.jsonl.gz",
+      "sha256": "b6b7402a44d180e3d1bab1f44609d79dc87019c5fbde4bde42a4672e72ee8cfc",
+      "documents": 50,
+      "utf8_bytes": 484177
+    },
+    {
+      "language": "powershell__stress",
+      "programming_language": "powershell",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/powershell__stress.jsonl.gz",
+      "sha256": "ad4a7811fac52e38af61768dbb25a0f2b4556536d3dffeca57a8e738b68de537",
+      "documents": 50,
+      "utf8_bytes": 171101
+    },
+    {
+      "language": "solidity__edit-before",
+      "programming_language": "solidity",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/solidity__edit-before.jsonl.gz",
+      "sha256": "673fb203d941a7ecd3db949a49b3a1fda6f397516bc9745adfa46e2fc47bb872",
+      "documents": 100,
+      "utf8_bytes": 1270351
+    },
+    {
+      "language": "solidity__edit-after",
+      "programming_language": "solidity",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/solidity__edit-after.jsonl.gz",
+      "sha256": "3ced16a57691e48ae2e4edeb198461a4601c76b7cc9dd5df22b268d50496519f",
+      "documents": 100,
+      "utf8_bytes": 1318034
+    },
+    {
+      "language": "solidity__edit-diff",
+      "programming_language": "solidity",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/solidity__edit-diff.jsonl.gz",
+      "sha256": "2ddf7c2b057ad25bf292cf1a3552d67cc256718afd0fded17334b23a8a177772",
+      "documents": 100,
+      "utf8_bytes": 243668
+    },
+    {
+      "language": "solidity__context",
+      "programming_language": "solidity",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/solidity__context.jsonl.gz",
+      "sha256": "fd1ca8c49d2a5537c0cfda1844cda3a6cb759a58966869718411cfe57e5cefd9",
+      "documents": 50,
+      "utf8_bytes": 492161
+    },
+    {
+      "language": "solidity__stress",
+      "programming_language": "solidity",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/solidity__stress.jsonl.gz",
+      "sha256": "1cbf6c8eda00adab4b7078b4b4fb0f29b8960c48ede18d37abf9275e9d775868",
+      "documents": 50,
+      "utf8_bytes": 169287
+    },
+    {
+      "language": "cobol__edit-before",
+      "programming_language": "cobol",
+      "variant": "edit-before",
+      "path": "benchmarks/code-scenarios-v0.1/cobol__edit-before.jsonl.gz",
+      "sha256": "6b2bafc853d469a3f612b04392d77bb1e8f1178ca61dd92546d4ef3941ccd6c5",
+      "documents": 100,
+      "utf8_bytes": 574181
+    },
+    {
+      "language": "cobol__edit-after",
+      "programming_language": "cobol",
+      "variant": "edit-after",
+      "path": "benchmarks/code-scenarios-v0.1/cobol__edit-after.jsonl.gz",
+      "sha256": "c53f5ab6a38e85904bd397e6dacddb16916d09d5226e3e2e0a0d7ac2f1841117",
+      "documents": 100,
+      "utf8_bytes": 583467
+    },
+    {
+      "language": "cobol__edit-diff",
+      "programming_language": "cobol",
+      "variant": "edit-diff",
+      "path": "benchmarks/code-scenarios-v0.1/cobol__edit-diff.jsonl.gz",
+      "sha256": "871ccc5cd796670c5957bee76252063585b24fd0b3fdf92a12a19e8bcbb0d358",
+      "documents": 100,
+      "utf8_bytes": 211965
+    },
+    {
+      "language": "cobol__context",
+      "programming_language": "cobol",
+      "variant": "context",
+      "path": "benchmarks/code-scenarios-v0.1/cobol__context.jsonl.gz",
+      "sha256": "c3e2fff15a37a2e96576a1db6634ede2a90747ef77639ad92c7ab36d93ea78df",
+      "documents": 50,
+      "utf8_bytes": 507992
+    },
+    {
+      "language": "cobol__stress",
+      "programming_language": "cobol",
+      "variant": "stress",
+      "path": "benchmarks/code-scenarios-v0.1/cobol__stress.jsonl.gz",
+      "sha256": "08736eec5d7dd4c98f26b7d247fc444818ad75e2f54f777908d92dba443cd546",
+      "documents": 50,
+      "utf8_bytes": 161747
+    }
+  ],
+  "languages": {
+    "python": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "javascript": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "typescript": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "ruby": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "php": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "perl": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "lua": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "c": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "cpp": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "rust": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "go": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "zig": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "assembly": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "java": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "kotlin": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "scala": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "csharp": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "swift": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "dart": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "haskell": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "ocaml": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "elixir": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "erlang": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "r": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "julia": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "matlab": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "fortran": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "sql": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "bash": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "powershell": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "solidity": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    },
+    "cobol": {
+      "edit_pairs": 100,
+      "edit_splits": {
+        "development": 20,
+        "evaluation": 80
+      },
+      "contexts": 50,
+      "stresses": 50
+    }
+  },
+  "edit_pairs": 3200,
+  "documents": 12800,
+  "quota_complete": true,
+  "collection_failures": [
+    {
+      "language": "cpp",
+      "repository": "microsoft/BitNet",
+      "error": "Command '['git', '-c', 'core.hooksPath=/dev/null', '-c', 'core.quotePath=false', '-C', '/Users/ketsiledikobe/Shinning-Tokens/Shinning-Tokens/.cache/code-scenarios-v0.1/git/microsoft--BitNet.git', 'fetch', '--quiet', '--no-tags', 'origin', '1f86f058de0c3f4098dedae2ae8653c335c868a1', '355c0c4d1870f067"
+    }
+  ],
+  "builder_sha256": "0a3dca63c243bc8b821f3f5de1d648f18ef0909fbab4bf09b286b130c52d686b",
+  "scope": "Real modified-file before/after/diff inputs, constructed contexts from real files, and separately labelled controlled stresses.",
+  "limitations": [
+    "Recent Git history is a bounded sample, not production traffic.",
+    "Historical file-specific license exceptions are not independently audited.",
+    "Context requests are constructed repository contexts, not captured conversations or tool outputs.",
+    "Stress transformations are correlated controlled cases."
+  ]
+}

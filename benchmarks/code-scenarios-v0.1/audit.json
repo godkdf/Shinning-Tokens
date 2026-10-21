@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-21T20:22:21.923839+00:00",
+  "manifest_sha256": "10b6f30884198a1e4f191d8194162a8d73f2328c1bb05e866a466050286f680e",
+  "inputs": 12800,
+  "real_edit_pairs": 3200,
+  "git_blob_hashes_verified": 6400,
+  "integrity_pass": true
+}

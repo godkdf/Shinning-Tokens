@@ -1,0 +1,26 @@
+{
+  "model_parameters": 268098176,
+  "training_seconds": 60.01888866399986,
+  "updates": 1271,
+  "scored_tokens": 684589,
+  "tokens_per_second": 11406.225860536897,
+  "initial_eval": {
+    "loss": 12.490467064324235,
+    "manifest_sha256": "c93a5c26feae779aa34eb74a2701fa89a0663ce7d5f1090a6743dc61fa203f55",
+    "nll_sum": 165236.3887939453,
+    "scored_tokens": 13229
+  },
+  "final_eval": {
+    "loss": 6.872893265166136,
+    "manifest_sha256": "c93a5c26feae779aa34eb74a2701fa89a0663ce7d5f1090a6743dc61fa203f55",
+    "nll_sum": 90921.50500488281,
+    "scored_tokens": 13229
+  },
+  "notebook_elapsed_seconds": 343.2592167699995,
+  "split_hashes": {
+    "train": "a1152a578b44071931157992cec95f047f6c037c992843b71315a89f480f1867",
+    "validation": "09c6417709b313ce9b0464836f057eaaa8d8b11edcca72c9a6434be608106608"
+  },
+  "training_occupancy": 0.5259983834087333,
+  "source": "User-provided gemma_colab_pilot_reports; measured V1 results, not a V2 measurement."
+}

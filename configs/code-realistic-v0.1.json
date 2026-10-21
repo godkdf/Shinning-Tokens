@@ -1,0 +1,300 @@
+{
+  "protocol": "code-realistic-v0.1",
+  "seed": 20261021,
+  "files_per_language": 1000,
+  "development_files_per_language": 200,
+  "max_files_per_repository": 100,
+  "min_file_bytes": 80,
+  "max_file_bytes": 1048576,
+  "min_band_files": 100,
+  "languages": [
+    {
+      "id": "python",
+      "name": "Python",
+      "github_language": "Python",
+      "extensions": [
+        ".py"
+      ]
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "github_language": "JavaScript",
+      "extensions": [
+        ".js",
+        ".mjs",
+        ".cjs",
+        ".jsx"
+      ]
+    },
+    {
+      "id": "typescript",
+      "name": "TypeScript",
+      "github_language": "TypeScript",
+      "extensions": [
+        ".ts",
+        ".tsx"
+      ]
+    },
+    {
+      "id": "ruby",
+      "name": "Ruby",
+      "github_language": "Ruby",
+      "extensions": [
+        ".rb"
+      ]
+    },
+    {
+      "id": "php",
+      "name": "PHP",
+      "github_language": "PHP",
+      "extensions": [
+        ".php"
+      ]
+    },
+    {
+      "id": "perl",
+      "name": "Perl",
+      "github_language": "Perl",
+      "extensions": [
+        ".pl",
+        ".pm",
+        ".t"
+      ]
+    },
+    {
+      "id": "lua",
+      "name": "Lua",
+      "github_language": "Lua",
+      "extensions": [
+        ".lua"
+      ]
+    },
+    {
+      "id": "c",
+      "name": "C",
+      "github_language": "C",
+      "extensions": [
+        ".c"
+      ]
+    },
+    {
+      "id": "cpp",
+      "name": "C++",
+      "github_language": "C++",
+      "extensions": [
+        ".cpp",
+        ".cc",
+        ".cxx",
+        ".hpp",
+        ".hh"
+      ]
+    },
+    {
+      "id": "rust",
+      "name": "Rust",
+      "github_language": "Rust",
+      "extensions": [
+        ".rs"
+      ]
+    },
+    {
+      "id": "go",
+      "name": "Go",
+      "github_language": "Go",
+      "extensions": [
+        ".go"
+      ]
+    },
+    {
+      "id": "zig",
+      "name": "Zig",
+      "github_language": "Zig",
+      "extensions": [
+        ".zig"
+      ]
+    },
+    {
+      "id": "assembly",
+      "name": "Assembly",
+      "github_language": "Assembly",
+      "extensions": [
+        ".asm",
+        ".s",
+        ".S"
+      ]
+    },
+    {
+      "id": "java",
+      "name": "Java",
+      "github_language": "Java",
+      "extensions": [
+        ".java"
+      ]
+    },
+    {
+      "id": "kotlin",
+      "name": "Kotlin",
+      "github_language": "Kotlin",
+      "extensions": [
+        ".kt",
+        ".kts"
+      ]
+    },
+    {
+      "id": "scala",
+      "name": "Scala",
+      "github_language": "Scala",
+      "extensions": [
+        ".scala"
+      ]
+    },
+    {
+      "id": "csharp",
+      "name": "C#",
+      "github_language": "C#",
+      "extensions": [
+        ".cs"
+      ]
+    },
+    {
+      "id": "swift",
+      "name": "Swift",
+      "github_language": "Swift",
+      "extensions": [
+        ".swift"
+      ]
+    },
+    {
+      "id": "dart",
+      "name": "Dart",
+      "github_language": "Dart",
+      "extensions": [
+        ".dart"
+      ]
+    },
+    {
+      "id": "haskell",
+      "name": "Haskell",
+      "github_language": "Haskell",
+      "extensions": [
+        ".hs",
+        ".lhs"
+      ]
+    },
+    {
+      "id": "ocaml",
+      "name": "OCaml",
+      "github_language": "OCaml",
+      "extensions": [
+        ".ml",
+        ".mli"
+      ]
+    },
+    {
+      "id": "elixir",
+      "name": "Elixir",
+      "github_language": "Elixir",
+      "extensions": [
+        ".ex",
+        ".exs"
+      ]
+    },
+    {
+      "id": "erlang",
+      "name": "Erlang",
+      "github_language": "Erlang",
+      "extensions": [
+        ".erl",
+        ".hrl"
+      ]
+    },
+    {
+      "id": "r",
+      "name": "R",
+      "github_language": "R",
+      "extensions": [
+        ".r",
+        ".R"
+      ]
+    },
+    {
+      "id": "julia",
+      "name": "Julia",
+      "github_language": "Julia",
+      "extensions": [
+        ".jl"
+      ]
+    },
+    {
+      "id": "matlab",
+      "name": "MATLAB",
+      "github_language": "MATLAB",
+      "extensions": [
+        ".m"
+      ]
+    },
+    {
+      "id": "fortran",
+      "name": "Fortran",
+      "github_language": "Fortran",
+      "extensions": [
+        ".f",
+        ".f90",
+        ".f95",
+        ".f03",
+        ".f08",
+        ".for",
+        ".F",
+        ".F90"
+      ]
+    },
+    {
+      "id": "sql",
+      "name": "SQL",
+      "github_language": "SQL",
+      "extensions": [
+        ".sql"
+      ]
+    },
+    {
+      "id": "bash",
+      "name": "Bash",
+      "github_language": "Shell",
+      "extensions": [
+        ".sh",
+        ".bash"
+      ]
+    },
+    {
+      "id": "powershell",
+      "name": "PowerShell",
+      "github_language": "PowerShell",
+      "extensions": [
+        ".ps1",
+        ".psm1",
+        ".psd1"
+      ]
+    },
+    {
+      "id": "solidity",
+      "name": "Solidity",
+      "github_language": "Solidity",
+      "extensions": [
+        ".sol"
+      ]
+    },
+    {
+      "id": "cobol",
+      "name": "COBOL",
+      "github_language": "COBOL",
+      "extensions": [
+        ".cob",
+        ".cbl",
+        ".cpy",
+        ".COB",
+        ".CBL"
+      ]
+    }
+  ]
+}

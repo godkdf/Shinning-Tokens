@@ -1,0 +1,121 @@
+{
+  "label": "A \u2014 previously measured v1.0; NOT rerun",
+  "result": {
+    "checkpoint_array_leaves": 605,
+    "checkpoint_bytes": 3217374158,
+    "checkpoint_save_verify_reload_seconds": 64.86639897900022,
+    "checkpoint_sha256": "67b52cc7bb779e257172a85ae9d9f09bb3d5599f7f68dfb1064e27f5cd8418b8",
+    "compilation_seconds": 30.63192024199998,
+    "config": {
+      "adam_b1": 0.9,
+      "adam_b2": 0.999,
+      "adam_eps": 1e-08,
+      "dataset_config": "sample-10BT",
+      "dataset_id": "HuggingFaceFW/fineweb",
+      "dataset_revision": "9bb295ddab0e05d785b879661af7260fed5140fc",
+      "expected_devices": 1,
+      "experiment": "GEM-COLAB-001",
+      "gradient_clip": 1.0,
+      "learning_rate": 0.0003,
+      "local_batch_per_chip": 1,
+      "minimum_updates": 5,
+      "model_id": "google/gemma-3-270m",
+      "model_revision": "9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+      "notebook_start_monotonic": 5297.587609447,
+      "reload_loss_tolerance": 0.001,
+      "seed": 42,
+      "sequence_length": 1024,
+      "setup_seconds": 43.892278011999224,
+      "train_documents": 10000,
+      "training_seconds": 60.0,
+      "validation_documents": 32,
+      "warmup_updates": 5,
+      "weight_decay": 0.01
+    },
+    "cost_note": "Colab compute-unit usage is shown by Colab; this notebook does not invent a USD rate.",
+    "cost_usd": null,
+    "cpu_test": false,
+    "data_passes": 0,
+    "device": "TPU v5 lite",
+    "engineering_status": "PASS",
+    "final_eval": {
+      "loss": 6.872893265166136,
+      "manifest_sha256": "c93a5c26feae779aa34eb74a2701fa89a0663ce7d5f1090a6743dc61fa203f55",
+      "nll_sum": 90921.50500488281,
+      "scored_tokens": 13229
+    },
+    "final_eval_seconds": 0.2836715789999289,
+    "initial_eval": {
+      "loss": 12.490467064324235,
+      "manifest_sha256": "c93a5c26feae779aa34eb74a2701fa89a0663ce7d5f1090a6743dc61fa203f55",
+      "nll_sum": 165236.3887939453,
+      "scored_tokens": 13229
+    },
+    "initial_eval_seconds": 0.3023707980000836,
+    "initialization_seconds": 11.973342229999616,
+    "last_update_start_seconds": 59.97060630600026,
+    "learning_status": "PASS",
+    "memory_scope": "Device-lifetime peak, including initialization and evaluation.",
+    "memory_stats": {
+      "bytes_in_use": 3486085120,
+      "bytes_limit": 16909336064,
+      "bytes_reservable_limit": 13636889600,
+      "bytes_reserved": 3690611712,
+      "largest_alloc_size": 671088640,
+      "largest_free_block_bytes": 9732494336,
+      "num_allocs": 623,
+      "peak_bytes_in_use": 3488707584,
+      "peak_bytes_reserved": 3690611712
+    },
+    "model_parameters": 268098176,
+    "notebook_elapsed_seconds": 343.2592167699995,
+    "reload_loss_error": 0.0,
+    "reloaded_eval": {
+      "loss": 6.872893265166136,
+      "manifest_sha256": "c93a5c26feae779aa34eb74a2701fa89a0663ce7d5f1090a6743dc61fa203f55",
+      "nll_sum": 90921.50500488281,
+      "scored_tokens": 13229
+    },
+    "requirements": {
+      "COLAB-001_SINGLE_V5E": "PASS",
+      "COLAB-002_NATIVE_RANDOM": "PASS",
+      "COLAB-003_TIED_EMBEDDING": "PASS",
+      "COLAB-004_DISJOINT_DOCUMENTS": "PASS",
+      "COLAB-005_TIMED_TRAINING": "PASS",
+      "COLAB-006_MINIMUM_UPDATES": "PASS",
+      "COLAB-007_FINITE_UPDATES": "PASS",
+      "COLAB-008_TRANSFORMER_CHANGED": "PASS",
+      "COLAB-009_SAME_VALIDATION": "PASS",
+      "COLAB-010_EXACT_CHECKPOINT": "PASS",
+      "COLAB-011_RELOAD_LOSS": "PASS",
+      "COLAB-012_ZERO_UNTIMED_UPDATES": "PASS"
+    },
+    "scored_tokens": 684589,
+    "tokens_per_second": 11406.225860536897,
+    "training_overrun_seconds": 0.01888866399986,
+    "training_seconds": 60.01888866399986,
+    "updates": 1271
+  },
+  "source_result_sha256": "18346e0a6f9adb09b0a530175627cc3e7084b3658357851acde3463830060b11",
+  "expected_files": {
+    "tokenizer/config.json": "8983343e5bfbf8e336d222a522a1d781443491e9de2d081b8856f8fd26ab6046",
+    "tokenizer/special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+    "tokenizer/tokenizer.json": "7d4046bf0505a327dd5a0abbb427ecd4fc82f99c2ceaa170bc61ecde12809b0c",
+    "tokenizer/tokenizer.model": "1299c11d7cf632ef3b4e11937501358ada021bbdf7c47638d13c0ee982f2e79c",
+    "tokenizer/tokenizer_config.json": "94b03056ec5831e9021c3e3fe9db682778c4f2d081c4188f1fcb8b90541cf1cf",
+    "train.jsonl": "51725541090347dffca71ef2770f71f82c4ec00479f6016681103507a8c98041",
+    "validation.jsonl": "c75c188c52af1a86a797a85a04314eac4ae167eb7b7a6063097a835d7b71c92c"
+  },
+  "splits": {
+    "train": {
+      "ordered_document_hash": "49006b99037c78a4e3de240fa70371b4004d191c8e1e013a3afbafddc882ecd7",
+      "blocks": 13023,
+      "scored_tokens": 6923674
+    },
+    "validation": {
+      "ordered_document_hash": "074f008ff91acb19214fe73e92de3537bb4fed680a327a1ff1a24ce88cd480d4",
+      "blocks": 34,
+      "scored_tokens": 13229
+    }
+  }
+}
