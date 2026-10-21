@@ -19,6 +19,37 @@ def byte_alphabet():
 
 BYTE_DECODER = byte_alphabet()
 
+def native_ranks(path, native):
+    """Read data-only ranks and verify the reconstructed reference artifact."""
+    if native.get("asset_format") == "huggingface-bytelevel-json":
+        raw = read_json(path)
+        specials = {a["id"] for a in raw.get("added_tokens", []) if a.get("special")}
+        ranks = {bytes(BYTE_DECODER[c] for c in piece):i
+                 for piece,i in raw["model"]["vocab"].items() if i not in specials}
+    else:
+        ranks = {base64.b64decode(b):int(i) for b,i in
+                 (line.split() for line in path.read_bytes().splitlines())}
+    if native.get("reference_ranks_sha256"):
+        original = b"".join(base64.b64encode(b)+b" "+str(i).encode()+b"\n"
+                            for b,i in sorted(ranks.items(),key=lambda x:x[1]))
+        if sha256(original) != native["reference_ranks_sha256"]:
+            raise ValueError("Reconstructed native ranks differ from the reference artifact")
+    return ranks
+
+def reference_chunks(text, max_chars, max_run):
+    """Match declared reference character and consecutive-whitespace safeguards."""
+    for start in range(0,len(text),max_chars):
+        chunk=text[start:start+max_chars]
+        slice_start=0;run=0;space=chunk[0].isspace()
+        for i,c in enumerate(chunk):
+            current=c.isspace()
+            if current != space:run=1;space=current
+            else:
+                run+=1
+                if run>max_run:
+                    yield chunk[slice_start:i];slice_start=i;run=1
+        yield chunk[slice_start:]
+
 def has_component(value, kind):
     if isinstance(value, dict):
         return value.get("type") == kind or any(has_component(v, kind) for v in value.values())
@@ -90,10 +121,8 @@ class TikAdapter:
             ranks={base64.b64decode(b):i for b,i in data["mergeable_ranks"]}
             self.tokenizer=tiktoken.Encoding(name=self.id,pat_str=data["pat_str"],mergeable_ranks=ranks,special_tokens=data["special_tokens"])
         elif spec["kind"] in ["custom_tiktoken","tiktoken_asset"]:
-            asset=resolve_asset(spec,download=download);ranks={}
-            for line in asset.read_bytes().splitlines():
-                b,i=line.split();ranks[base64.b64decode(b)]=int(i)
             native=spec["native_spec"]
+            asset=resolve_asset(spec,download=download);ranks=native_ranks(asset,native)
             self.tokenizer=tiktoken.Encoding(name=self.id,pat_str=native["pat_str"],mergeable_ranks=ranks,special_tokens=native["special_tokens"])
         elif download and os.environ.get("TOKENIZER_LAB_OFFLINE")!="1":
             self.tokenizer = tiktoken.get_encoding(spec.get("encoding", "o200k_base"))
@@ -110,6 +139,11 @@ class TikAdapter:
         self.path = saved if saved.exists() else asset
 
     def encode(self, text):
+        native=self.spec.get("native_spec",{})
+        if native.get("max_encode_chars"):
+            encode=(lambda chunk:self.tokenizer.encode(chunk,allowed_special="all")) if native.get("allowed_special")=="all" else self.tokenizer.encode_ordinary
+            return [i for chunk in reference_chunks(text,native["max_encode_chars"],native["max_consecutive_chars"])
+                    for i in encode(chunk)]
         if self.spec.get("native_spec",{}).get("normalization")=="NFC":text=__import__("unicodedata").normalize("NFC",text)
         if self.spec.get("native_spec",{}).get("allowed_special")=="all":return self.tokenizer.encode(text,allowed_special="all")
         if self.spec.get("native_spec",{}).get("allowed_special")=="config_added_tokens":return self.tokenizer.encode(text,allowed_special=set(self.tokenizer._special_tokens),disallowed_special=())
@@ -131,7 +165,8 @@ class TikAdapter:
     def components(self):
         return {"model":"byte-level BPE", "normalizer":self.spec.get("native_spec",{}).get("normalization"),
                 "pre_tokenizer":{"type":"regex","pattern":self.tokenizer._pat_str},
-                "decoder":"byte concatenation", "implementation":"tiktoken","special_token_policy":self.spec.get("native_spec",{}).get("allowed_special","ordinary text"),"asset_hash_scope":"canonical mergeable ranks and special-token map; pipeline settings are recorded separately"}
+                "decoder":"byte concatenation", "implementation":"tiktoken","special_token_policy":self.spec.get("native_spec",{}).get("allowed_special","ordinary text"),"asset_hash_scope":"canonical mergeable ranks and special-token map; pipeline settings are recorded separately",
+                **({"reference_chunking":{"max_encode_chars":self.spec["native_spec"]["max_encode_chars"],"max_consecutive_chars":self.spec["native_spec"]["max_consecutive_chars"]}} if self.spec.get("native_spec",{}).get("max_encode_chars") else {})}
 
 def registry(path=None):
     entries=read_json(path or ROOT / "configs/registry.json")["tokenizers"]

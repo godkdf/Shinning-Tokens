@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "tokenizers": 54,
+  "partitions_per_tokenizer": 867,
+  "checkpoints": 46818,
+  "observations": 23304780,
+  "errors": 0,
+  "malformed_transport_rejections": 324,
+  "catalog_sha256": "c54883db96130f2d0d1c5e84ff966856f5147952a190ef8f9e7ef5da84d9e2ad",
+  "scope": "6,936 new checkpoints independently audited. Prior 39,882-checkpoint verification retained; historical observations were not re-audited. Qwen 2.5 metadata adds Kimi Dev as an exact alias.",
+  "base_hub_sha256": "e43ada41e144799f27435fbfd0aa081042ac9bd798c88a2a113625f88d070938",
+  "base_verification_sha256": "f6ebe9f70cde15f21bac743f03c68b5206aec99e40aed6125e2dc07a44675436",
+  "new_verification_sha256": "c61ca60b6d5b102eba03c515d64a68cd7a55fbb4378082aab4fcf23c139d5232"
+}

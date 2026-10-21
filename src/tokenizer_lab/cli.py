@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse
 import json
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -16,7 +17,7 @@ def main(argv=None):
     sub.add_parser("doctor")
     prep=sub.add_parser("prepare");prep.add_argument("--diagnostics-only",action="store_true");prep.add_argument("--bytes-per-language",type=int,default=1_000_000)
     run=sub.add_parser("run");run.add_argument("--config",default="configs/launch.json");run.add_argument("--skip-maps",action="store_true");run.add_argument("--skip-runtime",action="store_true")
-    sub.add_parser("build-site")
+    site=sub.add_parser("build-site");site.add_argument("--results",help="Aggregate hub JSON; defaults to the latest completed release")
     serve=sub.add_parser("serve");serve.add_argument("--port",type=int,default=8765)
     launch=sub.add_parser("launch");launch.add_argument("--port",type=int,default=8765);launch.add_argument("--no-browser",action="store_true")
     selected=sub.add_parser("run-selected")
@@ -36,13 +37,13 @@ def main(argv=None):
     args=parser.parse_args(argv)
     if args.command=="doctor":
         import importlib.metadata
-        from .adapters import registry,resolve_asset
+        from .adapters import asset_path
+        from .downloads import catalog
         assets=[]
-        for spec in registry():
-            try:
-                path=resolve_asset(spec,download=False) if spec["kind"]!="tiktoken" else None
-                assets.append({"id":spec["id"],"status":"cached" if path else "native runtime","sha256":file_hash(path) if path else None})
-            except FileNotFoundError as exc:assets.append({"id":spec["id"],"status":"missing","detail":str(exc)})
+        for spec in catalog()['tokenizers']:
+            path=asset_path(spec)
+            assets.append({'id':spec['id'],'status':'cached' if spec['cached'] else 'missing or corrupt',
+                'sha256':file_hash(path) if spec['cached'] else None})
         emit({"root":str(ROOT),"python":sys.version.split()[0],"packages":{p:importlib.metadata.version(p) for p in ["tokenizers","tiktoken","numpy","pyarrow"]},"assets":assets})
     elif args.command=="prepare":
         from .corpora import build_diagnostics,build_fineweb
@@ -55,11 +56,20 @@ def main(argv=None):
         hub=run(args.config,skip_maps=args.skip_maps,skip_runtime=args.skip_runtime);emit(hub["checks"])
         if hub["checks"]["failures"]:sys.exit(1)
     elif args.command=="build-site":
-        source=ROOT/"results/v0.1/hub.json"
+        releases=[p for p in (ROOT/'results').glob('v*/hub.json') if re.fullmatch(r'v\d+(?:\.\d+)+',p.parent.name)]
+        releases.sort(key=lambda p:tuple(map(int,p.parent.name[1:].split('.'))),reverse=True)
+        source=Path(args.results).expanduser() if args.results else next(iter(releases),ROOT/'results/v0.1/hub.json')
         if not source.exists():parser.error("Run measurements before building the site")
-        shutil.copyfile(source,ROOT/"site/data/hub.json")
+        hub=read_json(source)
+        if hub.get('verification',{}).get('status')=='pending':parser.error('Complete the result audit before building the site')
+        write_json(ROOT/'site/data/hub.json.gz',hub,compact=True)
+        (ROOT/'site/data/hub.json').unlink(missing_ok=True)
+        import csv,gzip,io
+        buffer=io.StringIO();writer=csv.DictWriter(buffer,fieldnames=list(hub['benchmarks'][0]))
+        writer.writeheader();writer.writerows(hub['benchmarks'])
+        (ROOT/'site/data/benchmarks.csv.gz').write_bytes(gzip.compress(buffer.getvalue().encode(),mtime=0))
         shutil.copyfile(ROOT/"research/methods.json",ROOT/"site/data/methods.json")
-        emit({"site":str(ROOT/"site"),"checks":read_json(source)["checks"]})
+        emit({"site":str(ROOT/"site"),"source":str(source),"checks":hub["checks"]})
     elif args.command=="serve":
         from .server import serve
         serve(args.port)

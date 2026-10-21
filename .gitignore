@@ -18,4 +18,7 @@ artifacts/
 configs/custom-tokenizers.json
 results/local/
 results/v0.2/*/checkpoints/
+results/v0.3/*/checkpoints/
+results/v0.4/*/checkpoints/
 site/data/offline/
+site/data/release-validation.json

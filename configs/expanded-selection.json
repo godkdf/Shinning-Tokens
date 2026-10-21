@@ -43,7 +43,17 @@
     "minimax_text01",
     "minimax_m1",
     "minimax_m2",
-    "minimax_m3"
+    "minimax_m3",
+    "gpt2",
+    "llama3",
+    "moonlight",
+    "kimi_vl",
+    "kimi_k2_base",
+    "kimi_k2",
+    "kimi_k2_thinking",
+    "kimi_linear",
+    "kimi_k25",
+    "kimi_k3"
   ],
   "datasets": [
     "fineweb-mixture-v0.1",

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "tokenizers": 46,
+  "partitions_per_tokenizer": 867,
+  "checkpoints": 39882,
+  "observations": 19852220,
+  "errors": 0,
+  "malformed_transport_rejections": 276,
+  "catalog_sha256": "c54883db96130f2d0d1c5e84ff966856f5147952a190ef8f9e7ef5da84d9e2ad",
+  "scope": "1,734 new checkpoints independently audited. Frozen v0.2 aggregates and prior 38,148-checkpoint verification retained unchanged; historical checkpoints were not re-audited.",
+  "base_hub_sha256": "3e319b571043c791b74070bda2ce026cce7df45b0bb00d832f711fa330260413",
+  "base_verification_sha256": "c7ff93bc061baf389f8af730713f27b12f324877fb72394d11e2d3ae82f011c5",
+  "new_verification_sha256": "e085d98534fd29cf945ad1b00b7c17e51cdd099e0651c1176b200660a56d8790"
+}

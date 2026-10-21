@@ -1,0 +1,2026 @@
+{
+  "checked_at": "2026-10-21T08:48:04.350092+00:00",
+  "scope": "All 19 public repositories returned for official author moonshotai; 16 text-capable checkpoints included, 3 non-text pipelines excluded. Kimi K1/K1.5 API-only models are not represented by an inspected official public artifact.",
+  "new_profiles": [
+    "moonlight",
+    "kimi_vl",
+    "kimi_k2_base",
+    "kimi_k2",
+    "kimi_k2_thinking",
+    "kimi_linear",
+    "kimi_k25",
+    "kimi_k3"
+  ],
+  "shared_existing_profile": {
+    "qwen25": "Kimi-Dev-72B is byte-identical/canonically identical to the existing Qwen 2.5 profile."
+  },
+  "included": [
+    {
+      "repo": "moonshotai/Kimi-Dev-72B",
+      "revision": "8791d7981945752a51f692d66f2bbfb3573c9722",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-Dev-72B/tree/8791d7981945752a51f692d66f2bbfb3573c9722",
+      "wrapper_config_sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+      "chat_template_sha256": null,
+      "license": "mit",
+      "file_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "catalog_structural_sha256": "cca87f1614d8e57e6dcc18d78e387b640c1f8294e85bae6c714ba8efda14a5d4",
+      "profile": "qwen25",
+      "identity": "Exact canonical native JSON pipeline match; no duplicate profile or rerun."
+    },
+    {
+      "repo": "moonshotai/Kimi-K2-Base",
+      "revision": "ce72df012259dcc55d945e890f815fe7ef69159c",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-K2-Base/tree/ce72df012259dcc55d945e890f815fe7ef69159c",
+      "wrapper_config_sha256": "a4cdd80882ea8c7bb1a0b8710223a2d1ca5dd994eb553679863209c6e905b112",
+      "chat_template_sha256": null,
+      "license": "other",
+      "file_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+      "wrapper_source_sha256": "10c22135c67b0bb5d1da82cc42c629bd9696d0edc7b69c97e90772ecd3baf8d7",
+      "native_pipeline_sha256": "547d8f791a1b13fcc36bccdfcd06d47cd6982c26a2fa94afd12114f9e21dd7de",
+      "profile": "kimi_k2_base"
+    },
+    {
+      "repo": "moonshotai/Kimi-K2-Instruct",
+      "revision": "fd1984e2b7a3350dbf7305fe73a4ede25c14de50",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct/tree/fd1984e2b7a3350dbf7305fe73a4ede25c14de50",
+      "wrapper_config_sha256": "5ba77d5822137ac3cb9337d2b84561d10425562cf8b8f2c74c91a832516a778d",
+      "chat_template_sha256": "39e8c195b474c1a4148046f41fedd177b2ff8f420fa376e52fcdddb829e8f0c5",
+      "license": "other",
+      "file_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+      "wrapper_source_sha256": "b52cbff687ee5b32c8c0551da9974c678d39be0f3c890d53727888557b850c1f",
+      "native_pipeline_sha256": "9fd24fd53a85ab50116a2530a49300c376bee4829cc8a4f8291967ba9c8cf0a9",
+      "profile": "kimi_k2"
+    },
+    {
+      "repo": "moonshotai/Kimi-K2-Instruct-0905",
+      "revision": "ac6c49f04883bd0a0598b790693a72061c676629",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905/tree/ac6c49f04883bd0a0598b790693a72061c676629",
+      "wrapper_config_sha256": "5ba77d5822137ac3cb9337d2b84561d10425562cf8b8f2c74c91a832516a778d",
+      "chat_template_sha256": "00938c355ca7195fd4f9c923e93af063846d4d5005e06999274f8db57b65bb0b",
+      "license": "other",
+      "file_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+      "wrapper_source_sha256": "e7523ad4b356f27a7c842bd1b14307e5818dfb7ba57f8d91c6fef934bdeaef41",
+      "native_pipeline_sha256": "9fd24fd53a85ab50116a2530a49300c376bee4829cc8a4f8291967ba9c8cf0a9",
+      "profile": "kimi_k2"
+    },
+    {
+      "repo": "moonshotai/Kimi-K2-Thinking",
+      "revision": "a51ccc050d73dab088bf7b0e2dd9b30ae85a4e55",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-K2-Thinking/tree/a51ccc050d73dab088bf7b0e2dd9b30ae85a4e55",
+      "wrapper_config_sha256": "d0a17617078b53af4ff77546d8ef190d28efad6ef2ed0ee69e4b3c97a6f829fd",
+      "chat_template_sha256": "07a791b8563c5159054394745049c8e487986ecb34aaab77727e1b158bbe6a5c",
+      "license": "other",
+      "file_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+      "wrapper_source_sha256": "b52cbff687ee5b32c8c0551da9974c678d39be0f3c890d53727888557b850c1f",
+      "native_pipeline_sha256": "a43bce31ee94bd08202b5cfa87c00078055fd2b3659b92f5df20700ac491bbfe",
+      "profile": "kimi_k2_thinking"
+    },
+    {
+      "repo": "moonshotai/Kimi-K2.5",
+      "revision": "4d01dfe0332d63057c186e0b262165819efb6611",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-K2.5/tree/4d01dfe0332d63057c186e0b262165819efb6611",
+      "wrapper_config_sha256": "12fcab43d2b6068f46769f5ff373960bf7c17a94d7abbc50e2491306b2f6cf58",
+      "chat_template_sha256": "7c91e4b3578b518bfb388d2e3dc645daf0fbf843656e887db75d12891e0030ff",
+      "license": "other",
+      "file_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+      "wrapper_source_sha256": "56aae6f32aa6d8604a119ed6097fd07968c3bc2fbbe225f151acbed9141add6f",
+      "native_pipeline_sha256": "dd7efdce37a94c4fc0b8ada4755c893aa9d1380462b881e71633c0bf93a50294",
+      "profile": "kimi_k25"
+    },
+    {
+      "repo": "moonshotai/Kimi-K2.6",
+      "revision": "7eb5002f6aadc958aed6a9177b7ed26bb94011bb",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-K2.6/tree/7eb5002f6aadc958aed6a9177b7ed26bb94011bb",
+      "wrapper_config_sha256": "12fcab43d2b6068f46769f5ff373960bf7c17a94d7abbc50e2491306b2f6cf58",
+      "chat_template_sha256": "8bf859698fd4781c0e1e1c63ce74422aab27e53ccc5f47116317c64cda06132f",
+      "license": "other",
+      "file_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+      "wrapper_source_sha256": "2ab1ffb6f5c4380758bd8d9752ff1041c09024182676a4311528fbdf92fb9599",
+      "native_pipeline_sha256": "dd7efdce37a94c4fc0b8ada4755c893aa9d1380462b881e71633c0bf93a50294",
+      "profile": "kimi_k25"
+    },
+    {
+      "repo": "moonshotai/Kimi-K2.7-Code",
+      "revision": "74797c9c62378b951a1f6fcf5c4631024e9b8bef",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code/tree/74797c9c62378b951a1f6fcf5c4631024e9b8bef",
+      "wrapper_config_sha256": "6dfafeacca3d44748fc4a2fcc6725be5ea616ecc5b95f5a8b4277077c06e7d9f",
+      "chat_template_sha256": "8d21200dff7e85beaf51c8b110952e039ffd0779f615d64d63293d74773360f9",
+      "license": "other",
+      "file_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+      "wrapper_source_sha256": "88394687bd081f55928849b2d140e190c70297660d3fb8b7c54c0e5633b177e3",
+      "native_pipeline_sha256": "dd7efdce37a94c4fc0b8ada4755c893aa9d1380462b881e71633c0bf93a50294",
+      "profile": "kimi_k25"
+    },
+    {
+      "repo": "moonshotai/Kimi-K3",
+      "revision": "f831ab66814297da540d832a5235f8e904f29d06",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-K3/tree/f831ab66814297da540d832a5235f8e904f29d06",
+      "wrapper_config_sha256": "5d0803c94db9cd78763499e0956c95fd5a225c14a727e5a6cf5db3f96f010a6e",
+      "chat_template_sha256": null,
+      "license": "other",
+      "file_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+      "wrapper_source_sha256": "f28ea66e2d862a2a5814970b2ce40c2f7d8296ff09aed90a7e7def689b906944",
+      "native_pipeline_sha256": "b0c55beb9368a8f6f4d56f5c61016a185f2985903be676c503f25faac3d73b97",
+      "profile": "kimi_k3"
+    },
+    {
+      "repo": "moonshotai/Kimi-Linear-48B-A3B-Base",
+      "revision": "3b171c17bfc4ee348599b6781a2ca8715c21c8dc",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-Linear-48B-A3B-Base/tree/3b171c17bfc4ee348599b6781a2ca8715c21c8dc",
+      "wrapper_config_sha256": "5ba77d5822137ac3cb9337d2b84561d10425562cf8b8f2c74c91a832516a778d",
+      "chat_template_sha256": "75e3cd76bd26b77c02507eb35073b66c8ffd0c88eab185ebc6f8c6e425161809",
+      "license": "mit",
+      "file_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+      "wrapper_source_sha256": "b6b304f63d355f29f5f5aa27694337c824c90e1ac80559ca537909824729761f",
+      "native_pipeline_sha256": "77f9e731a1cd2ba82bd059952ad1ff62f64a98d8b0b17b4f0b1813f07fd8923d",
+      "profile": "kimi_linear"
+    },
+    {
+      "repo": "moonshotai/Kimi-Linear-48B-A3B-Instruct",
+      "revision": "e1df551a447157d4658b573f9a695d57658590e9",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-Linear-48B-A3B-Instruct/tree/e1df551a447157d4658b573f9a695d57658590e9",
+      "wrapper_config_sha256": "5ba77d5822137ac3cb9337d2b84561d10425562cf8b8f2c74c91a832516a778d",
+      "chat_template_sha256": "75e3cd76bd26b77c02507eb35073b66c8ffd0c88eab185ebc6f8c6e425161809",
+      "license": "mit",
+      "file_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+      "wrapper_source_sha256": "b6b304f63d355f29f5f5aa27694337c824c90e1ac80559ca537909824729761f",
+      "native_pipeline_sha256": "77f9e731a1cd2ba82bd059952ad1ff62f64a98d8b0b17b4f0b1813f07fd8923d",
+      "profile": "kimi_linear"
+    },
+    {
+      "repo": "moonshotai/Kimi-VL-A3B-Instruct",
+      "revision": "398eede0903cd983a2bfa0cc634e9ac1d843f375",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-VL-A3B-Instruct/tree/398eede0903cd983a2bfa0cc634e9ac1d843f375",
+      "wrapper_config_sha256": "d7861718cab22c7962e14b4693b4009dd526115cd392dc779069a8173be95703",
+      "chat_template_sha256": "172c7450a66b9b3644538888ffa24d02047e535e9d1f911564460203fbf7e8e8",
+      "license": "mit",
+      "file_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+      "wrapper_source_sha256": "0ae85e29c37689fefe41b8bfdb7aebd9a0152defedbf37fae0f8413000512029",
+      "native_pipeline_sha256": "e9b519044068de750f6355f61ecac0ebc6faef31e2b74be4a28d4a80bcb6bf1b",
+      "profile": "kimi_vl"
+    },
+    {
+      "repo": "moonshotai/Kimi-VL-A3B-Thinking",
+      "revision": "7d99e220af610d8624fcba22b2c076c7ed528f14",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking/tree/7d99e220af610d8624fcba22b2c076c7ed528f14",
+      "wrapper_config_sha256": "d7861718cab22c7962e14b4693b4009dd526115cd392dc779069a8173be95703",
+      "chat_template_sha256": "172c7450a66b9b3644538888ffa24d02047e535e9d1f911564460203fbf7e8e8",
+      "license": "mit",
+      "file_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+      "wrapper_source_sha256": "0ae85e29c37689fefe41b8bfdb7aebd9a0152defedbf37fae0f8413000512029",
+      "native_pipeline_sha256": "e9b519044068de750f6355f61ecac0ebc6faef31e2b74be4a28d4a80bcb6bf1b",
+      "profile": "kimi_vl"
+    },
+    {
+      "repo": "moonshotai/Kimi-VL-A3B-Thinking-2506",
+      "revision": "aa1730989e7558695b44ee493623e03bd325a994",
+      "source_url": "https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking-2506/tree/aa1730989e7558695b44ee493623e03bd325a994",
+      "wrapper_config_sha256": "d7861718cab22c7962e14b4693b4009dd526115cd392dc779069a8173be95703",
+      "chat_template_sha256": "172c7450a66b9b3644538888ffa24d02047e535e9d1f911564460203fbf7e8e8",
+      "license": "mit",
+      "file_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+      "wrapper_source_sha256": "0ae85e29c37689fefe41b8bfdb7aebd9a0152defedbf37fae0f8413000512029",
+      "native_pipeline_sha256": "e9b519044068de750f6355f61ecac0ebc6faef31e2b74be4a28d4a80bcb6bf1b",
+      "profile": "kimi_vl"
+    },
+    {
+      "repo": "moonshotai/Moonlight-16B-A3B",
+      "revision": "476b36a473d4467f94469414bef6cee75c9c8172",
+      "source_url": "https://huggingface.co/moonshotai/Moonlight-16B-A3B/tree/476b36a473d4467f94469414bef6cee75c9c8172",
+      "wrapper_config_sha256": "566eff6d3b862587c620edb402dc76417c582605c79e2c9a4bca333a73f44fcb",
+      "chat_template_sha256": null,
+      "license": "mit",
+      "file_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+      "wrapper_source_sha256": "11b6c72b07381146bbde5e987e927b134a5a1a7e22741693024237b53dd23557",
+      "native_pipeline_sha256": "06807961e7cd46a2bc684d401c0100b026c3458c3ed9f04b37f40be3e62a79ba",
+      "profile": "moonlight"
+    },
+    {
+      "repo": "moonshotai/Moonlight-16B-A3B-Instruct",
+      "revision": "4e735b07a89f73647dfab71ab91b840f362ede5b",
+      "source_url": "https://huggingface.co/moonshotai/Moonlight-16B-A3B-Instruct/tree/4e735b07a89f73647dfab71ab91b840f362ede5b",
+      "wrapper_config_sha256": "566eff6d3b862587c620edb402dc76417c582605c79e2c9a4bca333a73f44fcb",
+      "chat_template_sha256": null,
+      "license": "mit",
+      "file_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+      "wrapper_source_sha256": "11b6c72b07381146bbde5e987e927b134a5a1a7e22741693024237b53dd23557",
+      "native_pipeline_sha256": "06807961e7cd46a2bc684d401c0100b026c3458c3ed9f04b37f40be3e62a79ba",
+      "profile": "moonlight"
+    }
+  ],
+  "excluded": [
+    {
+      "repo": "moonshotai/Kimi-Audio-7B",
+      "revision": "d90be7113cd5be6bcf54fae2aabcad060a23f6cf",
+      "reason": "Audio/speech pipeline; text-plus-audio tokenization is outside this text-only extension."
+    },
+    {
+      "repo": "moonshotai/Kimi-Audio-7B-Instruct",
+      "revision": "9a82a84c37ad9eb1307fb6ed8d7b397862ef9e6b",
+      "reason": "Audio/speech pipeline; text-plus-audio tokenization is outside this text-only extension."
+    },
+    {
+      "repo": "moonshotai/MoonViT-SO-400M",
+      "revision": "a889d399ff2306053e4e28d499d3b8f97d3e5007",
+      "reason": "Vision encoder, not a text tokenizer."
+    }
+  ],
+  "repositories": [
+    {
+      "repo": "moonshotai/Kimi-Audio-7B",
+      "revision": "d90be7113cd5be6bcf54fae2aabcad060a23f6cf",
+      "pipeline_tag": "text-to-speech",
+      "gated": false,
+      "license": "mit",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1519,
+          "git_blob": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "lfs_sha256": null
+        },
+        {
+          "file": ".gitignore",
+          "bytes": 0,
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "lfs_sha256": null
+        },
+        {
+          "file": "README.md",
+          "bytes": 3148,
+          "git_blob": "90c6e61122d33dc2c192a86dabe1653076edf9fb",
+          "lfs_sha256": null
+        },
+        {
+          "file": "config.json",
+          "bytes": 1239,
+          "git_blob": "f179474b57174a702ddbd95141e52540c7b09783",
+          "lfs_sha256": null
+        },
+        {
+          "file": "configuration_moonshot_kimia.py",
+          "bytes": 2484,
+          "git_blob": "7541baac0bccf84157aea00e3c13615491955b36",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 24,
+          "git_blob": "72006f8ac7d290b60316aadcf6401f7231faca63",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 34738,
+          "git_blob": "af1a1185c1feec7a91a32de54acb9ea5c02592ae",
+          "lfs_sha256": null
+        },
+        {
+          "file": "modeling_moonshot_kimia.py",
+          "bytes": 35316,
+          "git_blob": "d2e3ffb73885ef41c224b17f61badc94e5bc0c62",
+          "lfs_sha256": null
+        },
+        {
+          "file": "special_tokens_map.json",
+          "bytes": 13393,
+          "git_blob": "605a6b4186f0bcfe2ce9250bf669e4304bfee1d4",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2561218,
+          "git_blob": "b59a29faddb69027255022411d8710e864c5d112",
+          "lfs_sha256": "b2b1b8dfb5cc5f024bafc373121c6aba3f66f9a5a0269e243470a1de16a33186"
+        },
+        {
+          "file": "tokenization_kimia.py",
+          "bytes": 11251,
+          "git_blob": "7f697d3d7e3c31a38171f1ca5af9b62754ddbfac",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 112634,
+          "git_blob": "dd1b2bf21d02b11952d7b716746b4b392d48a7a9",
+          "lfs_sha256": null
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Kimi-Audio-7B-Instruct",
+      "revision": "9a82a84c37ad9eb1307fb6ed8d7b397862ef9e6b",
+      "pipeline_tag": "text-to-speech",
+      "gated": false,
+      "license": "mit",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1519,
+          "git_blob": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "lfs_sha256": null
+        },
+        {
+          "file": ".gitignore",
+          "bytes": 0,
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "lfs_sha256": null
+        },
+        {
+          "file": "README.md",
+          "bytes": 7175,
+          "git_blob": "cb6b4c08b53ea9d58ac5640ffe0183fb412c82f4",
+          "lfs_sha256": null
+        },
+        {
+          "file": "config.json",
+          "bytes": 1239,
+          "git_blob": "f179474b57174a702ddbd95141e52540c7b09783",
+          "lfs_sha256": null
+        },
+        {
+          "file": "configuration_moonshot_kimia.py",
+          "bytes": 2484,
+          "git_blob": "7541baac0bccf84157aea00e3c13615491955b36",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 24,
+          "git_blob": "72006f8ac7d290b60316aadcf6401f7231faca63",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 34738,
+          "git_blob": "af1a1185c1feec7a91a32de54acb9ea5c02592ae",
+          "lfs_sha256": null
+        },
+        {
+          "file": "modeling_moonshot_kimia.py",
+          "bytes": 35306,
+          "git_blob": "a642317281405a2196873897d92e281138e242f9",
+          "lfs_sha256": null
+        },
+        {
+          "file": "special_tokens_map.json",
+          "bytes": 13393,
+          "git_blob": "605a6b4186f0bcfe2ce9250bf669e4304bfee1d4",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2561218,
+          "git_blob": "b59a29faddb69027255022411d8710e864c5d112",
+          "lfs_sha256": "b2b1b8dfb5cc5f024bafc373121c6aba3f66f9a5a0269e243470a1de16a33186"
+        },
+        {
+          "file": "tokenization_kimia.py",
+          "bytes": 11251,
+          "git_blob": "7f697d3d7e3c31a38171f1ca5af9b62754ddbfac",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 112634,
+          "git_blob": "dd1b2bf21d02b11952d7b716746b4b392d48a7a9",
+          "lfs_sha256": null
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Kimi-Dev-72B",
+      "revision": "8791d7981945752a51f692d66f2bbfb3573c9722",
+      "pipeline_tag": "text-generation",
+      "gated": false,
+      "license": "mit",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 2396,
+          "git_blob": "08e99bd814dca7aa1ec8ef03cc3b0f51ae918343",
+          "lfs_sha256": null
+        },
+        {
+          "file": "LICENSE.md",
+          "bytes": 288,
+          "git_blob": "e4943f90d25ed591dbf9c1103b15d0578a885136",
+          "lfs_sha256": null,
+          "sha256": "90ea60983c7da1b06860cd23475bd06fef3d951f8f76ac698fa609445c4bbf11"
+        },
+        {
+          "file": "README.md",
+          "bytes": 2896,
+          "git_blob": "507e7d130261a0d00ad266944e7eac1a998de96a",
+          "lfs_sha256": null,
+          "sha256": "91cc7034a24a788f842590f71019941a8489ddd6791e0a9c349a5be18b7f38c2"
+        },
+        {
+          "file": "config.json",
+          "bytes": 663,
+          "git_blob": "a615b7cc57ca046be17874d186651417d9775cdf",
+          "lfs_sha256": null,
+          "sha256": "9c114c3da81d4db6027c0caab398b59fe800024df5a0ed27d341501575cecaf9"
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 73137,
+          "git_blob": "12818d776a079e8d200cbb1d3757947335308698",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tokenizer.json",
+          "bytes": 7031645,
+          "git_blob": "443909a61d429dff23010e5bddd28ff530edda00",
+          "lfs_sha256": null,
+          "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 7305,
+          "git_blob": "07bfe0640cb5a0037f9322287fbfc682806cf672",
+          "lfs_sha256": null,
+          "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+        },
+        {
+          "file": "vocab.json",
+          "bytes": 2776833,
+          "git_blob": "4783fe10ac3adce15ac8f358ef5462739852c569",
+          "lfs_sha256": null
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Kimi-K2-Base",
+      "revision": "ce72df012259dcc55d945e890f815fe7ef69159c",
+      "pipeline_tag": "text-generation",
+      "gated": false,
+      "license": "other",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1631,
+          "git_blob": "ba49e059dc2c1f9d9ce39a4abfb358b77edb49be",
+          "lfs_sha256": null
+        },
+        {
+          "file": "LICENSE",
+          "bytes": 1463,
+          "git_blob": "fe5473406f56a61085e7786f67bca07dbd4854c9",
+          "lfs_sha256": null,
+          "sha256": "b280da6f496d75e0c5beb79b03520d190fce67dfe12f75cf3aadad8670839d93"
+        },
+        {
+          "file": "README.md",
+          "bytes": 24919,
+          "git_blob": "9b9ed58a0a20a1e420c73b9a67585460fc6ee701",
+          "lfs_sha256": null,
+          "sha256": "2640030b9d1f37481ebb055b78a57a7b7b9f6caf26038852349ca98b3d0da7d4"
+        },
+        {
+          "file": "THIRD_PARTY_NOTICES.md",
+          "bytes": 1663,
+          "git_blob": "28299e4b75e17c3dd207310f77a99375c1f917ee",
+          "lfs_sha256": null,
+          "sha256": "0bcafdbe0492592a97648bf522039a6270fd98faec4cf5c8453cfcab2110743f"
+        },
+        {
+          "file": "config.json",
+          "bytes": 1725,
+          "git_blob": "da5e6d57d441456dfff648b32e8334e4b1c2b3c0",
+          "lfs_sha256": null,
+          "sha256": "8c13ae1049df55f29b3bdcae69a562433f243ff70dac251d819ecad8dbdf7439"
+        },
+        {
+          "file": "configuration_deepseek.py",
+          "bytes": 10652,
+          "git_blob": "79b86a084abd1013a46244394f876aa0375b88ca",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 52,
+          "git_blob": "c402a521d8afd0d501e129c4075ebc73bda87880",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 12529626,
+          "git_blob": "52d0b34f545fb102cdbe484e2571fa7e1ed8b049",
+          "lfs_sha256": "c1f1d16c853f20467ae81361d2a92223650d39efa005f9c872a7cc14425ddcbc"
+        },
+        {
+          "file": "modeling_deepseek.py",
+          "bytes": 75769,
+          "git_blob": "1192a0063d01688f10fb33ba9abb3e0017e6bb71",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2795286,
+          "git_blob": "b4149a6e17a01b6442187f39890f89bc2fe8d309",
+          "lfs_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+          "sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103"
+        },
+        {
+          "file": "tokenization_kimi.py",
+          "bytes": 11323,
+          "git_blob": "67a35818edf8ab0768c388e506c5f37b9b31eb5b",
+          "lfs_sha256": null,
+          "sha256": "10c22135c67b0bb5d1da82cc42c629bd9696d0edc7b69c97e90772ecd3baf8d7"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 5003,
+          "git_blob": "a72d5e25c58904b63738d268a066c12f19bb69df",
+          "lfs_sha256": null,
+          "sha256": "a4cdd80882ea8c7bb1a0b8710223a2d1ca5dd994eb553679863209c6e905b112"
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Kimi-K2-Instruct",
+      "revision": "fd1984e2b7a3350dbf7305fe73a4ede25c14de50",
+      "pipeline_tag": "text-generation",
+      "gated": false,
+      "license": "other",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1695,
+          "git_blob": "640ac7624228083dd4eba1f254c07a6870a895d3",
+          "lfs_sha256": null
+        },
+        {
+          "file": "LICENSE",
+          "bytes": 1463,
+          "git_blob": "fe5473406f56a61085e7786f67bca07dbd4854c9",
+          "lfs_sha256": null,
+          "sha256": "b280da6f496d75e0c5beb79b03520d190fce67dfe12f75cf3aadad8670839d93"
+        },
+        {
+          "file": "README.md",
+          "bytes": 25517,
+          "git_blob": "907da9dd4f3f985c74a9f4d80360bd62d1223c4f",
+          "lfs_sha256": null,
+          "sha256": "72e2785dbd9ada9355ea3a812d2a9da606f1ae07feea7a0f7e18b8111deb8837"
+        },
+        {
+          "file": "THIRD_PARTY_NOTICES.md",
+          "bytes": 1664,
+          "git_blob": "2e2c9bb7eacbe3bb30250e5fb734d439aa9de3b6",
+          "lfs_sha256": null,
+          "sha256": "5d7789302c002ace2bef98ee1082a1278026b868b0a6bec0ee1eaf1b71022ade"
+        },
+        {
+          "file": "chat_template.jinja",
+          "bytes": 2021,
+          "git_blob": "1cbca75b092ae6f4a75c842129c4f16fd96bd67a",
+          "lfs_sha256": null,
+          "sha256": "39e8c195b474c1a4148046f41fedd177b2ff8f420fa376e52fcdddb829e8f0c5"
+        },
+        {
+          "file": "config.json",
+          "bytes": 1725,
+          "git_blob": "da5e6d57d441456dfff648b32e8334e4b1c2b3c0",
+          "lfs_sha256": null,
+          "sha256": "8c13ae1049df55f29b3bdcae69a562433f243ff70dac251d819ecad8dbdf7439"
+        },
+        {
+          "file": "configuration_deepseek.py",
+          "bytes": 10652,
+          "git_blob": "79b86a084abd1013a46244394f876aa0375b88ca",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 52,
+          "git_blob": "0c10bfdd315ca8e600ec53fbd411cb4d1cbb9dd8",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 12529626,
+          "git_blob": "fbdcce531043f7ec283d3efda4c68db58b2193cb",
+          "lfs_sha256": "78957a08bb224e141dbf63feba25b8c6f2b9825a89434054e2856a20c45a1eb7"
+        },
+        {
+          "file": "modeling_deepseek.py",
+          "bytes": 75769,
+          "git_blob": "1192a0063d01688f10fb33ba9abb3e0017e6bb71",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2795286,
+          "git_blob": "b4149a6e17a01b6442187f39890f89bc2fe8d309",
+          "lfs_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+          "sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103"
+        },
+        {
+          "file": "tokenization_kimi.py",
+          "bytes": 12586,
+          "git_blob": "cda60e800304fa7e3081bae5af6c749a51df5635",
+          "lfs_sha256": null,
+          "sha256": "b52cbff687ee5b32c8c0551da9974c678d39be0f3c890d53727888557b850c1f"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 3695,
+          "git_blob": "8bfc1efdf0d93e143c98d7bf1199f4aad326c10b",
+          "lfs_sha256": null,
+          "sha256": "5ba77d5822137ac3cb9337d2b84561d10425562cf8b8f2c74c91a832516a778d"
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Kimi-K2-Instruct-0905",
+      "revision": "ac6c49f04883bd0a0598b790693a72061c676629",
+      "pipeline_tag": "text-generation",
+      "gated": false,
+      "license": "other",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1634,
+          "git_blob": "4553e7b1b76214963cbe7d65961b323cf2c81393",
+          "lfs_sha256": null
+        },
+        {
+          "file": "LICENSE",
+          "bytes": 1463,
+          "git_blob": "fe5473406f56a61085e7786f67bca07dbd4854c9",
+          "lfs_sha256": null,
+          "sha256": "b280da6f496d75e0c5beb79b03520d190fce67dfe12f75cf3aadad8670839d93"
+        },
+        {
+          "file": "README.md",
+          "bytes": 9894,
+          "git_blob": "3d36d7a0bb89c6bcd9d3f068425af9b16b52dcf9",
+          "lfs_sha256": null,
+          "sha256": "fbb70f67df597c48b15ac095a504247b083b0b65139e34f89426f0ce0775da59"
+        },
+        {
+          "file": "THIRD_PARTY_NOTICES.md",
+          "bytes": 1664,
+          "git_blob": "2e2c9bb7eacbe3bb30250e5fb734d439aa9de3b6",
+          "lfs_sha256": null,
+          "sha256": "5d7789302c002ace2bef98ee1082a1278026b868b0a6bec0ee1eaf1b71022ade"
+        },
+        {
+          "file": "chat_template.jinja",
+          "bytes": 2023,
+          "git_blob": "106b2831f2bb1eec085435133c98a85eee593d5b",
+          "lfs_sha256": null,
+          "sha256": "00938c355ca7195fd4f9c923e93af063846d4d5005e06999274f8db57b65bb0b"
+        },
+        {
+          "file": "config.json",
+          "bytes": 3174,
+          "git_blob": "cc19fd16f81bb953ffd6b574890d8447c4e0f374",
+          "lfs_sha256": null,
+          "sha256": "4cd10b0f3cb1c1dfdbfcdd2f303057500f570b24f671ce5eb7650b6a511807cc"
+        },
+        {
+          "file": "configuration_deepseek.py",
+          "bytes": 10652,
+          "git_blob": "79b86a084abd1013a46244394f876aa0375b88ca",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 52,
+          "git_blob": "0c10bfdd315ca8e600ec53fbd411cb4d1cbb9dd8",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 13525772,
+          "git_blob": "4fdaa02509be403861b6355694c6bd3f7deabfb0",
+          "lfs_sha256": "bdd9222c7ef1c693d6f6efe027abfd984f5f277063bff01240aaf8bb1576cdd3"
+        },
+        {
+          "file": "modeling_deepseek.py",
+          "bytes": 75769,
+          "git_blob": "1192a0063d01688f10fb33ba9abb3e0017e6bb71",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2795286,
+          "git_blob": "b4149a6e17a01b6442187f39890f89bc2fe8d309",
+          "lfs_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+          "sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103"
+        },
+        {
+          "file": "tokenization_kimi.py",
+          "bytes": 12531,
+          "git_blob": "06e0a261764df556656f84e9a56386b826c10075",
+          "lfs_sha256": null,
+          "sha256": "e7523ad4b356f27a7c842bd1b14307e5818dfb7ba57f8d91c6fef934bdeaef41"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 3695,
+          "git_blob": "8bfc1efdf0d93e143c98d7bf1199f4aad326c10b",
+          "lfs_sha256": null,
+          "sha256": "5ba77d5822137ac3cb9337d2b84561d10425562cf8b8f2c74c91a832516a778d"
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Kimi-K2-Thinking",
+      "revision": "a51ccc050d73dab088bf7b0e2dd9b30ae85a4e55",
+      "pipeline_tag": "text-generation",
+      "gated": false,
+      "license": "other",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1849,
+          "git_blob": "cbc391dd278dafc0276aca47a468cb938557a811",
+          "lfs_sha256": null
+        },
+        {
+          "file": "LICENSE",
+          "bytes": 1462,
+          "git_blob": "64534f90a189212615aeee73a1b6da821021d054",
+          "lfs_sha256": null,
+          "sha256": "fa2dd8ae5b5fa27c2b5bbc835a053930efcf42451768aebdfac230f350f1aa62"
+        },
+        {
+          "file": "README.md",
+          "bytes": 16176,
+          "git_blob": "10260d219a5aeffb22da322ad8d624f49cdae967",
+          "lfs_sha256": null,
+          "sha256": "8343341da86d2a74ee576768ea2f8c0be2d3e9cf1cb51838a794581e7a1466cd"
+        },
+        {
+          "file": "THIRD_PARTY_NOTICES.md",
+          "bytes": 1673,
+          "git_blob": "a391d2752a3fa762fa3dc05bcb4b8674a5bc7c6f",
+          "lfs_sha256": null,
+          "sha256": "6a648b64c19520a729a2936418f5ecff5d537d7e0d9e142d0360e79d5ed00e28"
+        },
+        {
+          "file": "chat_template.jinja",
+          "bytes": 3450,
+          "git_blob": "5817f39a52fc6647e2f071195a7ddb7d4ca6ad20",
+          "lfs_sha256": null,
+          "sha256": "07a791b8563c5159054394745049c8e487986ecb34aaab77727e1b158bbe6a5c"
+        },
+        {
+          "file": "config.json",
+          "bytes": 3830,
+          "git_blob": "b116c16af8bd8342107f397accb29456ccf6b1ed",
+          "lfs_sha256": null,
+          "sha256": "666ee58fc3871ecc369a22bc8c100075c2ad24ccbe8b3e336fa5f726e6111c15"
+        },
+        {
+          "file": "configuration_deepseek.py",
+          "bytes": 10652,
+          "git_blob": "79b86a084abd1013a46244394f876aa0375b88ca",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 53,
+          "git_blob": "6f77b943e161cf5db0963e4d02e7ea18283184ef",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 20450783,
+          "git_blob": "efae88e2139abfcc427368b2018f833e04954f96",
+          "lfs_sha256": "499d8a33d52eac30f368b9dce6dea929fa140e48d66227a0f52d20035f99122a"
+        },
+        {
+          "file": "modeling_deepseek.py",
+          "bytes": 75769,
+          "git_blob": "1192a0063d01688f10fb33ba9abb3e0017e6bb71",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2795286,
+          "git_blob": "b4149a6e17a01b6442187f39890f89bc2fe8d309",
+          "lfs_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+          "sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103"
+        },
+        {
+          "file": "tokenization_kimi.py",
+          "bytes": 12586,
+          "git_blob": "cda60e800304fa7e3081bae5af6c749a51df5635",
+          "lfs_sha256": null,
+          "sha256": "b52cbff687ee5b32c8c0551da9974c678d39be0f3c890d53727888557b850c1f"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 4046,
+          "git_blob": "d844df29b69b04d9c2dcbaae7eff8fdff7bad322",
+          "lfs_sha256": null,
+          "sha256": "d0a17617078b53af4ff77546d8ef190d28efad6ef2ed0ee69e4b3c97a6f829fd"
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Kimi-K2.5",
+      "revision": "4d01dfe0332d63057c186e0b262165819efb6611",
+      "pipeline_tag": "image-text-to-text",
+      "gated": false,
+      "license": "other",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1643,
+          "git_blob": "20ea40516e24e1bacb8e3434e3a7ca441764ee9b",
+          "lfs_sha256": null
+        },
+        {
+          "file": "LICENSE",
+          "bytes": 1465,
+          "git_blob": "7c219d7247ad815f9c73a93684402da0549e9724",
+          "lfs_sha256": null,
+          "sha256": "c524b41658421b8b143c5b50637ef008909da56013ad12ccaba0536139ee35b0"
+        },
+        {
+          "file": "README.md",
+          "bytes": 40082,
+          "git_blob": "908e8aa5cd2f478f3c9253b474134980d4a131b4",
+          "lfs_sha256": null,
+          "sha256": "1b04bed9c6c25894171c0ab5e0b4c4d57667698a654dbfd5a6c1649b922810a5"
+        },
+        {
+          "file": "THIRD_PARTY_NOTICES.md",
+          "bytes": 1662,
+          "git_blob": "c558728752e493c3764a7abdd1281e3d12bfed1d",
+          "lfs_sha256": null,
+          "sha256": "42990e5d055ad379c215a2846cb82daa5e856e89ec774e51c126bce26061f792"
+        },
+        {
+          "file": "chat_template.jinja",
+          "bytes": 3759,
+          "git_blob": "f88cb41422626beb4cf1e7826b079448a4663cd0",
+          "lfs_sha256": null,
+          "sha256": "7c91e4b3578b518bfb388d2e3dc645daf0fbf843656e887db75d12891e0030ff"
+        },
+        {
+          "file": "config.json",
+          "bytes": 5416,
+          "git_blob": "951255997883c0e4fd53a8a3e10add6e79354217",
+          "lfs_sha256": null,
+          "sha256": "acd5bb01a16f64b309599cd6ed196be056f613c99d6bc9300692b82cd10882f6"
+        },
+        {
+          "file": "configuration_deepseek.py",
+          "bytes": 10615,
+          "git_blob": "b3152dd7c3e53d223d561848dc967f487daf32ef",
+          "lfs_sha256": null
+        },
+        {
+          "file": "configuration_kimi_k25.py",
+          "bytes": 5435,
+          "git_blob": "5858b3290a32509480affd58abc01482d5976550",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 52,
+          "git_blob": "4bb3f8ec4a1d604598b7ffb4621b955e995bda92",
+          "lfs_sha256": null
+        },
+        {
+          "file": "kimi_k25_processor.py",
+          "bytes": 6906,
+          "git_blob": "d526032f91036de5f3d226b866acf449553b986d",
+          "lfs_sha256": null
+        },
+        {
+          "file": "kimi_k25_vision_processing.py",
+          "bytes": 10019,
+          "git_blob": "fdf3ab2f100f7c28a1f1e7295297e54b515d0b53",
+          "lfs_sha256": null
+        },
+        {
+          "file": "media_utils.py",
+          "bytes": 13179,
+          "git_blob": "8795e06f381700d6420798f82174e3f9647e9f89",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 23597438,
+          "git_blob": "9a11548c9004aa9b3c0e8fa6b03f2a187c3400d1",
+          "lfs_sha256": "bdba19b127c4d1dc57dc3b6f3366c10739c7e7f13baf3f5424b556469a4dbc1b"
+        },
+        {
+          "file": "modeling_deepseek.py",
+          "bytes": 78528,
+          "git_blob": "707925a7f440d22c1fde9ea13676b7ee924d6e21",
+          "lfs_sha256": null
+        },
+        {
+          "file": "modeling_kimi_k25.py",
+          "bytes": 50961,
+          "git_blob": "a40ec230e0fdc7283fa4b7c504303296913785ec",
+          "lfs_sha256": null
+        },
+        {
+          "file": "preprocessor_config.json",
+          "bytes": 742,
+          "git_blob": "b0accb4b335998b847e0093bf4a63e1f32447cc9",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2795286,
+          "git_blob": "b4149a6e17a01b6442187f39890f89bc2fe8d309",
+          "lfs_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+          "sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103"
+        },
+        {
+          "file": "tokenization_kimi.py",
+          "bytes": 13353,
+          "git_blob": "7868ea7598734c24cbbbbf904799c76b29af9803",
+          "lfs_sha256": null,
+          "sha256": "56aae6f32aa6d8604a119ed6097fd07968c3bc2fbbe225f151acbed9141add6f"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 4862,
+          "git_blob": "c4d32fcaffbe72d4050388e6464bb719408e361e",
+          "lfs_sha256": null,
+          "sha256": "12fcab43d2b6068f46769f5ff373960bf7c17a94d7abbc50e2491306b2f6cf58"
+        },
+        {
+          "file": "tool_declaration_ts.py",
+          "bytes": 16517,
+          "git_blob": "3cc7727ddbeabef16b90ce0219446bc2d4ea9032",
+          "lfs_sha256": null
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Kimi-K2.6",
+      "revision": "7eb5002f6aadc958aed6a9177b7ed26bb94011bb",
+      "pipeline_tag": "image-text-to-text",
+      "gated": false,
+      "license": "other",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1643,
+          "git_blob": "20ea40516e24e1bacb8e3434e3a7ca441764ee9b",
+          "lfs_sha256": null
+        },
+        {
+          "file": "LICENSE",
+          "bytes": 1465,
+          "git_blob": "03dfdb976871da3e6ffce3e21c18c0ecbfae7cb5",
+          "lfs_sha256": null,
+          "sha256": "1d4ab2d8404287de44429024a78b58d3aabc4df9d0c490e73fec9ff1fd842529"
+        },
+        {
+          "file": "README.md",
+          "bytes": 29325,
+          "git_blob": "d68a0ad32facc3ec268fa9b4b0d85182769b4bbd",
+          "lfs_sha256": null,
+          "sha256": "95db3be1d0473e482c7aa901f237ad7af8bb7929625a777b27428081bb8ea9f7"
+        },
+        {
+          "file": "THIRD_PARTY_NOTICES.md",
+          "bytes": 1662,
+          "git_blob": "7a2268c9c78cc44875827da732a6b0c2f652d76c",
+          "lfs_sha256": null,
+          "sha256": "e3dfc50a89f5b755dd1c0b4bc84236188fdb9d832a85eef5f25997b2faa1b400"
+        },
+        {
+          "file": "chat_template.jinja",
+          "bytes": 4022,
+          "git_blob": "039939fb0cbca410595f7cefc0d62018d142b931",
+          "lfs_sha256": null,
+          "sha256": "8bf859698fd4781c0e1e1c63ce74422aab27e53ccc5f47116317c64cda06132f"
+        },
+        {
+          "file": "config.json",
+          "bytes": 5416,
+          "git_blob": "eb7e9302b33c55765ac93e09eeb87cf7d7d4c438",
+          "lfs_sha256": null,
+          "sha256": "85825ca6e18cbe539eb83ee09eedfb3f4222265929f06e9f535a6d9364f55899"
+        },
+        {
+          "file": "configuration_deepseek.py",
+          "bytes": 10615,
+          "git_blob": "b3152dd7c3e53d223d561848dc967f487daf32ef",
+          "lfs_sha256": null
+        },
+        {
+          "file": "configuration_kimi_k25.py",
+          "bytes": 5435,
+          "git_blob": "5858b3290a32509480affd58abc01482d5976550",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 52,
+          "git_blob": "4bb3f8ec4a1d604598b7ffb4621b955e995bda92",
+          "lfs_sha256": null
+        },
+        {
+          "file": "kimi_k25_processor.py",
+          "bytes": 6906,
+          "git_blob": "d526032f91036de5f3d226b866acf449553b986d",
+          "lfs_sha256": null
+        },
+        {
+          "file": "kimi_k25_vision_processing.py",
+          "bytes": 10019,
+          "git_blob": "fdf3ab2f100f7c28a1f1e7295297e54b515d0b53",
+          "lfs_sha256": null
+        },
+        {
+          "file": "media_utils.py",
+          "bytes": 13179,
+          "git_blob": "8795e06f381700d6420798f82174e3f9647e9f89",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 23597438,
+          "git_blob": "7fae62c0cac64d541dd0be66c971d83aa1e89da5",
+          "lfs_sha256": "00a982d005d6e39b25cfcb379a7e6d57f393fc0346e70892ea4271c259c0d1e3"
+        },
+        {
+          "file": "modeling_deepseek.py",
+          "bytes": 78528,
+          "git_blob": "707925a7f440d22c1fde9ea13676b7ee924d6e21",
+          "lfs_sha256": null
+        },
+        {
+          "file": "modeling_kimi_k25.py",
+          "bytes": 50961,
+          "git_blob": "a40ec230e0fdc7283fa4b7c504303296913785ec",
+          "lfs_sha256": null
+        },
+        {
+          "file": "preprocessor_config.json",
+          "bytes": 742,
+          "git_blob": "b0accb4b335998b847e0093bf4a63e1f32447cc9",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2795286,
+          "git_blob": "b4149a6e17a01b6442187f39890f89bc2fe8d309",
+          "lfs_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+          "sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103"
+        },
+        {
+          "file": "tokenization_kimi.py",
+          "bytes": 13462,
+          "git_blob": "436afeff0908a207c893f8e86ad91892268cec30",
+          "lfs_sha256": null,
+          "sha256": "2ab1ffb6f5c4380758bd8d9752ff1041c09024182676a4311528fbdf92fb9599"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 4862,
+          "git_blob": "c4d32fcaffbe72d4050388e6464bb719408e361e",
+          "lfs_sha256": null,
+          "sha256": "12fcab43d2b6068f46769f5ff373960bf7c17a94d7abbc50e2491306b2f6cf58"
+        },
+        {
+          "file": "tool_declaration_ts.py",
+          "bytes": 16517,
+          "git_blob": "3cc7727ddbeabef16b90ce0219446bc2d4ea9032",
+          "lfs_sha256": null
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Kimi-K2.7-Code",
+      "revision": "74797c9c62378b951a1f6fcf5c4631024e9b8bef",
+      "pipeline_tag": "image-text-to-text",
+      "gated": false,
+      "license": "other",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1643,
+          "git_blob": "20ea40516e24e1bacb8e3434e3a7ca441764ee9b",
+          "lfs_sha256": null
+        },
+        {
+          "file": "LICENSE",
+          "bytes": 1470,
+          "git_blob": "41a8d900c7cc1c6d773bc9bcf61f07658e09b9e8",
+          "lfs_sha256": null,
+          "sha256": "9cb73476cecdfabac7775bf7c225bd5f6017d5d678372917e4456964c0454f7a"
+        },
+        {
+          "file": "README.md",
+          "bytes": 15061,
+          "git_blob": "0f67f24ac27696aca1033d9f73a9af6f9aec8d26",
+          "lfs_sha256": null,
+          "sha256": "c78bbe5af19636b180eda956abf1f30a79027ec04d6642ebddc44edbc4470879"
+        },
+        {
+          "file": "THIRD_PARTY_NOTICES.md",
+          "bytes": 1665,
+          "git_blob": "7df3ba9ec5872b0d6b99c74824e4d798926751ae",
+          "lfs_sha256": null,
+          "sha256": "98392e4fd8a43aa576613212e69d0c7d2090504b4127da1fca7270f6af85d101"
+        },
+        {
+          "file": "chat_template.jinja",
+          "bytes": 2385,
+          "git_blob": "317ce481296988cd4281e42764252b9198076e2f",
+          "lfs_sha256": null,
+          "sha256": "8d21200dff7e85beaf51c8b110952e039ffd0779f615d64d63293d74773360f9"
+        },
+        {
+          "file": "config.json",
+          "bytes": 5420,
+          "git_blob": "82efafe47e37462a55e6eb50f46fc1f04e34f75e",
+          "lfs_sha256": null,
+          "sha256": "ffbb57bff844e024f6c112640b63da80af228ceb8fb3e2e21908a21febbcdffb"
+        },
+        {
+          "file": "configuration_deepseek.py",
+          "bytes": 10615,
+          "git_blob": "b3152dd7c3e53d223d561848dc967f487daf32ef",
+          "lfs_sha256": null
+        },
+        {
+          "file": "configuration_kimi_k25.py",
+          "bytes": 5435,
+          "git_blob": "5858b3290a32509480affd58abc01482d5976550",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 91,
+          "git_blob": "cc46200200f5f296e83858c7cdf8a512f0b8c178",
+          "lfs_sha256": null
+        },
+        {
+          "file": "kimi_k25_processor.py",
+          "bytes": 6906,
+          "git_blob": "d526032f91036de5f3d226b866acf449553b986d",
+          "lfs_sha256": null
+        },
+        {
+          "file": "kimi_k25_vision_processing.py",
+          "bytes": 10019,
+          "git_blob": "fdf3ab2f100f7c28a1f1e7295297e54b515d0b53",
+          "lfs_sha256": null
+        },
+        {
+          "file": "media_utils.py",
+          "bytes": 13179,
+          "git_blob": "8795e06f381700d6420798f82174e3f9647e9f89",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 23597438,
+          "git_blob": "64e83ae4de4269205710f39ce49a77691e8227b3",
+          "lfs_sha256": "f6dd3318271f0121445d2af1c0c3f75707127a84a625f86bc0eaae9deb848f40"
+        },
+        {
+          "file": "modeling_deepseek.py",
+          "bytes": 78639,
+          "git_blob": "d33cf2edf7a5b959c0818ce59b549965d1b5e27e",
+          "lfs_sha256": null
+        },
+        {
+          "file": "modeling_kimi_k25.py",
+          "bytes": 53045,
+          "git_blob": "c871db69d5af2e766ef40f40405d6d2467628cfd",
+          "lfs_sha256": null
+        },
+        {
+          "file": "preprocessor_config.json",
+          "bytes": 744,
+          "git_blob": "41291c9c4657724feacf30fe4ff3a82bf3eb16a0",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2795286,
+          "git_blob": "b4149a6e17a01b6442187f39890f89bc2fe8d309",
+          "lfs_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+          "sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103"
+        },
+        {
+          "file": "tokenization_kimi.py",
+          "bytes": 14132,
+          "git_blob": "5f0b292c6e7e105eeba82da6881dfa6acdcf7ad3",
+          "lfs_sha256": null,
+          "sha256": "88394687bd081f55928849b2d140e190c70297660d3fb8b7c54c0e5633b177e3"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 4832,
+          "git_blob": "0ffd8f25af6e8cd62bf0918e7f690ba1d1be279d",
+          "lfs_sha256": null,
+          "sha256": "6dfafeacca3d44748fc4a2fcc6725be5ea616ecc5b95f5a8b4277077c06e7d9f"
+        },
+        {
+          "file": "tool_declaration_ts.py",
+          "bytes": 16517,
+          "git_blob": "3cc7727ddbeabef16b90ce0219446bc2d4ea9032",
+          "lfs_sha256": null
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Kimi-K3",
+      "revision": "f831ab66814297da540d832a5235f8e904f29d06",
+      "pipeline_tag": "image-text-to-text",
+      "gated": false,
+      "license": "other",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1639,
+          "git_blob": "62375aaf6f0f97fad2b39e33dbc99fee014c7d8d",
+          "lfs_sha256": null
+        },
+        {
+          "file": "LICENSE",
+          "bytes": 3065,
+          "git_blob": "97c0111bba229b0981b1d74e34bacef723ca8f7b",
+          "lfs_sha256": null,
+          "sha256": "20c797ce19af0c17de52c6afb144644768a591c521655f5ebf5712c9850f2887"
+        },
+        {
+          "file": "README.md",
+          "bytes": 45261,
+          "git_blob": "10466db3bd36b1eb9b14a099d9d8d77130247712",
+          "lfs_sha256": null,
+          "sha256": "57de265b5842dfa465c6e73b368b0e15a89b8793b5450528dad577da202cc6fe"
+        },
+        {
+          "file": "config.json",
+          "bytes": 7006,
+          "git_blob": "d7f26ead420b1d967f2759679dbebc65edfcff93",
+          "lfs_sha256": null,
+          "sha256": "9710e121a58d03ac92c8d6da287a19541994319afbbe6d6202af001ffd379213"
+        },
+        {
+          "file": "configuration_kimi_k3.py",
+          "bytes": 11343,
+          "git_blob": "b38c4f8fcab1ce295aea236772ea1cba57f978c9",
+          "lfs_sha256": null
+        },
+        {
+          "file": "encoding_k3.py",
+          "bytes": 26304,
+          "git_blob": "82a5f1f0777cd6135d3394002be82639345d0fe3",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 53,
+          "git_blob": "3908a4a5477122aa4b09386acab760fb7887c0fc",
+          "lfs_sha256": null
+        },
+        {
+          "file": "kimi_k3_processor.py",
+          "bytes": 7660,
+          "git_blob": "033a5773885c144509788e89a445217b76d6c046",
+          "lfs_sha256": null
+        },
+        {
+          "file": "kimi_k3_vision_processing.py",
+          "bytes": 6686,
+          "git_blob": "58154424ff951289570c8fb5578e7372bfbfaa8b",
+          "lfs_sha256": null
+        },
+        {
+          "file": "media_utils.py",
+          "bytes": 13844,
+          "git_blob": "e8b2ae127e254e364e6b568b1093a7e12ac576e0",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 59764096,
+          "git_blob": "2e7014d727cf518d32bf21674e3b16687b2ba21b",
+          "lfs_sha256": "a1c5210650ce71d2d3ae9ec5a101ac4afd3cf4b10091be589853437eb967febd"
+        },
+        {
+          "file": "modeling_kimi_k3.py",
+          "bytes": 53444,
+          "git_blob": "be85612710534c2e41065b67933a9639e7817d7f",
+          "lfs_sha256": null
+        },
+        {
+          "file": "modeling_kimi_linear.py",
+          "bytes": 51506,
+          "git_blob": "b8c41e8bfce768d74d8da3a37e693f5ee43876a0",
+          "lfs_sha256": null
+        },
+        {
+          "file": "preprocessor_config.json",
+          "bytes": 1011,
+          "git_blob": "8be28c13c93fb8982f81928d3f4fe80568102286",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2795286,
+          "git_blob": "b4149a6e17a01b6442187f39890f89bc2fe8d309",
+          "lfs_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+          "sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103"
+        },
+        {
+          "file": "tokenization_kimi.py",
+          "bytes": 16145,
+          "git_blob": "5df9d462b43295245084fbab46fd956020d4b84e",
+          "lfs_sha256": null,
+          "sha256": "f28ea66e2d862a2a5814970b2ce40c2f7d8296ff09aed90a7e7def689b906944"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 3478,
+          "git_blob": "418aaacbd996a6674efa89d26be06dae11433e1c",
+          "lfs_sha256": null,
+          "sha256": "5d0803c94db9cd78763499e0956c95fd5a225c14a727e5a6cf5db3f96f010a6e"
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Kimi-Linear-48B-A3B-Base",
+      "revision": "3b171c17bfc4ee348599b6781a2ca8715c21c8dc",
+      "pipeline_tag": "text-generation",
+      "gated": false,
+      "license": "mit",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1631,
+          "git_blob": "e2d27e24431057df43aef17c34daeb0db46b3396",
+          "lfs_sha256": null
+        },
+        {
+          "file": "README.md",
+          "bytes": 6706,
+          "git_blob": "a71f69a9086c97dea4445a08e9e3237f54a00eca",
+          "lfs_sha256": null,
+          "sha256": "49edd7069a066c665582cecc51d4028df51ccb64da4301a4ede5017873a2ca8b"
+        },
+        {
+          "file": "chat_template.jinja",
+          "bytes": 1850,
+          "git_blob": "2ed215774585d4ec289e211cf4ac60d616a62b75",
+          "lfs_sha256": null,
+          "sha256": "75e3cd76bd26b77c02507eb35073b66c8ffd0c88eab185ebc6f8c6e425161809"
+        },
+        {
+          "file": "config.json",
+          "bytes": 1751,
+          "git_blob": "912298398b14894fa1bb5e858e3d788e060204c0",
+          "lfs_sha256": null,
+          "sha256": "732c453928a14df15ad7b7bf8c626a02236d10eee80ce63a36aa05df73bc17eb"
+        },
+        {
+          "file": "configuration_kimi.py",
+          "bytes": 4948,
+          "git_blob": "2d66544ae84b3c22b5ec88da2ef3843089198ddd",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 147,
+          "git_blob": "df17c871d59dbbbcaf3dd50b9df2e5c840e5ab88",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 1987740,
+          "git_blob": "645e544891f5f6c03913e26b0a631c8808426dcd",
+          "lfs_sha256": null
+        },
+        {
+          "file": "modeling_kimi.py",
+          "bytes": 40793,
+          "git_blob": "4f296a216c45d2569392eab34b3ac54018e46eec",
+          "lfs_sha256": null
+        },
+        {
+          "file": "special_tokens_map.json",
+          "bytes": 5583,
+          "git_blob": "f5b5c7742464f515c7d3c42d70fa7f18f080207b",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2795286,
+          "git_blob": "b4149a6e17a01b6442187f39890f89bc2fe8d309",
+          "lfs_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+          "sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103"
+        },
+        {
+          "file": "tokenization_kimi.py",
+          "bytes": 12534,
+          "git_blob": "4ed6d54161322844166fd114ec77d5e07202c2c0",
+          "lfs_sha256": null,
+          "sha256": "b6b304f63d355f29f5f5aa27694337c824c90e1ac80559ca537909824729761f"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 3695,
+          "git_blob": "8bfc1efdf0d93e143c98d7bf1199f4aad326c10b",
+          "lfs_sha256": null,
+          "sha256": "5ba77d5822137ac3cb9337d2b84561d10425562cf8b8f2c74c91a832516a778d"
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Kimi-Linear-48B-A3B-Instruct",
+      "revision": "e1df551a447157d4658b573f9a695d57658590e9",
+      "pipeline_tag": "text-generation",
+      "gated": false,
+      "license": "mit",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1631,
+          "git_blob": "e2d27e24431057df43aef17c34daeb0db46b3396",
+          "lfs_sha256": null
+        },
+        {
+          "file": "README.md",
+          "bytes": 6540,
+          "git_blob": "893084bcc9cbc0f63485e3dd8ddd2429abeccfac",
+          "lfs_sha256": null,
+          "sha256": "d2332c5f1c7318737c2d42c6ec09ff7f26223d1b595fd5d0e1a189ba53064dd9"
+        },
+        {
+          "file": "chat_template.jinja",
+          "bytes": 1850,
+          "git_blob": "2ed215774585d4ec289e211cf4ac60d616a62b75",
+          "lfs_sha256": null,
+          "sha256": "75e3cd76bd26b77c02507eb35073b66c8ffd0c88eab185ebc6f8c6e425161809"
+        },
+        {
+          "file": "config.json",
+          "bytes": 1751,
+          "git_blob": "69e2a71feb9258d1ac9e8b0a7cd34d5446672755",
+          "lfs_sha256": null,
+          "sha256": "a6ac3c2c4b5aa72370f9727f49ffa4432715d20061889acdb37c688be853096e"
+        },
+        {
+          "file": "configuration_kimi.py",
+          "bytes": 4948,
+          "git_blob": "2d66544ae84b3c22b5ec88da2ef3843089198ddd",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 147,
+          "git_blob": "65082b17f9353c5aec7ad2c8fee629657f21e62e",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 1987740,
+          "git_blob": "645e544891f5f6c03913e26b0a631c8808426dcd",
+          "lfs_sha256": null
+        },
+        {
+          "file": "modeling_kimi.py",
+          "bytes": 42975,
+          "git_blob": "bdf4d98b1afc0dc9b80a2cd83ffb77efa639c00e",
+          "lfs_sha256": null
+        },
+        {
+          "file": "special_tokens_map.json",
+          "bytes": 5583,
+          "git_blob": "f5b5c7742464f515c7d3c42d70fa7f18f080207b",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2795286,
+          "git_blob": "b4149a6e17a01b6442187f39890f89bc2fe8d309",
+          "lfs_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+          "sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103"
+        },
+        {
+          "file": "tokenization_kimi.py",
+          "bytes": 12534,
+          "git_blob": "4ed6d54161322844166fd114ec77d5e07202c2c0",
+          "lfs_sha256": null,
+          "sha256": "b6b304f63d355f29f5f5aa27694337c824c90e1ac80559ca537909824729761f"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 3695,
+          "git_blob": "8bfc1efdf0d93e143c98d7bf1199f4aad326c10b",
+          "lfs_sha256": null,
+          "sha256": "5ba77d5822137ac3cb9337d2b84561d10425562cf8b8f2c74c91a832516a778d"
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Kimi-VL-A3B-Instruct",
+      "revision": "398eede0903cd983a2bfa0cc634e9ac1d843f375",
+      "pipeline_tag": "image-text-to-text",
+      "gated": false,
+      "license": "mit",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1722,
+          "git_blob": "d4520d69e0cd6c6a28810c13cd1760e3cc4f60bb",
+          "lfs_sha256": null
+        },
+        {
+          "file": "README.md",
+          "bytes": 14619,
+          "git_blob": "aacc0ef7efa62f3d10206ed311f33c2472a62c5a",
+          "lfs_sha256": null,
+          "sha256": "7fa4d4e39537a43a7d6cc6f62873eb014b2f8bc3da2142111ba2ad29d4984794"
+        },
+        {
+          "file": "chat_template.jinja",
+          "bytes": 1032,
+          "git_blob": "019818d19d81c16c4dfe66ee89d937b6ca808843",
+          "lfs_sha256": null,
+          "sha256": "172c7450a66b9b3644538888ffa24d02047e535e9d1f911564460203fbf7e8e8"
+        },
+        {
+          "file": "config.json",
+          "bytes": 2005,
+          "git_blob": "7acee6b033fa560af68b650afcc2457ac807f3d4",
+          "lfs_sha256": null,
+          "sha256": "af3810295de6b08232776b74110ed482fa0183f4aeaec586ff4f7593910951cb"
+        },
+        {
+          "file": "configuration_kimi_vl.py",
+          "bytes": 13151,
+          "git_blob": "7542fddd8ae87c59cef2a91627bf2ce823d1c11e",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 149,
+          "git_blob": "17e8b359f06a1b542412281eeaf096967c298ba9",
+          "lfs_sha256": null
+        },
+        {
+          "file": "image_processing_kimi_vl.py",
+          "bytes": 4680,
+          "git_blob": "1ec0fea53681b1c6e7a91f5e14db0bf738460dde",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 588207,
+          "git_blob": "eec736471c95bc8b36217d039f12b029fff97438",
+          "lfs_sha256": null
+        },
+        {
+          "file": "modeling_kimi_vl.py",
+          "bytes": 105649,
+          "git_blob": "ee22486ad5dbc91f4f939d86f36e732cd3be2d3c",
+          "lfs_sha256": null
+        },
+        {
+          "file": "preprocessor_config.json",
+          "bytes": 401,
+          "git_blob": "ed5370a944f5052d5c879f3c2723fa1aaaa43cab",
+          "lfs_sha256": null
+        },
+        {
+          "file": "processing_kimi_vl.py",
+          "bytes": 7537,
+          "git_blob": "70296b617e5f485e1de6665f0bade946f27abf5a",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2795286,
+          "git_blob": "b4149a6e17a01b6442187f39890f89bc2fe8d309",
+          "lfs_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+          "sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103"
+        },
+        {
+          "file": "tokenization_moonshot.py",
+          "bytes": 10958,
+          "git_blob": "2dfe8f5a715a9f36bc81b1b227a1de23446b1013",
+          "lfs_sha256": null,
+          "sha256": "0ae85e29c37689fefe41b8bfdb7aebd9a0152defedbf37fae0f8413000512029"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 3857,
+          "git_blob": "655acb84881b7d76aad1e8ee0f81c292b05a9863",
+          "lfs_sha256": null,
+          "sha256": "d7861718cab22c7962e14b4693b4009dd526115cd392dc779069a8173be95703"
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Kimi-VL-A3B-Thinking",
+      "revision": "7d99e220af610d8624fcba22b2c076c7ed528f14",
+      "pipeline_tag": "image-text-to-text",
+      "gated": false,
+      "license": "mit",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1783,
+          "git_blob": "a2c32459f717b778e1b974a7c6c278f4f908674d",
+          "lfs_sha256": null
+        },
+        {
+          "file": "README.md",
+          "bytes": 9248,
+          "git_blob": "2e35bec7ac7befe5038f61b30521f2fe5d8f0363",
+          "lfs_sha256": null,
+          "sha256": "354c2afe44ef831cf4311db4cf4d1a056bde978ce2b9cc57f5b47a880c601aa2"
+        },
+        {
+          "file": "chat_template.jinja",
+          "bytes": 1032,
+          "git_blob": "019818d19d81c16c4dfe66ee89d937b6ca808843",
+          "lfs_sha256": null,
+          "sha256": "172c7450a66b9b3644538888ffa24d02047e535e9d1f911564460203fbf7e8e8"
+        },
+        {
+          "file": "config.json",
+          "bytes": 2005,
+          "git_blob": "7acee6b033fa560af68b650afcc2457ac807f3d4",
+          "lfs_sha256": null,
+          "sha256": "af3810295de6b08232776b74110ed482fa0183f4aeaec586ff4f7593910951cb"
+        },
+        {
+          "file": "configuration_kimi_vl.py",
+          "bytes": 13151,
+          "git_blob": "7542fddd8ae87c59cef2a91627bf2ce823d1c11e",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 149,
+          "git_blob": "73065bd17b83216d5fd6abf1fb101d1f7d3d1aed",
+          "lfs_sha256": null
+        },
+        {
+          "file": "image_processing_kimi_vl.py",
+          "bytes": 4680,
+          "git_blob": "1ec0fea53681b1c6e7a91f5e14db0bf738460dde",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 588207,
+          "git_blob": "eec736471c95bc8b36217d039f12b029fff97438",
+          "lfs_sha256": null
+        },
+        {
+          "file": "modeling_kimi_vl.py",
+          "bytes": 105842,
+          "git_blob": "4c6afdac1fe4a3e2323c24a1e7d443b88e625f98",
+          "lfs_sha256": null
+        },
+        {
+          "file": "preprocessor_config.json",
+          "bytes": 401,
+          "git_blob": "ed5370a944f5052d5c879f3c2723fa1aaaa43cab",
+          "lfs_sha256": null
+        },
+        {
+          "file": "processing_kimi_vl.py",
+          "bytes": 7537,
+          "git_blob": "70296b617e5f485e1de6665f0bade946f27abf5a",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2795286,
+          "git_blob": "b4149a6e17a01b6442187f39890f89bc2fe8d309",
+          "lfs_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+          "sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103"
+        },
+        {
+          "file": "tokenization_moonshot.py",
+          "bytes": 10958,
+          "git_blob": "2dfe8f5a715a9f36bc81b1b227a1de23446b1013",
+          "lfs_sha256": null,
+          "sha256": "0ae85e29c37689fefe41b8bfdb7aebd9a0152defedbf37fae0f8413000512029"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 3857,
+          "git_blob": "655acb84881b7d76aad1e8ee0f81c292b05a9863",
+          "lfs_sha256": null,
+          "sha256": "d7861718cab22c7962e14b4693b4009dd526115cd392dc779069a8173be95703"
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Kimi-VL-A3B-Thinking-2506",
+      "revision": "aa1730989e7558695b44ee493623e03bd325a994",
+      "pipeline_tag": "image-text-to-text",
+      "gated": false,
+      "license": "mit",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1801,
+          "git_blob": "2abcc40bd16295b2e98cf03b6fdb1c9076c7167e",
+          "lfs_sha256": null
+        },
+        {
+          "file": "README.md",
+          "bytes": 13625,
+          "git_blob": "cc1b0ade556e102fd9446fd257458eb58c3651ea",
+          "lfs_sha256": null,
+          "sha256": "840d2b966176f9e1742bd3143dcf8cde33e444734f799e1502cba9d0c85643bf"
+        },
+        {
+          "file": "chat_template.jinja",
+          "bytes": 1032,
+          "git_blob": "019818d19d81c16c4dfe66ee89d937b6ca808843",
+          "lfs_sha256": null,
+          "sha256": "172c7450a66b9b3644538888ffa24d02047e535e9d1f911564460203fbf7e8e8"
+        },
+        {
+          "file": "config.json",
+          "bytes": 2005,
+          "git_blob": "7acee6b033fa560af68b650afcc2457ac807f3d4",
+          "lfs_sha256": null,
+          "sha256": "af3810295de6b08232776b74110ed482fa0183f4aeaec586ff4f7593910951cb"
+        },
+        {
+          "file": "configuration_kimi_vl.py",
+          "bytes": 13151,
+          "git_blob": "7542fddd8ae87c59cef2a91627bf2ce823d1c11e",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 149,
+          "git_blob": "73065bd17b83216d5fd6abf1fb101d1f7d3d1aed",
+          "lfs_sha256": null
+        },
+        {
+          "file": "image_processing_kimi_vl.py",
+          "bytes": 4680,
+          "git_blob": "1ec0fea53681b1c6e7a91f5e14db0bf738460dde",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 588207,
+          "git_blob": "eec736471c95bc8b36217d039f12b029fff97438",
+          "lfs_sha256": null
+        },
+        {
+          "file": "modeling_kimi_vl.py",
+          "bytes": 105842,
+          "git_blob": "4c6afdac1fe4a3e2323c24a1e7d443b88e625f98",
+          "lfs_sha256": null
+        },
+        {
+          "file": "preprocessor_config.json",
+          "bytes": 402,
+          "git_blob": "92bd1824b19b1837205795ba0874acae7b4ed8e7",
+          "lfs_sha256": null
+        },
+        {
+          "file": "processing_kimi_vl.py",
+          "bytes": 7538,
+          "git_blob": "de279ec3796835f8c888f5862ebda068ebf268cc",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2795286,
+          "git_blob": "b4149a6e17a01b6442187f39890f89bc2fe8d309",
+          "lfs_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+          "sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103"
+        },
+        {
+          "file": "tokenization_moonshot.py",
+          "bytes": 10958,
+          "git_blob": "2dfe8f5a715a9f36bc81b1b227a1de23446b1013",
+          "lfs_sha256": null,
+          "sha256": "0ae85e29c37689fefe41b8bfdb7aebd9a0152defedbf37fae0f8413000512029"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 3857,
+          "git_blob": "655acb84881b7d76aad1e8ee0f81c292b05a9863",
+          "lfs_sha256": null,
+          "sha256": "d7861718cab22c7962e14b4693b4009dd526115cd392dc779069a8173be95703"
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/MoonViT-SO-400M",
+      "revision": "a889d399ff2306053e4e28d499d3b8f97d3e5007",
+      "pipeline_tag": "image-feature-extraction",
+      "gated": false,
+      "license": "mit",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1561,
+          "git_blob": "f6b1f326ca4ab7cf0c8798856f8fe0020ff82d58",
+          "lfs_sha256": null
+        },
+        {
+          "file": "README.md",
+          "bytes": 1427,
+          "git_blob": "55250c45719c699dd57f9378694945ece631530e",
+          "lfs_sha256": null
+        },
+        {
+          "file": "config.json",
+          "bytes": 501,
+          "git_blob": "741c945c6c5bcaef3038593d7eafe76d34db2aff",
+          "lfs_sha256": null
+        },
+        {
+          "file": "configuration_moonvit.py",
+          "bytes": 1020,
+          "git_blob": "f51d25ea873f27a7bd80a59ca6b0bde118b211b8",
+          "lfs_sha256": null
+        },
+        {
+          "file": "image_processing_moonvit.py",
+          "bytes": 4681,
+          "git_blob": "d903a209f9c5e4dfc9ffd14a3fee61013e70eb68",
+          "lfs_sha256": null
+        },
+        {
+          "file": "modeling_moonvit.py",
+          "bytes": 19448,
+          "git_blob": "274888a745ca5de53e474aa4ce413f6446eea804",
+          "lfs_sha256": null
+        },
+        {
+          "file": "preprocessor_config.json",
+          "bytes": 339,
+          "git_blob": "5d4ed93b0fe588de0c2d924022d9b08075553287",
+          "lfs_sha256": null
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Moonlight-16B-A3B",
+      "revision": "476b36a473d4467f94469414bef6cee75c9c8172",
+      "pipeline_tag": "text-generation",
+      "gated": false,
+      "license": "mit",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1519,
+          "git_blob": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "lfs_sha256": null
+        },
+        {
+          "file": "README.md",
+          "bytes": 8355,
+          "git_blob": "f4ff807b4de8ae9a7281f1c85fdd449ecb6c1488",
+          "lfs_sha256": null,
+          "sha256": "4d74df70b1d105726ff2a6944fce443a8aee57671c5edaf1af5870a37d11c91b"
+        },
+        {
+          "file": "config.json",
+          "bytes": 1375,
+          "git_blob": "884b0b151c22df50797e9392f1f1f968abfa0019",
+          "lfs_sha256": null,
+          "sha256": "64513a4aa6ffd2337215ea80c880491ad54a180ffb66a53dd9e178c6f8e9f76c"
+        },
+        {
+          "file": "configuration_deepseek.py",
+          "bytes": 10652,
+          "git_blob": "79b86a084abd1013a46244394f876aa0375b88ca",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 61,
+          "git_blob": "0434d33d917b3d0c95e4f19a225c61b98f1e34de",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 445693,
+          "git_blob": "5a1b46de3d2e062948cd2883d56960711a1a16d3",
+          "lfs_sha256": null
+        },
+        {
+          "file": "modeling_deepseek.py",
+          "bytes": 75859,
+          "git_blob": "a72d8b7d904ebc28aab13be12bbb5f0469a41be7",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2795286,
+          "git_blob": "b4149a6e17a01b6442187f39890f89bc2fe8d309",
+          "lfs_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+          "sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103"
+        },
+        {
+          "file": "tokenization_moonshot.py",
+          "bytes": 11129,
+          "git_blob": "6c4903cc80d4e347ba5e25d57160268edd7ee1e4",
+          "lfs_sha256": null,
+          "sha256": "11b6c72b07381146bbde5e987e927b134a5a1a7e22741693024237b53dd23557"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 2659,
+          "git_blob": "6eee45b6e1ff757799cf1da5d52d0c266d5894c3",
+          "lfs_sha256": null,
+          "sha256": "566eff6d3b862587c620edb402dc76417c582605c79e2c9a4bca333a73f44fcb"
+        }
+      ]
+    },
+    {
+      "repo": "moonshotai/Moonlight-16B-A3B-Instruct",
+      "revision": "4e735b07a89f73647dfab71ab91b840f362ede5b",
+      "pipeline_tag": "text-generation",
+      "gated": false,
+      "license": "mit",
+      "files": [
+        {
+          "file": ".gitattributes",
+          "bytes": 1519,
+          "git_blob": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "lfs_sha256": null
+        },
+        {
+          "file": "README.md",
+          "bytes": 8355,
+          "git_blob": "f4ff807b4de8ae9a7281f1c85fdd449ecb6c1488",
+          "lfs_sha256": null,
+          "sha256": "4d74df70b1d105726ff2a6944fce443a8aee57671c5edaf1af5870a37d11c91b"
+        },
+        {
+          "file": "config.json",
+          "bytes": 1375,
+          "git_blob": "9e4762cf96109967c9a0393946f7e8424037b170",
+          "lfs_sha256": null,
+          "sha256": "6827d4b5327a446d6a80716a6e5cec695f279b282110ef7dae09241656430302"
+        },
+        {
+          "file": "configuration_deepseek.py",
+          "bytes": 10652,
+          "git_blob": "79b86a084abd1013a46244394f876aa0375b88ca",
+          "lfs_sha256": null
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 61,
+          "git_blob": "cd487f22fea22a60e404e6d15145ccec3bb1cf21",
+          "lfs_sha256": null
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "bytes": 445693,
+          "git_blob": "bebd4429634b5d806138c9dfa5cdb4a8aa8d04dc",
+          "lfs_sha256": null
+        },
+        {
+          "file": "modeling_deepseek.py",
+          "bytes": 75864,
+          "git_blob": "1e0b079496ed8dabcceed03af8bbbd02861ec2e4",
+          "lfs_sha256": null
+        },
+        {
+          "file": "tiktoken.model",
+          "bytes": 2795286,
+          "git_blob": "b4149a6e17a01b6442187f39890f89bc2fe8d309",
+          "lfs_sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103",
+          "sha256": "b6c497a7469b33ced9c38afb1ad6e47f03f5e5dc05f15930799210ec050c5103"
+        },
+        {
+          "file": "tokenization_moonshot.py",
+          "bytes": 11129,
+          "git_blob": "6c4903cc80d4e347ba5e25d57160268edd7ee1e4",
+          "lfs_sha256": null,
+          "sha256": "11b6c72b07381146bbde5e987e927b134a5a1a7e22741693024237b53dd23557"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 2659,
+          "git_blob": "6eee45b6e1ff757799cf1da5d52d0c266d5894c3",
+          "lfs_sha256": null,
+          "sha256": "566eff6d3b862587c620edb402dc76417c582605c79e2c9a4bca333a73f44fcb"
+        }
+      ]
+    }
+  ],
+  "identity_policy": "Group identical native ordinary ranks, regex, complete special-ID mapping, direct encode special policy, chunk limits and decoding. Chat-only changes do not split text profiles."
+}

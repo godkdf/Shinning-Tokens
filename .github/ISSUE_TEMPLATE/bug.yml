@@ -1,0 +1,30 @@
+name: Bug report
+description: Report a reproducible tokenizer, data, launcher or explorer problem.
+body:
+  - type: input
+    id: release
+    attributes:
+      label: Release or commit
+      description: Include the app version and the result cohort if relevant.
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Operating system and processor
+    validations:
+      required: true
+  - type: textarea
+    id: selection
+    attributes:
+      label: Tokenizers, datasets and language IDs
+      description: Include artifact hashes when the tokenizer is custom.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps, expected result and actual result
+      description: Give exact counts or a minimal text example when possible. Do not include credentials or private documents.
+    validations:
+      required: true

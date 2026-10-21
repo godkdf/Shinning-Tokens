@@ -1,4 +1,8 @@
-# Intrinsic benchmark protocol v0.1
+# Intrinsic benchmark protocol
+
+Current protocol: **intrinsic-v0.2**. Application **0.2.3** publishes result cohorts v0.1–v0.4 separately. The current matrix has **54 profiles × 431,570 inputs = 23,304,780 observations**, across **867 partitions per tokenizer**. Earlier cohorts and their saved measurement sources remain frozen.
+
+The expanded inputs and Unicode transport rules are specified in [docs/EXPANDED.md](docs/EXPANDED.md); formats and hash scopes are in [docs/SCHEMAS.md](docs/SCHEMAS.md). Result extensions retain prior audit evidence rather than claiming every historical checkpoint was re-audited during each addition. The initial FineWeb/diagnostic definitions below remain part of the protocol.
 
 ## Inputs and scope
 
@@ -41,3 +45,13 @@ V3.1 is compared to the **Gemma 3 control**, not Gemma4. The local control remov
 Whole-sequence conversion rejects special/control IDs and incomplete byte streams, decodes the complete ordinary sequence, encodes the target, then compares reconstructed bytes. It cannot undo normalization already performed by the source. Standalone vocabulary maps describe piece matching and one-to-many encodings; they are not universal token-ID substitution tables or model-weight conversion.
 
 Embedding initialization, embedding-space mapping and cross-tokenizer distillation are separate studies. Published results, historical local reports, executable baselines and fresh local reproductions have explicit evidence labels.
+
+## Expanded Unicode and family behavior
+
+FLORES-200 dev/devtest contribute **409,836 sentences / 204 script varieties**. MADLAD contributes **5,237 bounded-prefix documents / 418 configurations**. These augment the **5,941 FineWeb documents** and **10,556 diagnostics** without modifying them. FLORES+ was not run; MADLAD is not a uniform or established historical holdout sample.
+
+UTF-16LE and BE compare strict encodings of the original and reconstructed Unicode without BOMs. They are transport checks, not alternative tokenizer code-unit inputs. Each profile has **10 valid probes and 6 malformed inputs rejected before tokenization**. Token counts do not depend on this transport switch.
+
+Full native tokenizer identity includes special-token policy and wrapper limits. Kimi's shared ordinary rank file does not collapse its 8 profiles: special names/ranges or direct marker-recognition policies differ. Four expose two reserved IDs beyond their model configs' declared rows. Native tiktoken data paths are inspected; complete Transformers wrapper parity is not independently established. [Kimi details](docs/KIMI.md).
+
+Runtime cohorts use the same frozen **216-document / 1,112,864-byte** interleaved FineWeb input with one warm-up and five timed repeats in sequential fresh processes. The 54 historical rows were not measured simultaneously. Loaded RSS, incremental RSS, sampled peak, tokenizer file bytes and browser memory are distinct quantities.

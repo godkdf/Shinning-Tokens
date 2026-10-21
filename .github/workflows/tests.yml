@@ -11,3 +11,6 @@ jobs:
       - run: uv sync --frozen --extra test --python 3.12
       - run: uv run pytest -q
       - run: node --check site/app.js
+      - run: node --check site/launcher.js
+      - run: node --check site/offline-download.js
+      - run: uv run --frozen python -m tokenizer_lab.publication audit --source-only

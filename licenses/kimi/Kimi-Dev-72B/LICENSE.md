@@ -1,0 +1,2 @@
+- Kimi-Dev-72B is built with Qwen-2.5-72B. Qwen-2.5-72B is licensed under the [Qwen LICENSE AGREEMENT](https://huggingface.co/Qwen/Qwen2.5-72B/blob/main/LICENSE), Copyright (c) Alibaba Cloud. All Rights Reserved.
+- Subject to the Qwen LICENSE AGREEMENT, Kimi-Dev-72B is under MIT license.

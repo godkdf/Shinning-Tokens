@@ -1,21 +1,6 @@
 name: Offline portability
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'src/**'
-      - 'scripts/launch*'
-      - 'configs/runtime-assets.json'
-      - 'pyproject.toml'
-      - 'uv.lock'
-      - '.github/workflows/portability.yml'
-  pull_request:
-    paths:
-      - 'src/**'
-      - 'scripts/launch*'
-      - 'configs/runtime-assets.json'
-      - 'pyproject.toml'
-      - 'uv.lock'
 jobs:
   native-kit:
     strategy:

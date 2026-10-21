@@ -1,0 +1,23 @@
+name: Tokenizer or diagnostic proposal
+description: Propose a pinned tokenizer, language diagnostic or comparison.
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Official tokenizer repository or diagnostic source
+    validations:
+      required: true
+  - type: textarea
+    id: difference
+    attributes:
+      label: What differs from existing profiles?
+      description: Describe vocabulary IDs, normalization, special policies, segmentation or a concrete failing example. A new model name alone is not a distinct tokenizer.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Revision, data-only artifacts, license and expected measurement
+      description: No model weights are needed for an intrinsic tokenizer proposal.
+    validations:
+      required: true

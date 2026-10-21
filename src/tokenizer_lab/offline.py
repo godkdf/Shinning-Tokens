@@ -101,10 +101,16 @@ def _preflight(root, tokenizers, languages, datasets):
                 relative = f".cache/assets/{spec['id']}/{filename}"
             files.append((relative, spec.get("sha256")))
             asset_dir = root / ".cache/assets" / spec["id"]
-            if asset_dir.is_dir():
-                for companion in asset_dir.rglob("*"):
-                    if companion.is_file() and companion.suffix.lower() not in (".py", ".pyc", ".safetensors", ".pt", ".pth", ".bin", ".onnx") and companion.relative_to(root).as_posix() != relative:
-                        files.append((companion.relative_to(root).as_posix(), None))
+            # Declared reference .py files are data, never imported or executed.
+            # Catalog readiness requires these companions, including their hashes.
+            for companion in spec.get("companions", []):
+                name=companion['file']
+                path=(asset_dir/name).relative_to(root).as_posix()
+                if path!=relative:files.append((path,companion['sha256']))
+            for name in ['provenance.json','ported-tokenizer.json']:
+                path=asset_dir/name
+                if path.is_file() and not any(path.relative_to(root).as_posix()==p for p,_ in files):
+                    files.append((path.relative_to(root).as_posix(),None))
     for partition in partitions:
         if not partition.get("sha256"):
             raise ValueError(f"Partition has no integrity hash: {partition.get('path')}")
@@ -168,8 +174,8 @@ def _uv(root):
 def _dependencies(root, kit, spec):
     uv = _uv(root)
     requirements = kit / "requirements.lock.txt"
-    subprocess.run([uv, "export", "--frozen", "--no-dev", "--no-editable", "--no-emit-project", "--no-header", "--format", "requirements.txt", "--output-file", str(requirements)], cwd=root, check=True, stdout=subprocess.DEVNULL)
     cache = Path(os.environ.get("UV_CACHE_DIR", str(root / ".cache/offline/uv")))
+    subprocess.run([uv, "export", "--frozen", "--no-dev", "--no-editable", "--no-emit-project", "--no-header", "--format", "requirements.txt", "--cache-dir",str(cache),"--output-file", str(requirements)], cwd=root, check=True, stdout=subprocess.DEVNULL)
     command = [uv, "pip", "install", "--target", str(kit / "vendor"), "--python-version", "3.12", "--python-platform", spec["python_platform"], "--only-binary", ":all:", "--require-hashes", "--link-mode", "copy", "--cache-dir", str(cache), "--requirements", str(requirements), "--no-python-downloads"]
     if os.environ.get("TOKENIZER_LAB_OFFLINE") == "1":
         command.append("--offline")
@@ -238,7 +244,7 @@ def _copy_site(root, kit, selected_ids, language_ids, dataset_ids):
         if relative.parts and relative.parts[0] == "data":
             excluded |= {name for name in names if name.endswith((".gz", ".zip", ".parquet", ".jsonl", ".tar", ".zst")) and name!="hub.json.gz"}
         if str(relative) == "data":
-            excluded |= {"vocab", "mappings", "texts", "text", "encodings", "offline", "tokenizers", "gemma-v31-inputs.tar.gz", "observations.jsonl.gz"} & set(names)
+            excluded |= {"vocab", "mappings", "texts", "text", "encodings", "offline", "tokenizers", "gemma-v31-inputs.tar.gz", "observations.jsonl.gz", "offline-index.json", "source-release.json", "release-validation.json"} & set(names)
         return excluded
     shutil.copytree(root / "site", kit / "site", ignore=ignore)
     examples_path = kit / "site/data/examples.json"
@@ -369,10 +375,10 @@ def build_bundle(target, tokenizers=None, languages=None, datasets=None, output=
         for directory in ("src", "docs", "licenses", "research", "scripts"):
             if (root / directory).is_dir():
                 shutil.copytree(root / directory, kit / directory, ignore=shutil.ignore_patterns("__pycache__", "*.pyc", ".DS_Store"))
-        for name in ("pyproject.toml", "uv.lock", "README.md", "LICENSE", "THIRD_PARTY.md", "CITATION.cff"):
+        for name in ("pyproject.toml", "uv.lock", "README.md", "LICENSE", "THIRD_PARTY.md", "CITATION.cff", "CHANGELOG.md", "BENCHMARK.md", "CONTRIBUTING.md", "SECURITY.md"):
             if (root / name).is_file():
                 _copy(root, kit, name)
-        shutil.copytree(root / "configs", kit / "configs")
+        shutil.copytree(root / "configs", kit / "configs",ignore=shutil.ignore_patterns('custom-tokenizers.json','.DS_Store','*.tmp'))
         selected_ids = {p["id"] for p in entries}
         if "gemma_v31" in selected_ids and (root / "experiments/gemma-v31").is_dir():
             shutil.copytree(root / "experiments/gemma-v31", kit / "experiments/gemma-v31")

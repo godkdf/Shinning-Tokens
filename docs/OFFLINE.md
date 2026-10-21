@@ -4,13 +4,15 @@ A portable kit contains **one Python runtime, native packages, the selected toke
 
 ## Supported kits
 
+The source checkout and current starter packages are **0.2.3**, with the complete **54-profile catalog**, including GPT-2, original Llama 3 and **8 Kimi/Moonlight profiles** as separate selections. Historical 0.2.1 archives remain separate local artifacts. Empty download selections still install **0 tokenizer / 0 language payloads**. Each Kimi profile downloads only its rank data and recorded configuration/notices; no model weights or media payloads are needed.
+
 | Kit | Computer | Minimum supported system |
 | --- | --- | --- |
 | `windows-x86_64` | Windows, Intel or AMD 64-bit | Windows 10 |
 | `linux-x86_64` | Linux, Intel or AMD 64-bit | glibc 2.28; Ubuntu 20.04 and newer satisfy this |
 | `macos-arm64` | Mac, Apple Silicon | macOS 13 |
 | `macos-x86_64` | Mac, Intel | macOS 13 |
-| `linux-arm64` | Linux, 64-bit ARM | glibc 2.28 |
+| `linux-arm64` (build-only target) | Linux, 64-bit ARM; no prebuilt release ZIP | glibc 2.28 |
 
 Windows ARM and 32-bit systems are not native kit targets. The Mac kits use different native packages; choose the kit for the computer's processor. The Linux kit targets glibc distributions; Alpine's musl environment is outside this target.
 
@@ -90,7 +92,7 @@ set PYTHONPATH=src;vendor
 runtime\python.exe -m tokenizer_lab.offline verify
 ```
 
-Verification reports checked file count, corrupt or missing files, and whether the kit matches the current operating system and processor. A matching checksum proves file integrity; it does not prove execution on another operating system. Native portability checks are defined for all four required targets in `.github/workflows/portability.yml`, including relocation into a path containing spaces, actual Unicode encode/decode, UTF-16 code-unit equality, and blocked external DNS. The existence of this workflow does not mean those remote jobs have already run.
+Verification reports checked file count, corrupt or missing files, and whether the kit matches the current operating system and processor. A matching checksum proves file integrity; it does not prove execution on another operating system. Manual native portability checks are defined for all four required targets in `.github/workflows/portability.yml`, including relocation into a path containing spaces, actual Unicode encode/decode, UTF-16 code-unit equality, and blocked external DNS. The workflow runs only when dispatched manually. Its existence does not mean those remote jobs have already run.
 
 Primary references: [Python Build Standalone release](https://github.com/astral-sh/python-build-standalone/releases/tag/20260901), [distribution documentation](https://github.com/astral-sh/python-build-standalone/blob/main/docs/running.rst), [uv target installation](https://docs.astral.sh/uv/reference/cli/), [GitHub native runner labels](https://docs.github.com/en/actions/reference/runners/github-hosted-runners).
 
@@ -109,3 +111,9 @@ Fresh browser selections are empty. Tokenizers can be downloaded without choosin
 The plan distinguishes installed compressed bytes from network transfer bytes. FLORES source replay temporarily downloads the **25,585,843-byte** official archive once, installs only the selected split/language files, and deletes the archive. FineWeb uses bounded Parquet ranges; MADLAD reads a bounded prefix of a pinned gzip stream. Their network totals are unknown before transfer and are labelled accordingly. These costs are shown before Download. Removal deletes only selected known cached payloads and returns the actual bytes freed.
 
 The app and benchmark engine share one compressed language-text copy. At most two selected language files stay unpacked in the browser. Starter archives include runtime/native dependencies and metadata; zero selected payloads does not mean a zero-byte application. The unused terminal-info database is omitted from portable runtimes to avoid case-sensitive filename collisions when preparing Linux packages on macOS.
+
+## Publication artifacts
+
+The four current starter ZIPs, exact sizes, source fingerprints and SHA-256 values are prepared under `artifacts/releases/0.2.3/`. `site/data/offline-index.json` records the corresponding multipart browser downloads and per-archive native verification. Packages contain no historical downloadable ZIPs recursively. Current static hosting and GitHub-release upload are separate publication steps. See [release preparation](RELEASE.md).
+
+A small source archive is corpus-free; use the local manager to restore only selected pinned text and tokenizer inputs. The larger explorer archive contains saved vocabularies/maps/text. A starter contains only the selected OS runtime/dependencies plus the interface and aggregate metadata. Declared reference-source `.py` companions may be retained as data for catalog integrity; the lab never imports those upstream files.

@@ -8,7 +8,7 @@ async function render(){
   const response=await fetch('./data/offline-index.json');if(!response.ok)throw new Error('Offline packages are not present in this source checkout. See docs/OFFLINE.md to build a selected package.');
   const index=await response.json();const grid=node('div','','two-column');
   for(const kit of index.kits){
-   const card=node('section','','card');card.append(node('h2',names[kit.target]||kit.target),node('p',`${bytes(kit.bytes)} download · ${bytes(kit.installed_bytes)} extracted`),node('p','0 tokenizers · 0 benchmarks · 0 language files','note'));
+   const card=node('section','','card');card.append(node('h2',names[kit.target]||kit.target),node('p',`Release ${index.release}`,'note'),node('p',`${bytes(kit.bytes)} download · ${bytes(kit.installed_bytes)} extracted`),node('p','0 tokenizers · 0 benchmarks · 0 language files','note'));
    const button=node('button','Download starter ZIP ↓','button primary');button.type='button';const status=node('p','','note');const cancel=node('button','Cancel','button small');cancel.type='button';cancel.hidden=true;let controller;
    cancel.onclick=()=>controller?.abort();
    button.onclick=async()=>{
@@ -26,7 +26,7 @@ async function render(){
      const url=URL.createObjectURL(blob);const a=node('a');a.href=url;a.download=kit.filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),60000);status.textContent=`Verified ${bytes(blob.size)}. Extract the ZIP and open Launch Tokenizer Lab.`;
     }catch(error){status.textContent=error.name==='AbortError'?'Download cancelled. No further parts will be fetched.':error.message;}finally{button.disabled=false;cancel.hidden=true;}
    };
-   const detail=node('details');detail.append(node('summary','Integrity & system requirements'),node('p',kit.minimum_os||''),node('code',kit.sha256));card.append(button,cancel,status,detail);grid.append(card);
+   const detail=node('details');detail.append(node('summary','Integrity & system requirements'),node('p',kit.minimum_os||''),node('code',kit.sha256));card.append(button,cancel,status,detail);if(kit.release_url){const direct=node('a','Download from GitHub release ↗','inline-link');direct.href=kit.release_url;direct.rel='noopener noreferrer';card.append(direct);}grid.append(card);
   }
   host.replaceChildren(grid);
  }catch(error){host.replaceChildren(node('p',error.message,'callout'));}

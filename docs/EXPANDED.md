@@ -38,13 +38,29 @@ Local runs require explicit nonempty tokenizer, dataset and language selections,
 After explicitly preparing the selected inputs, replay the full expanded matrix with:
 
 ```sh
-uv run --frozen tokenizer-lab run-selected --selection configs/expanded-selection.json --vocabulary --runtime --output results/replay-v0.2
+uv run --frozen tokenizer-lab run-selected --selection configs/expanded-selection.json --vocabulary --runtime --output results/local/full-matrix
 ```
 
-That command intentionally selects all 44 configured tokenizers and all prepared benchmark partitions. The local launcher's normal default remains an empty selection. For everyday work, select a smaller scope in the launcher. The published runtime table is measured sequentially; the expanded corpus execution can be partitioned into separate jobs without pooling timing from concurrent jobs.
+That command now selects all 54 configured tokenizers and all prepared benchmark partitions. The local launcher's normal default remains an empty selection. For everyday work, select a smaller scope in the launcher. The published runtime table is measured sequentially; the expanded corpus execution can be partitioned into separate jobs without pooling timing from concurrent jobs.
 
 The expanded run retains the frozen v0.1 release and writes separate v0.2 checkpoints. Native runtime samples use the same interleaved FineWeb text, one warm-up, five repeats and a fresh process. Final runtime measurements are collected sequentially after corpus jobs finish. RSS, incremental loaded RSS, sampled peak RSS, loading time and encode/decode MB/s have distinct definitions; numbers apply to the recorded host. No aggregate winner score is defined.
 
 Vocabulary categories overlap. Script, numeric and code-associated token counts describe pieces; they are not ability scores. Pairwise overlap uses unique ordinary byte pieces without normalization. Whole-sequence conversion retokenizes reconstructed text and checks fidelity. Full standalone maps are available for the original 30 directions; new pairs can be converted on demand locally rather than silently downloading every possible map.
 
 Language names and aliases use the recorded FLORES names, langcodes/language-data and ISO names. Continent browsing uses overlapping CLDR and Glottolog country metadata. Multiple groups are intentional; Unspecified means insufficient metadata. Metadata file SHA-256 values are stored in `benchmarks/languages.json`.
+
+## Reference extension v0.3
+
+GPT-2 and original Llama 3 each ran the same **431,570 inputs / 867 partitions**, adding **863,140 observations** and **1,734 independently audited checkpoints**. The combined explorer has **46 profiles, 19,852,220 observations and 1,035 pairs**. Frozen v0.2 checkpoints retain their prior audit; their aggregates are copied unchanged, with hashes linking both audit records. See [the extension results](../reports/v0.3.md).
+
+GPT-2 uses native tiktoken with **50,256 ordinary pieces + 1 special ID**. Llama 3 uses native tiktoken with **128,000 ordinary pieces + 256 special IDs**. Its pinned public NousResearch redistribution matches Meta's official Git blobs; reconstructing the original rank file must reproduce Meta's original SHA-256 before the adapter loads. Meta's **400,000-character slice and 25,000-character consecutive-run limits** are retained. Neither profile normalizes text or inserts BOS/EOS. Literal special-token spellings are ordinary text.
+
+`configs/reference-selection.json` selects only these two profiles and the full corpus. `python -m tokenizer_lab.publish_references` combines their separate `results/v0.3/gpt2` and `results/v0.3/llama3` outputs with frozen v0.2 measurements, audits the new checkpoints, adds saved examples and updates the local explorer. New runtime rows use the identical frozen input hash; historical 44-profile timings were not rerun. Private website publication and native Windows/Linux/Intel Mac checks remain deferred.
+
+## Kimi extension v0.4
+
+Eight Kimi/Moonlight profiles each ran the same **431,570 inputs / 867 partitions**, adding **3,452,560 observations** and **6,936 audited checkpoints**. The combined explorer has **54 profiles, 23,304,780 observations and 1,431 vocabulary pairs**. Kimi Dev is a byte-identical tokenizer alias of the existing Qwen 2.5 profile. Historical aggregates remain frozen; only that profile's name/family/alias metadata is enriched.
+
+The eight profiles share ordinary ranks but preserve different special-ID maps, reserved ranges and direct encode policies. Seven recognize literal special spellings; K2 Base encodes them as ordinary text. Four upstream wrappers expose **258 special IDs**, including two beyond their model configs' vocabulary rows. Full Transformers wrapper parity is not independently established. See [Kimi identities](KIMI.md) and [measured results](../reports/v0.4.md).
+
+With the selected assets and complete pinned corpus cached, `uv run --frozen python -m tokenizer_lab.publish_kimi --run` runs the eight profiles sequentially, preserves their measurement sources, audits new observations and updates the local explorer. This performs no implicit downloads and does not publish the website.

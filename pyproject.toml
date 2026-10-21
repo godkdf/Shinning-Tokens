@@ -1,6 +1,6 @@
 [project]
 name = "shining-tokenizer-lab"
-version = "0.2.1"
+version = "0.2.3"
 description = "Reproducible tokenizer comparison, vocabulary exploration, and transfer research"
 readme = "README.md"
 requires-python = ">=3.11"

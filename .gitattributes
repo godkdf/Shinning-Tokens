@@ -1,2 +1,8 @@
-# Preserve verbatim upstream agreement snapshots, including their whitespace.
-licenses/*.html -whitespace
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.gz binary
+*.zip binary
+*.png binary
+*.parquet binary
+*.npy binary
+*.npz binary

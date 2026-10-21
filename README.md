@@ -1,82 +1,83 @@
 # Tokenizer Lab
 
-A reproducible hub for understanding tokenizer strengths, weaknesses, and tradeoffs across languages. The expanded inventory has **44 tokenizer profiles**, including distinct GLM, Qwen, DeepSeek, Xiaomi MiMo and MiniMax generations. Exact aliases group **104 official checkpoints into 38 profiles**; the existing Gemma, BLOOM, JAIS, o200k and parent-control profiles remain available.
+Compare how tokenizers represent the same text: what they preserve, how many tokens they use, what their vocabularies contain, and how fast they run. **No model training or model weights are required.**
 
-The v0.2 corpus contains **431,570 inputs**: **409,836 FLORES-200 sentences** across **204 script varieties**, **5,237 MADLAD documents** across **418 configurations**, **5,941 FineWeb documents**, and **10,556 diagnostics**. UTF-8, UTF-16LE and UTF-16BE fidelity are reported separately. See [the expanded protocol](docs/EXPANDED.md) and [tokenizer inventory](docs/tokenizer-families.md).
+**Release 0.2.3 · 54 tokenizer profiles · 23,304,780 observations · 1,431 vocabulary comparisons.**
 
-For a self-contained local application, use [the offline setup](docs/OFFLINE.md). Starter packages contain **0 tokenizer and 0 language-text payloads**. Select only the tokenizers, benchmarks and languages you need, review installed and download sizes, then download explicitly. Cached benchmark runs never fetch missing files.
+The lab includes Gemma, BLOOM, JAIS, GPT-2, native o200k, Llama 3, GLM, Qwen, DeepSeek, MiMo, MiniMax and Kimi/Moonlight generations. Exact tokenizer aliases are grouped; different special IDs or processing policies remain distinct. See [the inventory](docs/tokenizer-families.md) and [Kimi identities](docs/KIMI.md).
 
-This is intrinsic analysis: **no model training or model weights are required**. Compression is not model quality. Embedding transfer and distillation have a separate, cited [research library](docs/research/index.md).
+## Start the local app
 
-| Tokenizer | Purpose |
-|---|---|
-| Original Gemma4 | General multilingual comparator |
-| BLOOM | General multilingual comparator |
-| JAIS Family 256M | Arabic/English comparator |
-| Qwen3 | General multilingual comparator; normalization is measured explicitly |
-| Native o200k | Native `tiktoken` implementation, not a converted tokenizer |
-| Gemma V3.1 | Experimental Gemma 3 expansion: **2,000 appended IDs** |
-| Gemma 3 parent control | Expansion control, reconstructed by removing those 2,000 additions |
+1. Download the **0.2.3 starter ZIP for your computer** from the project's [release assets](https://github.com/godkdf/Shinning-Tokens/releases).
+2. Extract the complete ZIP. On Windows open **Launch Tokenizer Lab.cmd**; on either Mac architecture open **Launch Tokenizer Lab.command**; on Linux run **launch-tokenizer-lab.sh**.
+3. In **Downloads & storage**, select only the tokenizers, benchmarks and languages you need. Review the sizes, then download explicitly.
+4. Run the selected benchmark, compare saved results, inspect vocabularies, or convert text between installed tokenizers.
 
-Exact repository revisions are in [the registry](configs/registry.json). The reconstructed parent has not been verified against Google's gated download. Its identity and exact candidate rebuild are recorded in [the expansion experiment](experiments/gemma-v31/identity.json).
+Starters contain **0 tokenizer assets and 0 benchmark-text payloads**. Python, native dependencies, the interface and saved aggregate results are included. After preparing selected inputs online once, runs work offline. Language text stays compressed until selected. You can search languages by normal name and browse overlapping continent groups.
 
-## Frozen v0.1 measured results
+Custom tokenizers: import a local Hugging Face-compatible **tokenizer.json**, give it a name, and select the benchmarks and languages to run. Import does not execute repository Python. [Offline setup and system requirements](docs/OFFLINE.md).
 
-- **115,479 observations**: 7 tokenizers × 16,497 original inputs.
-- **5,941 FineWeb documents**, **23,437,127 UTF-8 bytes**, **24 language/script varieties**. All 7 tokenizers reconstruct every sampled FineWeb document exactly.
-- On **10,556 constructed diagnostics**, Gemma4, Gemma V3.1 and its parent each change 20 inputs; Qwen3 changes 24 through canonical Unicode normalization. BLOOM, JAIS and native o200k reconstruct all diagnostics exactly. These are observed samples, not a proof of losslessness for every possible string.
-- V3.1 saves **104,899 / 5,681,387 tokens = 1.8464%** on the pooled FineWeb sample. **17 languages improve; 7 regress**. Igbo uses **11.68% fewer** tokens; Portuguese uses **3.97% more**. No model-quality gain is established.
+**Verification:** the current Apple Silicon kit is exercised locally. Windows, Linux and Intel Mac packages have pinned runtime/wheel hashes and archive checks; native execution on those three platforms remains deferred. The manual portability workflow is available for later verification.
 
-See [the complete generated report](reports/v0.1.md), per-language tables and artifact identities. Runtime numbers apply to the recorded host; no combined winner score is assigned.
+## Run from source
 
-## Start
-
-Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/). Run from the cloned repository; the editable research project keeps configuration, inputs, and outputs together.
+Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/). The project runs from its source checkout rather than as a standalone PyPI installation.
 
 ```sh
 git clone https://github.com/godkdf/Shinning-Tokens.git
 cd Shinning-Tokens
 uv sync --frozen --extra test
-uv run tokenizer-lab doctor
-uv run pytest -q
+uv run --frozen tokenizer-lab launch
 ```
 
-The repository may be private. GitHub access is required until its owner changes that audience.
+The launcher opens at **http://localhost:8765/launcher.html**. The explorer uses the same local service. The repository currently requires GitHub access while private; publishing or changing visibility is a separate owner action.
 
-The published result bundle can be explored without downloading model weights. For a fresh measurement:
+`uv run --frozen tokenizer-lab doctor` checks installed assets without fetching them. `uv run --frozen pytest -q` runs the tests. Asset integration tests skip when their explicitly cached inputs are absent; skips are not evidence that those tokenizer implementations passed.
 
-```sh
-uv run tokenizer-lab prepare
-uv run tokenizer-lab run --config configs/launch.json
-uv run tokenizer-lab verify
-uv run tokenizer-lab serve
-```
+## What has been measured
 
-Open **http://localhost:8765**. Downloaded tokenizer files are cached outside tracked source. Official Gemma 3 access requires accepting upstream terms and authenticating with Hugging Face. The frozen V3.1 input package provides the exact experimental inputs with their agreement and notices; follow [artifact setup](docs/REPRODUCE.md) before the full run.
+Every profile receives the same **431,570 original inputs across 867 dataset/language partitions**.
 
-## What is measured
+| Dataset | Inputs | Coverage |
+|---|---:|---|
+| FineWeb mixture | 5,941 | 24 pinned language/script varieties |
+| FLORES-200 dev | 203,388 | 204 varieties × 997 sentences |
+| FLORES-200 devtest | 206,448 | 204 varieties × 1,012 sentences |
+| MADLAD sample | 5,237 | 418 bounded clean-source configurations |
+| Unicode, number and code diagnostics | 10,556 | 500 + 10,000 + 56 constructed cases |
+| **Total per tokenizer** | **431,570** | **867 partitions** |
 
-- **Original UTF-8 fidelity:** exact bytes, canonical-normalization differences, other mismatches, errors, and unknown-token emissions. Failures remain in the denominator.
-- **Capacity:** ordinary/special IDs, ID space and holes, unique byte pieces, file size, scripts, overlapping numerical/code/whitespace categories.
-- **Text efficiency:** bytes/token and emitted token counts by language and diagnostic suite. Pooled counts are explicitly labelled.
-- **Runtime:** native encode/decode MB/s, 5 repeats after warm-up, load time, process RSS and sampled peak in fresh subprocesses.
-- **Overlap:** unique ordinary byte-piece intersection, Jaccard, directional coverage, and category overlap. Matching pieces do not imply matching segmentation.
-- **Converters:** verified whole-sequence decode → encode, plus standalone vocabulary maps labelled for context dependence.
-- **Experiments:** V3.1 versus its parent, paired uncertainty, regressions, and a historical embedding mapping case.
+The original 44-profile expanded measurements remain frozen in v0.2. GPT-2 and Llama 3 add 2 profiles in v0.3; Kimi/Moonlight adds 8 in v0.4. These result-cohort names are separate from application version **0.2.3** and measurement protocol **intrinsic-v0.2**.
 
-The launch corpus targets **1,000,000 bytes × 24 language/script varieties**, using pinned FineWeb2 test shards and original FineWeb for English. Whole-document sampling can overshoot; a small source shard can fall short. Actual sizes, source revisions, exclusions, and shortfalls are in [the corpus manifest](benchmarks/fineweb-v0.1/manifest.json). Additional diagnostics contain **500 Unicode**, **10,000 number**, and **56 code** cases. These constructed cases are not representative arithmetic or coding ability tests.
+Measured properties:
 
-## Read and extend
+- **Fidelity:** exact original UTF-8, UTF-16LE and UTF-16BE bytes; canonical-only changes, other mismatches, errors and unknown emissions remain visible.
+- **Efficiency:** emitted tokens and original UTF-8 bytes/token, by dataset and language.
+- **Vocabulary:** ordinary/special IDs, ID gaps, scripts, overlapping numeric/code categories and unique byte pieces.
+- **Overlap and conversion:** 1,431 undirected vocabulary pairs; verified whole-sequence decode → encode; 30 historical standalone maps with context warnings.
+- **Runtime:** native encode/decode throughput, load time, process RSS and sampled peak, with one warm-up and five repeats in fresh processes.
 
-| Location | Contents |
+**Compression is not model quality.** FLORES-200 was run; FLORES+ was not. MADLAD uses bounded prefixes, not uniform samples, and is not established as held out from historical token selection. Runtime rows were collected in separate cohorts, not one simultaneous 54-profile rerun. Some legacy wrappers have inspected data-only ports without independently established full upstream wrapper parity.
+
+Examples of findings:
+
+- GPT-2, Llama 3 and all **8 new Kimi/Moonlight profiles** reconstruct their sampled inputs exactly in all three encodings.
+- Kimi Dev is an exact Qwen 2.5 tokenizer alias. Its NFC normalization changes **11,521 / 431,570 inputs (2.6696%)**, all canonically equivalent but not byte-exact.
+- Gemma V3.1 appends **2,000 IDs** to the recorded Gemma 3 parent. Its frozen FineWeb analysis saves **1.8464%** pooled tokens, with **17 languages improving and 7 regressing**. No model-quality gain is established. The reconstructed parent is not independently verified against Google's gated artifact.
+
+## Results, inputs and reuse
+
+| Read | Purpose |
 |---|---|
-| [BENCHMARK.md](BENCHMARK.md) | Definitions, sampling, fidelity and runtime protocol |
-| [reports/v0.1.md](reports/v0.1.md) | Generated measured results |
-| [results/v0.1/hub.json](results/v0.1/hub.json) | Machine-readable aggregates and provenance |
-| [docs/REPRODUCE.md](docs/REPRODUCE.md) | Inputs, commands, checks and limitations |
-| [docs/SCHEMAS.md](docs/SCHEMAS.md) | Documents, observations, vocabulary and mapping formats |
-| [docs/research/](docs/research/index.md) | FVT, WECHSEL, FOCUS, CW2V, mapping, ZeTT, ULD and ALM |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Add a tokenizer, analysis or experiment |
-| [THIRD_PARTY.md](THIRD_PARTY.md) | Upstream terms and data attribution |
+| [Latest results: v0.4](reports/v0.4.md) | Kimi tables, inherited audit chain and current totals |
+| [Expanded v0.2](reports/v0.2.md), [references v0.3](reports/v0.3.md) | Earlier frozen cohorts and their timing scopes |
+| [Benchmark definitions](BENCHMARK.md) | Denominators, fidelity, bytes/token, vocabulary and runtime |
+| [Reproduce measurements](docs/REPRODUCE.md) | Explicit downloads, cached runs, custom inputs and audits |
+| [Data formats](docs/SCHEMAS.md) | Read aggregates, vocabulary rows, checkpoints and provenance |
+| [Transfer research](docs/research/index.md) | FVT, WECHSEL, FOCUS, CW2V, mapping, ZeTT and distillation |
+| [Contribute](CONTRIBUTING.md) | Add a tokenizer, diagnostic, analysis or experiment |
+| [Release preparation](docs/RELEASE.md) | Build, verify and publish the concrete release assets |
 
-Source code and original diagnostics: Apache-2.0. Upstream tokenizer and corpus terms remain applicable. Cite [CITATION.cff](CITATION.cff), the exact result manifest, and the relevant upstream work.
+The **source archive** contains code, manifests, documentation, notices and aggregates; it omits original-text payloads, tokenizer assets and per-document checkpoints. The **explorer archive** contains saved vocabularies, mappings and compressed texts. The **starter ZIPs** contain the local application with zero selected inputs. Choose the artifact that matches the job; full release sizes and SHA-256 values are recorded in its manifest.
+
+Licensing: original source and diagnostics use **Apache-2.0**. Upstream tokenizer, dataset and metadata terms remain applicable; the lab does not relicense them. See [THIRD_PARTY.md](THIRD_PARTY.md), [licenses](licenses/), [CITATION.cff](CITATION.cff) and the exact result manifest when citing a result. [Security and local-service scope](SECURITY.md).

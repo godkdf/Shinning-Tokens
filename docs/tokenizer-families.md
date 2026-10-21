@@ -1,5 +1,7 @@
 # Tokenizer families and pinned generations
 
+The complete registry now has **54 profiles**. The **2026-10-21** extensions add native **GPT-2 (50,257 IDs)**, original **Llama 3 (128,256 IDs)** and **8 Kimi/Moonlight profiles (163,840 or 163,842 IDs)** to the 44-profile v0.2 lab. The Kimi survey includes 16 text-capable checkpoints: 15 grouped into 8 new profiles and Kimi Dev 72B as an exact Qwen 2.5 alias. The 38-profile generation survey below remains separately scoped. Llama 3 uses a byte-identical public redistribution verified against Meta's original rank-file SHA-256. See [v0.3 results](../reports/v0.3.md), [Kimi identities](KIMI.md), [v0.4 results](../reports/v0.4.md) and [the registry](../configs/registry.json).
+
 Verified **2026-10-19**: **105 official repository representatives**, **104 text repositories included**, **38 distinct recorded tokenizer profiles**: **29 native Rust JSON profiles** and **9 declared legacy native profiles**. **0 repository inspections failed**. MiniMax H3 is excluded because it is audio/video generation rather than a text LLM generation.
 
 The machine-readable source is [`configs/tokenizer-candidates.json`](../configs/tokenizer-candidates.json). Each representative has an immutable model revision, tokenizer asset SHA-256, canonical structural SHA-256, local tokenizer-only path, and a list of verified aliases. The catalog records the inspected checkpoint set; it does not claim that every model-size, quantization, or instruction-tuning checkpoint ever published was inspected.

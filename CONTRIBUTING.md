@@ -1,11 +1,31 @@
 # Contribute
 
-Make one change with a measurable question. Preserve existing published inputs and protocol versions.
+Start with one measurable question. Keep frozen inputs/results intact; put new corpus or tokenizer semantics in a new versioned cohort or explicit local run.
 
-For a tokenizer, add a unique registry ID, exact upstream revision, terms link and native adapter. Document normalization, special IDs and piece-byte semantics. Run all existing diagnostics and report failures. Do not silently substitute a converted tokenizer for its native implementation.
+## Tokenizer or family
 
-For an analysis, state its denominator and exclusions. Preserve per-language results; report regressions alongside gains. Categories must have explicit rules and versions. Do not turn compression, heuristic code pieces or script counts into model capability claims.
+1. Pin the official repository revision, exact artifact hashes and upstream terms in the registry/catalog. Download data assets only; do not fetch weights or enable `trust_remote_code`.
+2. Record the native implementation, regex, normalization, byte decoding, special-token map/policy, reserved ranges and automatic BOS/EOS behavior. State any unverified wrapper parity.
+3. Group aliases only when the complete declared measured pipeline matches. Identical ranks, a chat-template change or matching dimensions alone do not establish equivalence.
+4. Add meaningful tests for reference IDs, byte fidelity, special policies, invalid transport and cached-only behavior. Include exact input/asset/code identities in measured results.
+5. Run the selected diagnostics and language partitions. Keep mismatches, errors and unknown emissions in their denominators. Report both gains and regressions.
 
-For an experiment, follow [the experiment format](docs/experiments/README.md). Link the parent, candidate, deterministic recipe, selection data, evaluation data and artifact hashes. Distinguish proposed, historical, paper-reported and locally reproduced evidence. Keep model-weight training separate from the cheap intrinsic pipeline.
+## Analysis or experiment
 
-Run `uv run pytest -q`. For a release bundle, run the complete pipeline and `uv run tokenizer-lab verify`. Changes to corpus sampling or token semantics require a protocol revision and refreshed evidence. Contributions should include a concrete before/after number, an affected example, or a clearly defined new question.
+State the denominator, weighting, sampling, exclusions and what the result does not establish. Vocabulary category rules need versions. Do not label script coverage, code-associated pieces or compression as model capability.
+
+For changed vocabularies, follow [the experiment format](docs/experiments/README.md): parent identity, hypothesis, deterministic recipe, selection/evaluation split, additions/deletions, gains, regressions, compute and limitations. Separate proposed, historical, paper-reported and freshly reproduced evidence. Keep model training separate from intrinsic evaluation.
+
+## Development checks
+
+```sh
+uv sync --frozen --extra test
+uv run --frozen pytest -q
+uv run --frozen python -m tokenizer_lab.publication audit --source-only
+```
+
+Fresh checkouts skip integration tests whose explicit tokenizer assets/reference caches are absent. Report skips; never describe them as verified tokenizers. Core tests use local fixtures and should not download a model or full benchmark silently.
+
+Before release, follow [release preparation](docs/RELEASE.md), run asset integrity checks and regenerate the source/explorer distributions. Native portability checks are manual; their workflow definition is not evidence that a platform has been exercised. Local user files and unrelated experiments must not enter a release by accident.
+
+Include a concrete before/after number, an affected example or a sharply defined new question in a pull request. File a [bug report](https://github.com/godkdf/Shinning-Tokens/issues) with release, platform, selected IDs and reproducible steps. Follow [SECURITY.md](SECURITY.md) for sensitive reports.
