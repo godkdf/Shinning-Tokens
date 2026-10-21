@@ -1,0 +1,16 @@
+{
+  "unit_tests_passed": 8,
+  "notebook_schema_valid": true,
+  "notebook_code_cells_parse": true,
+  "native_model_parameter_shapes": 268098176,
+  "cpu_fixture": {
+    "model_parameters": 22880,
+    "device_count": 16,
+    "updates": 109,
+    "training_seconds": 1.0043299999961164,
+    "reload_loss_error": 0.0
+  },
+  "cpu_fixture_state_restored_exactly": true,
+  "real_tpu_run_executed": false,
+  "cloud_launch_and_storage_not_exercised_locally": true
+}

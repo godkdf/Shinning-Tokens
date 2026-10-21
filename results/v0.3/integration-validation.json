@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-10-21T07:58:33.021076+00:00",
+  "automated_tests": {
+    "passed": 59,
+    "failed": 0,
+    "command": "python -m pytest -q"
+  },
+  "javascript_syntax": "passed",
+  "dependency_lock": "passed (uv lock --check --offline)",
+  "new_checkpoint_audit": "passed; 1,734 checkpoints and 863,140 observations",
+  "explorer_profiles": 46,
+  "vocabulary_pairs": 1035,
+  "saved_examples_with_both_new_encodings": 771,
+  "local_browser_checks": [
+    "GPT-2 versus Llama 3 FLORES devtest comparison renders measured counts",
+    "Live multilingual GPT-2 to Llama 3 conversion preserves exact text",
+    "Llama 3 vocabulary loads with 128,256 IDs",
+    "Browser error log empty"
+  ],
+  "download_default": {
+    "tokenizers": [],
+    "datasets": [],
+    "languages": []
+  },
+  "benchmark_network_downloads": 0,
+  "source_snapshot": {
+    "file": "site/data/source.tar.gz",
+    "sha256": "af4fbff6816741cae66b885781397ddf88fb1e0ce7777fc8055785be72491f5c"
+  },
+  "deferred": [
+    "Private website publishing",
+    "Native Windows, Linux and Intel Mac checks",
+    "Rebuilding historical 0.2.1 starter ZIPs"
+  ]
+}

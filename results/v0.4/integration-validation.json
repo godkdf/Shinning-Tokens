@@ -1,0 +1,75 @@
+{
+  "checked_at": "2026-10-21T09:07:31.043270+00:00",
+  "automated_tests": {
+    "passed": 70,
+    "failed": 0,
+    "skipped": 0,
+    "command": "python -m pytest -q"
+  },
+  "javascript_syntax": "passed",
+  "dependency_lock": "passed (uv lock --check --offline)",
+  "new_checkpoint_audit": {
+    "status": "passed",
+    "checkpoints": 6936,
+    "observations": 3452560,
+    "errors": 0,
+    "utf8_mismatches": 0,
+    "utf16le_mismatches": 0,
+    "utf16be_mismatches": 0
+  },
+  "new_profile_ids": [
+    "moonlight",
+    "kimi_vl",
+    "kimi_k2_base",
+    "kimi_k2",
+    "kimi_k2_thinking",
+    "kimi_linear",
+    "kimi_k25",
+    "kimi_k3"
+  ],
+  "total_profiles": 54,
+  "vocabulary_pairs": 1431,
+  "saved_examples_with_all_new_encodings": 771,
+  "ordinary_kimi_vocabulary_pairs": {
+    "count": 28,
+    "shared_pieces_each": 163584,
+    "jaccard_each": 1
+  },
+  "kimi_dev_alias": {
+    "profile": "qwen25",
+    "identity": "Exact tokenizer.json SHA-256 match",
+    "reused_observations": 431570,
+    "canonical_only_changes": 11521,
+    "execution_errors": 0
+  },
+  "browser_checks": [
+    "Kimi Dev versus Kimi K3 all-suite UTF-16BE comparison shows 420,049 versus 431,570 exact inputs",
+    "Live multilingual Kimi K3 to GPT-2 conversion preserves exact text",
+    "Kimi K2.5/K2.6/K2.7 vocabulary loads with 163,840 IDs",
+    "Browser error log empty"
+  ],
+  "download_default": {
+    "tokenizers": [],
+    "datasets": [],
+    "languages": []
+  },
+  "benchmark_network_downloads": 0,
+  "source_snapshot": {
+    "file": "site/data/source.tar.gz",
+    "sha256": "9d0005264cf9128656b8d8f7527f90be223f446c58ffa42b0f11106faa982e78",
+    "release": "0.2.3"
+  },
+  "limits": [
+    "Text only; no audio/image/chat-template evaluation",
+    "Full Transformers wrapper parity not independently established",
+    "Historical performance timings not rerun"
+  ],
+  "deferred": [
+    "Private website publishing",
+    "Native Windows, Linux and Intel Mac checks"
+  ],
+  "unchanged": [
+    "Historical 0.2.1 starter ZIPs",
+    "Unrelated experiments/gemma-270m-tpu-pilot folder"
+  ]
+}

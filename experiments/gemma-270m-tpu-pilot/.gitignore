@@ -1,0 +1,8 @@
+.venv/
+.controller-venv/
+.bootstrap/
+prepared/
+runs/
+__pycache__/
+.pytest_cache/
+*.pyc
