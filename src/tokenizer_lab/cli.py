@@ -69,7 +69,9 @@ def main(argv=None):
         writer.writeheader();writer.writerows(hub['benchmarks'])
         (ROOT/'site/data/benchmarks.csv.gz').write_bytes(gzip.compress(buffer.getvalue().encode(),mtime=0))
         shutil.copyfile(ROOT/"research/methods.json",ROOT/"site/data/methods.json")
-        emit({"site":str(ROOT/"site"),"source":str(source),"checks":hub["checks"]})
+        from .code_study import build as build_code_study
+        code_study=build_code_study()
+        emit({"site":str(ROOT/"site"),"source":str(source),"checks":hub["checks"],"code_study":code_study})
     elif args.command=="serve":
         from .server import serve
         serve(args.port)

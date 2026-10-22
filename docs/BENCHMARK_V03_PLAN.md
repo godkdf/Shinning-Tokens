@@ -1,6 +1,8 @@
 # Proposed benchmark upgrade: realistic code workloads
 
-Status: proposal, 2026-10-21. Proposed application version: 0.3.0. Proposed protocol: code-realistic-v0.1. Existing intrinsic-v0.2 results remain frozen.
+Status: partially implemented; dataset and tokenization/fidelity runs completed, 2026-10-21. Proposed application version: 0.3.0. Protocol: code-realistic-v0.1. Existing intrinsic-v0.2 results remain frozen.
+
+Implementation evidence: [completed study](../reports/code-realistic-v0.1.md), covering 32,000 source files in 32 languages, 3,200 actual edit pairs, 1,600 constructed contexts and 1,600 controlled stress cases. All 54 tokenizer profiles completed 2,419,200 measurements with zero execution errors; 28 profiles reconstructed every input byte-for-byte. All language file quotas are met; 26 of 128 language/size groups remain below the proposed 100-file minimum. The study remains provisional, and the full requirements matrix below has not been accepted. See the completed study for remaining validation work.
 
 ## Purpose and assumptions
 

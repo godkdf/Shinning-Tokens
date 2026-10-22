@@ -4,6 +4,12 @@ Current protocol: **intrinsic-v0.2**. Application **0.2.3** publishes result coh
 
 The expanded inputs and Unicode transport rules are specified in [docs/EXPANDED.md](docs/EXPANDED.md); formats and hash scopes are in [docs/SCHEMAS.md](docs/SCHEMAS.md). Result extensions retain prior audit evidence rather than claiming every historical checkpoint was re-audited during each addition. The initial FineWeb/diagnostic definitions below remain part of the protocol.
 
+## Separate realistic code study
+
+[Code benchmark guide](docs/CODE_BENCHMARK.md): **32 languages, 32,000 source files from 608 repositories, 3,200 actual edit pairs, 1,600 constructed contexts and 1,600 controlled stress cases**. All **54 profiles × 44,800 inputs = 2,419,200 observations** completed with **0 execution errors**; **28 profiles** reconstructed every input byte-for-byte. Open **Realistic code** in the explorer to filter by language, workload and split or download counts. The initial selection is held-out evaluation.
+
+This cohort measures counts and fidelity. Its concurrent collection times are not isolated speed measurements. All language file quotas are met; **26/128 language/size groups** miss the proposed minimum. The corpus remains provisional and the full NASA-inspired acceptance plan remains incomplete. This separate study changes neither the intrinsic-v0.2 catalog nor its historical results.
+
 ## Inputs and scope
 
 All implementations receive the same original UTF-8 document strings. No automatic BOS/EOS insertion, chat template, normalization, padding, truncation, or cleaning is added by this Lab. Native normalization already present inside an upstream tokenizer remains enabled and is part of its measured behavior. Arbitrary invalid UTF-8 byte sequences and unpaired Python surrogates are outside this text benchmark.

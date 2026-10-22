@@ -36,6 +36,10 @@ The launcher opens at **http://localhost:8765/launcher.html**. The explorer uses
 
 ## What has been measured
 
+The separate [realistic code study](reports/code-realistic-v0.1.md) adds **32 languages, 32,000 real source files, 3,200 actual edit pairs, 1,600 constructed contexts and 1,600 controlled stress cases**. All **54 profiles** completed **2,419,200 measurements with 0 execution errors**; **28 profiles** preserved every input byte-for-byte. Its corpus is provisional, with remaining size-coverage and validation gaps documented in the report. The historical totals below describe the original benchmark.
+
+Open **Realistic code** in Tokenizer Lab to compare profiles by workload, programming language and split, inspect coverage and export CSV tables. It defaults to held-out evaluation. [Preparation, rerun commands and limits](docs/CODE_BENCHMARK.md). Rebuild the explorer with `uv run --frozen tokenizer-lab build-site` after preparing the audited study. Saved code results require no tokenizer assets to browse; code reruns use the dedicated runners described in the guide.
+
 Every profile receives the same **431,570 original inputs across 867 dataset/language partitions**.
 
 | Dataset | Inputs | Coverage |

@@ -39,6 +39,10 @@ def source_paths(root=ROOT):
         if (root/name).is_file():paths.add(root/name)
     for directory in ['benchmarks/metadata','benchmarks/unicode']:
         paths.update(p for p in (root/directory).rglob('*') if p.is_file())
+    for name in ['study.json.gz','measurements.csv.gz','report.md','guide.md','validation.json',
+                 'summary.csv','source-report.md','source-by-language.csv.gz','scenarios-by-language.csv.gz']:
+        path=root/'site/data/code-study'/name
+        if path.is_file():paths.add(path)
     for p in (root/'benchmarks').rglob('*.json'):
         if p.name in ['manifest.json','source-lock.json']:paths.add(p)
     paths.update(p for p in (root/'site').glob('*') if p.is_file())

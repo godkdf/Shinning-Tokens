@@ -4,6 +4,8 @@ A portable kit contains **one Python runtime, native packages, the selected toke
 
 ## Supported kits
 
+The source explorer now includes **Realistic code**, a separate saved study with 32 programming languages and 2,419,200 observations. Rebuilt kits retain its small counts/provenance bundle without adding tokenizer assets or code-text payloads. Previously built kits are unchanged. Code-study reruns use the dedicated source-checkout runners and full dataset described in the [code benchmark guide](CODE_BENCHMARK.md); they are not selections in the historical Local runs catalog.
+
 The source checkout and current starter packages are **0.2.3**, with the complete **54-profile catalog**, including GPT-2, original Llama 3 and **8 Kimi/Moonlight profiles** as separate selections. Historical 0.2.1 archives remain separate local artifacts. Empty download selections still install **0 tokenizer / 0 language payloads**. Each Kimi profile downloads only its rank data and recorded configuration/notices; no model weights or media payloads are needed.
 
 | Kit | Computer | Minimum supported system |

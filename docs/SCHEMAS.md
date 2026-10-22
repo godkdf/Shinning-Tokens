@@ -54,6 +54,10 @@ Historical standalone maps have `exact_byte_piece`, `standalone_one_to_many`, `s
 
 ## Compressed text, selections and distributions
 
+The separate realistic code cohort exports `site/data/code-study/study.json.gz` (schema **1.0**). It contains `summary`, `profiles`, `languages`, `workloads`, `coverage`, `provenance` and `rows`. Each row is one **tokenizer × workload × programming language × split**, restricted to `size_band=all` so size-band subtotals cannot double-count files. Counts include `documents`, `utf8_bytes`, `tokens`, `exact`, `canonical_only`, `mismatches`, `errors`, `unknown_emissions`, `utf16le_exact` and `utf16be_exact`. The current export has **20,736 rows** representing **2,419,200 observations**. Missing groups are rejected rather than filled with zeros.
+
+The six workload IDs are `code-realistic-v0.1`, `real-edit-before-v0.1`, `real-edit-after-v0.1`, `real-edit-diff-v0.1`, `repository-context-v0.1` and `code-stress-v0.1`. Splits are `development` and `evaluation`. Ratios in the app are recomputed from pooled counts. Fidelity is scoped to the selected rows; the global exact-profile count covers all workloads and both splits. The independent validation ledger and hashes of all 108 input aggregate files accompany the export. `measurements.csv.gz` contains the same rows. This bundle is separate from the frozen intrinsic hub and corpus catalog. [Code study guide](CODE_BENCHMARK.md).
+
 `benchmarks/catalog.json` fixes **867** original partitions. `site/data/text-index.json` records compressed UI text and available saved-example sidecars, hashes and byte sizes. The **689** sidecars contain **771** small saved examples; this is separate from full corpus coverage. Unavailable saved token IDs do not remove source documents.
 
 Selection objects contain explicit arrays: `tokenizers`, `datasets`, `languages`, and optionally local `custom_tokenizers` paths for a run. Missing/empty lists mean none. Catalog presence is not proof that an asset is installed. Download plans distinguish cached bytes, installed bytes and unknown/transient network cost.

@@ -125,7 +125,152 @@
       "status": "completed",
       "exit_code": 0,
       "seconds": 91.12
+    },
+    "deepseek_v3_base": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 87.3
+    },
+    "chatglm1": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 53.57
+    },
+    "kimi_k2": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 31.33
+    },
+    "codeqwen15": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 89.46
+    },
+    "chatglm2": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 65.08
+    },
+    "glm_original_en": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 77.85
+    },
+    "deepseek_coder1": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 143.95
+    },
+    "gemma3_parent": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 89.15
+    },
+    "qwen38": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 85.56
+    },
+    "kimi_linear": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 31.02
+    },
+    "glm_original_zh": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 59.04
+    },
+    "o200k": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 20.75
+    },
+    "gpt2": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 29.83
+    },
+    "kimi_k2_thinking": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 31.56
+    },
+    "bloom": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 74.92
+    },
+    "kimi_k2_base": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 31.15
+    },
+    "deepseek_llm": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 179.1
+    },
+    "minimax_m2": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 95.48
+    },
+    "glm_edge": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 84.44
+    },
+    "minimax_m1": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 88.47
+    },
+    "minimax_text01": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 85.12
+    },
+    "kimi_k25": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 31.22
+    },
+    "qwen1_hf": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 84.31
+    },
+    "deepseek_math_7b_base": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 181.06
+    },
+    "qwen35_base": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 100.55
+    },
+    "deepseek_v41": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 107.24
+    },
+    "gemma4": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 112.04
+    },
+    "qwen35": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 111.96
+    },
+    "deepseek_v31_base": {
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 85.57
     }
   },
-  "at": "2026-10-21T20:39:01.744799+00:00"
+  "at": "2026-10-21T20:48:54.272898+00:00"
 }

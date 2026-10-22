@@ -1,12 +1,14 @@
+import {summarizeCodeRows, codeStudyCSV} from './code-study.js?v=20261022.1';
 function replace(target,...children){target.replaceChildren(...children.filter(child=>child!==null&&child!==undefined&&child!==false));}
 const REPO = 'https://github.com/godkdf/Shinning-Tokens';
 const main = document.querySelector('#main');
 const nav = document.querySelector('#navigation');
 const menuButton = document.querySelector('.mobile-menu');
-const labels = {overview:'Overview',compare:'Compare tokenizers',languages:'Languages',vocabulary:'Vocabulary explorer',numbers:'Numbers & code',convert:'Convert sequences',experiments:'Experiments',research:'Research library',reproduce:'Reproduce & contribute',texts:'Corpus texts',local:'Local runs'};
+const labels = {overview:'Overview',compare:'Compare tokenizers',languages:'Languages',vocabulary:'Vocabulary explorer',numbers:'Numbers & code',code:'Realistic code',convert:'Convert sequences',experiments:'Experiments',research:'Research library',reproduce:'Reproduce & contribute',texts:'Corpus texts',local:'Local runs'};
 const state = {hub:null,languages:[],textIndex:[],partitions:new Map(),methods:[],errors:{},vocab:new Map(),backend:false};
 let fieldSequence = 0;
 let routeVersion = 0;
+let codeStudyPromise;
 
 // All dataset strings are inserted as text nodes, including token surfaces.
 function el(tag, attrs = {}, ...children) {
@@ -200,6 +202,7 @@ function corpusTexts(params) {
 }
 async function localRuns() {
   main.append(heading('Your machine. Your tokenizers.','Launch an offline benchmark.','Choose cached tokenizers, languages, and datasets. Register a local tokenizer.json to run the same checks on your own tokenizer.'));
+  main.append(callout(el('span',{},'The 32-language code study has its own frozen inputs and resumable runner. ',el('a',{href:'#code'},'Inspect its completed results and reproduction guide →'))));
   const output=el('div',{});main.append(output);
   const {mountLocalLauncher}=await import('./launcher.js?v=20261019.4');
   await mountLocalLauncher(output,{languages:state.languages});
@@ -225,6 +228,7 @@ function overview() {
   });
   main.append(section('A common workspace. Different tradeoffs.',table([{label:'Tokenizer'},{label:'Vocabulary IDs',class:'numeric'},{label:'Special IDs',class:'numeric'},{label:'Bytes / token',class:'numeric'},'Role',''],tableRows),el('a',{href:'#compare'},'All measurements ↗')));
   main.append(el('p',{class:'note'},`Bytes/token uses ${defaultDataset() || 'all published suites'}; pooled original bytes divided by emitted tokens. Higher means fewer tokens for the same text. Vocabulary size, fidelity, and processing cost remain separate measurements.`));
+  main.append(section('Realistic code · 32 programming languages',card('44,800 inputs per tokenizer',[el('p',{class:'muted'},'32,000 real source files, actual Git edits, constructed repository contexts and controlled stress cases. All 54 profiles completed 2,419,200 measurements; 28 preserved every input byte-for-byte.'),el('a',{class:'button',href:'#code'},'Explore code results →')],'New completed study')));
   main.append(section('Look inside the same text',examplesPanel(primary.slice(0,2).map(p=>p.id)),el('a',{href:'#texts'},'Browse source texts →')));
   main.append(section('Research with a visible paper trail',el('div',{class:'split-panel'},el('div',{},el('div',{class:'card-kicker'},'An open lab, not a single score'),el('p',{class:'panel-lead'},'Understand the gain. Find the regression. Make the next experiment easier.'),el('p',{class:'muted'},'Token efficiency is one observation. Exact reconstruction, language differences, vocabulary cost, and runtime tell the rest of the story.')),el('div',{},el('h3',{},'Build on the result'),el('div',{class:'step'},el('span',{class:'step-number'},'1'),el('div',{},el('h4',{},'Inspect the artifact'),el('p',{},'Pinned tokenizer revisions, exact bytes, and documented corpus provenance.'))),el('div',{class:'step'},el('span',{class:'step-number'},'2'),el('div',{},el('h4',{},'Change one idea'),el('p',{},'Add a vocabulary experiment, a corpus, an analysis, or a converter.'))),el('a',{class:'button',href:'#reproduce'},'Reproduce & contribute →')))));
   main.append(dataNotice());
@@ -422,10 +426,57 @@ async function vocabulary(params,version) {
   }catch(error){if(version===routeVersion)replace(output,callout(error.message,'error'),link('Download the vocabulary file directly',`./data/vocab/${id}.json.gz`,{class:'button',download:`${id}.json.gz`}));}
 }
 
+async function realisticCode(params, version) {
+  main.append(heading('Completed code study','Real code. Measured bytes.','Compare 54 tokenizer profiles on original files, real Git edits, constructed repository contexts and controlled stress cases. The default selection uses held-out evaluation files.'));
+  const loading=el('p',{role:'status',class:'note'},'Loading the audited code measurements…');main.append(loading);
+  let study;
+  try {
+    codeStudyPromise ||= fetchJSON('./data/code-study/study.json.gz').catch(error=>{codeStudyPromise=null;throw error;});
+    study=await codeStudyPromise;
+  } catch(error) {
+    if(version!==routeVersion)return;
+    loading.remove();main.append(callout('The code study bundle is unavailable. Rebuild the site from the completed, audited study.','warning'),codeBlock('uv run --frozen tokenizer-lab build-site'),docsLink('docs/CODE_BENCHMARK.md','Code study guide ↗'));return;
+  }
+  if(version!==routeVersion)return;
+  loading.remove();
+  const dataset=study.workloads.some(item=>item.id===params.get('dataset'))?params.get('dataset'):'code-realistic-v0.1';
+  const language=study.languages.some(item=>item.id===params.get('language'))?params.get('language'):'';
+  const split=['development','evaluation',''].includes(params.get('split'))?params.get('split'):'evaluation';
+  const exactOnly=params.get('fidelity')==='exact';
+  const a=study.profiles.includes(params.get('left'))?params.get('left'):'llama3';
+  const b=study.profiles.includes(params.get('right'))?params.get('right'):'o200k';
+  const change=(key,value)=>location.hash=routeHref('code',{dataset,language,split,fidelity:exactOnly?'exact':'all',left:a,right:b,[key]:value});
+  const summary=study.summary;
+  main.append(el('div',{class:'stats-grid'},stat('Completed profiles',fmt(summary.all_profiles_verified),'Same frozen inputs for every profile'),stat('Measurements',fmt(summary.total_observations),`${fmt(summary.execution_errors)} execution errors`),stat('Byte-exact on every input',`${summary.byte_exact_profiles_all_inputs} / ${summary.all_profiles_verified}`,`Across all ${fmt(study.inputs_per_profile)} inputs per profile`),stat('Programming languages',fmt(study.languages.length),`${fmt(study.source_files)} source files · ${fmt(study.repositories)} repositories`)));
+  main.append(callout(`Provisional corpus: ${study.coverage.below_minimum} of ${study.coverage.groups} language/size groups fall below the ${study.coverage.minimum}-file target. Near-duplicate families and dialects still need review.`, 'warning'));
+  main.append(el('div',{class:'filter-bar'},el('div',{class:'control-row'},
+    select('Workload',study.workloads.map(item=>({value:item.id,label:item.name})),dataset,value=>change('dataset',value)),
+    select('Programming language',[{value:'',label:'All 32 languages'},...study.languages.map(item=>({value:item.id,label:item.name}))],language,value=>change('language',value)),
+    select('Split',[{value:'evaluation',label:'Evaluation · 80%'},{value:'development',label:'Development · 20%'},{value:'',label:'Both splits'}],split,value=>change('split',value)),
+    select('Table profiles',[{value:'all',label:'All profiles'},{value:'exact',label:'Byte-exact on this selection'}],exactOnly?'exact':'all',value=>change('fidelity',value)))));
+  const all=study.profiles.map(id=>summarizeCodeRows(study.rows,id,{dataset,language,split})).filter(Boolean);
+  const shown=all.filter(row=>!exactOnly||row.byte_exact).sort((left,right)=>left.errors-right.errors||left.tokens-right.tokens||name(left.tokenizer).localeCompare(name(right.tokenizer)));
+  const sample=all[0];
+  if(!sample){main.append(empty('No completed measurements','This selection has no measured inputs.'));return;}
+  main.append(el('p',{class:'note'},`${fmt(sample.documents)} inputs · ${size(sample.utf8_bytes)} original UTF-8 per profile · ${all.filter(row=>row.byte_exact).length}/${all.length} profiles byte-exact on this selection. Bytes/token is pooled original bytes divided by emitted tokens. Lower token counts with changed bytes remain diagnostic.`));
+  const codeProfiles=study.profiles.map(id=>({value:id,label:name(id)}));
+  main.append(section('Compare two profiles',el('div',{},el('div',{class:'control-row'},select('Tokenizer A',codeProfiles,a,value=>change('left',value)),select('Tokenizer B',codeProfiles,b,value=>change('right',value))),table(['Measurement',{label:name(a),class:'numeric'},{label:name(b),class:'numeric'}],[
+    ['Emitted tokens','tokens',value=>fmt(value)],['Bytes per token','bytes_per_token',value=>fmt(value,4)],['Exact UTF-8 reconstructions','exact',value=>`${fmt(value)} / ${fmt(sample.documents)}`],['Canonical-only changes','canonical_only',value=>fmt(value)],['Other byte changes','mismatches',value=>fmt(value)],['Execution errors','errors',value=>fmt(value)],['Unknown-token emissions','unknown_emissions',value=>fmt(value)]
+  ].map(([label,key,format])=>el('tr',{},cell(label),...[a,b].map(id=>ncell(format(all.find(row=>row.tokenizer===id)?.[key])))))))));
+  main.append(section('Measured token counts',table(['Tokenizer',{label:'Tokens',class:'numeric'},{label:'Bytes/token',class:'numeric'},{label:'Exact inputs',class:'numeric'},{label:'Canonical-only',class:'numeric'},{label:'Other changes',class:'numeric'},{label:'Errors',class:'numeric'},'Fidelity'],shown.map(row=>el('tr',{},cell(name(row.tokenizer)),ncell(fmt(row.tokens)),ncell(fmt(row.bytes_per_token,4)),ncell(`${fmt(row.exact)} / ${fmt(row.documents)}`),ncell(fmt(row.canonical_only)),ncell(fmt(row.mismatches)),ncell(fmt(row.errors)),cell(badge(row.byte_exact?'Byte-exact':'Changes bytes',row.byte_exact?'neutral':'warn'))))),button('Download this table · CSV',()=>downloadText(codeStudyCSV(shown),'code-study-selection.csv','text/csv;charset=utf-8'))));
+  main.append(el('p',{class:'note'},'Sorted by measured token count, with failed profiles last. Token counts do not measure code-generation quality. Collection used concurrent correctness workers; isolated speed and memory comparisons are pending.'));
+  main.append(section('Source coverage',el('details',{class:'details-section'},el('summary',{},'Inspect all 32 languages and file-size coverage'),table(['Language',{label:'Files',class:'numeric'},{label:'Development',class:'numeric'},{label:'Evaluation',class:'numeric'},{label:'≤1 KiB',class:'numeric'},{label:'1–8 KiB',class:'numeric'},{label:'8–64 KiB',class:'numeric'},{label:'64 KiB–1 MiB',class:'numeric'}],study.languages.map(item=>el('tr',{},cell(item.name),ncell(fmt(item.files)),ncell(fmt(item.splits.development)),ncell(fmt(item.splits.evaluation)),...['le1k','1k-8k','8k-64k','64k-1m'].map(key=>ncell(fmt(item.bands[key])))))),el('p',{class:'note'},'Target: at least 100 files per language/size group. All languages meet their total quota of 1,000 files. Size bands are disjoint; boundaries are specified in the reproduction guide.'))));
+  main.append(section('Download the evidence',el('div',{class:'button-row'},link('All language/split counts · CSV ↓','./data/code-study/measurements.csv.gz',{download:'code-study-measurements.csv.gz',class:'button'}),link('Study bundle · JSON ↓','./data/code-study/study.json.gz',{download:'code-study.json.gz',class:'button'}),link('Report','./data/code-study/report.md',{class:'button'}),link('Validation ledger','./data/code-study/validation.json',{class:'button'}),link('Reproduction guide','./data/code-study/guide.md',{class:'button'}))));
+  main.append(el('p',{class:'note'},`Validated ${new Date(study.validated_at).toLocaleDateString('en-US')} · ${fmt(summary.checkpoint_files_verified)} checkpoint hashes reconciled. Downloaded aggregates contain counts and provenance, without source code payloads or tokenizer assets.`));
+  main.append(section('Reproduce from the prepared source checkout',codeBlock('uv run --frozen python -m tokenizer_lab.codebench audit\nuv run --frozen python -m tokenizer_lab.code_scenarios audit\nuv run --frozen python -m tokenizer_lab.codebench run\nuv run --frozen python -m tokenizer_lab.code_scenarios run')));
+  main.append(callout('Prepare the frozen corpus partitions and tokenizer assets first. These commands run tokenization and fidelity checks offline and resume compatible checkpoints. Full preparation, license scope and remaining acceptance work are documented in the reproduction guide.'));
+}
+
 function numbers(params) {
   const id=profile(params.get('tokenizer'))?.id || profiles()[0]?.id;
   const p=profile(id),counts=p?.vocabulary?.type_counts || {};
   main.append(heading('Structural vocabulary','Numbers, code, and the space between.','Count the available pieces, then inspect what they do on text. A code-associated vocabulary entry is a documented heuristic, not proof that a tokenizer understands code.'));
+  main.append(el('a',{class:'button',href:'#code'},'Realistic code · 32-language results →'));
   main.append(el('div',{class:'control-row'},select('Tokenizer',tokenizerOptions(),id,value=>location.hash=routeHref('numbers',{tokenizer:value})),el('a',{class:'button',href:routeHref('vocabulary',{tokenizer:id})},'Inspect individual pieces →')));
   const categories=Object.keys(counts);
   const groups=[['Numerical pieces',key=>/num|digit|decimal|integer|percent|fraction|scientific/i.test(key),'ASCII and other Unicode digits, numerical patterns, and mixed alphanumeric pieces.'],['Code-associated pieces',key=>/code|operator|bracket|indent|keyword|identifier|markup|escape|punct/i.test(key),'Operators and delimiters, identifier fragments, keywords, and markup under the published rules.'],['Whitespace & Unicode structure',key=>/space|newline|tab|control|combining|emoji|joiner|byte|mixed|invalid/i.test(key),'Spacing, line breaks, combining marks, byte fragments, and other structural pieces.']];
@@ -561,7 +612,7 @@ function renderRoute() {
   nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');
   replace(main,);
   if(!profiles().length){main.append(heading('Published data required','The lab is ready for its bundle.','Tokenizer profiles and measurements have not been generated yet.'),callout('Run the documented pipeline to create site/data/hub.json. No placeholder scores are displayed.','warning'),el('a',{class:'button',href:REPO},'Open source repository ↗'));return;}
-  const handlers={overview,compare,languages,vocabulary,numbers,convert,experiments,research,reproduce,texts:corpusTexts,local:localRuns};
+  const handlers={overview,compare,languages,vocabulary,numbers,code:realisticCode,convert,experiments,research,reproduce,texts:corpusTexts,local:localRuns};
   Promise.resolve(handlers[route](params,routeVersion)).catch(error=>{main.append(callout(`This view could not render: ${error.message}. The downloadable JSON remains available.`,'error'));console.error(error);});
 }
 async function fetchJSON(path) {let response=await fetch(path,{cache:'no-cache'});if(!response.ok&&path.endsWith('hub.json.gz'))response=await fetch(path.slice(0,-3));if(!response.ok)throw new Error(`${path}: HTTP ${response.status}`);const bytes=new Uint8Array(await response.arrayBuffer());if(bytes[0]===0x1f&&bytes[1]===0x8b)return JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text());return JSON.parse(new TextDecoder().decode(bytes));}

@@ -242,7 +242,8 @@ def _copy_site(root, kit, selected_ids, language_ids, dataset_ids):
         relative = Path(directory).relative_to(root / "site")
         excluded = {"__pycache__", ".DS_Store"} & set(names)
         if relative.parts and relative.parts[0] == "data":
-            excluded |= {name for name in names if name.endswith((".gz", ".zip", ".parquet", ".jsonl", ".tar", ".zst")) and name!="hub.json.gz"}
+            saved_aggregates = {"study.json.gz", "measurements.csv.gz", "source-by-language.csv.gz", "scenarios-by-language.csv.gz"} if relative.as_posix() == "data/code-study" else {"hub.json.gz"}
+            excluded |= {name for name in names if name.endswith((".gz", ".zip", ".parquet", ".jsonl", ".tar", ".zst")) and name not in saved_aggregates}
         if str(relative) == "data":
             excluded |= {"vocab", "mappings", "texts", "text", "encodings", "offline", "tokenizers", "gemma-v31-inputs.tar.gz", "observations.jsonl.gz", "offline-index.json", "source-release.json", "release-validation.json"} & set(names)
         return excluded
