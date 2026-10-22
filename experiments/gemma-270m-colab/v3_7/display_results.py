@@ -2,6 +2,12 @@ from IPython.display import display, Markdown
 
 result = json.loads((OUTPUT / "result.json").read_text())
 profile = result.get("profiling", {})
+memory = result.get("training_memory", {})
+def memory_text(value, percent=None):
+    if value is None:
+        return "Unavailable"
+    text = f"{value / 2**30:.3f} GiB"
+    return text + (f" ({percent:.2f}%)" if percent is not None else "")
 rows = [
     ("Version / optimizer", result["version"] + " / " + result["optimizer"]["name"]),
     ("Engineering / learning / performance goals", " / ".join(result[key] for key in
@@ -14,6 +20,12 @@ rows = [
     ("Scored tokens/second", f'{result["tokens_per_second"]:,.2f}'),
     ("Attributed original bytes/second", f'{result["original_bytes_per_second_attributed"]:,.2f}'),
     ("Training occupancy", f'{result["training_occupancy"]:.3%}'),
+    ("TPU reported memory limit", memory_text(memory.get("device_limit_bytes"))),
+    ("Sampled peak active memory during training", memory_text(memory.get("sampled_peak_active_bytes"), memory.get("sampled_peak_active_percent"))),
+    ("Sampled peak reserved allocator pool during training", memory_text(memory.get("sampled_peak_reserved_bytes"), memory.get("sampled_peak_reserved_percent"))),
+    ("Isolated training allocator peak", memory_text(memory.get("training_allocator_peak_bytes"), memory.get("training_allocator_peak_percent"))
+        if memory.get("training_allocator_peak_bytes") is not None else "Not isolatable from the lifetime counter; sampled usage is shown above"),
+    ("Compiler training buffer estimate", memory_text(memory.get("compiled_peak_buffer_estimate_bytes"), memory.get("compiled_peak_buffer_estimate_percent"))),
     ("FineWiki macro BPB, initial → final", f'{result["initial_eval"]["wiki"]["language_macro_bpb"]:.7f} → {result["final_eval"]["wiki"]["language_macro_bpb"]:.7f}'),
     ("FineWiki BPB difference from V3.5", f'{result["final_eval"]["wiki"]["language_macro_bpb"] - result["baseline"]["finewiki_macro_bpb"]:+.7f}'),
     ("Head chunk / logical FP32 logits workspace", f'{result["head"]["chunk_tokens"]} tokens / {result["head"]["logical_fp32_logits_workspace_bytes"] / 2**20:.2f} MiB'),
@@ -53,6 +65,8 @@ print(timings.get("scope", timings.get("reason", "Operation timings unavailable"
 print("Profiler extraction errors:", json.dumps(profile.get("extraction_errors", {}), indent=2))
 print("Capture error:", profile.get("capture_error"))
 print("Raw trace:", profile.get("trace_directory"))
+print("Training memory scope:", memory.get("scope"))
+print("Training memory limitations:", memory.get("limitations"))
 
 language_rows = []
 for language, final in result["final_eval"]["wiki"]["languages"].items():

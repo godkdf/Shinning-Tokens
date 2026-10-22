@@ -30,6 +30,7 @@ from the official score/counts and its time included in total runtime cost.
 | Memory-bandwidth utilization | XProf's explicit HBM bandwidth utilization percentage, distinct from memory capacity usage. |
 | Host/device idle time | Separate XProf percentages. Host waiting for TPU work is not automatically a problem. Record dispatch gaps and synchronized-call durations separately. |
 | Operation timings | Exclusive HLO self-time, grouped using attention, vocabulary projection, loss, and optimizer metadata. Fused/unclassified work remains explicit; do not sum overlapping parent timings. |
+| Training memory | Active and reserved allocator bytes/GiB and percentage of the reported device limit, sampled at synchronized training boundaries and progress points. Record sampling overhead inside the training clock. Separate lifetime peaks and compiled buffer estimates. |
 
 Capture 4 diagnostic dispatches of 16 updates after checkpoint verification.
 Use named scopes, device/host tracing, and TPU performance counters. Save raw

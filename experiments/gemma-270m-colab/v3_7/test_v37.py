@@ -24,6 +24,7 @@ def helpers(filename, **extra):
 
 HEAD = helpers("head.py")
 PROFILE = helpers("profiling.py")
+MEMORY = helpers("memory.py")
 
 
 def test_cooldown_boundaries():
@@ -34,6 +35,34 @@ def test_cooldown_boundaries():
     assert schedule(1800, 1800) == pytest.approx(.3)
     with pytest.raises(ValueError):
         schedule(0, 0)
+
+
+def test_training_memory_percentages_and_peak_scope():
+    snapshot = MEMORY["memory_snapshot"]
+    summarize = MEMORY["summarize_training_memory"]
+    gib = 2**30
+    start = snapshot({"bytes_limit": 16*gib, "bytes_in_use": 4*gib,
+                      "bytes_reserved": 6*gib, "peak_bytes_in_use": 10*gib}, 0)
+    sample = snapshot({"bytes_limit": 16*gib, "bytes_in_use": 5*gib,
+                       "bytes_reserved": 7*gib, "peak_bytes_in_use": 10*gib}, 30)
+    stop = snapshot({"bytes_limit": 16*gib, "bytes_in_use": 4*gib,
+                     "bytes_reserved": 7*gib, "peak_bytes_in_use": 10*gib}, 60)
+    compiler = {"argument_size_in_bytes": 4*gib, "output_size_in_bytes": 3*gib,
+                "alias_size_in_bytes": 3*gib, "temp_size_in_bytes": 2*gib}
+    result = summarize(start, [sample], stop, compiler, .001)
+    assert result["sampled_peak_active_gib"] == 5
+    assert result["sampled_peak_active_percent"] == 31.25
+    assert result["sampled_peak_reserved_percent"] == 43.75
+    assert result["compiled_peak_buffer_estimate_percent"] == 37.5
+    # An earlier evaluation's larger peak cannot be relabeled a training peak.
+    assert result["training_allocator_peak_bytes"] is None
+    stop["peak_bytes_in_use"] = 12*gib
+    result = summarize(start, [sample], stop, compiler, .001)
+    assert result["training_allocator_peak_percent"] == 75
+    missing = snapshot(None, 0)
+    result = summarize(missing, [], missing, None, 0)
+    assert result["status"] == "unavailable"
+    assert result["sampled_peak_active_percent"] is None
 
 
 @pytest.mark.parametrize("count,chunk", [(1, 128), (128, 128), (137, 128), (257, 64)])
@@ -168,11 +197,6 @@ def test_native_entry_and_tied_embedding_gradients():
             self.embedder = Embedder()
             self.blocks = [Block(name="layer_0")]
             self.final_norm = nn.RMSNorm()
-        def __call__(self, tokens, positions, attention_mask):
-            x = self.embedder.encode(tokens)
-            for block in self.blocks:
-                _, x = block(x, positions, None, attention_mask)
-            return struct.PyTreeNode  # Replaced below by a lightweight logits object.
     # A subclass shares the exact parameter paths and implements the reference.
     @struct.dataclass
     class Output:
@@ -222,3 +246,30 @@ def test_profiler_options_and_capture_on_cpu(tmp_path):
     assert profile["completed_updates"] == 4
     assert (output / "profiling.json").is_file()
     assert list((output / "profile").rglob("*.xplane.pb"))
+    assert not profile["counter_evidence"]["hardware_counter_message_present"]
+    assert profile["measurements"]["matrix_unit_utilization"]["value"] is None
+    assert profile["measurements"]["memory_bandwidth_utilization"]["value"] is None
+
+
+def test_weights_archive_restore_and_digest(tmp_path):
+    import hashlib
+    import zipfile
+    from flax import serialization, traverse_util
+    tree = ast.parse((HERE / "runner.py").read_text())
+    names = {"numpy_leaf", "archive_tree", "save_archive", "restore_archive", "parameter_digest"}
+    nodes = [node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name in names]
+    namespace = {"jax": jax, "np": np, "Path": Path, "json": json, "hashlib": hashlib,
+                 "zipfile": zipfile, "serialization": serialization, "traverse_util": traverse_util}
+    exec(compile(ast.Module(body=nodes, type_ignores=[]), "checkpoint", "exec"), namespace)
+    params = {"embedder": {"input_embedding": jnp.arange(20, dtype=jnp.float32).reshape(5, 4)},
+              "layer_0": {"norm": jnp.array([.1, .2, .3, .4])}}
+    original = namespace["parameter_digest"](params)
+    archive = tmp_path / "weights.npz"
+    count = namespace["save_archive"](archive, {"params": params}, {"kind": "weights_only"})
+    assert count == 2
+    restored = namespace["restore_archive"](archive, {"params": params})
+    assert namespace["parameter_digest"](restored["params"]) == original
+    modified = jax.tree.map(lambda x: x + 1, restored["params"])
+    assert namespace["parameter_digest"](modified) != original
+    # Disposable diagnostic updates do not change the saved checkpoint.
+    assert namespace["parameter_digest"](namespace["restore_archive"](archive, {"params": params})["params"]) == original

@@ -23,6 +23,9 @@ FineWiki macro BPB**. No V3.7 TPU speed or quality is preclaimed.
 
 The notebook records **matrix-unit utilization, HBM bandwidth utilization,
 host/device idle percentages, operation timings, and the raw XProf trace**.
+It also records active and reserved training memory in **GiB and percent of the
+TPU's reported memory limit**, using synchronized boundary/progress samples.
+Compiler memory estimates and lifetime peak counters are labeled separately.
 It captures a bounded **64-update diagnostic after the official checkpoint is
 saved, restored, and checked**. Diagnostic state is discarded and cannot alter
 the saved model, its quality score, or official training counts. Diagnostic

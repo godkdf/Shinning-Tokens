@@ -22,7 +22,7 @@ def build_source():
     end = source.index("def make_training_functions(", start)
     source = source[:start] + (HERE / "head.py").read_text() + "\n\n" + source[end:]
     start = source.index("def train_pilot(")
-    source = source[:start] + (HERE / "profiling.py").read_text() + "\n\n" + source[start:]
+    source = source[:start] + (HERE / "profiling.py").read_text() + "\n\n" + (HERE / "memory.py").read_text() + "\n\n" + source[start:]
     source = replace_once(source, "def one_step(state, batch):", "def one_step(state, batch, lr_multiplier):")
     source = replace_once(source, "def group(state, training, requested):", "def group(state, training, requested, lr_multiplier):")
     source = replace_once(source, "one_step(state, batch)", "one_step(state, batch, lr_multiplier)")
@@ -59,6 +59,25 @@ def build_source():
         '                    "learning_rate_multiplier": lr_multiplier,\n'
         '                    "learning_rate_at_dispatch_start": config["learning_rate"] * lr_multiplier\n'
         '                        * min((updates - completed) / config["warmup_updates"], 1.),')
+    source = replace_once(source, '    # Preserve completed dispatches even if a later call fails.',
+        '    memory_before_training = memory_snapshot(jax.devices()[0].memory_stats(), 0.)\n'
+        '    training_memory_samples = []\n'
+        '    memory_sampling_seconds = 0.\n'
+        '    # Preserve completed dispatches even if a later call fails.')
+    source = replace_once(source, '                if len(log_rows) == 1 or end - last_progress >= 2:\n',
+        '                if len(log_rows) == 1 or end - last_progress >= 2:\n'
+        '                    sample_started = time.monotonic()\n'
+        '                    training_memory_samples.append(memory_snapshot(jax.devices()[0].memory_stats(), end))\n'
+        '                    memory_sampling_seconds += time.monotonic() - sample_started\n')
+    source = replace_once(source, '    if not log_rows:\n',
+        '    memory_after_training = memory_snapshot(jax.devices()[0].memory_stats(), training_seconds)\n'
+        '    training_memory = summarize_training_memory(memory_before_training, training_memory_samples,\n'
+        '        memory_after_training, compiled_memory, memory_sampling_seconds)\n'
+        '    write_json(output / "training_memory.json", training_memory)\n'
+        '    if not log_rows:\n')
+    source = replace_once(source, '        "memory_stats": memory_stats, "compiled_memory_estimate": compiled_memory,',
+        '        "memory_stats": memory_stats, "compiled_memory_estimate": compiled_memory,\n'
+        '        "training_memory": training_memory,')
     source = replace_once(source, '    checkpoint_seconds = time.monotonic() - phase',
         '''    checkpoint_seconds = time.monotonic() - phase
     restore_started = time.monotonic()
@@ -136,7 +155,8 @@ def build_source():
 
 
 def cell(kind, text):
-    result = {"cell_type": kind, "metadata": {}, "source": text.splitlines(True)}
+    result = {"cell_type": kind, "id": hashlib.sha256(text.encode()).hexdigest()[:8],
+              "metadata": {}, "source": text.splitlines(True)}
     if kind == "code":
         result.update(execution_count=None, outputs=[])
     return result
@@ -147,6 +167,7 @@ def main():
         raise FileExistsError("Preserving existing notebook: " + str(TARGET))
     source = build_source()
     notebook = json.loads((PARENT / "gemma_270m_colab_v5e1_V3_5.ipynb").read_text())
+    notebook["metadata"]["colab"]["name"] = TARGET.name
     for item in notebook["cells"]:
         text = "".join(item["source"])
         if item["cell_type"] == "code":
@@ -182,7 +203,7 @@ the official checkpoint or score. Missing TPU counters appear as unavailable.
         + "\nV3.7 preserves the V3.5 corpus and tokenizer protocol. It changes the exact head implementation and adds a timed cooldown. Diagnostic state is discarded after checkpoint verification.\n").splitlines(True)
     download = "".join(notebook["cells"][15]["source"])
     download = download.replace('"kernel_verification.json", "training_accounting.json",',
-        '"kernel_verification.json", "head_verification.json", "profiling.json", "training_accounting.json",')
+        '"kernel_verification.json", "head_verification.json", "profiling.json", "training_memory.json", "training_accounting.json",')
     download = download.replace('shutil.copyfile(REPORT_ZIP, OUTPUT / REPORT_ZIP.name)',
         '''    for directory in ("profile", "profile_tools"):
         for path in sorted((OUTPUT / directory).rglob("*")):
