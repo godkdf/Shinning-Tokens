@@ -1,0 +1,749 @@
+{
+  "buckets": {
+    "code_cpp": {
+      "actual": {
+        "in_mix": 20972,
+        "train": 5368709
+      },
+      "repository": "bigcode/the-stack-smol",
+      "subset": "c++",
+      "targets": {
+        "in_mix": 20972,
+        "train": 5368709
+      }
+    },
+    "code_html": {
+      "actual": {
+        "in_mix": 5243,
+        "train": 1342177
+      },
+      "repository": "bigcode/the-stack-smol",
+      "subset": "html",
+      "targets": {
+        "in_mix": 5243,
+        "train": 1342177
+      }
+    },
+    "code_java": {
+      "actual": {
+        "in_mix": 20972,
+        "train": 5368709
+      },
+      "repository": "bigcode/the-stack-smol",
+      "subset": "java",
+      "targets": {
+        "in_mix": 20972,
+        "train": 5368709
+      }
+    },
+    "code_javascript": {
+      "actual": {
+        "in_mix": 15729,
+        "train": 4026532
+      },
+      "repository": "bigcode/the-stack-smol",
+      "subset": "javascript",
+      "targets": {
+        "in_mix": 15729,
+        "train": 4026532
+      }
+    },
+    "code_python": {
+      "actual": {
+        "in_mix": 31457,
+        "train": 8053064
+      },
+      "repository": "codeparrot/codeparrot-clean",
+      "subset": null,
+      "targets": {
+        "in_mix": 31457,
+        "train": 8053064
+      }
+    },
+    "code_rust": {
+      "actual": {
+        "in_mix": 10486,
+        "train": 2684355
+      },
+      "repository": "bigcode/the-stack-smol",
+      "subset": "rust",
+      "targets": {
+        "in_mix": 10486,
+        "train": 2684355
+      }
+    },
+    "dclm": {
+      "actual": {
+        "in_mix": 157286,
+        "train": 40265318
+      },
+      "repository": "HuggingFaceFW/finepdfs_edu_50BT-dclm_30BT-fineweb_edu_20BT-shuffled",
+      "subset": null,
+      "targets": {
+        "in_mix": 157286,
+        "train": 40265318
+      }
+    },
+    "fw2_arb_Arab": {
+      "actual": {
+        "in_mix": 36699,
+        "train": 9395240
+      },
+      "repository": "HuggingFaceFW/fineweb-2",
+      "subset": "arb_Arab",
+      "targets": {
+        "in_mix": 36700,
+        "train": 9395241
+      }
+    },
+    "fw2_cmn_Hani": {
+      "actual": {
+        "in_mix": 36698,
+        "train": 9395239
+      },
+      "repository": "HuggingFaceFW/fineweb-2",
+      "subset": "cmn_Hani",
+      "targets": {
+        "in_mix": 36700,
+        "train": 9395241
+      }
+    },
+    "fw2_deu_Latn": {
+      "actual": {
+        "in_mix": 17826,
+        "train": 4563403
+      },
+      "repository": "HuggingFaceFW/fineweb-2",
+      "subset": "deu_Latn",
+      "targets": {
+        "in_mix": 17826,
+        "train": 4563403
+      }
+    },
+    "fw2_fra_Latn": {
+      "actual": {
+        "in_mix": 26214,
+        "train": 6710886
+      },
+      "repository": "HuggingFaceFW/fineweb-2",
+      "subset": "fra_Latn",
+      "targets": {
+        "in_mix": 26214,
+        "train": 6710886
+      }
+    },
+    "fw2_hin_Deva": {
+      "actual": {
+        "in_mix": 36700,
+        "train": 9395239
+      },
+      "repository": "HuggingFaceFW/fineweb-2",
+      "subset": "hin_Deva",
+      "targets": {
+        "in_mix": 36700,
+        "train": 9395241
+      }
+    },
+    "fw2_ibo_Latn": {
+      "actual": {
+        "in_mix": 10486,
+        "train": 2684355
+      },
+      "repository": "HuggingFaceFW/fineweb-2",
+      "subset": "ibo_Latn",
+      "targets": {
+        "in_mix": 10486,
+        "train": 2684355
+      }
+    },
+    "fw2_jpn_Jpan": {
+      "actual": {
+        "in_mix": 26212,
+        "train": 6710884
+      },
+      "repository": "HuggingFaceFW/fineweb-2",
+      "subset": "jpn_Jpan",
+      "targets": {
+        "in_mix": 26214,
+        "train": 6710886
+      }
+    },
+    "fw2_por_Latn": {
+      "actual": {
+        "in_mix": 15729,
+        "train": 4026532
+      },
+      "repository": "HuggingFaceFW/fineweb-2",
+      "subset": "por_Latn",
+      "targets": {
+        "in_mix": 15729,
+        "train": 4026532
+      }
+    },
+    "fw2_rus_Cyrl": {
+      "actual": {
+        "in_mix": 26213,
+        "train": 6710886
+      },
+      "repository": "HuggingFaceFW/fineweb-2",
+      "subset": "rus_Cyrl",
+      "targets": {
+        "in_mix": 26214,
+        "train": 6710886
+      }
+    },
+    "fw2_sot_Latn": {
+      "actual": {
+        "in_mix": 8388,
+        "train": 2147484
+      },
+      "repository": "HuggingFaceFW/fineweb-2",
+      "subset": "sot_Latn",
+      "targets": {
+        "in_mix": 8389,
+        "train": 2147484
+      }
+    },
+    "fw2_spa_Latn": {
+      "actual": {
+        "in_mix": 20972,
+        "train": 5368709
+      },
+      "repository": "HuggingFaceFW/fineweb-2",
+      "subset": "spa_Latn",
+      "targets": {
+        "in_mix": 20972,
+        "train": 5368709
+      }
+    },
+    "fw2_swh_Latn": {
+      "actual": {
+        "in_mix": 20972,
+        "train": 5368709
+      },
+      "repository": "HuggingFaceFW/fineweb-2",
+      "subset": "swh_Latn",
+      "targets": {
+        "in_mix": 20972,
+        "train": 5368709
+      }
+    },
+    "fw2_tsn_Latn": {
+      "actual": {
+        "in_mix": 10486,
+        "train": 2684355
+      },
+      "repository": "HuggingFaceFW/fineweb-2",
+      "subset": "tsn_Latn",
+      "targets": {
+        "in_mix": 10486,
+        "train": 2684355
+      }
+    },
+    "fw2_xho_Latn": {
+      "actual": {
+        "in_mix": 10486,
+        "train": 2684355
+      },
+      "repository": "HuggingFaceFW/fineweb-2",
+      "subset": "xho_Latn",
+      "targets": {
+        "in_mix": 10486,
+        "train": 2684355
+      }
+    },
+    "fw2_zul_Latn": {
+      "actual": {
+        "in_mix": 10486,
+        "train": 2684355
+      },
+      "repository": "HuggingFaceFW/fineweb-2",
+      "subset": "zul_Latn",
+      "targets": {
+        "in_mix": 10486,
+        "train": 2684355
+      }
+    },
+    "math": {
+      "actual": {
+        "in_mix": 52429,
+        "train": 13421773
+      },
+      "repository": "HuggingFaceTB/finemath",
+      "subset": "finemath-3plus",
+      "targets": {
+        "in_mix": 52429,
+        "train": 13421773
+      }
+    },
+    "pdf_edu": {
+      "actual": {
+        "in_mix": 262144,
+        "train": 67108864
+      },
+      "repository": "HuggingFaceFW/finepdfs_edu_50BT-dclm_30BT-fineweb_edu_20BT-shuffled",
+      "subset": null,
+      "targets": {
+        "in_mix": 262144,
+        "train": 67108864
+      }
+    },
+    "translations_arb_Arab": {
+      "actual": {
+        "in_mix": 13106,
+        "train": 3355442
+      },
+      "repository": "HuggingFaceFW/finetranslations",
+      "subset": "arb_Arab",
+      "targets": {
+        "in_mix": 13107,
+        "train": 3355443
+      }
+    },
+    "translations_fra_Latn": {
+      "actual": {
+        "in_mix": 13107,
+        "train": 3355443
+      },
+      "repository": "HuggingFaceFW/finetranslations",
+      "subset": "fra_Latn",
+      "targets": {
+        "in_mix": 13107,
+        "train": 3355443
+      }
+    },
+    "translations_hin_Deva": {
+      "actual": {
+        "in_mix": 13106,
+        "train": 3355443
+      },
+      "repository": "HuggingFaceFW/finetranslations",
+      "subset": "hin_Deva",
+      "targets": {
+        "in_mix": 13107,
+        "train": 3355443
+      }
+    },
+    "translations_swh_Latn": {
+      "actual": {
+        "in_mix": 13107,
+        "train": 3355443
+      },
+      "repository": "HuggingFaceFW/finetranslations",
+      "subset": "swh_Latn",
+      "targets": {
+        "in_mix": 13107,
+        "train": 3355443
+      }
+    },
+    "web_edu": {
+      "actual": {
+        "in_mix": 104858,
+        "train": 26843546
+      },
+      "repository": "HuggingFaceFW/finepdfs_edu_50BT-dclm_30BT-fineweb_edu_20BT-shuffled",
+      "subset": null,
+      "targets": {
+        "in_mix": 104858,
+        "train": 26843546
+      }
+    },
+    "wiki_arb_Arab": {
+      "bytes": 65536,
+      "subset": "ar"
+    },
+    "wiki_cmn_Hani": {
+      "bytes": 65536,
+      "subset": "zh"
+    },
+    "wiki_deu_Latn": {
+      "bytes": 65536,
+      "subset": "de"
+    },
+    "wiki_eng_Latn": {
+      "bytes": 65536,
+      "subset": "en"
+    },
+    "wiki_fra_Latn": {
+      "bytes": 65536,
+      "subset": "fr"
+    },
+    "wiki_hin_Deva": {
+      "bytes": 65535,
+      "subset": "hi"
+    },
+    "wiki_ibo_Latn": {
+      "bytes": 65534,
+      "subset": "ig"
+    },
+    "wiki_jpn_Jpan": {
+      "bytes": 65536,
+      "subset": "ja"
+    },
+    "wiki_por_Latn": {
+      "bytes": 65536,
+      "subset": "pt"
+    },
+    "wiki_rus_Cyrl": {
+      "bytes": 65535,
+      "subset": "ru"
+    },
+    "wiki_sot_Latn": {
+      "bytes": 65536,
+      "subset": "st"
+    },
+    "wiki_spa_Latn": {
+      "bytes": 65536,
+      "subset": "es"
+    },
+    "wiki_swh_Latn": {
+      "bytes": 65536,
+      "subset": "sw"
+    },
+    "wiki_tsn_Latn": {
+      "bytes": 65536,
+      "subset": "tn"
+    },
+    "wiki_xho_Latn": {
+      "bytes": 65536,
+      "subset": "xh"
+    },
+    "wiki_zul_Latn": {
+      "bytes": 65536,
+      "subset": "zu"
+    }
+  },
+  "cross_split_source_groups": 0,
+  "deduplication_scope": "global exact source/span hashes and source groups; near duplicates are not exhaustively removed",
+  "document_counts": {
+    "in_mix": 299,
+    "train": 51131,
+    "wiki": 820
+  },
+  "files": {
+    "in_mix.jsonl": "1cd5f19a3a1004799e64c2c0529d09fde308a22a0040772f6453fcebe2906088",
+    "train.jsonl": "3fccd496ebe7205eed8d8e7abe3f477f6ff0d828c3ff82713dc0b6a7282a5e7a",
+    "wiki.jsonl": "9f8e44901c90ee2248c719d95c246d087bddfbd4aeee6044ae199ec1c2467960"
+  },
+  "language_bytes": {
+    "in_mix": {
+      "arb_Arab": 45114,
+      "cmn_Hani": 36698,
+      "deu_Latn": 17826,
+      "eng_Latn": 703447,
+      "fra_Latn": 33078,
+      "hin_Deva": 45937,
+      "ibo_Latn": 10486,
+      "jpn_Jpan": 26212,
+      "por_Latn": 15729,
+      "rus_Cyrl": 26213,
+      "sot_Latn": 8388,
+      "spa_Latn": 20972,
+      "swh_Latn": 27011,
+      "tsn_Latn": 10486,
+      "xho_Latn": 10486,
+      "zul_Latn": 10486
+    },
+    "train": {
+      "arb_Arab": 11367150,
+      "cmn_Hani": 9395239,
+      "deu_Latn": 4563403,
+      "eng_Latn": 180572583,
+      "fra_Latn": 8498347,
+      "hin_Deva": 11757195,
+      "ibo_Latn": 2684355,
+      "jpn_Jpan": 6710884,
+      "por_Latn": 4026532,
+      "rus_Cyrl": 6710886,
+      "sot_Latn": 2147484,
+      "spa_Latn": 5368709,
+      "swh_Latn": 6579617,
+      "tsn_Latn": 2684355,
+      "xho_Latn": 2684355,
+      "zul_Latn": 2684355
+    },
+    "wiki": {
+      "arb_Arab": 65536,
+      "cmn_Hani": 65536,
+      "deu_Latn": 65536,
+      "eng_Latn": 65536,
+      "fra_Latn": 65536,
+      "hin_Deva": 65535,
+      "ibo_Latn": 65534,
+      "jpn_Jpan": 65536,
+      "por_Latn": 65536,
+      "rus_Cyrl": 65535,
+      "sot_Latn": 65536,
+      "spa_Latn": 65536,
+      "swh_Latn": 65536,
+      "tsn_Latn": 65536,
+      "xho_Latn": 65536,
+      "zul_Latn": 65536
+    }
+  },
+  "original_bytes": {
+    "in_mix": 1048569,
+    "train": 268435449,
+    "wiki": 1048572
+  },
+  "protocol": "V39-expanded-byte-mix-1",
+  "recipe": {
+    "buckets": [
+      {
+        "bp": 2500,
+        "domain": "pdf_edu",
+        "key": "pdf_edu",
+        "language": "eng_Latn",
+        "repo": "HuggingFaceFW/finepdfs_edu_50BT-dclm_30BT-fineweb_edu_20BT-shuffled",
+        "subset": null
+      },
+      {
+        "bp": 1500,
+        "domain": "dclm",
+        "key": "dclm",
+        "language": "eng_Latn",
+        "repo": "HuggingFaceFW/finepdfs_edu_50BT-dclm_30BT-fineweb_edu_20BT-shuffled",
+        "subset": null
+      },
+      {
+        "bp": 1000,
+        "domain": "web_edu",
+        "key": "web_edu",
+        "language": "eng_Latn",
+        "repo": "HuggingFaceFW/finepdfs_edu_50BT-dclm_30BT-fineweb_edu_20BT-shuffled",
+        "subset": null
+      },
+      {
+        "bp": 250,
+        "domain": "multilingual_web",
+        "key": "fw2_fra_Latn",
+        "language": "fra_Latn",
+        "repo": "HuggingFaceFW/fineweb-2",
+        "subset": "fra_Latn"
+      },
+      {
+        "bp": 200,
+        "domain": "multilingual_web",
+        "key": "fw2_spa_Latn",
+        "language": "spa_Latn",
+        "repo": "HuggingFaceFW/fineweb-2",
+        "subset": "spa_Latn"
+      },
+      {
+        "bp": 150,
+        "domain": "multilingual_web",
+        "key": "fw2_por_Latn",
+        "language": "por_Latn",
+        "repo": "HuggingFaceFW/fineweb-2",
+        "subset": "por_Latn"
+      },
+      {
+        "bp": 350,
+        "domain": "multilingual_web",
+        "key": "fw2_cmn_Hani",
+        "language": "cmn_Hani",
+        "repo": "HuggingFaceFW/fineweb-2",
+        "subset": "cmn_Hani"
+      },
+      {
+        "bp": 350,
+        "domain": "multilingual_web",
+        "key": "fw2_arb_Arab",
+        "language": "arb_Arab",
+        "repo": "HuggingFaceFW/fineweb-2",
+        "subset": "arb_Arab"
+      },
+      {
+        "bp": 350,
+        "domain": "multilingual_web",
+        "key": "fw2_hin_Deva",
+        "language": "hin_Deva",
+        "repo": "HuggingFaceFW/fineweb-2",
+        "subset": "hin_Deva"
+      },
+      {
+        "bp": 200,
+        "domain": "multilingual_web",
+        "key": "fw2_swh_Latn",
+        "language": "swh_Latn",
+        "repo": "HuggingFaceFW/fineweb-2",
+        "subset": "swh_Latn"
+      },
+      {
+        "bp": 100,
+        "domain": "multilingual_web",
+        "key": "fw2_zul_Latn",
+        "language": "zul_Latn",
+        "repo": "HuggingFaceFW/fineweb-2",
+        "subset": "zul_Latn"
+      },
+      {
+        "bp": 100,
+        "domain": "multilingual_web",
+        "key": "fw2_xho_Latn",
+        "language": "xho_Latn",
+        "repo": "HuggingFaceFW/fineweb-2",
+        "subset": "xho_Latn"
+      },
+      {
+        "bp": 100,
+        "domain": "multilingual_web",
+        "key": "fw2_tsn_Latn",
+        "language": "tsn_Latn",
+        "repo": "HuggingFaceFW/fineweb-2",
+        "subset": "tsn_Latn"
+      },
+      {
+        "bp": 80,
+        "domain": "multilingual_web",
+        "key": "fw2_sot_Latn",
+        "language": "sot_Latn",
+        "repo": "HuggingFaceFW/fineweb-2",
+        "subset": "sot_Latn"
+      },
+      {
+        "bp": 250,
+        "domain": "multilingual_web",
+        "key": "fw2_rus_Cyrl",
+        "language": "rus_Cyrl",
+        "repo": "HuggingFaceFW/fineweb-2",
+        "subset": "rus_Cyrl"
+      },
+      {
+        "bp": 250,
+        "domain": "multilingual_web",
+        "key": "fw2_jpn_Jpan",
+        "language": "jpn_Jpan",
+        "repo": "HuggingFaceFW/fineweb-2",
+        "subset": "jpn_Jpan"
+      },
+      {
+        "bp": 170,
+        "domain": "multilingual_web",
+        "key": "fw2_deu_Latn",
+        "language": "deu_Latn",
+        "repo": "HuggingFaceFW/fineweb-2",
+        "subset": "deu_Latn"
+      },
+      {
+        "bp": 100,
+        "domain": "multilingual_web",
+        "key": "fw2_ibo_Latn",
+        "language": "ibo_Latn",
+        "repo": "HuggingFaceFW/fineweb-2",
+        "subset": "ibo_Latn"
+      },
+      {
+        "bp": 500,
+        "domain": "math",
+        "key": "math",
+        "language": "eng_Latn",
+        "repo": "HuggingFaceTB/finemath",
+        "subset": "finemath-3plus"
+      },
+      {
+        "bp": 300,
+        "domain": "code_python",
+        "key": "code_python",
+        "language": "eng_Latn",
+        "repo": "codeparrot/codeparrot-clean",
+        "subset": null
+      },
+      {
+        "bp": 200,
+        "domain": "code_java",
+        "key": "code_java",
+        "language": "eng_Latn",
+        "repo": "bigcode/the-stack-smol",
+        "subset": "java"
+      },
+      {
+        "bp": 200,
+        "domain": "code_cpp",
+        "key": "code_cpp",
+        "language": "eng_Latn",
+        "repo": "bigcode/the-stack-smol",
+        "subset": "c++"
+      },
+      {
+        "bp": 150,
+        "domain": "code_javascript",
+        "key": "code_javascript",
+        "language": "eng_Latn",
+        "repo": "bigcode/the-stack-smol",
+        "subset": "javascript"
+      },
+      {
+        "bp": 100,
+        "domain": "code_rust",
+        "key": "code_rust",
+        "language": "eng_Latn",
+        "repo": "bigcode/the-stack-smol",
+        "subset": "rust"
+      },
+      {
+        "bp": 50,
+        "domain": "code_html",
+        "key": "code_html",
+        "language": "eng_Latn",
+        "repo": "bigcode/the-stack-smol",
+        "subset": "html"
+      },
+      {
+        "bp": 125,
+        "domain": "translations",
+        "key": "translations_fra_Latn",
+        "language": "fra_Latn",
+        "repo": "HuggingFaceFW/finetranslations",
+        "subset": "fra_Latn"
+      },
+      {
+        "bp": 125,
+        "domain": "translations",
+        "key": "translations_arb_Arab",
+        "language": "arb_Arab",
+        "repo": "HuggingFaceFW/finetranslations",
+        "subset": "arb_Arab"
+      },
+      {
+        "bp": 125,
+        "domain": "translations",
+        "key": "translations_hin_Deva",
+        "language": "hin_Deva",
+        "repo": "HuggingFaceFW/finetranslations",
+        "subset": "hin_Deva"
+      },
+      {
+        "bp": 125,
+        "domain": "translations",
+        "key": "translations_swh_Latn",
+        "language": "swh_Latn",
+        "repo": "HuggingFaceFW/finetranslations",
+        "subset": "swh_Latn"
+      }
+    ],
+    "byte_quota_tolerance": 3,
+    "code_language_note": "Code has its own six domain labels; eng_Latn is an accounting placeholder for code, not detected natural-language identity.",
+    "in_mix_eval_bytes_target": 1048576,
+    "max_document_span_bytes": 32768,
+    "protocol": "V39-expanded-byte-mix-1",
+    "sampling_scope": "bounded deterministic stream prefixes; not uniform full-corpus sampling",
+    "source_weight_unit": "original UTF-8 bytes",
+    "split_rule": "SHA256(source group) modulo 10: 0 held out, 1..9 train",
+    "training_bytes_target": 268435456,
+    "wiki_eval_bytes_per_language": 65536
+  },
+  "recipe_sha256": "5e532271baf60f49029e29e24176b60810fc66fd43fae812f418c840ab14056f",
+  "rejected": {
+    "exact_duplicate": 250
+  },
+  "source_revisions": {
+    "HuggingFaceFW/finepdfs_edu_50BT-dclm_30BT-fineweb_edu_20BT-shuffled": "8904a95879538b9e7db6cf8636b2cd16b5e86a76",
+    "HuggingFaceFW/finetranslations": "af3f4ca895450216d4771cdbf3e3b95c5bacaa2a",
+    "HuggingFaceFW/fineweb-2": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+    "HuggingFaceFW/finewiki": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+    "HuggingFaceTB/finemath": "e92b25a616738fe95dc186b64dfb19f9c8525594",
+    "bigcode/the-stack-smol": "4a6938ce94446f324c6629e7de00ac591710044b",
+    "codeparrot/codeparrot-clean": "35a59fb025bc0a102f7d96eac09d145b896d487b"
+  }
+}

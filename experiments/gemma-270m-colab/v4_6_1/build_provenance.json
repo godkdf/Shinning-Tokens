@@ -1,0 +1,17 @@
+{
+  "base_notebook": "gemma_270m_colab_v5e1_V4_4_1.ipynb",
+  "base_sha256": "f38f8ccb9ffa05b5954cd29a32076b339db989af6364a19f765b5f9794a18cf5",
+  "notebook_sha256": "66fcf15cfdd6ca9bd02eee1fdb9c19af6a43797203eef2f4d282de6c68f0fe98",
+  "runner_sha256": "544ab53e2fe35599087136ef1dba760ee3dd9cab465a07a0ee70cc3db78619ab",
+  "tokenizer": {
+    "reference": "deepseek-ai/DeepSeek-V3-Base",
+    "revision": "afb92e1fa402c2be2a9eb085312bb02e0384d6c7",
+    "sha256": "621ac2e32d0dba658404412318818aaa8ce8cda492e59830109d8da6b517fb41",
+    "vocabulary_ids": 128815,
+    "model_rows": 128818,
+    "expected_parameters": 182769536
+  },
+  "discovery_start_after_updates": 1000,
+  "training_seconds": 1200,
+  "device_tests_executed": false
+}

@@ -1,0 +1,19 @@
+{
+  "base_notebook": "gemma_270m_colab_v5e1_V4_1_1.ipynb",
+  "base_sha256": "0cecd76595217bcdc431d9142f8503e5d78cdf8a3d1b8ca7c0bba63e4f83e94a",
+  "notebook_sha256": "f4e6e14dc51742d367f09e8284e9b4bc6c1e915d58f747ed7912275d5f167688",
+  "runner_sha256": "42c5b0ccc579397836169aed4b476c43183ce12c26cf24e8368231960649c815",
+  "tokenizer": "native tiktoken 0.14.0 / o200k_base",
+  "fixed_batches": [
+    [
+      3,
+      1024
+    ],
+    [
+      1,
+      2048
+    ]
+  ],
+  "training_seconds": 1200,
+  "device_tests_executed": false
+}

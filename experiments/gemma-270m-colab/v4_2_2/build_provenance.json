@@ -1,0 +1,10 @@
+{
+  "base_notebook": "gemma_270m_colab_v5e1_V4_2_1.ipynb",
+  "base_sha256": "f4e6e14dc51742d367f09e8284e9b4bc6c1e915d58f747ed7912275d5f167688",
+  "controller_source_sha256": "d8e7e51ea6b0187787ec742f67a7f920275d9b960d6297eed301480e9e8c060b",
+  "notebook_sha256": "45ace4e81e8ca4d6cc2ecc91cd7964e0ad2ec07e49692dbfa4867181f33f8f45",
+  "runner_sha256": "608992444ea5d07bdb2dc5df799062243795be16a1d2b1257be3f7059cb00193",
+  "discovery_start_after_updates": 1000,
+  "early_trigger": "recoverable memory failure",
+  "device_tests_executed": false
+}

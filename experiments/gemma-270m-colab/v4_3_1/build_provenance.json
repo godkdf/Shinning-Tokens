@@ -1,0 +1,17 @@
+{
+  "base_notebook": "gemma_270m_colab_v5e1_V4_2_2.ipynb",
+  "base_sha256": "45ace4e81e8ca4d6cc2ecc91cd7964e0ad2ec07e49692dbfa4867181f33f8f45",
+  "notebook_sha256": "3d9e96b1f7453c7448999288d8beda3b95279011130ccf3902ebd2aea149cbcc",
+  "runner_sha256": "02bb96a314e7f19066d5a61564806b2851d594967606468b257ee65f3c8d54d7",
+  "tokenizer": {
+    "reference": "bigscience/bloom",
+    "revision": "7f10a99ce7c08f03c7719a586cb2cbda1433ac05",
+    "sha256": "3fa39cd4b1500feb205bcce3b9703a4373414cafe4970e0657b413f7ddd2a9d3",
+    "vocabulary_ids": 250680,
+    "model_rows": 250683,
+    "expected_parameters": 260763136
+  },
+  "discovery_start_after_updates": 1000,
+  "training_seconds": 1200,
+  "device_tests_executed": false
+}

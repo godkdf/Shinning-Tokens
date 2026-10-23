@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "validation_scope": "Static notebook/source checks and CPU tokenizer/data preparation only",
+  "device_tests_executed": false,
+  "jax_imported": false,
+  "model_training_executed": false,
+  "notebook_schema": "PASS",
+  "embedded_runner_matches_file": true,
+  "deterministic_builder": true,
+  "dependency_pins_unchanged": true,
+  "discovery_model_optimizer_profile_functions_unchanged": true,
+  "official_tokenizer_id_and_byte_roundtrips": {
+    "texts": 832,
+    "added_token_spellings": 818,
+    "status": "PASS"
+  },
+  "packing_checks": {
+    "contexts": [
+      1024,
+      2048
+    ],
+    "splits": [
+      "train",
+      "in_mix",
+      "wiki"
+    ],
+    "original_bytes_per_split": 69316,
+    "native_tokens_per_split": 11060,
+    "targets_and_context_preserved": true
+  },
+  "native_ids": 128815,
+  "model_rows": 128818,
+  "parameters": 182769536,
+  "runner_sha256": "544ab53e2fe35599087136ef1dba760ee3dd9cab465a07a0ee70cc3db78619ab"
+}

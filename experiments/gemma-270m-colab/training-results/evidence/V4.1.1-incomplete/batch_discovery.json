@@ -1,0 +1,62 @@
+{
+  "both_locked": false,
+  "contexts": {
+    "long": {
+      "current_batch": 1,
+      "lock_reason": "Candidate executable exceeds the memory budget or has no estimate; never executed.",
+      "locked": true,
+      "observations": [
+        {
+          "accepted": true,
+          "batch": 1,
+          "dispatch_seconds": 1.5953924550001375,
+          "tokens": 32768,
+          "tokens_per_second": 20539.146902256834,
+          "updates": 16
+        }
+      ],
+      "selected_batch": 1,
+      "selected_tps": 20539.146902256834,
+      "window_seconds": 0.0,
+      "window_tokens": 0,
+      "window_updates": 0
+    },
+    "short": {
+      "current_batch": 3,
+      "lock_reason": null,
+      "locked": false,
+      "observations": [
+        {
+          "accepted": true,
+          "batch": 1,
+          "dispatch_seconds": 0.882996519000244,
+          "tokens": 16383,
+          "tokens_per_second": 18553.867028320044,
+          "updates": 16
+        },
+        {
+          "accepted": true,
+          "batch": 2,
+          "dispatch_seconds": 0.8178792809999322,
+          "tokens": 32767,
+          "tokens_per_second": 40063.36969428953,
+          "updates": 16
+        }
+      ],
+      "selected_batch": 2,
+      "selected_tps": 40063.36969428953,
+      "window_seconds": 0.0,
+      "window_tokens": 0,
+      "window_updates": 0
+    }
+  },
+  "discovery_updates": 48,
+  "finished_at_update": null,
+  "maximum_discovery_updates": 256,
+  "scope": "Largest measured reasonable batch within a bounded real-training search; not a proof of the physical OOM limit.",
+  "selected_batches": {
+    "long": 1,
+    "short": 2
+  },
+  "window_updates": 16
+}

@@ -1,0 +1,765 @@
+[
+  {
+    "version": "V4",
+    "model_parameters": 268100736,
+    "training_seconds": 1200.005,
+    "updates": 16319,
+    "scored_tokens": 44560465,
+    "tokens_per_second": 37133.6,
+    "scoring_bytes_per_second": 156460.0,
+    "final_short_batch": 3,
+    "final_long_batch": 1,
+    "initial_finewiki_macro_bpb": 5.365794,
+    "final_finewiki_macro_bpb": 1.944411,
+    "initial_in_mix_pooled_bpb": 4.1989,
+    "final_in_mix_pooled_bpb": 1.540723,
+    "sampled_peak_active_gib": 6.024,
+    "sampled_peak_active_percent": 38.25,
+    "device_capacity_gib": 15.748,
+    "compiler_plus_other_resident_estimate_percent": 81.988,
+    "training_occupancy_percent": 99.98,
+    "adaptive_compilation_seconds_inside_training": 66.133,
+    "initial_compilation_seconds": 11.11,
+    "notebook_elapsed_seconds": 1517.332,
+    "training_cu_estimate": 0.97334,
+    "total_cu_estimate": 1.23072,
+    "device_idle_percent": 0.8,
+    "estimated_compute_tflops_per_second": 65.89,
+    "estimated_compute_percent_of_peak": 32.51,
+    "estimated_hbm_gib_per_second": 433.06,
+    "estimated_hbm_percent_of_peak": 56.77,
+    "engineering_status": "PASS",
+    "learning_status": "PASS",
+    "performance_goal_status": "FAIL",
+    "profiling_status": "FAIL",
+    "telemetry_status": "PARTIAL",
+    "operation_ms_per_update": {
+      "attention": 8.469,
+      "cross_entropy": 7.598,
+      "mlp": 6.482,
+      "optimizer_updates": 10.713,
+      "other_or_fused": 25.402,
+      "vocabulary_projection": 16.269
+    },
+    "tokens_by_context": {
+      "long": 11024228,
+      "short": 33536237
+    },
+    "finewiki_languages": {
+      "arb_Arab": {
+        "initial": 4.589458,
+        "final": 1.598867
+      },
+      "cmn_Hani": {
+        "initial": 5.694109,
+        "final": 2.302597
+      },
+      "deu_Latn": {
+        "initial": 6.834828,
+        "final": 1.898481
+      },
+      "eng_Latn": {
+        "initial": 4.368269,
+        "final": 1.585709
+      },
+      "fra_Latn": {
+        "initial": 5.701595,
+        "final": 2.052126
+      },
+      "hin_Deva": {
+        "initial": 2.522037,
+        "final": 1.160201
+      },
+      "ibo_Latn": {
+        "initial": 6.277265,
+        "final": 2.378445
+      },
+      "jpn_Jpan": {
+        "initial": 4.606055,
+        "final": 1.742612
+      },
+      "por_Latn": {
+        "initial": 4.99992,
+        "final": 1.970525
+      },
+      "rus_Cyrl": {
+        "initial": 3.71028,
+        "final": 1.79366
+      },
+      "sot_Latn": {
+        "initial": 6.123781,
+        "final": 2.141096
+      },
+      "spa_Latn": {
+        "initial": 4.837948,
+        "final": 1.913336
+      },
+      "swh_Latn": {
+        "initial": 6.077913,
+        "final": 1.934032
+      },
+      "tsn_Latn": {
+        "initial": 6.226422,
+        "final": 2.006128
+      },
+      "xho_Latn": {
+        "initial": 6.754384,
+        "final": 2.410164
+      },
+      "zul_Latn": {
+        "initial": 6.528446,
+        "final": 2.222599
+      }
+    },
+    "tokenizer": "Gemma 3",
+    "native_ids": 262145,
+    "model_rows": 262148,
+    "scoring_basis": "original",
+    "evidence_kind": "cell_output",
+    "status": "completed",
+    "evidence_path": "evidence/V4/cell-output.txt",
+    "notebook": "../gemma_270m_colab_v5e1_V4.ipynb",
+    "host_idle_percent": null,
+    "matrix_unit_utilization_percent": null,
+    "memory_bandwidth_utilization_percent": null
+  },
+  {
+    "version": "V4.1.1",
+    "model_parameters": 268100096,
+    "training_seconds": 1200.0078723850002,
+    "updates": 15340,
+    "scored_tokens": 42052321,
+    "tokens_per_second": 35043.370937576896,
+    "final_short_batch": 3,
+    "final_long_batch": 1,
+    "adaptive_compilation_seconds_inside_training": 132.37857700000018,
+    "notebook_elapsed_seconds": 1958.685857905,
+    "engineering_status": "PASS",
+    "learning_status": "PASS",
+    "performance_goal_status": "FAIL",
+    "profiling_status": "FAIL",
+    "telemetry_status": "PARTIAL",
+    "tokens_by_context": {
+      "long": 10024592,
+      "short": 32027729
+    },
+    "data_manifest_sha256": "fccf214d574ef8a33d34068efeeb6db4d9d813b4cd39ef4210133f7ce94be8f7",
+    "initial_backbone_sha256": "80bb4b09f230a5dd773c63b89a85fbea09ecf569c1809911d59bcfeb18880069",
+    "scoring_bytes_per_second": 147479.62581967155,
+    "sampled_peak_active_gib": 6.295804500579834,
+    "sampled_peak_active_percent": 39.978320747863044,
+    "device_capacity_gib": 15.748046398162842,
+    "compiler_plus_other_resident_estimate_percent": 81.99494558227026,
+    "training_occupancy_percent": 99.97740706632219,
+    "initial_compilation_seconds": 423.820536143,
+    "training_cu_estimate": 0.9733397187122779,
+    "total_cu_estimate": 1.5887118625229444,
+    "device_idle_percent": 0.8,
+    "operation_ms_per_update": {
+      "attention": 8.469164843749983,
+      "cross_entropy": 7.597851249999999,
+      "mlp": 6.483160976562499,
+      "optimizer_updates": 10.70977925781252,
+      "other_or_fused": 26.066717148437593,
+      "vocabulary_projection": 16.268587382812502
+    },
+    "estimated_compute_percent_of_peak": 32.20718972317426,
+    "estimated_compute_tflops_per_second": 65.28397356887423,
+    "estimated_hbm_gib_per_second": 429.0673133246669,
+    "estimated_hbm_percent_of_peak": 56.241619258705846,
+    "initial_finewiki_macro_bpb": 5.36745423078537,
+    "initial_in_mix_pooled_bpb": 4.203772068023682,
+    "final_finewiki_macro_bpb": 1.9633981212973595,
+    "final_in_mix_pooled_bpb": 1.541087031364441,
+    "finewiki_languages": {
+      "arb_Arab": {
+        "initial": 4.589995384216309,
+        "final": 1.6243864297866821
+      },
+      "cmn_Hani": {
+        "initial": 5.698978900909424,
+        "final": 2.309452533721924
+      },
+      "deu_Latn": {
+        "initial": 6.8359856605529785,
+        "final": 1.9867607355117798
+      },
+      "eng_Latn": {
+        "initial": 4.37080192565918,
+        "final": 1.5896356105804443
+      },
+      "fra_Latn": {
+        "initial": 5.6969194412231445,
+        "final": 2.0586862564086914
+      },
+      "hin_Deva": {
+        "initial": 2.524672746658325,
+        "final": 1.1492230892181396
+      },
+      "ibo_Latn": {
+        "initial": 6.281250476837158,
+        "final": 2.3824422359466553
+      },
+      "jpn_Jpan": {
+        "initial": 4.60852575302124,
+        "final": 1.739637017250061
+      },
+      "por_Latn": {
+        "initial": 5.003151893615723,
+        "final": 1.956128478050232
+      },
+      "rus_Cyrl": {
+        "initial": 3.7096431255340576,
+        "final": 1.821960687637329
+      },
+      "sot_Latn": {
+        "initial": 6.125817775726318,
+        "final": 2.1929056644439697
+      },
+      "spa_Latn": {
+        "initial": 4.841793060302734,
+        "final": 1.8938816785812378
+      },
+      "swh_Latn": {
+        "initial": 6.08053731918335,
+        "final": 1.953521728515625
+      },
+      "tsn_Latn": {
+        "initial": 6.225552558898926,
+        "final": 2.0780692100524902
+      },
+      "xho_Latn": {
+        "initial": 6.756250858306885,
+        "final": 2.4226253032684326
+      },
+      "zul_Latn": {
+        "initial": 6.529390811920166,
+        "final": 2.2550532817840576
+      }
+    },
+    "tokenizer": "Gemma 4",
+    "native_ids": 262144,
+    "model_rows": 262147,
+    "scoring_basis": "original",
+    "evidence_kind": "machine_report",
+    "status": "completed",
+    "evidence_path": "evidence/V4.1.1-complete/result.json",
+    "notebook": "../gemma_270m_colab_v5e1_V4_1_1.ipynb",
+    "host_idle_percent": null,
+    "matrix_unit_utilization_percent": null,
+    "memory_bandwidth_utilization_percent": null
+  },
+  {
+    "tokenizer": "o200k_base",
+    "version": "V4.2.2",
+    "native_ids": 200000,
+    "model_rows": 200003,
+    "model_parameters": 228327936,
+    "scoring_basis": "original",
+    "evidence_kind": "missing",
+    "status": "report_missing",
+    "evidence_path": null,
+    "notebook": "../gemma_270m_colab_v5e1_V4_2_2.ipynb",
+    "host_idle_percent": null,
+    "matrix_unit_utilization_percent": null,
+    "memory_bandwidth_utilization_percent": null
+  },
+  {
+    "version": "V4.3.1",
+    "model_parameters": 260763136,
+    "training_seconds": 1200.0925082299996,
+    "updates": 17112,
+    "scored_tokens": 47053541,
+    "tokens_per_second": 39208.26159426546,
+    "final_short_batch": 3,
+    "final_long_batch": 1,
+    "adaptive_compilation_seconds_inside_training": 56.618553770999824,
+    "notebook_elapsed_seconds": 2107.6006842060006,
+    "engineering_status": "PASS",
+    "learning_status": "PASS",
+    "performance_goal_status": "FAIL",
+    "profiling_status": "FAIL",
+    "telemetry_status": "PARTIAL",
+    "tokens_by_context": {
+      "long": 10998557,
+      "short": 36054984
+    },
+    "data_manifest_sha256": "fccf214d574ef8a33d34068efeeb6db4d9d813b4cd39ef4210133f7ce94be8f7",
+    "initial_backbone_sha256": "80bb4b09f230a5dd773c63b89a85fbea09ecf569c1809911d59bcfeb18880069",
+    "scoring_bytes_per_second": 172778.31298673607,
+    "sampled_peak_active_gib": 5.543408393859863,
+    "sampled_peak_active_percent": 35.20060999125932,
+    "device_capacity_gib": 15.748046398162842,
+    "compiler_plus_other_resident_estimate_percent": 79.13363009259783,
+    "training_occupancy_percent": 99.97111572711796,
+    "initial_compilation_seconds": 252.0557844289997,
+    "training_cu_estimate": 0.9734083677865552,
+    "total_cu_estimate": 1.7094983327448672,
+    "device_idle_percent": 0.9,
+    "operation_ms_per_update": {
+      "attention": 8.44622281249995,
+      "cross_entropy": 7.155441328125001,
+      "mlp": 6.468328554687495,
+      "optimizer_updates": 10.236945195312511,
+      "other_or_fused": 24.97722964843729,
+      "vocabulary_projection": 15.438371367187502
+    },
+    "estimated_compute_percent_of_peak": 32.705368051977665,
+    "estimated_compute_tflops_per_second": 66.29378104135873,
+    "estimated_hbm_gib_per_second": 431.80558585739703,
+    "estimated_hbm_percent_of_peak": 56.60054867707393,
+    "initial_finewiki_macro_bpb": 4.614334389567375,
+    "initial_in_mix_pooled_bpb": 4.025498867034912,
+    "final_finewiki_macro_bpb": 1.9557377323508263,
+    "final_in_mix_pooled_bpb": 1.5438075065612793,
+    "finewiki_languages": {
+      "arb_Arab": {
+        "initial": 3.2336606979370117,
+        "final": 1.6459171772003174
+      },
+      "cmn_Hani": {
+        "initial": 4.154322624206543,
+        "final": 2.417827606201172
+      },
+      "deu_Latn": {
+        "initial": 5.896097660064697,
+        "final": 2.0135395526885986
+      },
+      "eng_Latn": {
+        "initial": 3.838503122329712,
+        "final": 1.6113598346710205
+      },
+      "fra_Latn": {
+        "initial": 4.29573917388916,
+        "final": 2.041813850402832
+      },
+      "hin_Deva": {
+        "initial": 2.143214464187622,
+        "final": 1.1065258979797363
+      },
+      "ibo_Latn": {
+        "initial": 5.115081310272217,
+        "final": 2.3755710124969482
+      },
+      "jpn_Jpan": {
+        "initial": 5.326756954193115,
+        "final": 1.801762342453003
+      },
+      "por_Latn": {
+        "initial": 3.982414484024048,
+        "final": 1.9352374076843262
+      },
+      "rus_Cyrl": {
+        "initial": 5.145208835601807,
+        "final": 1.7978425025939941
+      },
+      "sot_Latn": {
+        "initial": 5.3939595222473145,
+        "final": 2.154993772506714
+      },
+      "spa_Latn": {
+        "initial": 3.982097625732422,
+        "final": 1.8802638053894043
+      },
+      "swh_Latn": {
+        "initial": 4.4570841789245605,
+        "final": 1.87971031665802
+      },
+      "tsn_Latn": {
+        "initial": 5.627063751220703,
+        "final": 2.007315158843994
+      },
+      "xho_Latn": {
+        "initial": 5.593778133392334,
+        "final": 2.3944242000579834
+      },
+      "zul_Latn": {
+        "initial": 5.644367694854736,
+        "final": 2.2276992797851562
+      }
+    },
+    "tokenizer": "BLOOM",
+    "native_ids": 250680,
+    "model_rows": 250683,
+    "scoring_basis": "original",
+    "evidence_kind": "machine_report",
+    "status": "completed",
+    "evidence_path": "evidence/V4.3.1/result.json",
+    "notebook": "../gemma_270m_colab_v5e1_V4_3_1.ipynb",
+    "host_idle_percent": null,
+    "matrix_unit_utilization_percent": null,
+    "memory_bandwidth_utilization_percent": null
+  },
+  {
+    "version": "V4.4.1",
+    "model_parameters": 182411776,
+    "training_seconds": 1200.017,
+    "updates": 24544,
+    "scored_tokens": 80307432,
+    "tokens_per_second": 66921.9,
+    "scoring_bytes_per_second": 277275.9,
+    "final_short_batch": 3,
+    "final_long_batch": 2,
+    "initial_finewiki_macro_bpb": 5.268836,
+    "final_finewiki_macro_bpb": 1.782555,
+    "initial_in_mix_pooled_bpb": 4.076184,
+    "final_in_mix_pooled_bpb": 1.431393,
+    "sampled_peak_active_gib": 5.127,
+    "sampled_peak_active_percent": 32.558,
+    "device_capacity_gib": 15.748,
+    "compiler_plus_other_resident_estimate_percent": 63.665,
+    "training_occupancy_percent": 99.98,
+    "adaptive_compilation_seconds_inside_training": 117.877,
+    "initial_compilation_seconds": 86.21,
+    "notebook_elapsed_seconds": 1830.649,
+    "training_cu_estimate": 0.97335,
+    "total_cu_estimate": 1.48486,
+    "device_idle_percent": 1.3,
+    "estimated_compute_tflops_per_second": 105.59,
+    "estimated_compute_percent_of_peak": 52.09,
+    "estimated_hbm_gib_per_second": 449.65,
+    "estimated_hbm_percent_of_peak": 58.94,
+    "engineering_status": "PASS",
+    "learning_status": "PASS",
+    "performance_goal_status": "FAIL",
+    "profiling_status": "FAIL",
+    "telemetry_status": "PARTIAL",
+    "operation_ms_per_update": {
+      "attention": 13.429,
+      "cross_entropy": 1.273,
+      "mlp": 9.423,
+      "optimizer_updates": 6.122,
+      "other_or_fused": 7.775,
+      "vocabulary_projection": 11.083
+    },
+    "tokens_by_context": {
+      "long": 19872609,
+      "short": 60434823
+    },
+    "finewiki_languages": {
+      "arb_Arab": {
+        "initial": 4.16078,
+        "final": 1.450737
+      },
+      "cmn_Hani": {
+        "initial": 5.537626,
+        "final": 2.115211
+      },
+      "deu_Latn": {
+        "initial": 6.694432,
+        "final": 1.73471
+      },
+      "eng_Latn": {
+        "initial": 3.840338,
+        "final": 1.478534
+      },
+      "fra_Latn": {
+        "initial": 5.371441,
+        "final": 1.892778
+      },
+      "hin_Deva": {
+        "initial": 3.6876,
+        "final": 1.033069
+      },
+      "ibo_Latn": {
+        "initial": 6.003641,
+        "final": 2.185157
+      },
+      "jpn_Jpan": {
+        "initial": 4.615475,
+        "final": 1.542546
+      },
+      "por_Latn": {
+        "initial": 4.783084,
+        "final": 1.810502
+      },
+      "rus_Cyrl": {
+        "initial": 3.65366,
+        "final": 1.66271
+      },
+      "sot_Latn": {
+        "initial": 5.766672,
+        "final": 1.986588
+      },
+      "spa_Latn": {
+        "initial": 4.760311,
+        "final": 1.736058
+      },
+      "swh_Latn": {
+        "initial": 6.323855,
+        "final": 1.787653
+      },
+      "tsn_Latn": {
+        "initial": 6.085952,
+        "final": 1.862686
+      },
+      "xho_Latn": {
+        "initial": 6.479027,
+        "final": 2.193262
+      },
+      "zul_Latn": {
+        "initial": 6.537483,
+        "final": 2.048676
+      }
+    },
+    "tokenizer": "Llama 3",
+    "native_ids": 128256,
+    "model_rows": 128259,
+    "scoring_basis": "original",
+    "evidence_kind": "cell_output",
+    "status": "completed",
+    "evidence_path": "evidence/V4.4.1/cell-output.txt",
+    "notebook": "../gemma_270m_colab_v5e1_V4_4_1.ipynb",
+    "host_idle_percent": null,
+    "matrix_unit_utilization_percent": null,
+    "memory_bandwidth_utilization_percent": null
+  },
+  {
+    "version": "V4.5.1",
+    "model_parameters": 197396096,
+    "training_seconds": 1200.068,
+    "updates": 23115,
+    "scored_tokens": 75557854,
+    "tokens_per_second": 62961.3,
+    "scoring_bytes_per_second": 250442.8,
+    "final_short_batch": 3,
+    "final_long_batch": 2,
+    "initial_finewiki_macro_bpb": 5.790467,
+    "final_finewiki_macro_bpb": 1.824585,
+    "initial_in_mix_pooled_bpb": 4.29508,
+    "final_in_mix_pooled_bpb": 1.457129,
+    "sampled_peak_active_gib": 5.381,
+    "sampled_peak_active_percent": 34.167,
+    "device_capacity_gib": 15.748,
+    "compiler_plus_other_resident_estimate_percent": 68.863,
+    "training_occupancy_percent": 99.98,
+    "adaptive_compilation_seconds_inside_training": 108.973,
+    "initial_compilation_seconds": 86.29,
+    "notebook_elapsed_seconds": 2054.329,
+    "training_cu_estimate": 0.97339,
+    "total_cu_estimate": 1.66629,
+    "device_idle_percent": 1.5,
+    "estimated_compute_tflops_per_second": 104.74,
+    "estimated_compute_percent_of_peak": 51.67,
+    "estimated_hbm_gib_per_second": 451.37,
+    "estimated_hbm_percent_of_peak": 59.17,
+    "engineering_status": "PASS",
+    "learning_status": "PASS",
+    "performance_goal_status": "FAIL",
+    "profiling_status": "FAIL",
+    "telemetry_status": "PARTIAL",
+    "operation_ms_per_update": {
+      "attention": 13.433,
+      "cross_entropy": 1.573,
+      "mlp": 9.437,
+      "optimizer_updates": 6.829,
+      "other_or_fused": 8.114,
+      "vocabulary_projection": 13.111
+    },
+    "tokens_by_context": {
+      "long": 18434861,
+      "short": 57122993
+    },
+    "finewiki_languages": {
+      "arb_Arab": {
+        "initial": 4.779107,
+        "final": 1.490803
+      },
+      "cmn_Hani": {
+        "initial": 5.29156,
+        "final": 2.155776
+      },
+      "deu_Latn": {
+        "initial": 7.473058,
+        "final": 1.910696
+      },
+      "eng_Latn": {
+        "initial": 4.190886,
+        "final": 1.501451
+      },
+      "fra_Latn": {
+        "initial": 5.887358,
+        "final": 1.877436
+      },
+      "hin_Deva": {
+        "initial": 6.268064,
+        "final": 1.054409
+      },
+      "ibo_Latn": {
+        "initial": 6.226105,
+        "final": 2.226825
+      },
+      "jpn_Jpan": {
+        "initial": 5.056801,
+        "final": 1.622719
+      },
+      "por_Latn": {
+        "initial": 5.19727,
+        "final": 1.845504
+      },
+      "rus_Cyrl": {
+        "initial": 4.283085,
+        "final": 1.671494
+      },
+      "sot_Latn": {
+        "initial": 6.196675,
+        "final": 2.024218
+      },
+      "spa_Latn": {
+        "initial": 5.087546,
+        "final": 1.76886
+      },
+      "swh_Latn": {
+        "initial": 6.646794,
+        "final": 1.81116
+      },
+      "tsn_Latn": {
+        "initial": 6.37698,
+        "final": 1.889637
+      },
+      "xho_Latn": {
+        "initial": 6.878408,
+        "final": 2.241187
+      },
+      "zul_Latn": {
+        "initial": 6.80778,
+        "final": 2.101187
+      }
+    },
+    "tokenizer": "Qwen3",
+    "native_ids": 151669,
+    "model_rows": 151672,
+    "scoring_basis": "NFC",
+    "evidence_kind": "cell_output",
+    "status": "completed",
+    "evidence_path": "evidence/V4.5.1/cell-output.txt",
+    "notebook": "../gemma_270m_colab_v5e1_V4_5_1.ipynb",
+    "host_idle_percent": null,
+    "matrix_unit_utilization_percent": null,
+    "memory_bandwidth_utilization_percent": null
+  },
+  {
+    "version": "V4.6.1",
+    "model_parameters": 182769536,
+    "training_seconds": 1200.003,
+    "updates": 24477,
+    "scored_tokens": 80105111,
+    "tokens_per_second": 66754.1,
+    "scoring_bytes_per_second": 277853.6,
+    "final_short_batch": 3,
+    "final_long_batch": 2,
+    "initial_finewiki_macro_bpb": 5.148885,
+    "final_finewiki_macro_bpb": 1.786081,
+    "initial_in_mix_pooled_bpb": 4.039047,
+    "final_in_mix_pooled_bpb": 1.428672,
+    "sampled_peak_active_gib": 5.122,
+    "sampled_peak_active_percent": 32.526,
+    "device_capacity_gib": 15.748,
+    "compiler_plus_other_resident_estimate_percent": 63.72,
+    "training_occupancy_percent": 99.98,
+    "adaptive_compilation_seconds_inside_training": 117.148,
+    "initial_compilation_seconds": 87.35,
+    "notebook_elapsed_seconds": 1971.013,
+    "training_cu_estimate": 0.97334,
+    "total_cu_estimate": 1.59871,
+    "device_idle_percent": 1.3,
+    "estimated_compute_tflops_per_second": 105.38,
+    "estimated_compute_percent_of_peak": 51.99,
+    "estimated_hbm_gib_per_second": 448.89,
+    "estimated_hbm_percent_of_peak": 58.84,
+    "engineering_status": "PASS",
+    "learning_status": "PASS",
+    "performance_goal_status": "FAIL",
+    "profiling_status": "FAIL",
+    "telemetry_status": "PARTIAL",
+    "operation_ms_per_update": {
+      "attention": 13.429,
+      "cross_entropy": 1.373,
+      "mlp": 9.422,
+      "optimizer_updates": 6.139,
+      "other_or_fused": 7.784,
+      "vocabulary_projection": 11.124
+    },
+    "tokens_by_context": {
+      "long": 19880399,
+      "short": 60224712
+    },
+    "finewiki_languages": {
+      "arb_Arab": {
+        "initial": 4.105954,
+        "final": 1.459438
+      },
+      "cmn_Hani": {
+        "initial": 4.57467,
+        "final": 2.127665
+      },
+      "deu_Latn": {
+        "initial": 5.964293,
+        "final": 1.760218
+      },
+      "eng_Latn": {
+        "initial": 3.806169,
+        "final": 1.484132
+      },
+      "fra_Latn": {
+        "initial": 5.205359,
+        "final": 1.879039
+      },
+      "hin_Deva": {
+        "initial": 4.04098,
+        "final": 1.038038
+      },
+      "ibo_Latn": {
+        "initial": 5.96731,
+        "final": 2.199025
+      },
+      "jpn_Jpan": {
+        "initial": 4.738504,
+        "final": 1.555991
+      },
+      "por_Latn": {
+        "initial": 4.69378,
+        "final": 1.804885
+      },
+      "rus_Cyrl": {
+        "initial": 3.57864,
+        "final": 1.67516
+      },
+      "sot_Latn": {
+        "initial": 5.779408,
+        "final": 1.972348
+      },
+      "spa_Latn": {
+        "initial": 4.663021,
+        "final": 1.746945
+      },
+      "swh_Latn": {
+        "initial": 6.271217,
+        "final": 1.787957
+      },
+      "tsn_Latn": {
+        "initial": 6.037258,
+        "final": 1.849611
+      },
+      "xho_Latn": {
+        "initial": 6.454803,
+        "final": 2.199594
+      },
+      "zul_Latn": {
+        "initial": 6.500798,
+        "final": 2.037257
+      }
+    },
+    "tokenizer": "DeepSeek-V3-Base",
+    "native_ids": 128815,
+    "model_rows": 128818,
+    "scoring_basis": "original",
+    "evidence_kind": "cell_output",
+    "status": "completed",
+    "evidence_path": "evidence/V4.6.1/cell-output.txt",
+    "notebook": "../gemma_270m_colab_v5e1_V4_6_1.ipynb",
+    "host_idle_percent": null,
+    "matrix_unit_utilization_percent": null,
+    "memory_bandwidth_utilization_percent": null
+  }
+]

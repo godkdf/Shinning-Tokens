@@ -1,0 +1,901 @@
+ 
+
+
+Measurement
+Result
+
+
+
+Version / model parameters
+V4 / 268,100,736
+
+
+Locked batches: short / long
+3 × 1,024 / 1 × 2,048
+
+
+Discovery updates / maximum
+64 / 256
+
+
+Short / long scored tokens
+{'long': 11024228, 'short': 33536237}
+
+
+Adaptive compilation seconds inside training
+66.133
+
+
+Training / learning / performance
+PASS / PASS / FAIL
+
+
+Profiling requirements / telemetry
+FAIL / PARTIAL
+
+
+Actual training seconds
+1,200.005
+
+
+Updates / useful tokens
+16,319 / 44,560,465
+
+
+Useful tokens/s
+37,133.6
+
+
+Attributed original bytes/s
+156,460.0
+
+
+Useful occupancy
+99.98%
+
+
+Initial → final FineWiki macro BPB
+5.365794 → 1.944411
+
+
+Initial → final in-mixture pooled BPB
+4.198900 → 1.540723
+
+
+Compilation / initial eval / final eval seconds
+11.11 / 3.40 / 3.28
+
+
+Weights save and file-check seconds
+19.396
+
+
+Checkpoint restoration check
+Disabled as requested
+
+
+Whole notebook through report seconds
+1,517.332
+
+
+Estimated training / total CU at 2.92/hour
+0.97334 / 1.23072
+
+
+
+
+Measurement
+Result
+
+
+
+Reported device capacity GiB
+15.748
+
+
+Sampled maximum active GiB / % capacity
+6.024 / 38.250%
+
+
+Training allocator peak % / scope
+38.251% / isolated_new_high_water_mark
+
+
+Compiler + inactive context/evaluation estimate % capacity
+81.988% (estimate)
+
+
+Memory sampling overhead ms
+9.152
+
+Memory limits: Synchronized samples can miss temporary peaks. Lifetime counters include earlier phases unless a new peak was reached during training. Allocator counters may not expose every runtime-owned buffer. Reserved pool bytes are not active tensor bytes; compiler estimates are separate.
+
+
+
+Measurement
+Result
+
+
+
+device_idle_time
+0.800%
+
+
+host_idle_time
+UNAVAILABLE: XProf host-op idle accounting does not establish Python/CPU idle or blocked dispatch time. See separately measured host wait and dispatch gaps.
+
+
+matrix_unit_utilization
+UNAVAILABLE: No supported TPU utilization-counter message was exported. Default zeros are not measurements; inspect raw-counter audit. Runtime cause is not established.
+
+
+memory_bandwidth_utilization
+UNAVAILABLE: No supported TPU utilization-counter message was exported. Default zeros are not measurements; inspect raw-counter audit. Runtime cause is not established.
+
+
+
+
+Operation category
+ms/update
+Accounted operation time %
+
+
+
+attention
+8.469
+11.302
+
+
+cross_entropy
+7.598
+10.140
+
+
+mlp
+6.482
+8.651
+
+
+optimizer_updates
+10.713
+14.296
+
+
+other_or_fused
+25.402
+33.900
+
+
+vocabulary_projection
+16.269
+21.711
+
+Operation timing scope: Summed HLO self-time over profiled device cores; includes forward/backward; excludes idle. Not elapsed wall time.
+Host enqueue/wait/gaps: {
+  "between_dispatch_wall_ms": 4.33545900068566,
+  "enqueue_wall_ms": 11.281828999926802,
+  "note": "Host wall-clock durations around enqueue and synchronous completion APIs, including API overhead. These are not OS CPU-idle percentages; synchronization can overlap TPU execution.",
+  "synchronization_call_percent_of_window": 99.31620351706505,
+  "synchronization_call_wall_ms": 2406.1600399982126
+}
+
+
+
+Measurement
+Result
+
+
+
+ESTIMATED compute TFLOP/s / % peak
+65.89 / 32.51%
+
+
+ESTIMATED HBM GiB/s / % peak
+433.06 / 56.77%
+
+
+Diagnostic updates / total diagnostic seconds
+32 / 60.19
+
+Compiler FLOP/byte costs divided by observed duration. Not hardware-counter measurements or MXU busy time. Estimates may exceed physical peak; never clamp them.
+
+
+
+FineWiki language
+Initial BPB
+Final BPB
+Change
+
+
+
+arb_Arab
+4.589458
+1.598867
+-2.990591
+
+
+cmn_Hani
+5.694109
+2.302597
+-3.391512
+
+
+deu_Latn
+6.834828
+1.898481
+-4.936347
+
+
+eng_Latn
+4.368269
+1.585709
+-2.782560
+
+
+fra_Latn
+5.701595
+2.052126
+-3.649469
+
+
+hin_Deva
+2.522037
+1.160201
+-1.361836
+
+
+ibo_Latn
+6.277265
+2.378445
+-3.898820
+
+
+jpn_Jpan
+4.606055
+1.742612
+-2.863443
+
+
+por_Latn
+4.999920
+1.970525
+-3.029395
+
+
+rus_Cyrl
+3.710280
+1.793660
+-1.916621
+
+
+sot_Latn
+6.123781
+2.141096
+-3.982685
+
+
+spa_Latn
+4.837948
+1.913336
+-2.924612
+
+
+swh_Latn
+6.077913
+1.934032
+-4.143881
+
+
+tsn_Latn
+6.226422
+2.006128
+-4.220294
+
+
+xho_Latn
+6.754384
+2.410164
+-4.344220
+
+
+zul_Latn
+6.528446
+2.222599
+-4.305846
+
+Historical comparison: {
+  "bpb_difference_from_reference": null,
+  "controlled_same_budget_comparison": false,
+  "current_batch": 1,
+  "current_budget_seconds": 1200.0,
+  "current_corpus": "expanded 256 MiB",
+  "current_sequence_length": 1024,
+  "current_training_contexts": [
+    1024,
+    2048
+  ],
+  "note": "Descriptive historical comparison only. Corpus, language coverage, batch schedule, training context and duration differ. BPB and throughput do not isolate implementation efficiency.",
+  "reference_batch": 2,
+  "reference_finewiki_macro_bpb": 2.9347027242183685,
+  "reference_sequence_length": 1024,
+  "reference_tokens_per_second": 45734.29605429257,
+  "reference_training_seconds": 60.014611282999795,
+  "reference_version": "V3.5",
+  "same_evaluation_context_length": true,
+  "same_tokenizer_and_corpus": false,
+  "throughput_ratio_to_reference": null
+}
+Required measurements: {
+  "host_and_device_idle_time": "FAIL",
+  "matrix_unit_utilization": "FAIL",
+  "memory_bandwidth_utilization": "FAIL",
+  "operation_timings": "PASS",
+  "training_memory": "PASS"
+}
+Training requirements: {
+  "V4-001_ONE_ATTEMPT": "PASS",
+  "V4-002_ONE_V5E": "PASS",
+  "V4-003_SOURCE_PINS": "PASS",
+  "V4-004_FROZEN_CORPUS": "PASS",
+  "V4-005_SPLIT_SEPARATION": "PASS",
+  "V4-006_LOSSLESS_TOKENIZATION": "PASS",
+  "V4-007_INTACT_PACKING": "PASS",
+  "V4-008_NATIVE_ATTENTION_MASK": "PASS",
+  "V4-009_RESIDENT_INPUTS": "PASS",
+  "V4-010_GEMMA_BACKBONE": "PASS",
+  "V4-011_OPTIMIZER_ROUTING": "PASS",
+  "V4-012_TIMED_DISPATCH": "PASS",
+  "V4-013_DISPATCH_BOUND": "PASS",
+  "V4-014_FINITE_UPDATES": "PASS",
+  "V4-015_ZERO_EXTRA_UPDATES": "PASS",
+  "V4-016_FIXED_EVALUATION": "PASS",
+  "V4-017_WEIGHTS_ARTIFACT": "PASS",
+  "V4-018_CHANGED_WEIGHTS": "PASS",
+  "V4-019_MINIMUM_UPDATES": "PASS",
+  "V4-020_BYTE_ACCOUNTING": "PASS",
+  "V4-021_DOWNLOAD_BOUND": "PASS",
+  "V4-022_PREFIX_CACHE": "PASS",
+  "V4-023_MERGE_ORDER": "PASS",
+  "V4-024_SOURCE_COMPLETE": "PASS",
+  "V4-025_NATIVE_TRAINING": "PASS",
+  "V4-026_COMBINED_EVALUATOR": "PASS",
+  "V4-027_CPU_ACCOUNTING": "PASS",
+  "V4-028_WEIGHTS_ONLY": "PASS",
+  "V4-029_NO_RESTORE_CHECK": "PASS",
+  "V4-030_BOUNDED_DISCOVERY": "PASS",
+  "V4-031_TOKEN_SCHEDULE": "PASS",
+  "V4-032_CONTEXT_CURSORS": "PASS",
+  "V4-033_BOTH_CONTEXTS_MEASURED": "PASS",
+  "V4-034_BATCHES_LOCKED": "PASS",
+  "V4-035_NO_RECHECKS": "PASS"
+}
+Performance targets: {
+  "notebook_seconds_at_most_1800": true,
+  "occupancy_at_least_95_percent": true,
+  "pretraining_compilation_seconds_at_most_180": true,
+  "throughput_at_least_v35_reference": false
+}
+Timed source byte shares: {
+  "code_cpp": 0.018955629082386356,
+  "code_html": 0.00455372225999086,
+  "code_java": 0.019925308481589063,
+  "code_javascript": 0.015030398192192918,
+  "code_python": 0.030095757252101788,
+  "code_rust": 0.009783232127639848,
+  "dclm": 0.1521320880383037,
+  "math": 0.05060663896332143,
+  "multilingual_web": 0.30101076481015243,
+  "pdf_edu": 0.2500299955616635,
+  "translations": 0.04835731404388229,
+  "web_edu": 0.09951915118677579,
+  "wiki_holdout": 0.0
+}
+Timed language byte shares: {
+  "arb_Arab": 0.04193284448730151,
+  "cmn_Hani": 0.03559539361700093,
+  "deu_Latn": 0.01753838240166216,
+  "eng_Latn": 0.6730229348352061,
+  "fra_Latn": 0.031817611944029996,
+  "hin_Deva": 0.04254672621966066,
+  "ibo_Latn": 0.010100058333624541,
+  "jpn_Jpan": 0.02562220424574599,
+  "por_Latn": 0.014613871729843974,
+  "rus_Cyrl": 0.02593648455063863,
+  "sot_Latn": 0.008040360436319938,
+  "spa_Latn": 0.019247795200387368,
+  "swh_Latn": 0.02412007999221231,
+  "tsn_Latn": 0.009513947162549824,
+  "xho_Latn": 0.01027457505994705,
+  "zul_Latn": 0.010076729783868922
+}
+Artifacts: /content/drive/MyDrive/ShiningGem/colab-v5e1/V4/20261022T131433Z-4d22e6ba
+Batch decisions: [
+  {
+    "action": "increase",
+    "additional_observed_resident_bytes": 304024440,
+    "allocator_snapshot": {
+      "active_percent": 33.74975515537781,
+      "bytes_in_use": 5706859520,
+      "bytes_limit": 16909336064,
+      "bytes_reserved": 3131180032,
+      "peak_bytes_in_use": 5706865152,
+      "peak_bytes_reserved": 3131180032,
+      "reserved_percent": 18.517462898299637,
+      "training_elapsed_seconds": 0.8581173250004213
+    },
+    "at_update": 16,
+    "batch": 1,
+    "candidate_compiler_peak_plus_other_resident_bytes": 10601756160,
+    "decision_complete_seconds": 5.709191409000596,
+    "device_capacity_bytes": 16909336064,
+    "discovery_updates": 16,
+    "dispatch_seconds": 0.8569592849999026,
+    "elapsed_seconds": 0.8581173250004213,
+    "mode": "short",
+    "next_candidate_batch": 2,
+    "previous_selected_tokens_per_second": null,
+    "projected_next_peak_bytes": 12479470950,
+    "reason": "Measure the next admitted batch using real training updates.",
+    "selected_batch": 1,
+    "tokens_per_second": 19118.761283976124,
+    "window_tokens": 16384,
+    "window_updates": 16
+  },
+  {
+    "action": "lock",
+    "additional_observed_resident_bytes": 565321080,
+    "allocator_snapshot": {
+      "active_percent": 35.295138409995,
+      "bytes_in_use": 5968173568,
+      "bytes_limit": 16909336064,
+      "bytes_reserved": 7246595072,
+      "peak_bytes_in_use": 5968179200,
+      "peak_bytes_reserved": 7246595072,
+      "reserved_percent": 42.85558607725593,
+      "training_elapsed_seconds": 7.222344241999963
+    },
+    "at_update": 32,
+    "batch": 1,
+    "candidate_compiler_peak_plus_other_resident_bytes": 15786027520,
+    "decision_complete_seconds": 34.167903834000754,
+    "device_capacity_bytes": 16909336064,
+    "discovery_updates": 32,
+    "dispatch_seconds": 1.5052062830000068,
+    "elapsed_seconds": 7.222344241999963,
+    "mode": "long",
+    "previous_selected_tokens_per_second": null,
+    "projected_next_peak_bytes": 23735773747,
+    "reason": "Candidate executable exceeds the memory budget or has no estimate; never executed.",
+    "selected_batch": 1,
+    "tokens_per_second": 21769.773598533306,
+    "window_tokens": 32768,
+    "window_updates": 16
+  },
+  {
+    "action": "increase",
+    "additional_observed_resident_bytes": 794261880,
+    "allocator_snapshot": {
+      "active_percent": 36.64896679884214,
+      "bytes_in_use": 6197096960,
+      "bytes_limit": 16909336064,
+      "bytes_reserved": 7246595072,
+      "peak_bytes_in_use": 6197102592,
+      "peak_bytes_reserved": 7246595072,
+      "reserved_percent": 42.85558607725593,
+      "training_elapsed_seconds": 34.9647227610003
+    },
+    "at_update": 48,
+    "batch": 2,
+    "candidate_compiler_peak_plus_other_resident_bytes": 13270327808,
+    "decision_complete_seconds": 40.10068567000053,
+    "device_capacity_bytes": 16909336064,
+    "discovery_updates": 48,
+    "dispatch_seconds": 0.7889002069996423,
+    "elapsed_seconds": 34.9647227610003,
+    "mode": "short",
+    "next_candidate_batch": 3,
+    "previous_selected_tokens_per_second": 19118.761283976124,
+    "projected_next_peak_bytes": 13784183936,
+    "reason": "Measure the next admitted batch using real training updates.",
+    "selected_batch": 2,
+    "tokens_per_second": 41536.305491189785,
+    "window_tokens": 32768,
+    "window_updates": 16
+  },
+  {
+    "action": "lock",
+    "additional_observed_resident_bytes": 1065068920,
+    "allocator_snapshot": {
+      "active_percent": 38.250490590048514,
+      "bytes_in_use": 6467904000,
+      "bytes_limit": 16909336064,
+      "bytes_reserved": 7246595072,
+      "peak_bytes_in_use": 6467909632,
+      "peak_bytes_reserved": 7246595072,
+      "reserved_percent": 42.85558607725593,
+      "training_elapsed_seconds": 41.060539304000486
+    },
+    "at_update": 64,
+    "batch": 3,
+    "candidate_compiler_peak_plus_other_resident_bytes": 15716390912,
+    "decision_complete_seconds": 70.33703418500045,
+    "device_capacity_bytes": 16909336064,
+    "discovery_updates": 64,
+    "dispatch_seconds": 0.9520339840000815,
+    "elapsed_seconds": 41.060539304000486,
+    "mode": "short",
+    "previous_selected_tokens_per_second": 41536.305491189785,
+    "projected_next_peak_bytes": 16134650948,
+    "reason": "Candidate executable exceeds the memory budget or has no estimate; never executed.",
+    "selected_batch": 3,
+    "tokens_per_second": 51625.25794877065,
+    "window_tokens": 49149,
+    "window_updates": 16
+  }
+]
+Context transitions: [
+  {
+    "batch": 1,
+    "cycle": 0,
+    "elapsed_seconds": 1.900007191579789e-07,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "discovery",
+    "short_batch": 1,
+    "tokens": 0,
+    "update": 0
+  },
+  {
+    "batch": 1,
+    "cycle": 0,
+    "elapsed_seconds": 5.717120938999869,
+    "long_batch": 1,
+    "mode": "long",
+    "phase": "discovery",
+    "short_batch": 1,
+    "tokens": 16384,
+    "update": 16
+  },
+  {
+    "batch": 2,
+    "cycle": 0,
+    "elapsed_seconds": 34.17580898400047,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "discovery",
+    "short_batch": 1,
+    "tokens": 49152,
+    "update": 32
+  },
+  {
+    "batch": 3,
+    "cycle": 0,
+    "elapsed_seconds": 70.37230330400052,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 131069,
+    "update": 64
+  },
+  {
+    "batch": 1,
+    "cycle": 0,
+    "elapsed_seconds": 124.64059231800002,
+    "long_batch": 1,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 3002940,
+    "update": 999
+  },
+  {
+    "batch": 3,
+    "cycle": 1,
+    "elapsed_seconds": 169.8075646289999,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 4000117,
+    "update": 1486
+  },
+  {
+    "batch": 1,
+    "cycle": 1,
+    "elapsed_seconds": 226.46162123900012,
+    "long_batch": 1,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 7000823,
+    "update": 2463
+  },
+  {
+    "batch": 3,
+    "cycle": 2,
+    "elapsed_seconds": 271.71347562900064,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 8000114,
+    "update": 2951
+  },
+  {
+    "batch": 1,
+    "cycle": 2,
+    "elapsed_seconds": 328.3688725860002,
+    "long_batch": 1,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 11000932,
+    "update": 3928
+  },
+  {
+    "batch": 3,
+    "cycle": 3,
+    "elapsed_seconds": 373.6467302589999,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 12000211,
+    "update": 4416
+  },
+  {
+    "batch": 1,
+    "cycle": 3,
+    "elapsed_seconds": 430.35189545899993,
+    "long_batch": 1,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 15001052,
+    "update": 5393
+  },
+  {
+    "batch": 3,
+    "cycle": 4,
+    "elapsed_seconds": 475.6281124500001,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 16000312,
+    "update": 5881
+  },
+  {
+    "batch": 1,
+    "cycle": 4,
+    "elapsed_seconds": 532.341399254,
+    "long_batch": 1,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 19001302,
+    "update": 6858
+  },
+  {
+    "batch": 3,
+    "cycle": 5,
+    "elapsed_seconds": 577.6232180730003,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 20000369,
+    "update": 7346
+  },
+  {
+    "batch": 1,
+    "cycle": 5,
+    "elapsed_seconds": 634.3371311810006,
+    "long_batch": 1,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 23000836,
+    "update": 8323
+  },
+  {
+    "batch": 3,
+    "cycle": 6,
+    "elapsed_seconds": 679.6189520400003,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 24000125,
+    "update": 8811
+  },
+  {
+    "batch": 1,
+    "cycle": 6,
+    "elapsed_seconds": 736.3313411810004,
+    "long_batch": 1,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 27000592,
+    "update": 9788
+  },
+  {
+    "batch": 3,
+    "cycle": 7,
+    "elapsed_seconds": 781.7078582470003,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 28001948,
+    "update": 10277
+  },
+  {
+    "batch": 1,
+    "cycle": 7,
+    "elapsed_seconds": 838.3630399860003,
+    "long_batch": 1,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 31002597,
+    "update": 11254
+  },
+  {
+    "batch": 3,
+    "cycle": 8,
+    "elapsed_seconds": 883.6166390150001,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 32001835,
+    "update": 11742
+  },
+  {
+    "batch": 1,
+    "cycle": 8,
+    "elapsed_seconds": 940.2563328450005,
+    "long_batch": 1,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 35002340,
+    "update": 12719
+  },
+  {
+    "batch": 3,
+    "cycle": 9,
+    "elapsed_seconds": 985.4985871039999,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 36001484,
+    "update": 13207
+  },
+  {
+    "batch": 1,
+    "cycle": 9,
+    "elapsed_seconds": 1042.1439595350002,
+    "long_batch": 1,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 39002399,
+    "update": 14184
+  },
+  {
+    "batch": 3,
+    "cycle": 10,
+    "elapsed_seconds": 1087.398441362,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 40001693,
+    "update": 14672
+  },
+  {
+    "batch": 1,
+    "cycle": 10,
+    "elapsed_seconds": 1144.0478996420006,
+    "long_batch": 1,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 43002438,
+    "update": 15649
+  },
+  {
+    "batch": 3,
+    "cycle": 11,
+    "elapsed_seconds": 1189.3090829020002,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 44001503,
+    "update": 16137
+  }
+]
+Mixed diagnostic: 16 updates at 3x1024, then 16 at 1x2048. Category ms/update average these shapes; not per-context timings.
+Locked batch discovery: {
+  "both_locked": true,
+  "contexts": {
+    "long": {
+      "current_batch": 1,
+      "lock_reason": "Candidate executable exceeds the memory budget or has no estimate; never executed.",
+      "locked": true,
+      "observations": [
+        {
+          "accepted": true,
+          "batch": 1,
+          "dispatch_seconds": 1.5052062830000068,
+          "tokens": 32768,
+          "tokens_per_second": 21769.773598533306,
+          "updates": 16
+        }
+      ],
+      "selected_batch": 1,
+      "selected_tps": 21769.773598533306,
+      "window_seconds": 0.0,
+      "window_tokens": 0,
+      "window_updates": 0
+    },
+    "short": {
+      "current_batch": 3,
+      "lock_reason": "Candidate executable exceeds the memory budget or has no estimate; never executed.",
+      "locked": true,
+      "observations": [
+        {
+          "accepted": true,
+          "batch": 1,
+          "dispatch_seconds": 0.8569592849999026,
+          "tokens": 16384,
+          "tokens_per_second": 19118.761283976124,
+          "updates": 16
+        },
+        {
+          "accepted": true,
+          "batch": 2,
+          "dispatch_seconds": 0.7889002069996423,
+          "tokens": 32768,
+          "tokens_per_second": 41536.305491189785,
+          "updates": 16
+        },
+        {
+          "accepted": true,
+          "batch": 3,
+          "dispatch_seconds": 0.9520339840000815,
+          "tokens": 49149,
+          "tokens_per_second": 51625.25794877065,
+          "updates": 16
+        }
+      ],
+      "selected_batch": 3,
+      "selected_tps": 51625.25794877065,
+      "window_seconds": 0.0,
+      "window_tokens": 0,
+      "window_updates": 0
+    }
+  },
+  "discovery_updates": 64,
+  "finished_at_update": 64,
+  "maximum_discovery_updates": 256,
+  "scope": "Largest measured reasonable batch within a bounded real-training search; not a proof of the physical OOM limit.",
+  "selected_batches": {
+    "long": 1,
+    "short": 3
+  },
+  "window_updates": 16
+}
+Encoding preparation: {
+  "encode_passes_this_run": 0,
+  "reason": "Both matching packed context caches already exist.",
+  "schema": "v4-dense-document-encoding-1",
+  "status": "not_needed"
+}
+

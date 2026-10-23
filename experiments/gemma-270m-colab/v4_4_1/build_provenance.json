@@ -1,0 +1,22 @@
+{
+  "base_notebook": "gemma_270m_colab_v5e1_V4_3_1.ipynb",
+  "base_sha256": "3d9e96b1f7453c7448999288d8beda3b95279011130ccf3902ebd2aea149cbcc",
+  "notebook_sha256": "f38f8ccb9ffa05b5954cd29a32076b339db989af6364a19f765b5f9794a18cf5",
+  "runner_sha256": "816ff2e51f04b73fccd64903d07fd11504522a299a5f2fd649874a5e752c432c",
+  "tokenizer": {
+    "reference": "NousResearch/Meta-Llama-3-8B",
+    "revision": "315b20096dc791d381d514deb5f8bd9c8d6d3061",
+    "sha256": "e134af98b985517b4f068e3755ae90d4e9cd2d45d328325dc503f1c6b2d06cc7",
+    "official_reference": "meta-llama/Meta-Llama-3-8B",
+    "official_revision": "8cde5ca8380496c9a6cc7ef3a8b46a0372a1d920",
+    "official_ranks_sha256": "82e9d31979e92ab929cd544440f129d9ecd797b69e327f80f17e1c50d5551b55",
+    "license_sha256": "475211637354ce4c14b9c3dacccbefbaba735fe1b0db97d6c4fd11cd1356819f",
+    "use_policy_sha256": "003513f595a20b7d63c609dfe80879531acb9caef6376fcc109bf0827471f3d1",
+    "vocabulary_ids": 128256,
+    "model_rows": 128259,
+    "expected_parameters": 182411776
+  },
+  "discovery_start_after_updates": 1000,
+  "training_seconds": 1200,
+  "device_tests_executed": false
+}

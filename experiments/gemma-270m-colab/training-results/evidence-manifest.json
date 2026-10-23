@@ -1,0 +1,111 @@
+{
+  "import_date": "2026-10-23",
+  "files": [
+    {
+      "path": "V4/cell-output.txt",
+      "source": "user-supplied V4 cell output",
+      "kind": "cell_output",
+      "bytes": 20263,
+      "sha256": "1a46f4b86b633b73c05818ad667c1d81c5a0f284d08f37700fb08189d75e10b7"
+    },
+    {
+      "path": "V4.4.1/cell-output.txt",
+      "source": "user-supplied V4.4.1 cell output",
+      "kind": "cell_output",
+      "bytes": 27742,
+      "sha256": "52afcd4e4d49fd6a78536d9d1ac9b6a6358715d863d06f051579285508a8c616"
+    },
+    {
+      "path": "V4.5.1/cell-output.txt",
+      "source": "user-supplied V4.5.1 cell output",
+      "kind": "cell_output",
+      "bytes": 28367,
+      "sha256": "3081eb7ed9f7b7be3493155a53eb6e73c10a829586ca1d2b2ca626a695783f5b"
+    },
+    {
+      "path": "V4.6.1/cell-output.txt",
+      "source": "user-supplied V4.6.1 cell output",
+      "kind": "cell_output",
+      "bytes": 27731,
+      "sha256": "3ffde9f6be487122f353321c9dfa366836914c1537a094226fa5a233d1333a02"
+    },
+    {
+      "path": "V4.1.1-complete/result.json",
+      "source": "20261022T150527Z-3386c329/result.json",
+      "kind": "machine_report",
+      "bytes": 351706,
+      "sha256": "5d566391619b52ba5626d774bc76dfc5cf004fccd0859e64fb2ccbe3279a055c"
+    },
+    {
+      "path": "V4.1.1-complete/training.jsonl",
+      "source": "20261022T150527Z-3386c329/training.jsonl",
+      "kind": "machine_report",
+      "bytes": 574425,
+      "sha256": "62442cb82800f29498227437ce97e42818abe4835780240b4328e8acd3af23a0"
+    },
+    {
+      "path": "V4.1.1-complete/attempt_status.json",
+      "source": "20261022T150527Z-3386c329/attempt_status.json",
+      "kind": "machine_report",
+      "bytes": 171,
+      "sha256": "a3d165f4b48ec0386cdbc904dbd89cce5e8d051dde9fd803b69ade7b1c1704b8"
+    },
+    {
+      "path": "V4.1.1-complete/data_manifest.json",
+      "source": "20261022T150527Z-3386c329/data_manifest.json",
+      "kind": "machine_report",
+      "bytes": 18271,
+      "sha256": "fccf214d574ef8a33d34068efeeb6db4d9d813b4cd39ef4210133f7ce94be8f7"
+    },
+    {
+      "path": "V4.3.1/result.json",
+      "source": "gemma_colab_pilot_V4_3_1_reports.zip!/result.json",
+      "kind": "machine_report",
+      "bytes": 356396,
+      "sha256": "5abe4c25a76096d8e211b969cbeb0c756e684004515df032f48f32a794c472b6"
+    },
+    {
+      "path": "V4.3.1/training.jsonl",
+      "source": "gemma_colab_pilot_V4_3_1_reports.zip!/training.jsonl",
+      "kind": "machine_report",
+      "bytes": 629437,
+      "sha256": "7e68d2fa9d9f0336b1e988d666d7e1b729218106bb56a9b65d0aa491f115eb64"
+    },
+    {
+      "path": "V4.3.1/attempt_status.json",
+      "source": "gemma_colab_pilot_V4_3_1_reports.zip!/attempt_status.json",
+      "kind": "machine_report",
+      "bytes": 171,
+      "sha256": "438990ba4cf9a579d80eeec32ed82b27fdf1ea0e4006465f9edac43ef171fcea"
+    },
+    {
+      "path": "V4.3.1/data_manifest.json",
+      "source": "gemma_colab_pilot_V4_3_1_reports.zip!/data_manifest.json",
+      "kind": "machine_report",
+      "bytes": 18271,
+      "sha256": "fccf214d574ef8a33d34068efeeb6db4d9d813b4cd39ef4210133f7ce94be8f7"
+    },
+    {
+      "path": "V4.1.1-incomplete/attempt_status.json",
+      "source": "20261022T144323Z-f1a2d7fa/attempt_status.json",
+      "kind": "incomplete_attempt",
+      "bytes": 118,
+      "sha256": "5d899b55a2d4f4ea18a50d07e5643f4eda8724788930d8502016d42a2e34d739"
+    },
+    {
+      "path": "V4.1.1-incomplete/training.jsonl",
+      "source": "20261022T144323Z-f1a2d7fa/training.jsonl",
+      "kind": "incomplete_attempt",
+      "bytes": 2214,
+      "sha256": "df79c1c1f9e2f6ad31802c4b162ea3a8c5542ae4ac4b093e5de2d0b3555ac6c8"
+    },
+    {
+      "path": "V4.1.1-incomplete/batch_discovery.json",
+      "source": "20261022T144323Z-f1a2d7fa/batch_discovery.json",
+      "kind": "incomplete_attempt",
+      "bytes": 1653,
+      "sha256": "f0cd690d6ee6f8fde5107ad6447daa18d8026b0fee9e63e25961206cc422e135"
+    }
+  ],
+  "note": "Original selected reports and cell outputs, copied byte-for-byte. No weights, corpus text, tokenizer assets or raw profile archives included."
+}

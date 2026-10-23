@@ -6,6 +6,12 @@ Compare how tokenizers represent the same text: what they preserve, how many tok
 
 The lab includes Gemma, BLOOM, JAIS, GPT-2, native o200k, Llama 3, GLM, Qwen, DeepSeek, MiMo, MiniMax and Kimi/Moonlight generations. Exact tokenizer aliases are grouped; different special IDs or processing policies remain distinct. See [the inventory](docs/tokenizer-families.md) and [Kimi identities](docs/KIMI.md).
 
+## Tokenizers during model training
+
+The separate [Gemma training pilots](experiments/gemma-270m-colab/README.md) train the same Gemma transformer with different vocabulary tables for **20 minutes on one TPU v5e-1**. The [training comparison](experiments/gemma-270m-colab/training-results/README.md) records **6 completed runs across 7 tokenizer variants**, with BPB, throughput, memory, operation timings and estimated CU. Llama 3 reports **1.782555 original-byte FineWiki BPB**; DeepSeek-V3-Base reports **1.786081**. Qwen3 uses separately labelled NFC-normalized scoring. The o200k training result is still missing.
+
+These are single-run pilot observations, with source evidence and limitations recorded in the comparison. The intrinsic lab below still requires no model training. Only **V4+ training notebooks** remain in the current Colab directory; pre-V4 notebooks are retained in Git history.
+
 ## Start the local app
 
 1. Download the **0.2.3 starter ZIP for your computer** from the project's [release assets](https://github.com/godkdf/Shinning-Tokens/releases).

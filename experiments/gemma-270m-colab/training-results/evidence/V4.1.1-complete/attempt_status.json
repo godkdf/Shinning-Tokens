@@ -1,0 +1,8 @@
+{
+  "diagnostic_updates": 32,
+  "optimizer_updates": 15340,
+  "profiling_status": "FAIL",
+  "stage": "complete",
+  "timed_training_started": true,
+  "version": "V4.1.1"
+}

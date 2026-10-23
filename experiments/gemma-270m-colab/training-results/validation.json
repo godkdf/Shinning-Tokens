@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-23",
+  "status": "PASS",
+  "remaining_notebooks": 8,
+  "removed_pre_v4_notebooks": 18,
+  "completed_training_rows": 6,
+  "tokenizer_variants": 7,
+  "missing_result": "o200k_base",
+  "checks": [
+    "All 8 notebook schemas and code cells validate; execution outputs are empty",
+    "All 8 builders reproduce delivered notebooks exactly, including the V4 Git-history fallback",
+    "Embedded runners and existing provenance hashes match",
+    "Imported evidence hashes and deterministic Markdown/CSV/JSON generation match",
+    "Six completed rows have consistent token totals, timings and 16-language BPB averages",
+    "Completed machine-report logs end at the reported update/token totals and remain finite",
+    "New documentation links resolve locally",
+    "Credential-pattern scan of published V4 sources and imported evidence passed"
+  ],
+  "whitespace_note": "Original pasted cell outputs retain their original whitespace so evidence SHA256 remains exact. Whitespace validation excludes imported evidence.",
+  "device_tests_executed": false,
+  "jax_imported": false,
+  "new_model_training_executed": false
+}

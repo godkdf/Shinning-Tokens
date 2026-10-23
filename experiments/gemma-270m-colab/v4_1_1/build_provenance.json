@@ -1,0 +1,15 @@
+{
+  "base_notebook": "gemma_270m_colab_v5e1_V4.ipynb",
+  "base_sha256": "1d0783ca040d0a7f5d2cc1366c885084dd01c1eccd43fd0ab571e1e0d4bfde55",
+  "notebook_sha256": "0cecd76595217bcdc431d9142f8503e5d78cdf8a3d1b8ca7c0bba63e4f83e94a",
+  "runner_sha256": "d8e7e51ea6b0187787ec742f67a7f920275d9b960d6297eed301480e9e8c060b",
+  "tokenizer": {
+    "reference": "google/gemma-4-E4B",
+    "revision": "411aa17b749aa952df1359d2dcea73917a544d9a",
+    "sha256": "12bac982b793c44b03d52a250a9f0d0b666813da566b910c24a6da0695fd11e6",
+    "vocabulary_ids": 262144,
+    "model_rows": 262147,
+    "expected_parameters": 268100096
+  },
+  "validation_scope": "Static only; no device tests or training."
+}
