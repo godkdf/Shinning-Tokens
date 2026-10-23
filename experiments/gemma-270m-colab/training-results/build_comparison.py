@@ -11,7 +11,7 @@ EXPERIMENT = HERE.parent
 CATALOG = [
     ("Gemma 3", "V4", 262145, 268100736, "original", "cell_output"),
     ("Gemma 4", "V4.1.1", 262144, 268100096, "original", "machine_report"),
-    ("o200k_base", "V4.2.2", 200000, 228327936, "original", "missing"),
+    ("o200k_base", "V4.2.2", 200000, 228327936, "original", "cell_output"),
     ("BLOOM", "V4.3.1", 250680, 260763136, "original", "machine_report"),
     ("Llama 3", "V4.4.1", 128256, 182411776, "original", "cell_output"),
     ("Qwen3", "V4.5.1", 151669, 197396096, "NFC", "cell_output"),
@@ -158,10 +158,10 @@ def render(rows):
     done = [r for r in rows if r["status"] == "completed"]
     text = """# Tokenizer training comparison — V4 series
 
-Updated **23 October 2026**. **6 completed runs, 7 tokenizer variants, 1 missing result**.
+Updated **23 October 2026**. **7 completed runs, 7 tokenizer variants, 0 missing results**.
 Each completed run used approximately **1,200 seconds / 20 minutes on one TPU v5e-1**.
 These are exploratory training results from one run per completed tokenizer, without independent replay.
-Machine reports exist for Gemma 4 and BLOOM; the other four completed rows come from user-supplied cell outputs and retain their displayed precision.
+Machine reports exist for Gemma 4 and BLOOM; the other five completed rows come from user-supplied cell outputs and retain their displayed precision.
 
 All variants keep the Gemma3_270M transformer: **100,326,016 backbone parameters**, width **640**, fresh random initialization and AdamW.
 The tied vocabulary table changes size, so total parameters differ. This measures tokenizer plus vocabulary cost under a time budget; it does not isolate segmentation at fixed parameter count.
@@ -195,7 +195,7 @@ BPB is lower-is-better. Bytes/s includes repeated corpus exposure and is not uni
           fmt(r["initial_compilation_seconds"],2),fmt(r["adaptive_compilation_seconds_inside_training"],3),fmt(r["notebook_elapsed_seconds"],3),
           fmt(r["training_cu_estimate"],5),fmt(r["total_cu_estimate"],5)] for r in done])
     text += """CU figures are estimates at the supplied **2.92 CU/hour**, not billing receipts or USD prices. Total CU covers the notebook through its report; connected runtime afterward adds cost.
-Gemma 3 V4 and Gemma 4 V4.1.1 discover batches immediately; BLOOM and the three later variants defer discovery until update 1,000. The o200k V4.2.2 notebook also defers discovery, but its run report is missing. Earlier V4.2.1 is the fixed-batch o200k alternative.
+Gemma 3 V4 and Gemma 4 V4.1.1 discover batches immediately; o200k V4.2.2, BLOOM and the three later variants defer discovery until update 1,000. Earlier V4.2.1 is the fixed-batch o200k alternative; the supplied o200k result is from V4.2.2.
 All keep the cumulative 3M short / 1M long schedule outside discovery. The timed window includes candidate compilation; initial compilation and evaluations are outside it. Whole-notebook timings also depend on cache reuse and data preparation.
 
 ## Training memory and hardware telemetry
@@ -207,12 +207,12 @@ Sampled active memory is **measured**, but synchronized samples can miss tempora
         [[r["tokenizer"],fmt(r["device_capacity_gib"],3),fmt(r["sampled_peak_active_gib"],3),fmt(r["sampled_peak_active_percent"],3),
           fmt(r["compiler_plus_other_resident_estimate_percent"],3),fmt(r["device_idle_percent"],3),
           fmt(r["estimated_compute_percent_of_peak"],2),fmt(r["estimated_hbm_percent_of_peak"],2)] for r in done])
-    text += """**Measured matrix-unit utilization, measured memory-bandwidth utilization and host CPU idle are unavailable in all six supplied outputs.** The runtime did not export supported TPU utilization-counter messages. The two EST. columns use compiler FLOP/byte costs divided by observed diagnostic durations; they are not hardware-counter measurements.
-All six report training/learning **PASS**, performance goal **FAIL**, profiling requirements **FAIL**, and telemetry **PARTIAL**. Successful training does not mean every requested hardware measurement was obtained.
+    text += """**Measured matrix-unit utilization, measured memory-bandwidth utilization and host CPU idle are unavailable in all seven supplied outputs.** The runtime did not export supported TPU utilization-counter messages. The two EST. columns use compiler FLOP/byte costs divided by observed diagnostic durations; they are not hardware-counter measurements.
+All seven report training/learning **PASS**, performance goal **FAIL**, profiling requirements **FAIL**, and telemetry **PARTIAL**. Successful training does not mean every requested hardware measurement was obtained.
 
 ## Operation timings
 
-Milliseconds per optimizer update from the **post-save diagnostic**, using 16 short-context and 16 long-context updates at the final batches. Values sum HLO self-time, include forward/backward, exclude idle, and are not elapsed update wall time. Because the long batch is 1 for the first three runs and 2 for the later three, operation timings are not comparisons at identical work per update.
+Milliseconds per optimizer update from the **post-save diagnostic**, using 16 short-context and 16 long-context updates at the final batches. Values sum HLO self-time, include forward/backward, exclude idle, and are not elapsed update wall time. The long batch is 1 for Gemma 3, Gemma 4 and BLOOM, and 2 for o200k, Llama 3, Qwen3 and DeepSeek. Operation timings are not comparisons at identical work per update.
 
 """
     ops = ("attention", "cross_entropy", "mlp", "optimizer_updates", "other_or_fused", "vocabulary_projection")
@@ -224,8 +224,8 @@ Milliseconds per optimizer update from the **post-save diagnostic**, using 16 sh
           for language in sorted(gemma["finewiki_languages"])])
     text += """## Evidence and remaining files
 
-- **Missing:** o200k_base's completed report ZIP, for V4.2.1 or V4.2.2. No training results have been invented for that row.
-- Full report ZIPs for **Gemma 3 V4, Llama 3 V4.4.1, Qwen3 V4.5.1 and DeepSeek V4.6.1** would replace the cell-output evidence with exact machine-readable metrics, full logs and identities. The supplied cell outputs are enough to record the displayed results now.
+- **All seven tokenizer variants now have supplied completed results.** The o200k row uses the V4.2.2 cell output: 66,591,013 scored tokens, 55,491.1 tokens/s, and 1.825707 original-byte FineWiki BPB.
+- Full report ZIPs for **Gemma 3 V4, o200k V4.2.2, Llama 3 V4.4.1, Qwen3 V4.5.1 and DeepSeek V4.6.1** would replace the cell-output evidence with exact machine-readable metrics, full logs and identities. The supplied cell outputs are enough to record the displayed results now.
 - The [earlier incomplete Gemma 4 attempt](evidence/V4.1.1-incomplete/training.jsonl) ends at **48 successful updates / 81,918 scored tokens**. It has no final evaluation or completed result; the supplied files do not establish the termination cause. The completed Gemma 4 rerun is a separate attempt and is the table row above.
 - [Evidence manifest](evidence-manifest.json) hashes every imported file. Original selected machine reports, training logs and pasted cell outputs are checked in unchanged. Weights, corpus text, tokenizer assets and raw profile archives are not included. No independent training replay was performed.
 - [JSON](comparison.json) retains parsed values and evidence labels; [CSV](comparison.csv) provides flat training metrics. Rebuild using `python3 experiments/gemma-270m-colab/training-results/build_comparison.py` from the repository root. The builder validates evidence hashes and uses no accelerator libraries.
@@ -249,4 +249,4 @@ def build():
 if __name__ == "__main__":
     for name, content in build().items():
         (HERE / name).write_text(content)
-    print("Built 7 tokenizer rows from 6 completed runs; no training or device calls.")
+    print("Built 7 tokenizer rows from 7 completed runs; no training or device calls.")

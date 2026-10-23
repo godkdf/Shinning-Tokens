@@ -1,0 +1,1129 @@
+ 
+
+
+Measurement
+Result
+
+
+
+Version / model parameters
+V4.2.2 / 228,327,936
+
+
+Tokenizer / native vocabulary IDs
+o200k_base / 200,000
+
+
+Tied embedding/head rows × width
+200,003 × 640
+
+
+Parameter change from V4
+-39772800
+
+
+Final batches: short / long
+3 × 1,024 / 2 × 2,048
+
+
+Discovery trigger / actual start update
+1,000, or memory failure / 1000
+
+
+Discovery updates / maximum
+64 / 256
+
+
+Short / long scored tokens
+{'long': 15887213, 'short': 50703800}
+
+
+Compilation seconds inside training
+108.249
+
+
+Training / learning / performance
+PASS / PASS / FAIL
+
+
+Profiling requirements / telemetry
+FAIL / PARTIAL
+
+
+Actual training seconds
+1,200.031
+
+
+Updates / useful tokens
+20,404 / 66,591,013
+
+
+Useful tokens/s
+55,491.1
+
+
+Attributed original bytes/s
+246,717.8
+
+
+Useful occupancy
+99.97%
+
+
+Initial → final FineWiki macro BPB
+4.855797 → 1.825707
+
+
+Initial → final in-mixture pooled BPB
+3.910492 → 1.460350
+
+
+Compilation / initial eval / final eval seconds
+224.68 / 2.67 / 2.54
+
+
+Weights save and file-check seconds
+14.666
+
+
+Checkpoint restoration check
+Disabled as requested
+
+
+Whole notebook through report seconds
+1,905.981
+
+
+Estimated training / total CU at 2.92/hour
+0.97336 / 1.54596
+
+
+
+
+Measurement
+Result
+
+
+
+Reported device capacity GiB
+15.748
+
+
+Sampled maximum active GiB / % capacity
+5.641 / 35.821%
+
+
+Training allocator peak % / scope
+35.821% / isolated_new_high_water_mark
+
+
+Compiler + inactive context/evaluation estimate % capacity
+77.011% (estimate)
+
+
+Memory sampling overhead ms
+5.674
+
+Memory limits: Synchronized samples can miss temporary peaks. Lifetime counters include earlier phases unless a new peak was reached during training. Allocator counters may not expose every runtime-owned buffer. Reserved pool bytes are not active tensor bytes; compiler estimates are separate.
+
+
+
+Measurement
+Result
+
+
+
+device_idle_time
+1.100%
+
+
+host_idle_time
+UNAVAILABLE: XProf host-op idle accounting does not establish Python/CPU idle or blocked dispatch time. See separately measured host wait and dispatch gaps.
+
+
+matrix_unit_utilization
+UNAVAILABLE: No supported TPU utilization-counter message was exported. Default zeros are not measurements; inspect raw-counter audit. Runtime cause is not established.
+
+
+memory_bandwidth_utilization
+UNAVAILABLE: No supported TPU utilization-counter message was exported. Default zeros are not measurements; inspect raw-counter audit. Runtime cause is not established.
+
+
+
+
+Operation category
+ms/update
+Accounted operation time %
+
+
+
+attention
+13.400
+22.631
+
+
+cross_entropy
+2.057
+3.474
+
+
+mlp
+9.424
+15.916
+
+
+optimizer_updates
+8.608
+14.537
+
+
+other_or_fused
+8.502
+14.358
+
+
+vocabulary_projection
+17.222
+29.085
+
+Operation timing scope: Summed HLO self-time over profiled device cores; includes forward/backward; excludes idle. Not elapsed wall time.
+Host enqueue/wait/gaps: {
+  "between_dispatch_wall_ms": 4.0692089996809955,
+  "enqueue_wall_ms": 15.101759000572201,
+  "note": "Host wall-clock durations around enqueue and synchronous completion APIs, including API overhead. These are not OS CPU-idle percentages; synchronization can overlap TPU execution.",
+  "synchronization_call_percent_of_window": 98.95270024695719,
+  "synchronization_call_wall_ms": 1902.826765998725
+}
+
+
+
+Measurement
+Result
+
+
+
+ESTIMATED compute TFLOP/s / % peak
+104.36 / 51.48%
+
+
+ESTIMATED HBM GiB/s / % peak
+458.89 / 60.15%
+
+
+Diagnostic updates / total diagnostic seconds
+32 / 42.87
+
+Compiler FLOP/byte costs divided by observed duration. Not hardware-counter measurements or MXU busy time. Estimates may exceed physical peak; never clamp them.
+
+
+
+FineWiki language
+Initial BPB
+Final BPB
+Change
+
+
+
+arb_Arab
+3.980975
+1.546853
+-2.434122
+
+
+cmn_Hani
+5.711210
+2.180197
+-3.531013
+
+
+deu_Latn
+6.465336
+1.784658
+-4.680679
+
+
+eng_Latn
+3.941579
+1.508901
+-2.432678
+
+
+fra_Latn
+5.004556
+1.895834
+-3.108722
+
+
+hin_Deva
+2.756652
+1.051578
+-1.705074
+
+
+ibo_Latn
+5.328123
+2.214348
+-3.113775
+
+
+jpn_Jpan
+5.033033
+1.609496
+-3.423537
+
+
+por_Latn
+4.384040
+1.839927
+-2.544112
+
+
+rus_Cyrl
+3.485822
+1.729455
+-1.756367
+
+
+sot_Latn
+5.356440
+2.005366
+-3.351074
+
+
+spa_Latn
+4.412929
+1.793359
+-2.619570
+
+
+swh_Latn
+5.255911
+1.793087
+-3.462825
+
+
+tsn_Latn
+5.438159
+1.871152
+-3.567007
+
+
+xho_Latn
+5.657029
+2.271851
+-3.385178
+
+
+zul_Latn
+5.480958
+2.115252
+-3.365705
+
+Historical comparison: {
+  "bpb_difference_from_reference": null,
+  "controlled_same_budget_comparison": false,
+  "current_batch": 3,
+  "current_budget_seconds": 1200.0,
+  "current_corpus": "expanded 256 MiB",
+  "current_sequence_length": 1024,
+  "current_training_contexts": [
+    1024,
+    2048
+  ],
+  "note": "Descriptive historical comparison only. Corpus, language coverage, batch schedule, training context and duration differ. BPB and throughput do not isolate implementation efficiency.",
+  "reference_batch": 2,
+  "reference_finewiki_macro_bpb": 2.9347027242183685,
+  "reference_sequence_length": 1024,
+  "reference_tokens_per_second": 45734.29605429257,
+  "reference_training_seconds": 60.014611282999795,
+  "reference_version": "V3.5",
+  "same_evaluation_context_length": true,
+  "same_tokenizer_and_corpus": false,
+  "throughput_ratio_to_reference": null
+}
+Required measurements: {
+  "host_and_device_idle_time": "FAIL",
+  "matrix_unit_utilization": "FAIL",
+  "memory_bandwidth_utilization": "FAIL",
+  "operation_timings": "PASS",
+  "training_memory": "PASS"
+}
+Training requirements: {
+  "V4.2.2-001_ONE_ATTEMPT": "PASS",
+  "V4.2.2-002_ONE_V5E": "PASS",
+  "V4.2.2-003_SOURCE_PINS": "PASS",
+  "V4.2.2-004_FROZEN_CORPUS": "PASS",
+  "V4.2.2-005_SPLIT_SEPARATION": "PASS",
+  "V4.2.2-006_LOSSLESS_TOKENIZATION": "PASS",
+  "V4.2.2-007_INTACT_PACKING": "PASS",
+  "V4.2.2-008_NATIVE_ATTENTION_MASK": "PASS",
+  "V4.2.2-009_RESIDENT_INPUTS": "PASS",
+  "V4.2.2-010_GEMMA_BACKBONE": "PASS",
+  "V4.2.2-011_OPTIMIZER_ROUTING": "PASS",
+  "V4.2.2-012_TIMED_DISPATCH": "PASS",
+  "V4.2.2-013_DISPATCH_BOUND": "PASS",
+  "V4.2.2-014_FINITE_UPDATES": "PASS",
+  "V4.2.2-015_ZERO_EXTRA_UPDATES": "PASS",
+  "V4.2.2-016_FIXED_EVALUATION": "PASS",
+  "V4.2.2-017_WEIGHTS_ARTIFACT": "PASS",
+  "V4.2.2-018_CHANGED_WEIGHTS": "PASS",
+  "V4.2.2-019_MINIMUM_UPDATES": "PASS",
+  "V4.2.2-020_BYTE_ACCOUNTING": "PASS",
+  "V4.2.2-021_DOWNLOAD_BOUND": "PASS",
+  "V4.2.2-022_PREFIX_CACHE": "PASS",
+  "V4.2.2-023_MERGE_ORDER": "PASS",
+  "V4.2.2-024_SOURCE_COMPLETE": "PASS",
+  "V4.2.2-025_NATIVE_TRAINING": "PASS",
+  "V4.2.2-026_COMBINED_EVALUATOR": "PASS",
+  "V4.2.2-027_CPU_ACCOUNTING": "PASS",
+  "V4.2.2-028_WEIGHTS_ONLY": "PASS",
+  "V4.2.2-029_NO_RESTORE_CHECK": "PASS",
+  "V4.2.2-030_INITIAL_BATCHES": "PASS",
+  "V4.2.2-031_TOKEN_SCHEDULE": "PASS",
+  "V4.2.2-032_CONTEXT_CURSORS": "PASS",
+  "V4.2.2-033_DELAYED_BOUNDED_DISCOVERY": "PASS",
+  "V4.2.2-034_LOCKED_BATCHES": "PASS",
+  "V4.2.2-035_COMPILE_TRIGGER": "PASS"
+}
+Performance targets: {
+  "notebook_seconds_at_most_1800": false,
+  "occupancy_at_least_95_percent": true,
+  "pretraining_compilation_seconds_at_most_180": false,
+  "throughput_at_least_v35_reference": true
+}
+Timed source byte shares: {
+  "code_cpp": 0.020071398139098365,
+  "code_html": 0.005145566358249098,
+  "code_java": 0.020075630259792664,
+  "code_javascript": 0.015404216788460717,
+  "code_python": 0.03034765257015491,
+  "code_rust": 0.010112958070954938,
+  "dclm": 0.1492195836024893,
+  "math": 0.04987237420258512,
+  "multilingual_web": 0.2991937749280733,
+  "pdf_edu": 0.25106876331127354,
+  "translations": 0.050018684660873766,
+  "web_edu": 0.09946939710799434,
+  "wiki_holdout": 0.0
+}
+Timed language byte shares: {
+  "arb_Arab": 0.04214829796079233,
+  "cmn_Hani": 0.034425116780439274,
+  "deu_Latn": 0.01712189711035021,
+  "eng_Latn": 0.6734260490663021,
+  "fra_Latn": 0.03202624403905547,
+  "hin_Deva": 0.04369874702983572,
+  "ibo_Latn": 0.009904246631160154,
+  "jpn_Jpan": 0.024799318696795542,
+  "por_Latn": 0.01534322088453545,
+  "rus_Cyrl": 0.02445608121140358,
+  "sot_Latn": 0.008027971554920424,
+  "spa_Latn": 0.02056465805456113,
+  "swh_Latn": 0.024213911361714354,
+  "tsn_Latn": 0.009893029653645573,
+  "xho_Latn": 0.010073872595556345,
+  "zul_Latn": 0.009877337368932312
+}
+Artifacts: /content/drive/MyDrive/ShiningGem/colab-v5e1/V4.2.2/20261022T155040Z-f51d6779
+Batch decisions: [
+  {
+    "action": "increase",
+    "additional_observed_resident_bytes": 696707588,
+    "allocator_snapshot": {
+      "active_percent": 32.56495395891613,
+      "bytes_in_use": 5506517504,
+      "bytes_limit": 16909336064,
+      "bytes_reserved": 5898929152,
+      "peak_bytes_in_use": 5506523136,
+      "peak_bytes_reserved": 5898929152,
+      "reserved_percent": 34.88563436005526,
+      "training_elapsed_seconds": 50.8829992459996
+    },
+    "at_update": 1016,
+    "batch": 3,
+    "candidate_compiler_peak_plus_other_resident_bytes": 13152144384,
+    "decision_complete_seconds": 90.13063206900006,
+    "device_capacity_bytes": 16909336064,
+    "discovery_updates": 16,
+    "dispatch_seconds": 0.7909133039993321,
+    "elapsed_seconds": 50.8829992459996,
+    "mode": "short",
+    "next_candidate_batch": 4,
+    "previous_selected_tokens_per_second": null,
+    "projected_next_peak_bytes": 13501634406,
+    "reason": "Measure the next admitted batch using real training updates.",
+    "selected_batch": 3,
+    "tokens_per_second": 62145.87585195242,
+    "window_tokens": 49152,
+    "window_updates": 16
+  },
+  {
+    "action": "increase",
+    "additional_observed_resident_bytes": 696637956,
+    "allocator_snapshot": {
+      "active_percent": 32.56495395891613,
+      "bytes_in_use": 5506517504,
+      "bytes_limit": 16909336064,
+      "bytes_reserved": 5898929152,
+      "peak_bytes_in_use": 5506523648,
+      "peak_bytes_reserved": 5898929152,
+      "reserved_percent": 34.88563436005526,
+      "training_elapsed_seconds": 91.378062279
+    },
+    "at_update": 1032,
+    "batch": 1,
+    "candidate_compiler_peak_plus_other_resident_bytes": 13718705152,
+    "decision_complete_seconds": 128.34750386900032,
+    "device_capacity_bytes": 16909336064,
+    "discovery_updates": 32,
+    "dispatch_seconds": 1.239278301000013,
+    "elapsed_seconds": 91.378062279,
+    "mode": "long",
+    "next_candidate_batch": 2,
+    "previous_selected_tokens_per_second": null,
+    "projected_next_peak_bytes": 19919879680,
+    "reason": "Measure the next admitted batch using real training updates.",
+    "selected_batch": 1,
+    "tokens_per_second": 26441.19563261816,
+    "window_tokens": 32768,
+    "window_updates": 16
+  },
+  {
+    "action": "lock",
+    "at_update": 1048,
+    "batch": 4,
+    "decision_complete_seconds": 129.41645989300014,
+    "discovery_updates": 48,
+    "dispatch_seconds": 1.0580689749995145,
+    "elapsed_seconds": 129.41375476299982,
+    "mode": "short",
+    "previous_selected_tokens_per_second": 62145.87585195242,
+    "reason": "Larger batch did not improve useful dispatch tokens/s by at least 2%.",
+    "selected_batch": 3,
+    "tokens_per_second": 61912.787869080144,
+    "window_tokens": 65508,
+    "window_updates": 16
+  },
+  {
+    "action": "lock",
+    "additional_observed_resident_bytes": 1247161348,
+    "allocator_snapshot": {
+      "active_percent": 35.820690256996244,
+      "bytes_in_use": 6057040896,
+      "bytes_limit": 16909336064,
+      "bytes_reserved": 8089748480,
+      "peak_bytes_in_use": 6057046528,
+      "peak_bytes_reserved": 8089748480,
+      "reserved_percent": 47.84190490614878,
+      "training_elapsed_seconds": 130.5663191800004
+    },
+    "at_update": 1064,
+    "batch": 2,
+    "candidate_compiler_peak_plus_other_resident_bytes": 18124091392,
+    "decision_complete_seconds": 162.69946941800026,
+    "device_capacity_bytes": 16909336064,
+    "discovery_updates": 64,
+    "dispatch_seconds": 1.1397648180000033,
+    "elapsed_seconds": 130.5663191800004,
+    "mode": "long",
+    "previous_selected_tokens_per_second": 26441.19563261816,
+    "projected_next_peak_bytes": 18785928934,
+    "reason": "Candidate executable exceeds the memory budget or has no estimate; never executed.",
+    "selected_batch": 2,
+    "tokens_per_second": 57499.58146190104,
+    "window_tokens": 65536,
+    "window_updates": 16
+  }
+]
+Context transitions: [
+  {
+    "batch": 3,
+    "cycle": 0,
+    "elapsed_seconds": 2.8999966161791235e-07,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "initial_batches",
+    "short_batch": 3,
+    "tokens": 0,
+    "update": 0
+  },
+  {
+    "batch": 1,
+    "cycle": 0,
+    "elapsed_seconds": 48.34184243999971,
+    "long_batch": 1,
+    "mode": "long",
+    "phase": "initial_batches",
+    "short_batch": 3,
+    "tokens": 3000554,
+    "update": 977
+  },
+  {
+    "batch": 3,
+    "cycle": 0,
+    "elapsed_seconds": 50.0626151839997,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "discovery",
+    "short_batch": 3,
+    "tokens": 3047658,
+    "update": 1000
+  },
+  {
+    "batch": 1,
+    "cycle": 0,
+    "elapsed_seconds": 90.13875452800039,
+    "long_batch": 1,
+    "mode": "long",
+    "phase": "discovery",
+    "short_batch": 3,
+    "tokens": 3096810,
+    "update": 1016
+  },
+  {
+    "batch": 4,
+    "cycle": 0,
+    "elapsed_seconds": 128.35566679800013,
+    "long_batch": 1,
+    "mode": "short",
+    "phase": "discovery",
+    "short_batch": 3,
+    "tokens": 3129578,
+    "update": 1032
+  },
+  {
+    "batch": 2,
+    "cycle": 0,
+    "elapsed_seconds": 129.4265325919996,
+    "long_batch": 1,
+    "mode": "long",
+    "phase": "discovery",
+    "short_batch": 3,
+    "tokens": 3195086,
+    "update": 1048
+  },
+  {
+    "batch": 2,
+    "cycle": 0,
+    "elapsed_seconds": 162.71722995599976,
+    "long_batch": 2,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 3260622,
+    "update": 1064
+  },
+  {
+    "batch": 3,
+    "cycle": 1,
+    "elapsed_seconds": 175.41008475499984,
+    "long_batch": 2,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 4001676,
+    "update": 1245
+  },
+  {
+    "batch": 2,
+    "cycle": 1,
+    "elapsed_seconds": 223.86453051199987,
+    "long_batch": 2,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 7002171,
+    "update": 2222
+  },
+  {
+    "batch": 3,
+    "cycle": 2,
+    "elapsed_seconds": 240.8995999050003,
+    "long_batch": 2,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 8001300,
+    "update": 2466
+  },
+  {
+    "batch": 2,
+    "cycle": 2,
+    "elapsed_seconds": 289.41522850100046,
+    "long_batch": 2,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 11002022,
+    "update": 3443
+  },
+  {
+    "batch": 3,
+    "cycle": 3,
+    "elapsed_seconds": 306.4473919660004,
+    "long_batch": 2,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 12001340,
+    "update": 3687
+  },
+  {
+    "batch": 2,
+    "cycle": 3,
+    "elapsed_seconds": 354.88478069699977,
+    "long_batch": 2,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 15001885,
+    "update": 4664
+  },
+  {
+    "batch": 3,
+    "cycle": 4,
+    "elapsed_seconds": 371.91088781300004,
+    "long_batch": 2,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 16001070,
+    "update": 4908
+  },
+  {
+    "batch": 2,
+    "cycle": 4,
+    "elapsed_seconds": 420.3878714299999,
+    "long_batch": 2,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 19001478,
+    "update": 5885
+  },
+  {
+    "batch": 3,
+    "cycle": 5,
+    "elapsed_seconds": 437.41602785299983,
+    "long_batch": 2,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 20000587,
+    "update": 6129
+  },
+  {
+    "batch": 2,
+    "cycle": 5,
+    "elapsed_seconds": 485.8829859079997,
+    "long_batch": 2,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 23001185,
+    "update": 7106
+  },
+  {
+    "batch": 3,
+    "cycle": 6,
+    "elapsed_seconds": 502.915144564,
+    "long_batch": 2,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 24000299,
+    "update": 7350
+  },
+  {
+    "batch": 2,
+    "cycle": 6,
+    "elapsed_seconds": 551.3802123470005,
+    "long_batch": 2,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 27000585,
+    "update": 8327
+  },
+  {
+    "batch": 3,
+    "cycle": 7,
+    "elapsed_seconds": 568.4801651549997,
+    "long_batch": 2,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 28003939,
+    "update": 8572
+  },
+  {
+    "batch": 2,
+    "cycle": 7,
+    "elapsed_seconds": 616.8885528520004,
+    "long_batch": 2,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 31001332,
+    "update": 9548
+  },
+  {
+    "batch": 3,
+    "cycle": 8,
+    "elapsed_seconds": 633.9157553530003,
+    "long_batch": 2,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 32000560,
+    "update": 9792
+  },
+  {
+    "batch": 2,
+    "cycle": 8,
+    "elapsed_seconds": 682.3722516489997,
+    "long_batch": 2,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 35000742,
+    "update": 10769
+  },
+  {
+    "batch": 3,
+    "cycle": 9,
+    "elapsed_seconds": 699.402571175,
+    "long_batch": 2,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 36000060,
+    "update": 11013
+  },
+  {
+    "batch": 2,
+    "cycle": 9,
+    "elapsed_seconds": 747.9001032300002,
+    "long_batch": 2,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 39000660,
+    "update": 11990
+  },
+  {
+    "batch": 3,
+    "cycle": 10,
+    "elapsed_seconds": 764.936323076,
+    "long_batch": 2,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 40000004,
+    "update": 12234
+  },
+  {
+    "batch": 2,
+    "cycle": 10,
+    "elapsed_seconds": 813.4273688080002,
+    "long_batch": 2,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 43000144,
+    "update": 13211
+  },
+  {
+    "batch": 3,
+    "cycle": 11,
+    "elapsed_seconds": 830.5280236569997,
+    "long_batch": 2,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 44003448,
+    "update": 13456
+  },
+  {
+    "batch": 2,
+    "cycle": 11,
+    "elapsed_seconds": 878.9411816889997,
+    "long_batch": 2,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 47000764,
+    "update": 14432
+  },
+  {
+    "batch": 3,
+    "cycle": 12,
+    "elapsed_seconds": 895.9673445409999,
+    "long_batch": 2,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 48000044,
+    "update": 14676
+  },
+  {
+    "batch": 2,
+    "cycle": 12,
+    "elapsed_seconds": 944.4442446980001,
+    "long_batch": 2,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 51000439,
+    "update": 15653
+  },
+  {
+    "batch": 3,
+    "cycle": 13,
+    "elapsed_seconds": 961.5406123980001,
+    "long_batch": 2,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 52003697,
+    "update": 15898
+  },
+  {
+    "batch": 2,
+    "cycle": 13,
+    "elapsed_seconds": 1009.9541094509996,
+    "long_batch": 2,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 55000883,
+    "update": 16874
+  },
+  {
+    "batch": 3,
+    "cycle": 14,
+    "elapsed_seconds": 1026.9835728159997,
+    "long_batch": 2,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 56000084,
+    "update": 17118
+  },
+  {
+    "batch": 2,
+    "cycle": 14,
+    "elapsed_seconds": 1075.5055497470003,
+    "long_batch": 2,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 59003038,
+    "update": 18096
+  },
+  {
+    "batch": 3,
+    "cycle": 15,
+    "elapsed_seconds": 1092.532729249,
+    "long_batch": 2,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 60002455,
+    "update": 18340
+  },
+  {
+    "batch": 2,
+    "cycle": 15,
+    "elapsed_seconds": 1140.992716707,
+    "long_batch": 2,
+    "mode": "long",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 63002846,
+    "update": 19317
+  },
+  {
+    "batch": 3,
+    "cycle": 16,
+    "elapsed_seconds": 1158.0172505990004,
+    "long_batch": 2,
+    "mode": "short",
+    "phase": "locked_training",
+    "short_batch": 3,
+    "tokens": 64002038,
+    "update": 19561
+  }
+]
+Mixed diagnostic: 16 updates at 3x1024, then 16 at 2x2048. Category ms/update average these shapes; not per-context timings.
+Delayed batch discovery policy: {
+  "context_schedule": "3M short / 1M long cumulative tokens; discovery temporarily measures both contexts.",
+  "discovery": {
+    "both_locked": true,
+    "contexts": {
+      "long": {
+        "current_batch": 2,
+        "lock_reason": "Candidate executable exceeds the memory budget or has no estimate; never executed.",
+        "locked": true,
+        "observations": [
+          {
+            "accepted": true,
+            "batch": 1,
+            "dispatch_seconds": 1.239278301000013,
+            "tokens": 32768,
+            "tokens_per_second": 26441.19563261816,
+            "updates": 16
+          },
+          {
+            "accepted": true,
+            "batch": 2,
+            "dispatch_seconds": 1.1397648180000033,
+            "tokens": 65536,
+            "tokens_per_second": 57499.58146190104,
+            "updates": 16
+          }
+        ],
+        "selected_batch": 2,
+        "selected_tps": 57499.58146190104,
+        "window_seconds": 0.0,
+        "window_tokens": 0,
+        "window_updates": 0
+      },
+      "short": {
+        "current_batch": 4,
+        "lock_reason": "Larger batch did not improve useful dispatch tokens/s by at least 2%.",
+        "locked": true,
+        "observations": [
+          {
+            "accepted": true,
+            "batch": 3,
+            "dispatch_seconds": 0.7909133039993321,
+            "tokens": 49152,
+            "tokens_per_second": 62145.87585195242,
+            "updates": 16
+          },
+          {
+            "accepted": false,
+            "batch": 4,
+            "dispatch_seconds": 1.0580689749995145,
+            "tokens": 65508,
+            "tokens_per_second": 61912.787869080144,
+            "updates": 16
+          }
+        ],
+        "selected_batch": 3,
+        "selected_tps": 62145.87585195242,
+        "window_seconds": 0.0,
+        "window_tokens": 0,
+        "window_updates": 0
+      }
+    },
+    "discovery_updates": 64,
+    "finished_at_update": 1064,
+    "maximum_discovery_updates": 256,
+    "scope": "Largest measured reasonable batch within a bounded real-training search; not a proof of the physical OOM limit.",
+    "selected_batches": {
+      "long": 2,
+      "short": 3
+    },
+    "window_updates": 16
+  },
+  "discovery_enabled": true,
+  "discovery_start_after_updates": 1000,
+  "discovery_started": true,
+  "early_memory_trigger": false,
+  "initial_batches": {
+    "long": 1,
+    "short": 3
+  },
+  "memory_events": [],
+  "mode": "delayed_discovery",
+  "selected_batches": {
+    "long": 2,
+    "short": 3
+  },
+  "started_at_update": 1000
+}
+Encoding preparation: {
+  "cache_reused": false,
+  "encode_passes_this_run": 1,
+  "encoding_manifest": {
+    "byte_accounting": "Exact length of each native token byte piece; handles UTF-8 splits without character offsets",
+    "cache_key": "b7ae662fab936556dbd7cfdf",
+    "domains": [
+      "pdf_edu",
+      "dclm",
+      "web_edu",
+      "multilingual_web",
+      "math",
+      "code_python",
+      "code_java",
+      "code_cpp",
+      "code_javascript",
+      "code_rust",
+      "code_html",
+      "translations",
+      "wiki_holdout"
+    ],
+    "encoding_seconds": 42.12296485800016,
+    "files": {
+      "in_mix/byte_weights.bin": "9419194f7bd8bdcacf50dc78f77d9b2d16c8f9f54c75687ee1026886b3efd60d",
+      "in_mix/documents.jsonl": "3253df4ad6d67fc4c654f3e365fe64f3c80c04321fa54a5bb4cb8159ae72ef11",
+      "in_mix/ids.bin": "4f6872cc1ce2bb9dfd7bc680080d43bd2660066498e81b8b91a20b3cdb162d43",
+      "train/byte_weights.bin": "0416b9f7eac8ff00d2f8f71da97f1af04016ad9c070f1432443e8d0784c1fdec",
+      "train/documents.jsonl": "4e9764ba1aa8ef758256399f9f5ccc270fff49181c71bdb486c9e97aea85eddf",
+      "train/ids.bin": "0a852ebb366f73d256c41a401f6ad640b393b250f2bb84def10becdf54208da0",
+      "wiki/byte_weights.bin": "97043b948fa3f91f8de0f972eba83fee1a78afbea4b1a388264e7c953860ce29",
+      "wiki/documents.jsonl": "76b7a2d798aeacad705c8d53ac79f51e565522dc842eb83fa682d35054d3a7e8",
+      "wiki/ids.bin": "ea711a3b89ab81c670e7e3ebbc02afd943cbc10787de4e9ac900fec409debbd4"
+    },
+    "languages": [
+      "eng_Latn",
+      "fra_Latn",
+      "spa_Latn",
+      "por_Latn",
+      "cmn_Hani",
+      "arb_Arab",
+      "hin_Deva",
+      "swh_Latn",
+      "zul_Latn",
+      "xho_Latn",
+      "tsn_Latn",
+      "sot_Latn",
+      "rus_Cyrl",
+      "jpn_Jpan",
+      "deu_Latn",
+      "ibo_Latn"
+    ],
+    "raw_manifest_sha256": "fccf214d574ef8a33d34068efeeb6db4d9d813b4cd39ef4210133f7ce94be8f7",
+    "schema": "v421-native-byte-document-encoding-1",
+    "splits": {
+      "in_mix": {
+        "documents": 299,
+        "encode_passes": 1,
+        "original_bytes": 1048569,
+        "roundtrip_verification_passes": 1,
+        "text_tokens": 232171
+      },
+      "train": {
+        "documents": 51131,
+        "encode_passes": 1,
+        "original_bytes": 268435449,
+        "roundtrip_verification_passes": 1,
+        "text_tokens": 60338102
+      },
+      "wiki": {
+        "documents": 820,
+        "encode_passes": 1,
+        "original_bytes": 1048572,
+        "roundtrip_verification_passes": 1,
+        "text_tokens": 288538
+      }
+    },
+    "text_encoding_policy": "encode_ordinary; native special-token spellings remain ordinary text",
+    "tokenizer_sha256": "97973057009b00298ee5c575a23b895c912518ded47f9dc1559032e9f2532187"
+  },
+  "schema": "v421-native-byte-document-encoding-1",
+  "status": "available"
+}
+

@@ -6,8 +6,8 @@ tokenizers, then compare learning and throughput within a **1,200-second /
 size; all variants keep **100,326,016 backbone parameters** and width **640**.
 
 **[Training statistics: BPB, throughput, memory, timings, cost and evidence](training-results/README.md)**
-contains **6 completed runs**, an earlier incomplete attempt and the missing
-o200k result. [CSV](training-results/comparison.csv) and
+contains **7 completed tokenizer runs** and an earlier incomplete attempt.
+[CSV](training-results/comparison.csv) and
 [JSON](training-results/comparison.json) are available for reuse.
 
 ## Notebooks

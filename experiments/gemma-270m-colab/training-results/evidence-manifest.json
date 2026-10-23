@@ -105,6 +105,13 @@
       "kind": "incomplete_attempt",
       "bytes": 1653,
       "sha256": "f0cd690d6ee6f8fde5107ad6447daa18d8026b0fee9e63e25961206cc422e135"
+    },
+    {
+      "path": "V4.2.2/cell-output.txt",
+      "source": "user-supplied V4.2.2 cell output",
+      "kind": "cell_output",
+      "bytes": 25921,
+      "sha256": "46c2755b36a2f97f44d07584d9b0481b2dcb3912417b12b0f231e87d6359ef1c"
     }
   ],
   "note": "Original selected reports and cell outputs, copied byte-for-byte. No weights, corpus text, tokenizer assets or raw profile archives included."

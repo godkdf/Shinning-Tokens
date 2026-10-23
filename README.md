@@ -8,7 +8,7 @@ The lab includes Gemma, BLOOM, JAIS, GPT-2, native o200k, Llama 3, GLM, Qwen, De
 
 ## Tokenizers during model training
 
-The separate [Gemma training pilots](experiments/gemma-270m-colab/README.md) train the same Gemma transformer with different vocabulary tables for **20 minutes on one TPU v5e-1**. The [training comparison](experiments/gemma-270m-colab/training-results/README.md) records **6 completed runs across 7 tokenizer variants**, with BPB, throughput, memory, operation timings and estimated CU. Llama 3 reports **1.782555 original-byte FineWiki BPB**; DeepSeek-V3-Base reports **1.786081**. Qwen3 uses separately labelled NFC-normalized scoring. The o200k training result is still missing.
+The separate [Gemma training pilots](experiments/gemma-270m-colab/README.md) train the same Gemma transformer with different vocabulary tables for **20 minutes on one TPU v5e-1**. The [training comparison](experiments/gemma-270m-colab/training-results/README.md) records **7 completed runs across 7 tokenizer variants**, with BPB, throughput, memory, operation timings and estimated CU. Llama 3 reports **1.782555 original-byte FineWiki BPB**; DeepSeek-V3-Base reports **1.786081**. Qwen3 uses separately labelled NFC-normalized scoring. Native o200k reports **1.825707 original-byte FineWiki BPB**.
 
 These are single-run pilot observations, with source evidence and limitations recorded in the comparison. The intrinsic lab below still requires no model training. Only **V4+ training notebooks** remain in the current Colab directory; pre-V4 notebooks are retained in Git history.
 

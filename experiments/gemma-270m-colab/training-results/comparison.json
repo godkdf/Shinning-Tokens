@@ -250,15 +250,124 @@
     "memory_bandwidth_utilization_percent": null
   },
   {
-    "tokenizer": "o200k_base",
     "version": "V4.2.2",
+    "model_parameters": 228327936,
+    "training_seconds": 1200.031,
+    "updates": 20404,
+    "scored_tokens": 66591013,
+    "tokens_per_second": 55491.1,
+    "scoring_bytes_per_second": 246717.8,
+    "final_short_batch": 3,
+    "final_long_batch": 2,
+    "initial_finewiki_macro_bpb": 4.855797,
+    "final_finewiki_macro_bpb": 1.825707,
+    "initial_in_mix_pooled_bpb": 3.910492,
+    "final_in_mix_pooled_bpb": 1.46035,
+    "sampled_peak_active_gib": 5.641,
+    "sampled_peak_active_percent": 35.821,
+    "device_capacity_gib": 15.748,
+    "compiler_plus_other_resident_estimate_percent": 77.011,
+    "training_occupancy_percent": 99.97,
+    "adaptive_compilation_seconds_inside_training": 108.249,
+    "initial_compilation_seconds": 224.68,
+    "notebook_elapsed_seconds": 1905.981,
+    "training_cu_estimate": 0.97336,
+    "total_cu_estimate": 1.54596,
+    "device_idle_percent": 1.1,
+    "estimated_compute_tflops_per_second": 104.36,
+    "estimated_compute_percent_of_peak": 51.48,
+    "estimated_hbm_gib_per_second": 458.89,
+    "estimated_hbm_percent_of_peak": 60.15,
+    "engineering_status": "PASS",
+    "learning_status": "PASS",
+    "performance_goal_status": "FAIL",
+    "profiling_status": "FAIL",
+    "telemetry_status": "PARTIAL",
+    "operation_ms_per_update": {
+      "attention": 13.4,
+      "cross_entropy": 2.057,
+      "mlp": 9.424,
+      "optimizer_updates": 8.608,
+      "other_or_fused": 8.502,
+      "vocabulary_projection": 17.222
+    },
+    "tokens_by_context": {
+      "long": 15887213,
+      "short": 50703800
+    },
+    "finewiki_languages": {
+      "arb_Arab": {
+        "initial": 3.980975,
+        "final": 1.546853
+      },
+      "cmn_Hani": {
+        "initial": 5.71121,
+        "final": 2.180197
+      },
+      "deu_Latn": {
+        "initial": 6.465336,
+        "final": 1.784658
+      },
+      "eng_Latn": {
+        "initial": 3.941579,
+        "final": 1.508901
+      },
+      "fra_Latn": {
+        "initial": 5.004556,
+        "final": 1.895834
+      },
+      "hin_Deva": {
+        "initial": 2.756652,
+        "final": 1.051578
+      },
+      "ibo_Latn": {
+        "initial": 5.328123,
+        "final": 2.214348
+      },
+      "jpn_Jpan": {
+        "initial": 5.033033,
+        "final": 1.609496
+      },
+      "por_Latn": {
+        "initial": 4.38404,
+        "final": 1.839927
+      },
+      "rus_Cyrl": {
+        "initial": 3.485822,
+        "final": 1.729455
+      },
+      "sot_Latn": {
+        "initial": 5.35644,
+        "final": 2.005366
+      },
+      "spa_Latn": {
+        "initial": 4.412929,
+        "final": 1.793359
+      },
+      "swh_Latn": {
+        "initial": 5.255911,
+        "final": 1.793087
+      },
+      "tsn_Latn": {
+        "initial": 5.438159,
+        "final": 1.871152
+      },
+      "xho_Latn": {
+        "initial": 5.657029,
+        "final": 2.271851
+      },
+      "zul_Latn": {
+        "initial": 5.480958,
+        "final": 2.115252
+      }
+    },
+    "tokenizer": "o200k_base",
     "native_ids": 200000,
     "model_rows": 200003,
-    "model_parameters": 228327936,
     "scoring_basis": "original",
-    "evidence_kind": "missing",
-    "status": "report_missing",
-    "evidence_path": null,
+    "evidence_kind": "cell_output",
+    "status": "completed",
+    "evidence_path": "evidence/V4.2.2/cell-output.txt",
     "notebook": "../gemma_270m_colab_v5e1_V4_2_2.ipynb",
     "host_idle_percent": null,
     "matrix_unit_utilization_percent": null,
